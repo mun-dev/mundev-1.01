@@ -37,6 +37,9 @@ defined('_JEXEC') or die('Restricted access');
 				<?php if ($params->get('showauthor', 1)) { ?>
 					<div class="o-flag t-lg-mb--md">
 						<div class="o-flag__image">
+<<<<<<< HEAD
+               				<?php echo ED::themes()->html('user.avatar', $post->user, array('rank' => true, 'status' => true, 'size' => 'md')); ?>
+=======
 							<div class="o-avatar-status<?php echo ($post->user->isOnline()) ? ' is-online': ' is-offline'; ?>">
 								<div class="o-avatar-status__indicator"></div>
 								<a href="" class="o-avatar">
@@ -46,6 +49,7 @@ defined('_JEXEC') or die('Restricted access');
 							<div class="ed-rank-bar t-lg-mt--md">
 								<div class="ed-rank-bar__progress" style="width: <?php echo ED::getUserRankScore($post->user->id); ?>%"></div>
 							</div>
+>>>>>>> master
 						</div>
 						<div class="o-flag__body">
 							<a href="" class="ed-user-name t-lg-mb--"><?php echo $post->user->getName(); ?></a>

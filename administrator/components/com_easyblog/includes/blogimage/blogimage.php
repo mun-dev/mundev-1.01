@@ -20,8 +20,14 @@ class EasyBlogBlogImage extends EasyBlog
 	public $storage = null;
 	public $uri = null;
 	public $sizes = array();
+<<<<<<< HEAD
+	public $storageType = null;
+
+	public function __construct($path, $url, $storageType = EASYBLOG_MEDIA_STORAGE_TYPE_JOOMLA)
+=======
 
 	public function __construct($path, $url)
+>>>>>>> master
 	{
 		parent::__construct();
 
@@ -40,6 +46,10 @@ class EasyBlogBlogImage extends EasyBlog
 		// Set the storage uri
 		$this->absoluteUri = rtrim($url, '/');
 		$this->uri = rtrim(dirname($url), '/');
+<<<<<<< HEAD
+		$this->storageType = $storageType;
+=======
+>>>>>>> master
 
 		// Initialize the original width / height based on the configurations
 		$this->initDimensions();
@@ -87,6 +97,37 @@ class EasyBlogBlogImage extends EasyBlog
 	}
 
 	/**
+<<<<<<< HEAD
+	 * Returns a particular image url from remote server with the specified size
+	 *
+	 * @since	5.3.0
+	 * @access	public
+	 */
+	public function getRemoteSource($size, $html = false, $protocol = false)
+	{
+		$storageLib = EB::storage($this->storageType);
+
+		// Prefix the image file
+		$prefix = EBLOG_SYSTEM_VARIATION_PREFIX;
+
+		// File name should also have a prefix of the theme if there's a value for it.
+		$fileName = $prefix . '_' . $size . '_' . $this->image;
+
+		// Get the storage path. need to be relative path
+		$relatiavePath = str_replace(JPATH_ROOT, '', $this->storage);
+
+		$relatiavePath = ltrim($relatiavePath, '/');
+		$relatiavePath .= '/' . $fileName;
+
+		$url = $storageLib->getPermalink($relatiavePath);
+
+		return ($html) ? '<img src="' . $url . '" />' : $url;
+	}
+
+
+	/**
+=======
+>>>>>>> master
 	 * Returns a particular image url with the specified size
 	 *
 	 * @since	5.0
@@ -96,6 +137,14 @@ class EasyBlogBlogImage extends EasyBlog
 	{
 		static $cache = array();
 
+<<<<<<< HEAD
+		// we need to handle remote storage differently.
+		if ($this->storageType != EASYBLOG_MEDIA_STORAGE_TYPE_JOOMLA) {
+			return $this->getRemoteSource($size, $html);
+		}
+
+=======
+>>>>>>> master
 		$isHTML = $html ? '-html' : '';
 		$index = $this->original . $size . $isHTML . $protocol;
 

@@ -29,7 +29,11 @@ defined('_JEXEC') or die('Unauthorized Access');
 		<?php } ?>
 
 		<?php if ($album->hasDate()) { ?>
+<<<<<<< HEAD
+		<span data-album-date class="es-album-date"><i class="fa fa-calendar"></i> <?php echo $this->html('string.date', $album->getAssignedDate(), "COM_EASYSOCIAL_ALBUMS_DATE_FORMAT"); ?></span>
+=======
 		<span data-album-date class="es-album-date"><i class="fa fa-calendar"></i> <?php echo $this->html('string.date', $album->getAssignedDate(), "COM_EASYSOCIAL_ALBUMS_DATE_FORMAT",  $album->hasAssignedDate() ? false : true); ?></span>
+>>>>>>> master
 		<?php } ?>
 
 		<?php if ($album->location && $this->config->get('photos.location')) { ?>

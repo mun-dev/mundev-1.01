@@ -284,7 +284,11 @@ class SocialTableComments extends SocialTable
 
 		if ($state) {
 			// Clear out all the likes for this comment
+<<<<<<< HEAD
+			$likesModel = ES::model('likes');
+=======
 			$likesModel = FD::model('likes');
+>>>>>>> master
 			$likesModel->delete($this->uid, 'comments');
 
 			// Delete reactions made on the comment
@@ -299,6 +303,21 @@ class SocialTableComments extends SocialTable
 			$notificationsModel = ES::model('Notifications');
 			$notificationsModel->deleteNotificationsWithUid($this->id, $this->element);
 
+<<<<<<< HEAD
+			// #3420
+			// look like some element need to be removed using uid.
+			// e.g. videos.user.create | videos.user.featured
+			$requiredManualRemoval = array('videos.user.create', 'videos.group.create', 'videos.event.create', 'videos.page.create',
+										'videos.user.featured', 'videos.group.featured', 'videos.event.featured', 'videos.page.featured',
+										'audios.user.create', 'audios.group.create', 'audios.event.create', 'audios.page.create',
+										'audios.user.featured', 'audios.group.featured', 'audios.event.featured', 'audios.page.featured');
+
+			if (in_array($this->element, $requiredManualRemoval)) {
+				$notificationsModel->deleteNotificationsWithUid($this->uid, $this->element);
+			}
+
+=======
+>>>>>>> master
 			// Delete files related to this comment
 			$filesModel = ES::model('Files');
 			$filesModel->deleteFiles($this->id, 'comments');

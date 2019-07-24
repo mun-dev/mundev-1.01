@@ -43,7 +43,12 @@ jQuery(document).ready(function ($) {
 
 	if (jQuery.fn.datepicker !== undefined) {
 		jQuery('#searchatdate .input-append.date').datepicker({
+<<<<<<< HEAD
+			orientation: "top auto",
+			language: "kunena"
+=======
 			orientation: "top auto"
+>>>>>>> master
 		});
 	}
 });

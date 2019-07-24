@@ -67,6 +67,12 @@ jQuery(document).ready(function ($) {
 	});
 
 	if ($.fn.datepicker !== undefined) {
+<<<<<<< HEAD
+		$('.input-group.date').datepicker({
+			orientation: "top auto",
+			format: "yyyy-mm-dd",
+			language: "kunena"
+=======
 		// Load datepicker for announcement
 		$('#ann-date .input-group.date').datepicker({
 			orientation: "top auto",
@@ -81,6 +87,7 @@ jQuery(document).ready(function ($) {
 		$('#ann-date3 .input-group.date').datepicker({
 			orientation: "top auto",
 			format: "yyyy-mm-dd"
+>>>>>>> master
 		});
 	}
 

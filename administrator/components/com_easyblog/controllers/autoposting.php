@@ -1,7 +1,11 @@
 <?php
 /**
 * @package		EasyBlog
+<<<<<<< HEAD
+* @copyright	Copyright (C) 2010 - 2019 Stack Ideas Sdn Bhd. All rights reserved.
+=======
 * @copyright	Copyright (C) 2010 - 2017 Stack Ideas Sdn Bhd. All rights reserved.
+>>>>>>> master
 * @license		GNU/GPL, see LICENSE.php
 * EasyBlog is free software. This version may have been modified pursuant
 * to the GNU General Public License, and as distributed it includes or
@@ -29,6 +33,14 @@ class EasyBlogControllerAutoposting extends EasyBlogController
 		$model = EB::model('OAuth');
 		$state = $model->purgeLogs();
 
+<<<<<<< HEAD
+		$actionlog = EB::actionlog();
+		$actionlog->log('COM_EB_ACTIONLOGS_AUTOPOSTING_LOGS_PURGED', 'autoposting', array(
+			'link' => 'index.php?option=com_easyblog&view=autoposting&layout=logs'
+		));
+
+=======
+>>>>>>> master
 		$this->info->set('COM_EASYBLOG_AUTOPOSTING_LOGS_PURGED_SUCCESSFULLY', 'success');
 
 		return $this->app->redirect('index.php?option=com_easyblog&view=autoposting&layout=logs');

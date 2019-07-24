@@ -29,8 +29,13 @@ defined('_JEXEC') or die('Unauthorized Access');
 </tr>
 
 <tr>
+<<<<<<< HEAD
+	<td dir="ltr" bgcolor="#ffffff" height="100%" valign="top" width="100%" style="padding: 20px 16px 24px; font-family: sans-serif; font-size: 14px; color: #555555; text-align: center;">
+
+=======
 	<td dir="ltr" bgcolor="#ffffff" height="100%" valign="top" width="100%" style="padding: 20px 24px 24px; font-family: sans-serif; font-size: 14px; color: #555555; text-align: center;">
 		
+>>>>>>> master
 		<!--[if mso]>
 		<table role="presentation" aria-hidden="true" border="0" cellspacing="0" cellpadding="0" width="660" style="width: 660px;">
 		<tr>
@@ -38,7 +43,11 @@ defined('_JEXEC') or die('Unauthorized Access');
 		<![endif]-->
 		<table role="presentation" aria-hidden="true" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:660px;">
 			<tr>
+<<<<<<< HEAD
+				<td bgcolor="#f6f9fb" align="center" style="padding: 24px 16px;">
+=======
 				<td bgcolor="#f6f9fb" align="center" style="padding: 24px;">
+>>>>>>> master
 					<table role="presentation" aria-hidden="true" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:660px;">
 						<tr>
 							<td valign="top" width="100%">
@@ -66,8 +75,13 @@ defined('_JEXEC') or die('Unauthorized Access');
 									<a href="<?php echo FRoute::registration(array('external' => true , 'layout' => 'activation' , 'userid' => $id));?>"><?php echo JText::_('COM_EASYSOCIAL_EMAILS_REGISTRATION_ACTIVATION_ALTERNATIVE_THIS_PAGE');?></a>.
 								</p>
 
+<<<<<<< HEAD
+								<div style="margin: 0 0 24px; padding:15px 8px; background-color:#dcdcdc;border-radius: 2px;border: 1px solid #ccc; margin-left: auto; margin-right: auto; display: block; width: 250px;text-align: center;">
+									<span style="font-size:14px;"><?php echo $token; ?></span>
+=======
 								<div style="margin: 0 0 24px; padding:15px; background-color:#dcdcdc;border-radius: 2px;border: 1px solid #ccc; margin-left: auto; margin-right: auto; display: block; width: 300px;text-align: center;">
 									<span style="font-size:16px;"><?php echo $token; ?></span>
+>>>>>>> master
 								</div>
 							</td>
 						</tr>
@@ -86,7 +100,11 @@ defined('_JEXEC') or die('Unauthorized Access');
 									<img src="<?php echo $avatar;?>" alt="" style="border-radius:50%; -moz-border-radius:50%; -webkit-border-radius:50%;background:#fff;vertical-align:middle;" width="64" height="64"/>
 								</span>
 							</td>
+<<<<<<< HEAD
+							<td  width="200" style="padding: 0 16px;">
+=======
 							<td style="padding: 0 16px;">
+>>>>>>> master
 								<table align="left" style="font-size: 14px;margin: 0 auto 10px 20px; text-align:left;color:#798796" width="100%">
 									<tr>
 										<td style="padding: 5px;">
@@ -113,4 +131,8 @@ defined('_JEXEC') or die('Unauthorized Access');
 		</table>
 		<![endif]-->
 	</td>
+<<<<<<< HEAD
 </tr>
+=======
+</tr>
+>>>>>>> master

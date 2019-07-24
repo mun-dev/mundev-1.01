@@ -106,6 +106,29 @@ class SocialString
 	 * @since	1.2
 	 * @access	public
 	 */
+<<<<<<< HEAD
+	public function namesToNotifications($userIds, $page = false)
+	{
+		// Ensure that users is an array
+		$userIds 	= ES::makeArray($userIds);
+
+		// Ensure that they are all SocialUser objects
+		$tmpUsers = ES::user($userIds);
+		$users = array();
+
+		// Due to cache mechanism in ES::user(), there are instances where the ordering will be messed up.
+		// To fix this, Re-organized the users to always follow the correct ordering. #3438
+		// or directly fix in ES::user() @loadUsers
+		foreach ($userIds as $userId) {
+			foreach ($tmpUsers as $user) {
+				if ($user->id != $userId) {
+					continue;
+				}
+
+				$users[] = $user;
+			}
+		}
+=======
 	public function namesToNotifications($users, $page = false)
 	{
 		// Ensure that users is an array
@@ -113,6 +136,7 @@ class SocialString
 
 		// Ensure that they are all SocialUser objects
 		$users = ES::user($users);
+>>>>>>> master
 
 		// If the page exists, we need to include it.
 		if ($page) {

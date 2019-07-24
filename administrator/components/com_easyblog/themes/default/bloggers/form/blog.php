@@ -1,7 +1,11 @@
 <?php
 /**
 * @package		EasyBlog
+<<<<<<< HEAD
+* @copyright	Copyright (C) 2010 - 2019 Stack Ideas Sdn Bhd. All rights reserved.
+=======
 * @copyright	Copyright (C) 2010 - 2017 Stack Ideas Sdn Bhd. All rights reserved.
+>>>>>>> master
 * @license		GNU/GPL, see LICENSE.php
 * EasyBlog is free software. This version may have been modified pursuant
 * to the GNU General Public License, and as distributed it includes or
@@ -27,6 +31,20 @@ defined('_JEXEC') or die('Unauthorized Access');
 					</div>
 				</div>
 
+<<<<<<< HEAD
+				<div class="form-group" data-composer-editors>
+					<?php echo $this->html('form.label', 'COM_EB_SETTINGS_LAYOUT_SELECT_USER_EDITOR', 'user_editor'); ?>
+
+					<div class="col-md-7">
+						<?php echo $this->html('form.editors', 'user_editor', $bloggerParams->get('user_editor'), true); ?>
+						<div class="small mt-10">
+							<?php echo JText::_('COM_EASYBLOG_SETTINGS_LAYOUT_SELECT_DEFAULT_EDITOR_NOTE');?>
+						</div>
+					</div>
+				</div>
+
+=======
+>>>>>>> master
 				<div class="form-group">
 					<?php echo $this->html('form.label', 'COM_EASYBLOG_BLOGGERS_EDIT_PERMALINK', 'user_permalink'); ?>
 
@@ -71,7 +89,11 @@ defined('_JEXEC') or die('Unauthorized Access');
 					<?php echo $this->html('form.label', 'COM_EASYBLOG_BLOGGERS_EDIT_BIOGRAPHY_INFO', 'biography'); ?>
 
 					<div class="col-md-12">
+<<<<<<< HEAD
+						<?php echo $editor->display('biography', $author->getBiography(true) , '100%', '200', '10', '10' , array('pagebreak', 'ninjazemanta', 'readmore', 'article')); ?>
+=======
 						<?php echo $editor->display('biography', $author->getBiography(true) , '100%', '200', '10', '10' , array('pagebreak','ninjazemanta','image','readmore' , 'article') ); ?>
+>>>>>>> master
 					</div>
 				</div>
 			</div>

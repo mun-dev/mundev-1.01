@@ -38,7 +38,12 @@ body {
 	data-post-uid="<?php echo $post->uid; ?>"
 	data-author-id="<?php echo $this->my->id;?>"
 	data-permalink="<?php echo $post->isPublished() ? $post->getExternalPermalink() : '';?>"
+<<<<<<< HEAD
+	data-post-doctype="<?php echo $template->doctype; ?>"
+	data-map-integration="<?php echo $this->config->get('location_service_provider', 'maps') ?>">
+=======
 	data-post-doctype="<?php echo $template->doctype; ?>">
+>>>>>>> master
 
 	<?php echo $composer->renderTemplateManager($templateId); ?>
 

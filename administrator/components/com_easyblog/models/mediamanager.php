@@ -41,15 +41,33 @@ class EasyBlogModelMediaManager extends EasyBlogAdminModel
 	{
 		$db = EB::db();
 
+<<<<<<< HEAD
+		if (is_array($uris)) {
+			foreach ($uris as &$uri) {
+				$uri = $db->Quote($uri);
+			}
+=======
 		foreach ($uris as &$uri) {
 			$uri = $db->Quote($uri);
+>>>>>>> master
 		}
 
 		$query = array();
 		$query[] = 'SELECT * FROM ' . $db->qn('#__easyblog_media');
+<<<<<<< HEAD
+
+		if (is_array($uris)) {
+			$query[] = 'WHERE ' . $db->qn('uri') . ' IN(';
+			$query[] = implode(',', $uris);
+			$query[] = ')';
+		} else {
+			$query[] = 'WHERE ' . $db->qn('uri') . ' = ' . $db->Quote($uris);
+		}
+=======
 		$query[] = 'WHERE ' . $db->qn('uri') . ' IN(';
 		$query[] = implode(',', $uris);
 		$query[] = ')';
+>>>>>>> master
 
 		$query = implode(' ', $query);
 		$db->setQuery($query);
@@ -64,6 +82,37 @@ class EasyBlogModelMediaManager extends EasyBlogAdminModel
 	}
 
 	/**
+<<<<<<< HEAD
+	 * Retrieves a list of objects from the database given the uri
+	 *
+	 * @since	5.1
+	 * @access	public
+	 */
+	public function getPlaceObjects($placeId)
+	{
+		$db = EB::db();
+
+		$query = array();
+		$query[] = 'SELECT * FROM ' . $db->qn('#__easyblog_media');
+		$query[] = 'WHERE ' . $db->qn('place') . ' = ' . $db->Quote($placeId);
+
+		$query = implode(' ', $query);
+
+		$db->setQuery($query);
+		
+		$result = $db->loadObjectList();
+
+		if (!$result) {
+			return;
+		}
+		
+		return $result;
+	}
+
+
+	/**
+=======
+>>>>>>> master
 	 * Retrieves a list of articles on the site
 	 *
 	 * @since	5.0

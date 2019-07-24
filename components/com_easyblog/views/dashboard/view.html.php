@@ -150,6 +150,14 @@ class EasyBlogViewDashboard extends EasyBlogView
 		$metasModel = EB::model('Metas');
 		$meta = $metasModel->getMetaInfo(META_TYPE_BLOGGER, $this->my->id);
 
+<<<<<<< HEAD
+		// Remove duplicate meta. #1865
+		if ($meta->id) {
+			$metasModel->deleteMetas($this->my->id, META_TYPE_BLOGGER, $meta->id);
+		}
+
+=======
+>>>>>>> master
 		// Load twitter data for this user
 		$twitter = EB::table('Oauth');
 		$twitter->load(array('user_id' => $this->my->id, 'type' => EBLOG_OAUTH_TWITTER, 'system' => 0));
@@ -165,6 +173,32 @@ class EasyBlogViewDashboard extends EasyBlogView
 		// Load users params
 		$params = $profile->getParam();
 
+<<<<<<< HEAD
+		if ($this->config->get('main_joomlauserparams')) {
+
+			// Get language
+			$languages = EB::getLanguages();
+
+			// Get Timezone's group
+			$joomlaTimezone = EB::date()->getJoomlaTimezone();
+
+			$user = JFactory::getUser();
+			$userTimezone = $user->getParam('timezone');
+			$userLanguage = $user->getParam('language');
+
+			// UTC timezone is only meant for server.
+			if ($userTimezone === 'UTC') {
+				$userTimezone = '';
+			}
+
+			$this->set('userTimezone', $userTimezone);
+			$this->set('userLanguage', $userLanguage);
+			$this->set('joomlaTimezone', $joomlaTimezone);
+			$this->set('languages', $languages);
+		}
+
+=======
+>>>>>>> master
 		$this->set('params', $params);
 		$this->set('editor', $editor);
 		$this->set('feedburner', $feedburner);

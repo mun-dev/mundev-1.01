@@ -222,8 +222,11 @@ class EasyBlogModelBloggers extends EasyBlogAdminModel
 	 *
 	 * @since	5.0
 	 * @access	public
+<<<<<<< HEAD
+=======
 	 * @param	string
 	 * @return
+>>>>>>> master
 	 */
 	public function _buildQueryGroupBy()
 	{
@@ -238,8 +241,11 @@ class EasyBlogModelBloggers extends EasyBlogAdminModel
 	 *
 	 * @since	5.0
 	 * @access	public
+<<<<<<< HEAD
+=======
 	 * @param	string
 	 * @return
+>>>>>>> master
 	 */
 	public function _buildQueryOrderBy()
 	{

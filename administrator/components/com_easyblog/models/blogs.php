@@ -821,4 +821,73 @@ class EasyBlogModelBlogs extends EasyBlogAdminModel
 		return $this->_pagination;
 	}
 
+<<<<<<< HEAD
+	/**
+	 * Retrieves a list of post for auto archiving process
+	 *
+	 * @since	5.3.0
+	 * @access	public
+	 */
+	public function getAutoAchivingPosts($limit = 10)
+	{
+		$db = EB::db();
+		$config = EB::config();
+
+		// Get the current date
+		$now = EB::date()->toSql();
+		$months = $config->get('main_archiving_duration', 12);
+
+		$query = "select a.`id`";
+		$query .= " from `#__easyblog_post` as a";
+		$query .= " WHERE a.`published` = " . $db->Quote(EASYBLOG_POST_PUBLISHED);
+		$query .= " AND a.`state` = " . $db->Quote(EASYBLOG_POST_NORMAL);
+		$query .= " AND a.`created` <= DATE_SUB(" . $db->Quote($now) . ", INTERVAL " . $months . " MONTH)";
+
+		if ($limit) {
+			$query .= " LIMIT " . $limit;
+		}
+
+		$db->setQuery($query);
+		$results = $db->loadColumn();
+
+		return $results;
+	}
+
+	/**
+	 * Export Post Templates
+	 *
+	 * @since	5.3.0
+	 * @access	public
+	 */
+	public function exportTemplates($ids)
+	{
+		$db = EB::db();
+		
+		$columns = array(
+			'user_id',
+			'title',
+			'data',
+			'created',
+			'system',
+			'core',
+			'screenshot',
+			'published',
+			'datafix',
+			'doctype',
+			'ordering'
+		);
+
+		$columns = implode(',', $db->nameQuote($columns));
+
+		$query = array();
+		$query[] = 'SELECT ' . $columns . ' FROM `#__easyblog_post_templates`';
+		$query[] = 'WHERE `id` IN(' . implode(',', $db->Quote($ids)) . ')';
+
+		$query = implode(' ', $query);
+		$db->setQuery($query);
+
+		return $db->loadObjectList();
+	}
+=======
+>>>>>>> master
 }

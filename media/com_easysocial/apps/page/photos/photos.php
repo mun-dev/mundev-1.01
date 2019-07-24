@@ -424,12 +424,27 @@ class SocialPageAppPhotos extends SocialAppItem
 		// Get photo objects
 		$photos = $this->getPhotoFromParams($item);
 
+<<<<<<< HEAD
+		$uid = $item->contextId;
+		$element = $item->context;
+
+		// Get the unique item and element to be used
+		if (count($item->contextIds) > 1) {
+			$uid = $photos[0]->album_id;
+			$element = SOCIAL_TYPE_ALBUM;
+		}
+
+=======
+>>>>>>> master
 		// Get the first photo's album id.
 		$albumId = $photos[0]->album_id;
 		$album = ES::table('Album');
 		$album->load($albumId);
 
 		// old data compatibility
+<<<<<<< HEAD
+		$verb = ($element != SOCIAL_TYPE_ALBUM && $item->verb == 'create') ? 'add' : $item->verb;
+=======
 		$verb = ($item->verb == 'create') ? 'add' : $item->verb;
 
 		$objectId = $album->id;
@@ -445,6 +460,7 @@ class SocialPageAppPhotos extends SocialAppItem
 			$objectType = SOCIAL_TYPE_PHOTO;
 			$commentUrl = $photo->getPermalink();
 		}
+>>>>>>> master
 
 		// Get total number of items uploaded.
 		$count = count($item->contextIds);
@@ -466,7 +482,11 @@ class SocialPageAppPhotos extends SocialAppItem
 			$item->appid = $this->getApp()->id;
 		}
 
+<<<<<<< HEAD
+		$item->comments = ES::comments($uid, $element, $verb, SOCIAL_APPS_GROUP_PAGE, array('url' => ESR::stream(array('layout' => 'item', 'id' => $item->uid, 'sef' => false)),'clusterId' => $item->cluster_id), $item->uid);
+=======
 		$item->comments = ES::comments($item->contextId, $item->context, $verb, SOCIAL_APPS_GROUP_PAGE, array('url' => ESR::stream(array('layout' => 'item', 'id' => $item->uid, 'sef' => false)),'clusterId' => $item->cluster_id), $item->uid);
+>>>>>>> master
 
 		$this->set('count', $count);
 		$this->set('page', $page);

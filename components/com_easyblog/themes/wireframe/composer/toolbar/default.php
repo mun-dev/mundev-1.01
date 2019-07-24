@@ -113,15 +113,27 @@ defined('_JEXEC') or die('Unauthorized Access');
 			<?php echo $this->output('site/composer/toolbar/posts'); ?>
 		</div>
 
+<<<<<<< HEAD
+		<?php if ($this->config->get('main_locations') && !$templateEditor) { ?>
+=======
 		<?php if ($this->config->get('main_locations')) { ?>
+>>>>>>> master
 		<div class="btn-group" data-toolbar-view data-type="location">
 			<?php echo $this->output('site/composer/toolbar/location'); ?>
 		</div>
 		<?php } ?>
 		
+<<<<<<< HEAD
+		<?php if (!$templateEditor) { ?>
+			<div class="btn-group" data-toolbar-view data-type="cover">
+				<?php echo $this->output('site/composer/toolbar/cover'); ?>
+			</div>
+		<?php } ?>
+=======
 		<div class="btn-group" data-toolbar-view data-type="cover">
 			<?php echo $this->output('site/composer/toolbar/cover'); ?>
 		</div>
+>>>>>>> master
 			
 	</div>
 

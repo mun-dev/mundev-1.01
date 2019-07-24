@@ -111,6 +111,26 @@ class EasyBlog
 		return $responsive;
 	}
 
+<<<<<<< HEAD
+	/**
+	 * Determines if this is a tablet layout
+	 *
+	 * @since   5.3
+	 * @access  public
+	 */
+	public function isTablet()
+	{
+		$responsive = null;
+
+		if (is_null($responsive)) {
+			$responsive = EB::responsive()->isTablet();
+		}
+
+		return $responsive;
+	}
+
+=======
+>>>>>>> master
 	public function getError()
 	{
 		if (!$this->hasErrors()) {

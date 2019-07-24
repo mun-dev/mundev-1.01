@@ -33,6 +33,10 @@ class SocialGroupAppVideosHookNotificationLikes extends SocialAppHooks
 		// When user likes on a single video item
 		if ($item->context_type == 'videos.group.create' || $item->context_type == 'videos.group.featured') {
 			$video = ES::video($item->uid, SOCIAL_TYPE_GROUP, $item->context_ids);
+<<<<<<< HEAD
+			$group = ES::group($video->table->uid);
+=======
+>>>>>>> master
 
 			// Set the video image
 			$item->image = $video->getThumbnail();
@@ -40,7 +44,11 @@ class SocialGroupAppVideosHookNotificationLikes extends SocialAppHooks
 
 			// We need to determine if the user is the owner
 			if ($video->user_id == $item->target_id && $item->target_type == SOCIAL_TYPE_USER) {
+<<<<<<< HEAD
+				$item->title = JText::sprintf($this->getPlurality('APP_GROUP_VIDEOS_NOTIFICATIONS_LIKES_USER_VIDEO', $users), $names, $video->title, $group->title);
+=======
 				$item->title = JText::sprintf($this->getPlurality('APP_GROUP_VIDEOS_NOTIFICATIONS_LIKES_USER_VIDEO', $users), $names);
+>>>>>>> master
 				return;
 			}
 

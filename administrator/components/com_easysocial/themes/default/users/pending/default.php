@@ -31,7 +31,11 @@ defined('_JEXEC') or die('Unauthorized Access');
 		</div>
 
 		<div class="app-filter-bar__cell app-filter-bar__cell--divider-left"></div>
+<<<<<<< HEAD
+
+=======
 		
+>>>>>>> master
 		<div class="app-filter-bar__cell app-filter-bar__cell--divider-left app-filter-bar__cell--last t-text--center">
 			<div class="app-filter-bar__filter-wrap">
 				<?php echo $this->html('filter.limit', $limit); ?>
@@ -73,17 +77,56 @@ defined('_JEXEC') or die('Unauthorized Access');
 			<tbody>
 			<?php if( $users ){ ?>
 				<?php $i = 0; ?>
+<<<<<<< HEAD
+				<?php foreach ($users as $user) {
+
+					$hasOtherOauthClientAssociated = false;
+					$userTypes = array('joomla');
+
+					if ($user->type != 'joomla') {
+						$oauthModel = ES::model('Oauth');
+						$hasOtherOauthClientAssociated = $oauthModel->getOauthClientAssociatedList($user->id);
+
+						if ($hasOtherOauthClientAssociated) {
+
+							// reset Joomla user type if this user has associated with their social account
+							$userTypes = array();
+
+							foreach ($hasOtherOauthClientAssociated as $oauthData) {
+								$userTypes[] = $oauthData->client;
+							}
+						}
+					}
+				?>
+
+=======
 				<?php foreach( $users as $user ){ ?>
+>>>>>>> master
 				<tr data-pending-item
 					data-name="<?php echo $user->getName();?>"
 					data-id="<?php echo $user->id;?>"
 					data-avatar="<?php echo $user->getAvatar();?>"
 					data-email="<?php echo $user->email;?>">
 					<td>
+<<<<<<< HEAD
+						<?php echo $this->html('grid.id', $i++ , $user->id); ?>
+					</td>
+					<td align="left">
+
+						<div class="es-social-icons-wrapper">
+							<?php foreach ($userTypes as $userType) { ?>
+								<div class="">
+									<i class="fab fa-<?php echo $userType;?>" data-es-provide="tooltip" data-original-title="<?php echo JText::sprintf('COM_EASYSOCIAL_USERS_USER_ACCOUNT_TYPE', $userType);?>"></i>
+								</div>
+							<?php } ?>
+						</div>
+
+=======
 						<?php echo $this->html( 'grid.id' , $i++ , $user->id ); ?>
 					</td>
 					<td align="left">
 						<i class="fab fa-<?php echo $user->type;?> t-lg-mr--md" data-es-provide="tooltip" data-original-title="<?php echo JText::sprintf('COM_EASYSOCIAL_USERS_USER_ACCOUNT_TYPE', $user->type);?>"></i>
+>>>>>>> master
 						<a href="index.php?option=com_easysocial&view=users&layout=form&id=<?php echo $user->id;?>" data-user-item-insertLink>
 							<?php echo $user->name;?>
 						</a>
@@ -102,7 +145,11 @@ defined('_JEXEC') or die('Unauthorized Access');
 						<?php if ($user->state == SOCIAL_REGISTER_APPROVALS) { ?>
 							<?php echo JText::_('COM_ES_PENDING_APPROVAL'); ?>
 						<?php } elseif ($user->state == SOCIAL_REGISTER_CONFIRMATION_APPROVAL) { ?>
+<<<<<<< HEAD
+							<?php echo JText::_('COM_ES_PENDING_CONFIRMATION_EMAIL_ACCOUNT'); ?>
+=======
 							<?php echo JText::_('COM_ES_PENDING_CONFIRMATION_EMAIL_ACCOUNT'); ?>							
+>>>>>>> master
 						<?php } else { ?>
 							<?php echo JText::_('COM_ES_PENDING_USER_ACTIVATION'); ?>
 						<?php } ?>

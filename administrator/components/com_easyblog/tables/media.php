@@ -85,4 +85,12 @@ class EasyBlogTableMedia extends EasyBlogTable
 		
 		return $this->store();
 	}
+<<<<<<< HEAD
+
+	public function isImage()
+	{
+		return $this->type == 'image';
+	}
+=======
+>>>>>>> master
 }

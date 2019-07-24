@@ -29,6 +29,14 @@ $modules = EB::modules($module);
 // @5.1
 // Backward compatibility
 $config = $modules->config;
+<<<<<<< HEAD
+
+if (!$config->get('main_locations')) {
+	return;
+}
+
+=======
+>>>>>>> master
 $my = JFactory::getUser();
 
 $helper = new modEasyBlogPostMapHelper($modules);

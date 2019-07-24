@@ -54,11 +54,51 @@ class EasyBlogThemesHelperString
 	/**
 	 * Truncates a string at a centrain length and add a more link
 	 *
+<<<<<<< HEAD
+	 * @deprecated	5.0
+=======
 	 * @since   5.0
+>>>>>>> master
 	 * @access  public
 	 */
 	public static function truncater($text, $max = 250)
 	{
+<<<<<<< HEAD
+		return self::truncate($text, $max, '');
+	}
+
+	/**
+	 * Alternative to @truncater to truncate contents with HTML codes
+	 *
+	 * @since	5.3
+	 * @access	public
+	 */
+	public static function truncate($text, $max = 250, $ending = '', $exact = false, $showMore = true, $overrideReadmore = false, $stripTags = false)
+	{
+		if (!$ending) {
+			$ending = JText::_('COM_EASYBLOG_ELLIPSES');
+		}
+
+		// If the plain text is shorter than the maximum length, return the whole text
+		if ((JString::strlen(preg_replace('/<.*?>/', '', $text)) <= $max) || !$max) {
+			return $text;
+		}
+
+		// Truncate the string natively without retaining the original format.
+		if ($stripTags) {
+			$truncate = trim(strip_tags($text));
+			$truncate = EBString::substr($truncate, 0, $max) . $ending;
+		} else {
+			$stringLib = EB::string();
+			$truncate = $stringLib->truncateWithHtml($text, $max, $ending, $exact);
+		}
+
+		$theme = EB::themes();
+		$theme->set('truncated', $truncate);
+		$theme->set('original', $text);
+		$theme->set('showMore', $showMore);
+		$theme->set('overrideReadmore', $overrideReadmore);
+=======
 		$theme = EB::template();
 		$length = EBString::strlen($text);
 
@@ -68,9 +108,14 @@ class EasyBlogThemesHelperString
 		$theme->set('length', $length);
 		$theme->set('text', $text);
 		$theme->set('max', $max);
+>>>>>>> master
 
 		$output = $theme->output('admin/html/string.truncater');
 
 		return $output;
+<<<<<<< HEAD
+	}	
+=======
 	}
+>>>>>>> master
 }

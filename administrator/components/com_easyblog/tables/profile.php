@@ -1,7 +1,11 @@
 <?php
 /**
 * @package		EasyBlog
+<<<<<<< HEAD
+* @copyright	Copyright (C) 2010 - 2019 Stack Ideas Sdn Bhd. All rights reserved.
+=======
 * @copyright	Copyright (C) 2010 - 2018 Stack Ideas Sdn Bhd. All rights reserved.
+>>>>>>> master
 * @license		GNU/GPL, see LICENSE.php
 * EasyBlog is free software. This version may have been modified pursuant
 * to the GNU General Public License, and as distributed it includes or
@@ -40,8 +44,11 @@ class EasyBlogTableProfile extends EasyBlogTable
 	 *
 	 * @since	5.0
 	 * @access	public
+<<<<<<< HEAD
+=======
 	 * @param	string
 	 * @return
+>>>>>>> master
 	 */
 	public function bind($data, $ignore = array())
 	{
@@ -76,8 +83,11 @@ class EasyBlogTableProfile extends EasyBlogTable
 	 *
 	 * @since	4.0
 	 * @access	public
+<<<<<<< HEAD
+=======
 	 * @param	string
 	 * @return
+>>>>>>> master
 	 */
 	public function store($updateNulls = false)
 	{
@@ -86,14 +96,23 @@ class EasyBlogTableProfile extends EasyBlogTable
 		$invalidKeys = array('twitter', 'blogCount', 'messaging', 'featured', 'isBloggerSubscribed');
 
 		// before we store, we need to unset unnessary attribute.
+<<<<<<< HEAD
+		foreach ($invalidKeys as $iKey) {
+=======
 		foreach($invalidKeys as $iKey) {
+>>>>>>> master
 			if (isset($this->$iKey)) {
 				unset($this->$iKey);
 			}
 		}
 
+<<<<<<< HEAD
+		$state = parent::store($updateNulls);
+		$my = JFactory::getUser();
+=======
 		$state 	= parent::store($updateNulls);
 		$my 	= JFactory::getUser();
+>>>>>>> master
 
 		// If the user is updating their own profile
 		if ($my->id == $this->id) {
@@ -353,6 +372,28 @@ class EasyBlogTableProfile extends EasyBlogTable
 	public function getEditor()
 	{
 		$config = EB::config();
+<<<<<<< HEAD
+		$defaultEditor = $config->get('layout_editor');
+		$defaultEditorEnabled = JPluginHelper::isEnabled('editors', $defaultEditor);
+
+		$params = $this->getParam();
+		$userEditor = $params->get('user_editor');
+		// Check if the editor plugin is enabled
+		$userEditorEnabled = JPluginHelper::isEnabled('editors', $userEditor);
+
+		// Check if the author have permission to use their own editor
+		$allow = $this->getAcl()->get('allow_user_editor');
+
+		// check user's editor 
+		if ($allow && $userEditorEnabled && !empty($userEditor)) {
+			$editor = $userEditor;
+		} else {
+			$editor = 'composer';
+
+			if ($defaultEditorEnabled) {
+				$editor = $defaultEditor;
+			}
+=======
 		$editor = $config->get('layout_editor');
 
 		// Test if the plugin is enabled
@@ -361,6 +402,7 @@ class EasyBlogTableProfile extends EasyBlogTable
 		// If not enabled, we load easyblog built in composer by default
 		if (!$enabled) {
 			$editor = 'composer';
+>>>>>>> master
 		}
 
 		return $editor;
@@ -587,8 +629,11 @@ class EasyBlogTableProfile extends EasyBlogTable
 	 *
 	 * @since	5.0
 	 * @access	public
+<<<<<<< HEAD
+=======
 	 * @param	string
 	 * @return
+>>>>>>> master
 	 */
 	public function getPermalink($xhtml = true)
 	{
@@ -598,6 +643,15 @@ class EasyBlogTableProfile extends EasyBlogTable
 	}
 
 	/**
+<<<<<<< HEAD
+	 * Use @getParams instead
+	 *
+	 * @deprecated	5.3.0
+	 */
+	public function getParam()
+	{
+		return $this->getParams();
+=======
 	 * Retrieves the user's parameters
 	 *
 	 * @since	4.0
@@ -610,6 +664,7 @@ class EasyBlogTableProfile extends EasyBlogTable
 		$registry	 = new JRegistry($this->params);
 
 		return $registry;
+>>>>>>> master
 	}
 
 	/**
@@ -617,8 +672,11 @@ class EasyBlogTableProfile extends EasyBlogTable
 	 *
 	 * @since	5.0
 	 * @access	public
+<<<<<<< HEAD
+=======
 	 * @param	string
 	 * @return
+>>>>>>> master
 	 */
 	public function getUserType()
 	{

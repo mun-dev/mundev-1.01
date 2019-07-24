@@ -1,8 +1,14 @@
 <?php
 /**
+<<<<<<< HEAD
+* @package		EasyBlog
+* @copyright	Copyright (C) 2010 - 2019 Stack Ideas Sdn Bhd. All rights reserved.
+* @license		GNU/GPL, see LICENSE.php
+=======
 * @package      EasyBlog
 * @copyright    Copyright (C) 2010 - 2017 Stack Ideas Sdn Bhd. All rights reserved.
 * @license      GNU/GPL, see LICENSE.php
+>>>>>>> master
 * EasyBlog is free software. This version may have been modified pursuant
 * to the GNU General Public License, and as distributed it includes or
 * is derivative of works licensed under the GNU General Public License or
@@ -117,7 +123,11 @@ class EasyBlogModelCategories extends EasyBlogAdminModel
 
 		$query .= ' AND a.' . $db->quoteName('state') . '=' . $db->Quote(1);
 		$query .= ' GROUP BY a.' . $db->quoteName('id');
+<<<<<<< HEAD
+		$query .= ' ORDER BY a.' . $db->quoteName('ordering') . ' ASC';
+=======
 		$query .= ' ORDER BY a.' . $db->quoteName('id') . ' ASC';
+>>>>>>> master
 
 		$db->setQuery($query);
 
@@ -286,6 +296,10 @@ class EasyBlogModelCategories extends EasyBlogAdminModel
 
 		$db = EB::db();
 
+<<<<<<< HEAD
+		$items = $categories;
+=======
+>>>>>>> master
 		$categories = implode(',', $categories);
 
 		$query  = 'UPDATE ' . $db->nameQuote('#__easyblog_category') . ' '
@@ -304,6 +318,26 @@ class EasyBlogModelCategories extends EasyBlogAdminModel
 			return false;
 		}
 
+<<<<<<< HEAD
+		if (!is_array($items)) {
+			$items = array($items);
+		}
+
+		$actionString = $publish ? 'COM_EB_ACTIONLOGS_CATEGORY_PUBLISH' : 'COM_EB_ACTIONLOGS_CATEGORY_UNPUBLISH';
+
+		foreach ($items as $id) {
+			$category = EB::table('Category');
+			$category->load($id);
+
+			$actionlog = EB::actionlog();
+			$actionlog->log($actionString, 'category', array(
+				'link' => 'index.php?option=com_easyblog&view=categories&layout=form&id=' . $category->id,
+				'categoryTitle' => JText::_($category->title)
+			));
+		}
+
+=======
+>>>>>>> master
 		return true;
 	}
 

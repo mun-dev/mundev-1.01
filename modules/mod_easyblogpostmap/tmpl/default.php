@@ -12,6 +12,60 @@
 defined('_JEXEC') or die('Unauthorized Access');
 ?>
 <div id="eb" class="eb-mod mod-easyblogpostmap<?php echo $modules->getWrapperClass(); ?>" data-eb-module-postmap>
+<<<<<<< HEAD
+	<div id="locationMap" class="locationMap" style="width:<?php echo $params->get('fluid', true) ? '100%' : $mapWidth.'px'; ?>; height: <?php echo $mapHeight; ?>px;"></div>
+</div>
+<script type="text/javascript">
+<?php if ($config->get('location_service_provider') != 'osm') {  ?>
+	EasyBlog.require()
+	.script('site/location', 'site/vendors/ratings')
+	.done(function($) {
+
+		$("[data-eb-module-postmap]").implement("EasyBlog.Controller.Location.Map", {
+			language: "<?php echo $language; ?>",
+			gMapsKey: "<?php echo $gMapsKey; ?>",
+			zoom: <?php echo $zoom; ?>,
+			fitBounds: <?php echo $fitBounds; ?>,
+			useStaticMap: false,
+			disableMapsUI: <?php echo $mapUi; ?>,
+			locations: <?php echo json_encode($locations); ?>,
+			enableClusterer: <?php echo $enableMarkerClusterer; ?>
+		});
+	});
+
+<?php } else { ?>
+	EasyBlog.require()
+	.library('leaflet', 'leaflet-providers')
+	.script('site/vendors/ratings')
+	.done(function($) {
+		osm = L.map('locationMap', {
+			zoom: 12
+		});
+
+		osm.fitWorld();
+		var locations = <?php echo json_encode($locations); ?>
+
+		L.tileLayer.provider('Wikimedia').addTo(osm);
+		var bounds = new L.LatLngBounds();
+		var infoWindow = new Array();
+
+		$.each(locations, function(index, location) {
+			var infoWindow = L.popup().setContent(location.content);
+			var marker = L.marker([location.latitude, location.longitude])
+				.addTo(osm)
+				.bindPopup(infoWindow)
+
+			marker.addTo(osm);
+			bounds.extend(marker.getLatLng());
+		});
+
+		osm.fitBounds(bounds, {'maxZoom': 3});
+		osm.on('popupopen', function() {
+			$('[data-eb-module-postmap] [data-rating-form]').implement(EasyBlog.Controller.Ratings);
+		});
+	});
+<?php } ?>
+=======
 	<div class="locationMap" style="width:<?php echo $params->get('fluid', true) ? '100%' : $mapWidth.'px'; ?>; height: <?php echo $mapHeight; ?>px;"></div>
 </div>
 
@@ -32,4 +86,5 @@ EasyBlog.require()
 	});
 
 });
+>>>>>>> master
 </script>

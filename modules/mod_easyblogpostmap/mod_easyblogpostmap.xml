@@ -2,12 +2,20 @@
 <extension type="module" version="3.0" client="site" method="upgrade">
 	<name>EasyBlog - Post Map Module</name>
 	<author>Stack Ideas Sdn Bhd</author>
+<<<<<<< HEAD
+	<creationDate>18th July 2019</creationDate>
+=======
 	<creationDate>30th April 2019</creationDate>
+>>>>>>> master
 	<copyright>Copyright 2009 - 2015 Stack Ideas Sdn Bhd. All rights reserved.</copyright>
 	<license>GPL License v2</license>
 	<authorEmail>support@stackideas.com</authorEmail>
 	<authorUrl>http://stackideas.com</authorUrl>
+<<<<<<< HEAD
+	<version>5.3.2</version>
+=======
 	<version>5.2.14</version>
+>>>>>>> master
 	<description><![CDATA[Post map using Google Maps for your EasyBlog's component]]></description>
 	<languages>
 		<language tag="en-GB">en-GB.mod_easyblogpostmap.ini</language>
@@ -26,11 +34,21 @@
 				
 				<field name="type" type="moduletype" default="0" label="MOD_EASYBLOG_MODULE_TYPE" description="MOD_EASYBLOG_MODULE_TYPE_DESC" />
 				<field name="count" type="text" default="5" class="input-mini text-center" label="MOD_EASYBLOG_TOTAL_POSTS" description="MOD_EASYBLOG_TOTAL_POSTS_DESC" />
+<<<<<<< HEAD
+=======
 				<field name="enableMarkerClusterer" type="boolean" default="1" label="MOD_EASYBLOG_MARKERCLUSTERER" description="MOD_EASYBLOG_MARKERCLUSTERER_DESC" />
+>>>>>>> master
 				<field name="fluid" type="boolean" default="1" label="MOD_EASYBLOG_FLUID_LAYOUT" description="MOD_EASYBLOG_FLUID_LAYOUT_DESC" />
 				<field name="mapwidth" type="text" default="600" class="input-mini text-center" label="MOD_EASYBLOG_MAP_WIDTH" description="MOD_EASYBLOG_MAP_WIDTH_DESC" />
 				<field name="mapheight" type="text" default="600" class="input-mini text-center" label="MOD_EASYBLOG_MAP_HEIGHT" description="MOD_EASYBLOG_MAP_HEIGHT_DESC" />
 				<field name="infowidth" type="text" default="300" class="input-mini text-center" label="MOD_EASYBLOG_MAP_TOOLTIP_WIDTH" description="MOD_EASYBLOG_MAP_TOOLTIP_WIDTH_DESC" />
+<<<<<<< HEAD
+			</fieldset>
+
+			<fieldset name="googlemap">
+				<field name="enableMarkerClusterer" type="boolean" default="1" label="MOD_EASYBLOG_MARKERCLUSTERER" description="MOD_EASYBLOG_MARKERCLUSTERER_DESC" />
+=======
+>>>>>>> master
 				<field name="mapui" type="boolean" default="0" label="MOD_EASYBLOG_SHOW_MAPS_UI" description="MOD_EASYBLOG_SHOW_MAPS_UI_DESC" />
 				<field name="fitbounds" type="boolean" default="1" label="MOD_EASYBLOG_FIT_MARKER" description="MOD_EASYBLOG_FIT_MARKER_DESC" />
 				<field name="zoom" type="text" default="15" class="input-mini text-center" label="MOD_EASYBLOG_ZOOM_LEVEL" description="MOD_EASYBLOG_ZOOM_LEVEL_DESC" />

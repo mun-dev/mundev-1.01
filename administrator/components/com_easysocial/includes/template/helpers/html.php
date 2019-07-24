@@ -404,11 +404,22 @@ class ThemesHelperHTML extends ThemesHelperAbstract
 	 */
 	public function sidebar($view = '')
 	{
+<<<<<<< HEAD
+		$view = $this->input->get('view', '', 'cmd');
+		$layout = $this->input->get('layout', '', 'cmd');
+
+		// the reason need to add another one for the editnotiifcations is because menu link already set wrong for this edit notification menu item
+		$excludeProfileLayout = array('editNotifications', 'editnotifications', 'editPrivacy');
+
+		// we should skip this if the user profile sidebar set to hidden
+		if ($view == 'profile' && $this->config->get('users.profile.sidebar') == 'hidden' && !in_array($layout, $excludeProfileLayout)) {
+=======
 		$view = $this->input->get('view', '', 'cmd');		
 		$layout = $this->input->get('layout', '', 'cmd');
 
 		// we should skip this if the user profile sidebar set to hidden
 		if ($view == 'profile' && $this->config->get('users.profile.sidebar') == 'hidden') {
+>>>>>>> master
 			return;
 		}
 

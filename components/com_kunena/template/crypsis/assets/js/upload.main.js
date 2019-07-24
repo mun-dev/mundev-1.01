@@ -79,7 +79,11 @@ jQuery(function ($) {
 				}
 
 				$.ajax({
+<<<<<<< HEAD
+					url: Joomla.getOptions('com_kunena.kunena_upload_files_rem') + '&file_id=' + file.id,
+=======
 					url: Joomla.getOptions('com_kunena.kunena_upload_files_rem') + '&fil_id=' + file.id,
+>>>>>>> master
 					type: 'POST'
 				})
 					.done(function (data) {
@@ -110,7 +114,11 @@ jQuery(function ($) {
 				}
 
 				$.ajax({
+<<<<<<< HEAD
+					url: Joomla.getOptions('com_kunena.kunena_upload_files_rem') + '&file_id=' + fileid,
+=======
 					url: Joomla.getOptions('com_kunena.kunena_upload_files_rem') + '&fil_id=' + fileid,
+>>>>>>> master
 					type: 'POST'
 				})
 					.done(function (data) {
@@ -274,7 +282,11 @@ jQuery(function ($) {
 
 			// Ajax Request to delete the file from filesystem
 			$.ajax({
+<<<<<<< HEAD
+				url: Joomla.getOptions('com_kunena.kunena_upload_files_rem') + '&file_id=' + file_id,
+=======
 				url: Joomla.getOptions('com_kunena.kunena_upload_files_rem') + '&fil_id=' + file_id,
+>>>>>>> master
 				type: 'POST'
 			})
 				.done(function (data) {

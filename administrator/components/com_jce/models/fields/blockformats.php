@@ -65,6 +65,28 @@ class JFormFieldBlockformats extends JFormFieldCheckboxes
         $fieldname = preg_replace('/[^a-zA-Z0-9_\-]/', '_', $this->fieldname);
         $options = array();
 
+<<<<<<< HEAD
+        if (empty($this->value)) {
+            $data       = array_keys(self::$blockformats);
+            $values     = array();
+        } else {
+            $values     = is_array($this->value) ? $this->value : explode(',', $this->value);
+            $data       = array_unique(array_merge($this->value, array_keys(self::$blockformats)));
+        }
+
+        // create default font structure
+        foreach ($data as $format) {
+            if (array_key_exists($format, self::$blockformats) === false) {
+                continue;
+            }
+
+            $text = self::$blockformats[$format];
+
+            $tmp = array(
+                'value' => $format,
+                'text'  => JText::alt($text, $fieldname),
+                'checked' => in_array($format, $values)
+=======
         if (!empty($this->value)) {
             $this->value = is_array($this->value) ? $this->value : explode(',', $this->value);
         }
@@ -74,6 +96,7 @@ class JFormFieldBlockformats extends JFormFieldCheckboxes
                 'value' => $value,
                 'text' => JText::alt($text, $fieldname),
                 'checked' => empty($this->value) || in_array($value, $this->value),
+>>>>>>> master
             );
 
             $options[] = (object) $tmp;

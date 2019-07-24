@@ -239,4 +239,43 @@ class EasyBlogScheduler extends EasyBlog
 
 		return EB::exception('Expired download requests removed', EASYBLOG_MSG_INFO);
 	}
+<<<<<<< HEAD
+
+	/**
+	 * Process auto blog posts archiving.
+	 *
+	 * @since	5.3.0
+	 * @access	public
+	 */
+	public function archive()
+	{
+		if (!$this->config->get('main_archiving_enabled')) {
+			return EB::exception('COM_EB_SCHEDULER_AUTO_ARCHIVING_DISABLED', EASYBLOG_MSG_INFO);
+		}
+
+		$model = EB::model('Blogs');
+		$items = $model->getAutoAchivingPosts();
+
+		if (!$items) {
+			return EB::exception('COM_EB_SCHEDULER_AUTO_ARCHIVING_NO_POSTS', EASYBLOG_MSG_INFO);
+		}
+
+		$count = 0;
+
+		foreach ($items as $id) {
+
+			$post = EB::post($id);
+
+			try {
+				$post->archive();
+				$count++;
+			} catch(Exception $e) {
+
+			}
+		}
+
+		return EB::exception(JText::sprintf('COM_EB_SCHEDULER_AUTO_ARCHIVING_SUCCESS', $count), EASYBLOG_MSG_SUCCESS);
+	}
+=======
+>>>>>>> master
 }

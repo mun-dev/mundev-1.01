@@ -1,7 +1,11 @@
 <?php
 /**
 * @package		EasyBlog
+<<<<<<< HEAD
+* @copyright	Copyright (C) 2010 - 2019 Stack Ideas Sdn Bhd. All rights reserved.
+=======
 * @copyright	Copyright (C) 2010 - 2017 Stack Ideas Sdn Bhd. All rights reserved.
+>>>>>>> master
 * @license		GNU/GPL, see LICENSE.php
 * EasyBlog is free software. This version may have been modified pursuant
 * to the GNU General Public License, and as distributed it includes or
@@ -58,6 +62,15 @@ class EasyBlogControllerMeta extends EasyBlogController
 		// Save the meta object
 		$meta->store();
 
+<<<<<<< HEAD
+		$actionlog = EB::actionlog();
+		$actionlog->log('COM_EB_ACTIONLOGS_SEO_UPDATED', 'meta', array(
+			'link' => 'index.php?option=com_easyblog&view=metas&layout=form&id=' . $meta->id,
+			'pageTitle' => $meta->getTitle()
+		));
+
+=======
+>>>>>>> master
 		$task = $this->getTask();
 
 		if ($task == 'apply') {
@@ -71,6 +84,20 @@ class EasyBlogControllerMeta extends EasyBlogController
 
 	public function saveIndexing()
 	{
+<<<<<<< HEAD
+		EB::checkToken();
+		
+		$this->checkAccess('meta');
+
+		$app = JFactory::getApplication();
+		$task = $this->getTask();
+		$cid = $this->input->get('cid', 0, 'int');
+
+		$meta = EB::table('Meta');
+		$meta->load($cid[0]);
+
+		if (empty($cid) || !$meta->id) {
+=======
 		// Check for request forgeries
 		EB::checkToken();
 
@@ -85,6 +112,7 @@ class EasyBlogControllerMeta extends EasyBlogController
 		$meta->load( $cid[ 0 ] );
 
 		if (empty( $cid ) || !$meta->id ) {
+>>>>>>> master
 			$app->redirect( 'index.php?option=com_easyblog&view=metas' , JText::_( 'COM_EASYBLOG_INVALID_ID_PROVIDED') , 'error' );
 			$app->close();
 		}
@@ -92,7 +120,19 @@ class EasyBlogControllerMeta extends EasyBlogController
 		$meta->indexing = $task == 'addIndexing' ? 1 : 0;
 		$meta->store();
 
+<<<<<<< HEAD
+		$actionString = $task == 'addIndexing' ? 'COM_EB_ACTIONLOGS_SEO_ENABLED_INDEXING' : 'COM_EB_ACTIONLOGS_SEO_DISABLED_INDEXING';
+		$actionlog = EB::actionlog();
+		$actionlog->log($actionString, 'meta', array(
+			'link' => 'index.php?option=com_easyblog&view=metas&layout=form&id=' . $meta->id,
+			'pageTitle' => $meta->getTitle()
+		));
+
+		$message = $task == 'addIndexing' ? 'COM_EASYBLOG_META_ENABLED_INDEXING' : 'COM_EASYBLOG_META_DISABLED_INDEXING';
+		$message = JText::_($message);
+=======
 		$message = $task == 'addIndexing' ? JText::_( 'COM_EASYBLOG_META_ENABLED_INDEXING' ) : JText::_( 'COM_EASYBLOG_META_DISABLED_INDEXING' );
+>>>>>>> master
 
 		$app->redirect( 'index.php?option=com_easyblog&view=metas' , $message );
 	}
@@ -125,8 +165,17 @@ class EasyBlogControllerMeta extends EasyBlogController
 			$meta = EB::table('Meta');
 			$meta->load((int) $id);
 
+<<<<<<< HEAD
+			$meta->delete();
+
+			$actionlog = EB::actionlog();
+			$actionlog->log('COM_EB_ACTIONLOGS_SEO_DELETED', 'meta', array(
+				'pageTitle' => $meta->getTitle()
+			));
+=======
 			// Delete the tag
 			$meta->delete();
+>>>>>>> master
 		}
 
 		$this->info->set('COM_EASYBLOG_METAS_META_REMOVED', 'success');

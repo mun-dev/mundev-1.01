@@ -656,7 +656,11 @@ class ESR
 				// there is no menu item created for this view/item/id
 				// let just use the view.
 				if (!isset($selection[$key]) && isset($menus[$view]) && isset($menus[$view][0])) {
+<<<<<<< HEAD
+
+=======
 					
+>>>>>>> master
 					$selection[$key] = isset($menus[$view][0][$languageTag]) ? $menus[$view][0][$languageTag] : $menus[$view][0]['*'];
 				}
 			}
@@ -1028,7 +1032,11 @@ class ESR
 	public static function format($segments)
 	{
 		$app = JFactory::getApplication();
+<<<<<<< HEAD
+
+=======
 		
+>>>>>>> master
 		// Get the menu object.
 		$menu = $app->getMenu();
 
@@ -1048,6 +1056,13 @@ class ESR
 					continue;
 				}
 
+<<<<<<< HEAD
+				// since we knwo the 1st element is an view, we need reset the 1st element in the segments
+				// due to language translation. #3425
+				$segments[0] = $systemView;
+
+=======
+>>>>>>> master
 				$view = $systemView;
 				$viewExists = true;
 				break;
@@ -1497,7 +1512,11 @@ class ESR
 	 */
 	public static function getDbVars($segments, $debug = false)
 	{
+<<<<<<< HEAD
+		// we need to insert the current active menu item alias as
+=======
 		// we need to insert the current active menu item alias as 
+>>>>>>> master
 		// the 1st segments in the cached url always the menu item alias.
 
 		$menu = JFactory::getApplication()->getMenu();
@@ -1547,9 +1566,21 @@ class ESR
 	 */
 	public static function isViewSefCacheAllow($view)
 	{
+<<<<<<< HEAD
+
+		$disallowedViews = array('search', 'registration', 'stream', 'leaderboard', 'conversations', 'activities', 'notifications', 'account');
+		$disallowedViewsTranslated = array();
+
+		foreach ($disallowedViews as $item) {
+			$disallowedViewsTranslated[] = SocialRouterAdapter::translate($item);
+		}
+
+		if (in_array($view, $disallowedViews) || in_array($view, $disallowedViewsTranslated)) {
+=======
 		$disallowedViews = array('search', 'registration', 'stream', 'leaderboard', 'conversations', 'activities', 'notifications', 'account');
 
 		if (in_array($view, $disallowedViews)) {
+>>>>>>> master
 			return false;
 		}
 
@@ -1605,7 +1636,11 @@ class ESR
 	public static function deleteSEFCache(SocialTable $table, $alias)
 	{
 		self::updateSEFCache($table, $alias, $alias);
+<<<<<<< HEAD
+
+=======
 		
+>>>>>>> master
 		return true;
 	}
 

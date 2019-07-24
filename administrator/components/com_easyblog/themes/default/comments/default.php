@@ -42,7 +42,11 @@ defined('_JEXEC') or die('Unauthorized Access');
 					</th>
 					<th><?php echo JText::_('COM_EASYBLOG_TABLE_COLUMN_COMMENT');?></th>
 
+<<<<<<< HEAD
+					<th width="25%">
+=======
 					<th width="30%">
+>>>>>>> master
 						<?php echo JHTML::_('grid.sort', JText::_('COM_EASYBLOG_COMMENTS_BLOG_TITLE'), 'b.title', $orderDirection, $order ); ?>
 					</th>
 
@@ -53,6 +57,12 @@ defined('_JEXEC') or die('Unauthorized Access');
 					<th class="center" width="10%">
 						<?php echo JHTML::_('grid.sort', JText::_('COM_EASYBLOG_COMMENTS_AUTHOR') , 'a.created_by', $orderDirection, $order ); ?>
 					</th>
+<<<<<<< HEAD
+					<th class="center" width="10%">
+						<?php echo JText::_('COM_EB_TABLE_COLUMN_IP_ADDRESS'); ?>
+					</th>
+=======
+>>>>>>> master
 					<th width="1%" class="center">
 						<?php echo JText::_('COM_EASYBLOG_TABLE_COLUMN_ID'); ?>
 					</th>
@@ -101,13 +111,22 @@ defined('_JEXEC') or die('Unauthorized Access');
 								<?php } ?>
 								</span>
 							</td>
+<<<<<<< HEAD
+							<td class="center"><?php echo $comment->ip ? $comment->ip : '-' ; ?></td>
+
+=======
+>>>>>>> master
 							<td class="center"><?php echo $comment->id; ?></td>
 						</tr>
 					<?php } ?>
 
 				<?php } else { ?>
 				<tr>
+<<<<<<< HEAD
+					<td colspan="8" align="center" class="empty">
+=======
 					<td colspan="7" align="center" class="empty">
+>>>>>>> master
 						<?php echo JText::_('COM_EASYBLOG_COMMENTS_NO_COMMENT_ON_SITE_YET');?>
 					</td>
 				</tr>
@@ -115,7 +134,11 @@ defined('_JEXEC') or die('Unauthorized Access');
 			</tbody>
 			<tfoot>
 				<tr>
+<<<<<<< HEAD
+					<td colspan="8">
+=======
 					<td colspan="11">
+>>>>>>> master
 						<?php echo $pagination->getListFooter(); ?>
 					</td>
 				</tr>

@@ -108,7 +108,12 @@ class EasySocialModelOAuth extends EasySocialModel
 	}
 
 	/**
+<<<<<<< HEAD
+	 * Update to the default type after user revoke their oauth clients associated with
+	 * Or update the rest of the oauth client he associated to because user can able to link to their social network more than 1
+=======
 	 * Change back the default type after user revoke their oauth clients associated with
+>>>>>>> master
 	 *
 	 * @since	3.1
 	 * @access	public
@@ -117,6 +122,23 @@ class EasySocialModelOAuth extends EasySocialModel
 	{
 		$user = ES::user($userId);
 		$db = ES::db();
+<<<<<<< HEAD
+		$hasOtherOauthClientAssociated = false;
+
+		// Check for the user whether has associated with other social netowrk under this same user account or not.
+		if ($type == 'joomla') {
+			$hasOtherOauthClientAssociated = $this->getOauthClientAssociatedList($user->id, true);
+
+			// Update the user type to the latest oauth client if this user has associated to multiple social profiles.
+			if ($hasOtherOauthClientAssociated) {
+
+				foreach ($hasOtherOauthClientAssociated as $oauthData) {
+					$type = $oauthData->client;
+				}
+			}
+		}
+=======
+>>>>>>> master
 
 		$query = array();
 		$query[] = 'UPDATE ' . $db->qn('#__social_users');
@@ -128,4 +150,50 @@ class EasySocialModelOAuth extends EasySocialModel
 
 		return true;
 	}
+<<<<<<< HEAD
+
+	/**
+	 * Gets a list of oauth client data which associated with the same account
+	 *
+	 * @since	3.1.6
+	 * @access	public
+	 */
+	public function getOauthClientAssociatedList($userId = null, $onlyRetrieveLastCreatedOauthClient = false)
+	{
+		$db = ES::db();
+
+		$clientTypes = array(SOCIAL_TYPE_FACEBOOK, SOCIAL_TYPE_TWITTER, SOCIAL_TYPE_LINKEDIN);
+
+		foreach ($clientTypes as $clientType) {
+			$OauthClientTypes[] = $db->Quote($clientType);
+		}
+
+		$OauthClientTypes = implode(',', $OauthClientTypes);
+
+		$query = array();
+		$query[] = 'SELECT * FROM ' . $db->qn('#__social_oauth');
+		$query[] = 'WHERE ' . $db->qn('uid') . '=' . $db->Quote($userId);
+		$query[] = 'AND ' . $db->qn('type') . '=' . $db->Quote(SOCIAL_TYPE_USER);
+		$query[] = 'AND ' . $db->qn('client') . ' IN (' . $OauthClientTypes . ')';
+		$query[] = 'ORDER BY ' . $db->qn('created') . ' DESC';
+
+		// If require to check for update this user type which associated with their social account
+		// then have to retrieve the last created associated with this oauth account
+		if ($onlyRetrieveLastCreatedOauthClient) {
+			$query[] = 'LIMIT 1';
+		}
+
+		$query = implode(' ', $query);
+		$db->setQuery($query);
+
+		$result = $db->loadObjectList();
+
+		if (!$result) {
+			return false;
+		}
+
+		return $result;
+	}
+=======
+>>>>>>> master
 }

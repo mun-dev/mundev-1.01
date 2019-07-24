@@ -396,6 +396,23 @@ class PlgSystemEasySocial extends EasySocialPlugins
 	 */
 	public function onAfterRender()
 	{
+<<<<<<< HEAD
+		// // do not process if from backend.
+		// if ($this->app->isAdmin()) {
+		// 	return true;
+		// }
+
+		// $debug = $this->app->input->get('debug', false, 'bool');
+
+		// if (!$debug) {
+		// 	// if debug mode if off,
+		// 	// lets try to write the sef urls into cache
+		// 	$cache = ES::fileCache();
+		// 	$cache->writeCache();
+		// }
+
+		// return true;
+=======
 		// do not process if from backend.
 		if ($this->app->isAdmin()) {
 			return true;
@@ -411,6 +428,7 @@ class PlgSystemEasySocial extends EasySocialPlugins
 		}
 
 		return true;
+>>>>>>> master
 	}
 
 

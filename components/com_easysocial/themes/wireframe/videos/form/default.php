@@ -41,6 +41,20 @@ defined('_JEXEC') or die('Unauthorized Access');
 								</div>
 							</div>
 
+<<<<<<< HEAD
+							<?php if ($video->canEmbed()) { ?>
+							<div class="o-form-group <?php echo $video->isUpload() ? 't-hidden' : '';?>" data-form-link data-form-source>
+								<?php echo $this->html('form.label', 'COM_EASYSOCIAL_VIDEOS_VIDEO_LINK', 3, false); ?>
+
+								<div class="o-control-input">
+									<?php echo $this->html('grid.inputbox', 'link', $video->isLink() ? $video->path : '', 'video-link-source', array('placeholder="' . JText::_('COM_EASYSOCIAL_VIDEOS_VIDEO_LINK_PLACEHOLDER') . '"', 'data-video-link'));?>
+									<div class="o-loader o-loader--sm"></div>
+								</div>
+							</div>
+							<?php } ?>
+
+=======
+>>>>>>> master
 							<div class="o-form-group">
 								<?php if (!$isCluster && $this->config->get('privacy.enabled')) { ?>
 									<div class="es-privacy-cf">
@@ -54,14 +68,22 @@ defined('_JEXEC') or die('Unauthorized Access');
 
 									<div class="es-fields-error-note" data-title-error><?php echo JText::_('COM_ES_VIDEO_ENTER_A_TITLE'); ?></div>
 								</div>
+<<<<<<< HEAD
+
+=======
 								
+>>>>>>> master
 							</div>
 
 							<div class="o-form-group">
 								<?php echo $this->html('form.label', 'COM_EASYSOCIAL_VIDEOS_VIDEO_DESCRIPTION', 3, false); ?>
 
 								<div class="o-control-input">
+<<<<<<< HEAD
+    								<?php echo $this->html('grid.textarea', 'description', $video->description, 'video-desc', array('placeholder="' . JText::_('COM_ES_AUDIO_FORM_DESCRIPTION_PLACEHOLDER') . '" data-video-desc')); ?>
+=======
     								<?php echo $editor->display('description', $video->description, '100%', '350', '10', '10', false, null, 'com_easysocial'); ?>
+>>>>>>> master
 								</div>
 							</div>
 
@@ -96,6 +118,8 @@ defined('_JEXEC') or die('Unauthorized Access');
 
 							<?php } ?>
 
+<<<<<<< HEAD
+=======
 							<?php if ($video->canEmbed()) { ?>
 							<div class="o-form-group <?php echo $video->isUpload() ? 't-hidden' : '';?>" data-form-link data-form-source>
 								<?php echo $this->html('form.label', 'COM_EASYSOCIAL_VIDEOS_VIDEO_LINK', 3, false); ?>
@@ -106,6 +130,7 @@ defined('_JEXEC') or die('Unauthorized Access');
 							</div>
 							<?php } ?>
 
+>>>>>>> master
 							<?php if ($video->canUpload()) { ?>
 							<div class="o-form-group <?php echo $video->isLink() && $video->canEmbed() ? ' t-hidden' : '';?>" data-form-upload data-form-source>
 								<?php echo $this->html('form.label', 'COM_EASYSOCIAL_VIDEOS_VIDEO_FILE', 3, false); ?>

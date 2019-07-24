@@ -2,7 +2,11 @@ ed.require(['edq', 'easydiscuss'], function($, EasyDiscuss) {
 
 
     // Update the polls layout when something changes
+<<<<<<< HEAD
+    var updatePollsLayout = function(choices,totalVotes) {
+=======
     var updatePollsLayout = function(choices) {
+>>>>>>> master
 
         var items = $('[data-ed-poll-choice-item]');
 
@@ -20,6 +24,12 @@ ed.require(['edq', 'easydiscuss'], function($, EasyDiscuss) {
 
             item.find('[data-ed-poll-choice-show-voters]')
                 .data('count', choice.count);
+<<<<<<< HEAD
+
+            // Update the total vote as well
+            $('[data-ed-post-poll-total-votes]').text(totalVotes);
+=======
+>>>>>>> master
         });
     };
 
@@ -30,6 +40,17 @@ ed.require(['edq', 'easydiscuss'], function($, EasyDiscuss) {
 
         var item = $(this);
         var id = item.data('id');
+<<<<<<< HEAD
+        var postId = $('[data-ed-polls]').data('post-id');
+
+        EasyDiscuss.ajax('site/views/polls/vote', {
+            "id": id,
+            "postId" : postId
+        }).done(function(choices, totalVotes) {
+
+            // Update the layout
+            updatePollsLayout(choices, totalVotes);
+=======
 
         EasyDiscuss.ajax('site/views/polls/vote', {
             "id": id
@@ -37,6 +58,7 @@ ed.require(['edq', 'easydiscuss'], function($, EasyDiscuss) {
 
             // Update the layout
             updatePollsLayout(choices);
+>>>>>>> master
 
         });
 

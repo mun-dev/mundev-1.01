@@ -1,8 +1,14 @@
 <?php
 /**
+<<<<<<< HEAD
+* @package		EasyBlog
+* @copyright	Copyright (C) 2010 - 2019 Stack Ideas Sdn Bhd. All rights reserved.
+* @license		GNU/GPL, see LICENSE.php
+=======
 * @package      EasyBlog
 * @copyright    Copyright (C) 2010 - 2017 Stack Ideas Sdn Bhd. All rights reserved.
 * @license      GNU/GPL, see LICENSE.php
+>>>>>>> master
 * EasyBlog is free software. This version may have been modified pursuant
 * to the GNU General Public License, and as distributed it includes or
 * is derivative of works licensed under the GNU General Public License or
@@ -83,4 +89,47 @@ class EasyBlogContributorEasySocialPage extends EasyBlogContributorAbstract
 
 		return $canView;
 	}
+<<<<<<< HEAD
+
+	public function canCreatePost()
+	{
+		if (!EB::easysocial()->exists()) {
+			return;
+		}
+
+		if (!$this->canView()) {
+			return false;
+		}
+
+		// Only available when user is part of the cluster
+		if (!$this->page->isAdmin() && !$this->page->isMember() && !EB::isSiteAdmin()) {
+			return false;
+		}
+
+		$params = $this->page->getParams();
+
+		// Check for blog creation permission
+		if (!$this->page->isOwner() && !EB::isSiteAdmin()) {
+			$allowed = $params->get('blogcreate', null);
+
+			if (!is_null($allowed)) {
+				$allowed = ES::makeArray($allowed);
+				$isAllowed = false;
+
+				if (in_array('admin', $allowed) && $this->page->isAdmin()) {
+					$isAllowed = true;
+				}
+
+				if (in_array('member', $allowed) && $this->page->isMember()) {
+					$isAllowed = true;
+				}
+
+				return $isAllowed;
+			}
+		}
+
+		return true;
+	}
+=======
+>>>>>>> master
 }

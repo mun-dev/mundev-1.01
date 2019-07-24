@@ -87,6 +87,26 @@ defined('_JEXEC') or die('Unauthorized Access');
 		</div>
 
 		<div class="panel">
+<<<<<<< HEAD
+			<?php echo $this->html('panel.heading', 'COM_EB_AUTO_ARCHIVING'); ?>
+
+			<div class="panel-body">
+				<?php echo $this->html('settings.toggle', 'main_archiving_enabled', 'COM_EB_AUTO_ARCHIVING_ENABLE'); ?>
+
+				<?php echo $this->html('settings.dropdown', 'main_archiving_duration', 'COM_EB_AUTO_ARCHIVING_DURATION',
+						array('3' => 'COM_EB_AUTO_ARCHIVING_DURATION_3',
+							'6' => 'COM_EB_AUTO_ARCHIVING_DURATION_6', 
+							'12' => 'COM_EB_AUTO_ARCHIVING_DURATION_12', 
+							'18' => 'COM_EB_AUTO_ARCHIVING_DURATION_18',
+							'24' => 'COM_EB_AUTO_ARCHIVING_DURATION_24')
+					); ?>
+
+			</div>
+		</div>
+
+		<div class="panel">
+=======
+>>>>>>> master
 			<?php echo $this->html('panel.heading', 'COM_EB_GDPR'); ?>
 
 			<div class="panel-body">

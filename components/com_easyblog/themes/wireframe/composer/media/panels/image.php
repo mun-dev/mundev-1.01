@@ -32,7 +32,11 @@ defined('_JEXEC') or die('Unauthorized Access');
 
 
 
+<<<<<<< HEAD
+				<div class="o-form-group" data-eb-mm-panel-type="image-source">
+=======
 				<div class="o-form-group">
+>>>>>>> master
 					<label class="o-control-label" for="mm-preview-size"><?php echo JText::_('COM_EASYBLOG_BLOCKS_IMAGE_SOURCE');?></label>
 					<select name="variation" id="mm-preview-size" class="o-form-control input-sm" data-mm-variation data-mm-panel-input>
 						<?php foreach ($variations as $variation) { ?>
@@ -47,7 +51,11 @@ defined('_JEXEC') or die('Unauthorized Access');
 					</select>
 				</div>
 
+<<<<<<< HEAD
+				<div class="o-form-group" data-eb-mm-panel-type="image-style">
+=======
 				<div class="o-form-group">
+>>>>>>> master
 					<label class="o-control-label" for="mm-preview-alt"><?php echo JText::_('COM_EASYBLOG_BLOCKS_IMAGE_STYLE');?></label>
 					<select name="style" class="o-form-control input-sm" data-mm-panel-input>
 						<option value="clear" <?php echo $params->get('style', 'clear') == 'clear' ? ' selected="selected"' : '';?>><?php echo JText::_('COM_EASYBLOG_BLOCKS_IMAGE_STYLE_CLEAR');?></option>
@@ -59,7 +67,11 @@ defined('_JEXEC') or die('Unauthorized Access');
 					</select>
 				</div>
 
+<<<<<<< HEAD
+				<div class="o-form-group" data-eb-mm-panel-type="image-alignment">
+=======
 				<div class="o-form-group">
+>>>>>>> master
 					<label class="o-control-label" for="mm-preview-alt"><?php echo JText::_('COM_EASYBLOG_COMPOSER_ALIGNMENT');?></label>
 					<select name="alignment" class="o-form-control input-sm" data-mm-panel-input>
 						<option value="left" <?php echo $params->get('alignment', 'center') == 'left' ? ' selected="selected"' : '';?>><?php echo JText::_('COM_EASYBLOG_COMPOSER_ALIGNMENT_LEFT');?></option>
@@ -67,7 +79,12 @@ defined('_JEXEC') or die('Unauthorized Access');
 						<option value="right" <?php echo $params->get('alignment', 'center') == 'right' ? ' selected="selected"' : '';?>><?php echo JText::_('COM_EASYBLOG_COMPOSER_ALIGNMENT_RIGHT');?></option>
 					</select>
 				</div>
+<<<<<<< HEAD
+				
+				<div class="o-form-group" data-eb-mm-panel-type="link-to">
+=======
 				<div class="o-form-group">
+>>>>>>> master
 					<label class="o-control-label" for="mm-preview-alt"><?php echo JText::_('COM_EASYBLOG_MM_LINK_TO');?></label>
 					<select name="link" class="o-form-control input-sm" data-mm-preview-link data-mm-panel-input>
 						<option value="none" selected="selected"><?php echo JText::_('COM_EASYBLOG_MM_IMAGE_LINK_NONE');?></option>

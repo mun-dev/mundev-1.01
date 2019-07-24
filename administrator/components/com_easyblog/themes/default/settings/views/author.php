@@ -41,6 +41,17 @@ defined('_JEXEC') or die('Unauthorized Access');
 			</div>
 		</div>
 
+<<<<<<< HEAD
+		<div class="panel">
+			<?php echo $this->html('panel.heading', $fieldsets->author['grid']->label, $fieldsets->author['grid']->info); ?>
+
+			<div class="panel-body">
+				<?php echo $this->output('admin/settings/views/fields/renderer', array('fields' => $fieldsets->author['grid']->fields, 'key' => 'blogger')); ?>
+			</div>
+		</div>
+
+=======
+>>>>>>> master
 	</div>
 
 	<div class="col-lg-6">

@@ -188,7 +188,14 @@ class EasySocialControllerCover extends EasySocialController
 		$photo = ES::table('Photo');
 		$photo->uid = $uid;
 		$photo->type = $type;
+<<<<<<< HEAD
+
+		// Unable to store the current logged in user id now
+		// since we allowed site admin to edit other user avatar and cover on frontend
+		$photo->user_id = $uid;
+=======
 		$photo->user_id = $this->my->id;
+>>>>>>> master
 		$photo->album_id = $album->id;
 
 		$photo->title = $file['name'];

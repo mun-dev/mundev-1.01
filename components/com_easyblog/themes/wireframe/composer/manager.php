@@ -66,6 +66,31 @@ defined('_JEXEC') or die('Unauthorized Access');
 		<div class="eb-comp__body">
 			<?php echo $this->output('site/composer/toolbar/default'); ?>
 
+<<<<<<< HEAD
+			<div data-eb-alert-placeholder>
+				<div data-eb-alert-template>
+					<div class="o-alert o-alert--eb-composer o-alert--dismissible t-lg-mb--no t-hidden" data-composer-alert>
+						<button type="button" class="o-alert__close" data-bp-dismiss="alert">
+							<span aria-hidden="true">×</span>
+						</button>
+						<span data-composer-alert-message>
+						</span>
+					</div>
+				</div>
+
+				<?php if ($alert) { ?>
+					<div class="o-alert o-alert--eb-composer o-alert--dismissible t-lg-mb--no <?php echo $alert ? 'o-alert--' . $alert->type : 't-hidden';?>" data-composer-alert>
+						<button type="button" class="o-alert__close" data-bp-dismiss="alert">
+							<span aria-hidden="true">×</span>
+						</button>
+						<span data-composer-alert-message>
+							<?php if ($alert) { ?>
+								<?php echo $alert->text;?>
+							<?php } ?>
+						</span>
+					</div>
+				<?php } ?>
+=======
 			<div class="o-alert o-alert--eb-composer o-alert--dismissible t-lg-mb--no <?php echo $alert ? 'o-alert--' . $alert->type : 't-hidden';?>" data-composer-alert>
 				<button type="button" class="o-alert__close" data-bp-dismiss="alert">
 					<span aria-hidden="true">×</span>
@@ -75,6 +100,7 @@ defined('_JEXEC') or die('Unauthorized Access');
 						<?php echo $alert->text;?>
 					<?php } ?>
 				</span>
+>>>>>>> master
 			</div>
 
 			<div class="eb-revision-bar">
@@ -93,8 +119,13 @@ defined('_JEXEC') or die('Unauthorized Access');
 
 			<div class="eb-composer-views" data-eb-composer-views>
 				<div class="eb-composer-view eb-composer-document active" data-eb-composer-view data-name="document" data-eb-composer-document>
+<<<<<<< HEAD
+					<div class="eb-composer-viewport" data-eb-composer-viewport>
+						<div class="eb-composer-viewport-content" data-eb-composer-viewport-content>
+=======
 					<div class="eb-composer-viewport">
 						<div class="eb-composer-viewport-content">
+>>>>>>> master
 							<div class="eb-composer-page">
 								<div class="eb-composer-page-viewport" data-eb-composer-page-viewport>
 									<div class="eb-composer-page-header" data-eb-composer-page-header>
@@ -120,7 +151,11 @@ defined('_JEXEC') or die('Unauthorized Access');
 										</div>
 
 										<div class="eb-composer-field-title">
+<<<<<<< HEAD
+											<textarea name="title" placeholder="<?php echo JText::_('COM_EASYBLOG_DASHBOARD_WRITE_DEFAULT_TITLE'); ?>" data-post-title data-post-empty-title-alert-message="<?php echo JText::_('COM_EASYBLOG_DASHBOARD_SAVE_EMPTY_TITLE_ERROR'); ?>"><?php echo $this->html('string.escape', $post->title); ?></textarea>
+=======
 											<textarea name="title" placeholder="<?php echo JText::_('COM_EASYBLOG_DASHBOARD_WRITE_DEFAULT_TITLE'); ?>" data-post-title><?php echo $this->html('string.escape', $post->title); ?></textarea>
+>>>>>>> master
 										</div>
 
 										<div class="eb-comp-permalink" data-eb-editor-permalink>
@@ -199,6 +234,18 @@ defined('_JEXEC') or die('Unauthorized Access');
 				</div>
 
 				<div class="eb-composer-blocks-group-container">
+<<<<<<< HEAD
+					<?php $i = 0; ?>
+					<?php foreach ($blocks as $category => $blockItems) { ?>
+						<?php if ((count($blockItems) == 1 && $blockItems[0]->visible == true) || count($blockItems) > 1) { ?>
+						<div class="eb-composer-fieldset eb-composer-fieldset--accordion <?php echo !$composerPreferences || $composerPreferences->get(strtolower($category), 'open') == 'open' ? 'is-open' : '';?>" data-eb-composer-block-section data-id="<?php echo strtolower($category);?>">
+							<div class="eb-composer-fieldset-header" data-eb-composer-block-section-header>
+								<strong><?php echo JText::_('COM_EASYBLOG_BLOCKS_CATEGORY_' . strtoupper($category)); ?></strong>
+								<i class="eb-composer-fieldset-header__icon t-lg-pull-right" data-panel-icon></i>
+							</div>
+
+							<div class="eb-composer-fieldset-content" data-eb-composer-block-section-content>
+=======
 
 					<?php foreach($blocks as $category => $blockItems) { ?>
 						<?php if ((count($blockItems) == 1 && $blockItems[0]->visible == true) || count($blockItems) > 1) { ?>
@@ -207,6 +254,7 @@ defined('_JEXEC') or die('Unauthorized Access');
 								<strong><?php echo JText::_('COM_EASYBLOG_BLOCKS_CATEGORY_' . strtoupper($category)); ?></strong>
 							</div>
 							<div class="eb-composer-fieldset-content">
+>>>>>>> master
 								<div class="eb-composer-block-menu-group" data-eb-composer-block-menu-group>
 									<?php foreach ($blockItems as $block) { ?>
 									<div class="eb-composer-block-menu ebd-block<?php echo !$block->visible ? ' is-hidden' : '';?>" data-eb-composer-block-menu data-type="<?php echo $block->type; ?>" data-keywords="<?php echo $block->keywords; ?>">
@@ -233,6 +281,11 @@ defined('_JEXEC') or die('Unauthorized Access');
 							<?php } ?>
 						</div>
 						<?php } ?>
+<<<<<<< HEAD
+
+						<?php $i++; ?>
+=======
+>>>>>>> master
 					<?php } ?>
 
 					<div class="o-empty">

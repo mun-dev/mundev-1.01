@@ -130,9 +130,15 @@ defined('_JEXEC') or die('Unauthorized Access');
 		<?php } ?>
 
 		<?php if (($post->canFeature() && $post->isQuestion()) || ($post->canLock() && $post->isQuestion())) { ?>
+<<<<<<< HEAD
+		<a class="btn btn-default btn-xs dropdown-toggle ed-adminbar__dropdown-toggle" data-ed-toggle="dropdown">
+			<span class="caret"></span>
+			<span><?php echo JText::_('COM_EASYDISCUSS_MODERATION_TOOLS'); ?></span>
+=======
 		<a class="btn btn-default btn-xs dropdown-toggle" data-ed-toggle="dropdown">
 			<span class="caret"></span>
 			<span class="sr-only"><?php echo JText::_('COM_EASYDISCUSS_MODERATION_TOOLS'); ?></span>
+>>>>>>> master
 		</a>
 
 		<ul class="dropdown-menu  ed-adminbar__dropdown-menu-tools">

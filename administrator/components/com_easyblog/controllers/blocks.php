@@ -1,7 +1,11 @@
 <?php
 /**
 * @package		EasyBlog
+<<<<<<< HEAD
+* @copyright	Copyright (C) 2010 - 2019 Stack Ideas Sdn Bhd. All rights reserved.
+=======
 * @copyright	Copyright (C) 2010 - 2018 Stack Ideas Sdn Bhd. All rights reserved.
+>>>>>>> master
 * @license		GNU/GPL, see LICENSE.php
 * EasyBlog is free software. This version may have been modified pursuant
 * to the GNU General Public License, and as distributed it includes or
@@ -52,6 +56,15 @@ class EasyBlogControllerBlocks extends EasyBlogController
 
 		$table->store();
 
+<<<<<<< HEAD
+		$actionlog = EB::actionlog();
+		$actionlog->log('COM_EB_ACTIONLOGS_BLOCKS_UPDATED', 'blocks', array(
+			'link' => 'index.php?option=com_easyblog&view=blocks&layout=form&id=' . $table->id,
+			'blockTitle' => $table->title
+		));
+
+=======
+>>>>>>> master
 		$task = $this->getTask();
 
 		$message = 'Block saved successfully';
@@ -90,10 +103,32 @@ class EasyBlogControllerBlocks extends EasyBlogController
 		// Get the current task
 		$task = $this->getTask();
 
+<<<<<<< HEAD
+		$actionString = 'COM_EB_ACTIONLOGS_BLOCKS_PUBLISHED';
+		$message = 'COM_EASYBLOG_BLOCKS_PUBLISHED_SUCCESSFULLY';
+
+		if ($task == 'unpublish') {
+			$actionString = 'COM_EB_ACTIONLOGS_BLOCKS_UNPUBLISHED';
+			$message = 'COM_EASYBLOG_BLOCKS_UNPUBLISHED_SUCCESSFULLY';
+		}
+
+=======
+>>>>>>> master
 		foreach ($ids as $id) {
 			$block = EB::table('Block');
 			$block->load((int) $id);
 
+<<<<<<< HEAD
+			$actionlog = EB::actionlog();
+			$actionlog->log($actionString, 'blocks', array(
+				'link' => 'index.php?option=com_easyblog&view=blocks&layout=form&id=' . $block->id,
+				'blockTitle' => $block->title
+			));
+
+			$block->$task();
+		}
+
+=======
 			$block->$task();
 		}
 
@@ -103,6 +138,7 @@ class EasyBlogControllerBlocks extends EasyBlogController
 			$message = 'COM_EASYBLOG_BLOCKS_UNPUBLISHED_SUCCESSFULLY';
 		}
 
+>>>>>>> master
 		$this->info->set(JText::_($message), 'success');
 		return $this->app->redirect($redirect);
 	}

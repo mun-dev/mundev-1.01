@@ -1,7 +1,11 @@
 <?php
 /**
 * @package		EasyBlog
+<<<<<<< HEAD
+* @copyright	Copyright (C) 2010 - 2019 Stack Ideas Sdn Bhd. All rights reserved.
+=======
 * @copyright	Copyright (C) 2010 - 2017 Stack Ideas Sdn Bhd. All rights reserved.
+>>>>>>> master
 * @license		GNU/GPL, see LICENSE.php
 * EasyBlog is free software. This version may have been modified pursuant
 * to the GNU General Public License, and as distributed it includes or
@@ -351,17 +355,36 @@ class EasyBlogModelMetas extends EasyBlogAdminModel
 	 * @since	5.0
 	 * @access	public
 	 */
+<<<<<<< HEAD
+	public function deleteMetas($id, $type, $exclude = array())
+	{
+		$db = EB::db();
+
+		if (!is_array($exclude)) {
+			$exclude = EB::makeArray($exclude);
+		}
+
+=======
 	public function deleteMetas($id, $type)
 	{
 		$db = EB::db();
 
+>>>>>>> master
 		$query = array();
 		$query[] = 'DELETE FROM ' . $db->quoteName('#__easyblog_meta');
 		$query[] = 'WHERE ' . $db->quoteName('content_id') . '=' . $db->Quote($id);
 		$query[] = 'AND ' . $db->quoteName('type') . '=' . $db->Quote($type);
 
+<<<<<<< HEAD
+		if (!empty($exclude)) {
+			$query[] = 'AND ' . $db->quoteName('id') . ' NOT IN (' . implode(',', $exclude) . ')';
+		}
+
+		$query = implode(' ', $query);
+=======
 		$query = implode(' ', $query);
 
+>>>>>>> master
 		$db->setQuery($query);
 
 		return $db->Query();

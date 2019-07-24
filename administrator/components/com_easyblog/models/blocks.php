@@ -71,8 +71,11 @@ class EasyBlogModelBlocks extends EasyBlogAdminModel
 	 *
 	 * @since	4.0
 	 * @access	public
+<<<<<<< HEAD
+=======
 	 * @param	string
 	 * @return
+>>>>>>> master
 	 */
 	public function getTotal($options = array())
 	{

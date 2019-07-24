@@ -4,8 +4,13 @@
 	<element>kunena_signature</element>
 	<author>Stack Ideas Sdn Bhd</author>
 	<url>http://stackideas.com</url>
+<<<<<<< HEAD
+	<creationDate>18th July 2019</creationDate>
+	<version>2.2.33</version>
+=======
 	<creationDate>4th July 2019</creationDate>
 	<version>2.2.31</version>
+>>>>>>> master
 	<copyright>Copyright (c) 2009 - 2013 Stack Ideas Sdn. Bhd.</copyright>
 	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
 	<description><![CDATA[PLG_FIELDS_KUNENA_SIGNATURE_INFO]]></description>

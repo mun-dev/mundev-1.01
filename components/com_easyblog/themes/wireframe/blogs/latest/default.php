@@ -21,7 +21,11 @@ defined('_JEXEC') or die('Unauthorized Access');
 	<?php if ($pagination || $showLoadMore) { ?>
 		<?php echo EB::renderModule('easyblog-before-pagination'); ?>
 
+<<<<<<< HEAD
+		<?php if (!$showLoadMore && $this->getParam('pagination_style', 'normal') != 'autoload') { ?>
+=======
 		<?php if (!$showLoadMore && $this->config->get('listing_pagination_style') != 'autoload') { ?>
+>>>>>>> master
 			<?php echo $pagination;?>
 		<?php } else if ($showLoadMore) { ?>
 		<div>

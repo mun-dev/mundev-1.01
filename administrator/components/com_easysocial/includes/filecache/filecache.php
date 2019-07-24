@@ -17,12 +17,32 @@ jimport('joomla.filesystem.file');
 
 class SocialFileCache
 {
+<<<<<<< HEAD
+	protected $newUrls = array();
+
+	protected $_urlCount = 0;
+	protected $_newUrlCount = 0;
+	protected $_isLocked = false;
+
+
+	/**
+	 * Used to register shutdown function.
+	 *
+	 * @since	3.1.5
+	 * @access	public
+	 */
+	public function __construct() 
+	{
+		register_shutdown_function(array( $this, 'writeCache'));
+	}
+=======
 	public $storage = null;
 	public $_urls = null;
 	public $newUrls = array();
 
 	private $_urlCount = 0;
 	private $_newUrlCount = 0;
+>>>>>>> master
 
 	/**
 	 * Object initialisation for the class to fetch the appropriate user
@@ -78,6 +98,48 @@ class SocialFileCache
 	}
 
 	/**
+<<<<<<< HEAD
+	 * This method is used to refresh the cache file
+	 * or prevent the cache file from being 'cached'
+	 * when using php include
+	 *
+	 * @since	3.1.5
+	 * @access	public
+	 */
+	public function refreshCacheFile()
+	{
+		$check = true;
+		$filename = $this->getFilePath();
+
+		// in any case if the cache file already refreshed, 
+		// then we should skip the subsequence processing.
+
+		if ($check && function_exists('opcache_invalidate')) {
+			opcache_invalidate($filename);
+			$check = false;
+		}
+
+		if ($check && function_exists('apc_compile_file')) {
+			apc_compile_file($filename);
+			$check = false;
+		}
+		
+		if ($check && function_exists('wincache_refresh_if_changed')) {
+			wincache_refresh_if_changed(array($filename));
+			$check = false;
+		}
+
+		if ($check && function_exists('xcache_asm')) {
+			xcache_asm($filename);
+			$check = false;
+		}
+
+		return true;
+	}
+
+	/**
+=======
+>>>>>>> master
 	 * Get non sef url from cache
 	 *
 	 * @since	3.1
@@ -178,17 +240,55 @@ class SocialFileCache
 	 */
 	public function loadCache()
 	{
+<<<<<<< HEAD
+		static $loaded = false;
+
+		if (!$loaded) {
+=======
 		static $loaded = null;
 
 		if (is_null($loaded) && is_null($this->_urls)) {
 
 			$this->_urls = array();
+>>>>>>> master
 
 			// get cache file
 			$file = $this->getFilePath();
 
 			if (JFile::exists($file)) {
 
+<<<<<<< HEAD
+				$this->_urls = array();
+
+				// acquire lock.
+				$this->acquireLock();
+
+				// attemp to refresh the cache file before we include.
+				$this->refreshCacheFile();
+
+				include($file);
+
+				$loaded = !empty($this->_urls);
+				$this->_urlCount = !empty($this->_urls) ? count($this->_urls) : 0;
+
+			} else {
+
+				if ($this->acquireLock()) {
+
+					// regenerate the header for saving.
+					$content = $this->generateHeader();
+
+					$fp = fopen($file,'ab');
+					if ($fp) {
+						fwrite($fp, $content);
+						fclose($fp);
+					}
+				}
+
+				$this->_urls = array();
+				$loaded = true;
+				$this->_urlCount = 0;
+=======
 				$fp = fopen($file, 'a');
 
 				if (flock($fp, LOCK_EX)) {
@@ -200,6 +300,7 @@ class SocialFileCache
 
 				flock($fp, LOCK_UN);
 				fclose($fp);
+>>>>>>> master
 			}
 		}
 	}
@@ -220,6 +321,49 @@ class SocialFileCache
 
 		$newUrls = $this->getNewUrls();
 
+<<<<<<< HEAD
+		if (count($newUrls) && $this->_isLocked) {
+
+			// need to reload the urls
+			$this->loadCache();
+
+			// cache file content
+			$content = '';
+
+			// get cache file
+			$filepath = $this->getFilePath();
+			$isNewCache = false;
+
+			if (!JFile::exists($filepath)) {
+				$content = $this->generateHeader();
+				$isNewCache = true;
+			}
+
+			// in an event where cache file include might be 'cached' by php cache, e.g. opcache
+			// and if this happen, this might cause duplicate urls being written into cache file 
+			// and causing the filesize to increase drastrically.
+			// To solve this, we need to check if the file size above the allowed size or not.
+			$resetCacheFile = false;
+
+			if (!$isNewCache) {
+				$filesize = @filesize($filepath);
+				$filesize = (int) $filesize;
+
+				if ($filesize > 1024) {
+					$inKB = $filesize / 1024;
+					if ($inKB >= SOCIAL_SEF_FILESIZE) {
+						$resetCacheFile = true;
+					}
+				}
+			}
+
+			if (!$isNewCache && ($this->_urlCount + $this->_newUrlCount >= SOCIAL_SEF_LIMIT)) {
+				// the number of urls reach the threshold. let remove all urls in the cache file.
+				$resetCacheFile = true;
+			}
+
+			if ($resetCacheFile) {
+=======
 		if (!$newUrls) {
 			// nothing to process
 			return true;
@@ -245,10 +389,16 @@ class SocialFileCache
 		if (!$isNewCache && ($this->_urlCount + $this->_newUrlCount >= SOCIAL_SEF_LIMIT)) {
 			// the number of urls reach the threshold. let remove all urls in the cache file.
 			if (JFile::exists($filepath)) {
+>>>>>>> master
 				JFile::delete($filepath);
 
 				// regenerate the header for saving.
 				$content = $this->generateHeader();
+<<<<<<< HEAD
+				$isNewCache = true;
+			}
+
+=======
 			}
 		}
 
@@ -263,6 +413,7 @@ class SocialFileCache
 		$lock = flock($fp, LOCK_EX);
 
 		if ($lock) {
+>>>>>>> master
 			foreach ($newUrls as $key => $row) {
 
 				// further check if key really not exists
@@ -282,12 +433,27 @@ class SocialFileCache
 			}
 
 			if ($content) {
+<<<<<<< HEAD
+				$fp = fopen($filepath, "ab");
+				if ($fp) {
+					fwrite($fp, $content);
+				}
+			}
+
+			// lets unset from newurls
+			foreach ($newUrls as $key => $row) {
+				unset($this->newUrls[$key]);
+=======
 				// JFile::append($filepath, $content);
 				fwrite($fp, $content);
+>>>>>>> master
 			}
 		}
 
 		// lets release the lock
+<<<<<<< HEAD
+		$this->releaseLock();
+=======
 		// $this->releaseLock();
 		flock($fp, LOCK_UN);
 		fclose($fp);
@@ -296,6 +462,7 @@ class SocialFileCache
 		foreach ($newUrls as $key => $row) {
 			unset($this->newUrls[$key]);
 		}
+>>>>>>> master
 
 		return true;
 	}
@@ -476,11 +643,19 @@ class SocialFileCache
 	 */
 	private function acquireLock()
 	{
+<<<<<<< HEAD
+		$check = false;
+		$lockFile = $this->getFilePath(true);
+		$now = time();
+
+		do {
+=======
 		$state = false;
 		$now = time();
 
 		do {
 			$lockFile = $this->getFilePath(true);
+>>>>>>> master
 
 			// try open the lock file with x mode. if the file is there, fopen should return false with a warning.
 			// lets supress that warning
@@ -488,6 +663,41 @@ class SocialFileCache
 
 			if ($fp) {
 
+<<<<<<< HEAD
+				$state = fwrite($fp, $now);
+				$closed = fclose($fp);
+
+				$this->_isLocked = !empty($state) && $closed;
+
+			} else {
+
+				// incase the previoue writing did not remove the lock properly.
+				// let check for the previous stored time in the lock file.
+				// if more than 5 secs, mean someting not right.
+				// let release the lock
+
+				$time = @file_get_contents($lockFile);
+				$time = (int) trim($time);
+
+				if (($now - $time) > 5) {
+					$this->_isLocked = $this->releaseLock(true);
+					$check = true;
+				} else {
+					// stop the lock acquaring. this will also  prevent the cache writing from writing
+					// since we failed to acquire the lock. This also mean, the page will be displayed faster
+					// and at later time, we can always rewrite again.
+					$check = false;
+				}
+			}
+
+		} while (!$this->_isLocked && $check);
+
+		return $this->_isLocked;
+	}
+
+	/**
+	 * Release the lock
+=======
 				fwrite($fp, $now);
 				fclose($fp);
 
@@ -514,10 +724,24 @@ class SocialFileCache
 
 	/**
 	 * Acquire lock for writing new urls into cache file
+>>>>>>> master
 	 *
 	 * @since	3.1
 	 * @access	private
 	 */
+<<<<<<< HEAD
+	private function releaseLock($force = false)
+	{
+		$lockFile = $this->getFilePath(true);
+
+		if ($this->_isLocked || $force) {
+			if (JFile::exists($lockFile)) {
+				$this->_isLocked = !JFile::delete($lockFile);
+			}
+		}
+
+		return $this->_isLocked;
+=======
 	private function releaseLock()
 	{
 		$lockFile = $this->getFilePath(true);
@@ -528,6 +752,7 @@ class SocialFileCache
 		}
 
 		return true;
+>>>>>>> master
 	}
 
 }

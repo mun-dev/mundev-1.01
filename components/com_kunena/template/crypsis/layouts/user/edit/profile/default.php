@@ -13,6 +13,11 @@ defined('_JEXEC') or die;
 use Joomla\CMS\HTML\HTMLHelper;
 use Joomla\CMS\Language\Text;
 
+<<<<<<< HEAD
+echo $this->subLayout('Widget/Datepicker');
+$this->addScript('assets/js/profile.js');
+
+=======
 $this->addStyleSheet('assets/css/bootstrap.datepicker.css');
 $this->addScript('assets/js/bootstrap.datepicker.js');
 $this->addScript('assets/js/locales/bootstrap-datepicker.kunena.js');
@@ -67,6 +72,7 @@ Text::script('COM_KUNENA_BOOTSTRAP_DATEPICKER_MONTHSSHORT_DECEMBER');
 Text::script('COM_KUNENA_BOOTSTRAP_DATEPICKER_TODAY');
 Text::script('COM_KUNENA_BOOTSTRAP_DATEPICKER_MONTHS_TITLE');
 Text::script('COM_KUNENA_BOOTSTRAP_DATEPICKER_CLEAR');
+>>>>>>> master
 ?>
 <h3>
 	<?php echo $this->headerText; ?>

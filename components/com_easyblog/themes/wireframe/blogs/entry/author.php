@@ -16,7 +16,11 @@ defined('_JEXEC') or die('Unauthorized Access');
 		<?php echo JText::_('COM_EASYBLOG_ABOUT_THE_AUTHOR');?>
 	</h4>
 
+<<<<<<< HEAD
+	<div class="eb-entry-author-bio cell-top">
+=======
 	<div class="eb-entry-author-bio media cell-top">
+>>>>>>> master
 		<?php if ($this->entryParams->get('post_author_box_avatar', true)) { ?>
 		<div class="col-cell">
 			<a href="<?php echo $post->getAuthorPermalink();?>" class="eb-entry-author-avatar eb-avatar col-cell">
@@ -87,6 +91,15 @@ defined('_JEXEC') or die('Unauthorized Access');
 			<?php } ?>
 		</div>
 
+<<<<<<< HEAD
+	</div>
+
+	<?php if ($post->creator->getBioGraphy() && $this->entryParams->get('post_author_box_biography', true)) { ?>
+	<div class="eb-entry-author-details">
+		<?php echo $post->creator->getBioGraphy(); ?>
+	</div>
+	<?php } ?>
+=======
 		
 
 		<?php if ($post->creator->getBioGraphy() && $this->entryParams->get('post_author_box_biography', true)) { ?>
@@ -95,6 +108,7 @@ defined('_JEXEC') or die('Unauthorized Access');
 		</div>
 		<?php } ?>
 	</div>
+>>>>>>> master
 
 	<?php if ($this->entryParams->get('post_author_recent', true) && $recent) { ?>
 	<div class="eb-entry-author-recents">
@@ -102,7 +116,11 @@ defined('_JEXEC') or die('Unauthorized Access');
 
 		<?php if ($this->entryParams->get('post_author_box_more_posts', true)) { ?>
 		<span class="col-cell text-right">
+<<<<<<< HEAD
+			<a href="<?php echo EBR::_('index.php?option=com_easyblog&view=blogger&layout=listings&id=' . $post->creator->id);?>"><?php echo JText::_('COM_EASYBLOG_ABOUT_AUTHOR_VIEW_MORE_POSTS');?></a>
+=======
 			<a href="<?php echo $post->getAuthorPermalink();?>"><?php echo JText::_('COM_EASYBLOG_ABOUT_AUTHOR_VIEW_MORE_POSTS');?></a>
+>>>>>>> master
 		</span>
 		<?php } ?>
 

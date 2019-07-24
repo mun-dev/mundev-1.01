@@ -1,7 +1,11 @@
 <?php
 /**
 * @package		EasyBlog
+<<<<<<< HEAD
+* @copyright	Copyright (C) 2010 - 2019 Stack Ideas Sdn Bhd. All rights reserved.
+=======
 * @copyright	Copyright (C) 2010 - 2017 Stack Ideas Sdn Bhd. All rights reserved.
+>>>>>>> master
 * @license		GNU/GPL, see LICENSE.php
 * EasyBlog is free software. This version may have been modified pursuant
 * to the GNU General Public License, and as distributed it includes or
@@ -41,6 +45,11 @@ defined('_JEXEC') or die('Unauthorized Access');
 
 				<?php echo $this->html('settings.toggle', 'layout_composer_tags', 'COM_EASYBLOG_SETTINGS_LAYOUT_COMPOSER_ENABLE_TAGS'); ?>
 
+<<<<<<< HEAD
+				<?php echo $this->html('settings.toggle', 'layout_composer_multiple_categories', 'COM_EASYBLOG_SETTINGS_LAYOUT_COMPOSER_ALLOW_MULTIPLE_CATEGORIES'); ?>
+
+=======
+>>>>>>> master
 				<div class="form-group">
 					<?php echo $this->html('form.label', 'COM_EASYBLOG_LAYOUT_DASHBOARD_MAX_TAGS_ALLOWED', 'max_tags_allowed'); ?>
 
@@ -81,6 +90,11 @@ defined('_JEXEC') or die('Unauthorized Access');
 
 				<?php echo $this->html('settings.toggle', 'layout_composer_history', 'COM_EASYBLOG_SETTINGS_LAYOUT_DASHBOARD_ENABLE_REVISIONS'); ?>
 
+<<<<<<< HEAD
+				<?php echo $this->html('settings.toggle', 'publish_post_confirmation', 'COM_EB_SETTINGS_COMPOSER_PUBLISH_POST_CONFIRMATION'); ?>
+
+=======
+>>>>>>> master
 				<?php $hiddenClass = $this->config->get('layout_composer_history') ? '' : 'hidden'; ?>
 				<div class="form-group <?php echo $hiddenClass; ?>" data-revision-limit>
 					<?php echo $this->html('form.label', 'COM_EASYBLOG_SETTINGS_LAYOUT_DASHBOARD_REVISIONS_LIMIT', 'layout_composer_history_limit'); ?>

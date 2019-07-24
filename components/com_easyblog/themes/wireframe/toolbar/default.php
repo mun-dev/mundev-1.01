@@ -13,9 +13,15 @@ defined('_JEXEC') or die('Unauthorized Access');
 ?>
 <?php echo EB::renderModule('easyblog-before-toolbar'); ?>
 
+<<<<<<< HEAD
+<?php if ($heading || $showHeader || ($showToolbar && $canAccessToolbar)) { ?>
+<div class="eb-header">
+	<?php if ((!empty($title) || !empty($desc)) && ($heading || $showHeader)) { ?>
+=======
 <?php if ($heading || $this->config->get('layout_headers') || ($this->config->get('layout_toolbar') && $this->acl->get('access_toolbar'))) { ?>
 <div class="eb-header">
 	<?php if ((!empty($title) || !empty($desc)) && ($heading || $this->config->get('layout_headers'))) { ?>
+>>>>>>> master
 	<div class="eb-brand">
 		<?php if ($view == 'entry' && !empty($title)) { ?>
 			<h2 class="eb-brand-name reset-heading"><?php echo JText::_($title);?></h2>
@@ -31,6 +37,13 @@ defined('_JEXEC') or die('Unauthorized Access');
 	</div>
 	<?php } ?>
 
+<<<<<<< HEAD
+	<?php if ($showToolbar && $canAccessToolbar) { ?>
+
+	<div class="eb-toolbar" data-eb-toolbar>
+
+		<?php if ($showHome) { ?>
+=======
 	<?php if ($this->config->get('layout_toolbar') && $this->acl->get('access_toolbar')) { ?>
 
 	<div class="eb-toolbar">
@@ -48,6 +61,7 @@ defined('_JEXEC') or die('Unauthorized Access');
 		<?php } ?>
 
 		<?php if ($this->config->get('layout_latest')) { ?>
+>>>>>>> master
 		<div class="eb-toolbar__item eb-toolbar__item--home">
 			<nav class="o-nav eb-toolbar__o-nav">
 				<div class="o-nav__item <?php echo $view == 'latest' ? 'is-active' : '' ?>">
@@ -59,56 +73,133 @@ defined('_JEXEC') or die('Unauthorized Access');
 		</div>
 		<?php } ?>
 
+<<<<<<< HEAD
+		
+		<div class="eb-toolbar__item eb-toolbar__item--home-submenu" data-eb-mobile-toolbar>
+			<nav class="o-nav eb-toolbar__o-nav">
+				<?php if ($showCategories) { ?>
+				<div class="o-nav__item <?php echo $view == 'categories' ? 'is-active' : '' ?>">
+					<a href="<?php echo EBR::_('index.php?option=com_easyblog&view=categories');?>" class="o-nav__link eb-toolbar__link">
+						<i class="fa fa-folder-open t-sm-visible"></i>
+=======
 		<?php if (!$this->isMobile()) { ?>
 		<div class="eb-toolbar__item eb-toolbar__item--home-submenu">
 			<nav class="o-nav eb-toolbar__o-nav">
 				<?php if ($this->config->get('layout_categories')) { ?>
 				<div class="o-nav__item <?php echo $view == 'categories' ? 'is-active' : '' ?>">
 					<a href="<?php echo EBR::_('index.php?option=com_easyblog&view=categories');?>" class="o-nav__link eb-toolbar__link">
+>>>>>>> master
 						<span><?php echo JText::_('COM_EASYBLOG_TOOLBAR_CATEGORIES');?></span>
 					</a>
 				</div>
 				<?php } ?>
 
+<<<<<<< HEAD
+				<?php if ($showTags) { ?>
+				<div class="o-nav__item <?php echo $view == 'tags' ? 'is-active' : '' ?>">
+					<a href="<?php echo EBR::_('index.php?option=com_easyblog&view=tags');?>" class="o-nav__link eb-toolbar__link">
+						<i class="fa fa-tags t-sm-visible"></i>
+=======
 				<?php if ($this->config->get('layout_tags')) { ?>
 				<div class="o-nav__item <?php echo $view == 'tags' ? 'is-active' : '' ?>">
 					<a href="<?php echo EBR::_('index.php?option=com_easyblog&view=tags');?>" class="o-nav__link eb-toolbar__link">
+>>>>>>> master
 						<span><?php echo JText::_('COM_EASYBLOG_TOOLBAR_TAGS');?></span>
 					</a>
 				</div>
 				<?php } ?>
 
+<<<<<<< HEAD
+				<?php if ($showBloggers && !$bloggerMode) { ?>
+				<div class="o-nav__item <?php echo $view == 'blogger' ? 'is-active' : '' ?>">
+					<a href="<?php echo EBR::_('index.php?option=com_easyblog&view=blogger');?>" class="o-nav__link eb-toolbar__link">
+						<i class="fa fa-user t-sm-visible"></i>
+=======
 				<?php if ($this->config->get('layout_bloggers') && !$bloggerMode) { ?>
 				<div class="o-nav__item <?php echo $view == 'blogger' ? 'is-active' : '' ?>">
 					<a href="<?php echo EBR::_('index.php?option=com_easyblog&view=blogger');?>" class="o-nav__link eb-toolbar__link">
+>>>>>>> master
 						<span><?php echo JText::_('COM_EASYBLOG_TOOLBAR_BLOGGERS');?></span>
 					</a>
 				</div>
 				<?php } ?>
 
+<<<<<<< HEAD
+				<?php if ($showTeamblog) { ?>
+				<div class="o-nav__item <?php echo $view == 'teamblog' ? 'is-active' : '' ?>">
+					<a href="<?php echo EBR::_('index.php?option=com_easyblog&view=teamblog');?>" class="o-nav__link eb-toolbar__link">
+						<i class="fa fa-users t-sm-visible"></i>
+=======
 				<?php if ($this->config->get('layout_teamblog')) { ?>
 				<div class="o-nav__item <?php echo $view == 'teamblog' ? 'is-active' : '' ?>">
 					<a href="<?php echo EBR::_('index.php?option=com_easyblog&view=teamblog');?>" class="o-nav__link eb-toolbar__link">
+>>>>>>> master
 						<span><?php echo JText::_('COM_EASYBLOG_TOOLBAR_TEAMBLOGS');?></span>
 					</a>
 				</div>
 				<?php } ?>
 
+<<<<<<< HEAD
+				<?php if ($showArchives) { ?>
+				<div class="o-nav__item <?php echo $view == 'archive' ? 'is-active' : '' ?>">
+					<a href="<?php echo EBR::_('index.php?option=com_easyblog&view=archive');?>" class="o-nav__link eb-toolbar__link">
+						<i class="fa fa-archive t-sm-visible"></i>
+=======
 				<?php if ($this->config->get('layout_archives')) { ?>
 				<div class="o-nav__item <?php echo $view == 'archive' ? 'is-active' : '' ?>">
 					<a href="<?php echo EBR::_('index.php?option=com_easyblog&view=archive');?>" class="o-nav__link eb-toolbar__link">
+>>>>>>> master
 						<span><?php echo JText::_('COM_EASYBLOG_TOOLBAR_ARCHIVES');?></span>
 					</a>
 				</div>
 				<?php } ?>
 
+<<<<<<< HEAD
+				<?php if ($showCalendar) { ?>
+				<div class="o-nav__item <?php echo $view == 'calendar' ? 'is-active' : '' ?>">
+					<a href="<?php echo EBR::_('index.php?option=com_easyblog&view=calendar&layout=calendarView');?>" class="o-nav__link eb-toolbar__link">
+						<i class="fa fa-calendar t-sm-visible"></i>
+=======
 				<?php if ($this->config->get('layout_calendar')) { ?>
 				<div class="o-nav__item <?php echo $view == 'calendar' ? 'is-active' : '' ?>">
 					<a href="<?php echo EBR::_('index.php?option=com_easyblog&view=calendar&layout=calendarView');?>" class="o-nav__link eb-toolbar__link">
+>>>>>>> master
 						<span><?php echo JText::_('COM_EASYBLOG_TOOLBAR_CALENDAR');?></span>
 					</a>
 				</div>
 				<?php } ?>
+<<<<<<< HEAD
+
+				
+			</nav>
+		</div>
+		
+
+		<?php if ($showSearch) { ?>
+		<div class="eb-toolbar__item eb-toolbar__item--search" data-eb-toolbar-search-wrapper>
+			<div id="eb-toolbar-search" class="eb-toolbar__search">
+				<form class="eb-toolbar__search-form" method="post" action="<?php echo JRoute::_('index.php');?>">
+
+					<div class="eb-toolbar__search-filter">
+						<div class="eb-filter-select-group">
+							<?php echo $categoryDropdown; ?>
+							<div class="eb-filter-select-group__drop"></div>
+						</div>	
+					</div>
+
+					<input type="text" name="query" class="eb-toolbar__search-input" autocomplete="off" placeholder="<?php echo JText::_('COM_EASYBLOG_TOOLBAR_PLACEHOLDER_SEARCH');?>" value="<?php echo $this->html('string.escape', $query);?>" />
+					<?php echo $this->html('form.action', 'search.query');?>
+
+					<div class="eb-toolbar__search-submit-btn">
+						<button class="btn btn-primary btn-search-submit" type="submit">
+							<?php echo JText::_('COM_EASYBLOG_SEARCH_BUTTON'); ?>
+						</button>
+					</div>
+
+					
+					<div class="eb-toolbar__search-close-btn">
+						<a href="javascript:void(0);" class="" data-eb-toolbar-search-toggle><i class="fa fa-times"></i></a>
+=======
 			</nav>
 		</div>
 		<?php } ?>
@@ -131,12 +222,19 @@ defined('_JEXEC') or die('Unauthorized Access');
 					<div class="eb-filter-select-group">
 						<?php echo $categoryDropdown; ?>
 						<div class="eb-filter-select-group__drop"></div>
+>>>>>>> master
 					</div>
 				</form>
 			</div>
 		</div>
 		<?php } ?>
 
+<<<<<<< HEAD
+
+
+
+=======
+>>>>>>> master
 		<div class="eb-toolbar__item eb-toolbar__item--action">
 			<nav class="o-nav eb-toolbar__o-nav">
 
@@ -189,13 +287,30 @@ defined('_JEXEC') or die('Unauthorized Access');
 					</div>
 				<?php } ?>
 
+<<<<<<< HEAD
+				<?php if ($showSearch) { ?>
+=======
 				<?php if ($this->config->get('layout_search')) { ?>
+>>>>>>> master
 					<div class="o-nav__item"
 						data-original-title="<?php echo JText::_('COM_EASYBLOG_TOOLBAR_SEARCH');?>"
 						data-placement="top"
 						data-eb-provide="tooltip"
 					>
+<<<<<<< HEAD
+						<a href="javascript:void(0);" class="o-nav__link eb-toolbar__link" data-eb-toolbar-search-toggle><i class="fa fa-search"></i></a>
+					</div>
+				<?php } ?>
+
+				<?php if (($this->isMobile() || $this->isTablet()) && $showHamburgerIcon) { ?>
+					<div class="o-nav__item dropdown_">
+						<a href="javascript:void(0);" class="o-nav__link eb-toolbar__link"  data-eb-toolbar-toggle>
+
+							<i class="fa fa-bars"></i>
+						</a>
+=======
 						<a href="javascript:void(0);" class="o-nav__link eb-toolbar__link" data-eb-toolbar-search><i class="fa fa-search"></i></a>
+>>>>>>> master
 					</div>
 				<?php } ?>
 
@@ -205,7 +320,11 @@ defined('_JEXEC') or die('Unauthorized Access');
 						<i class="fa fa-lock"></i>
 						<span class="eb-toolbar__link-text"><?php echo JText::_('COM_EASYBLOG_TOOLBAR_SETTINGS');?></span>
 					</a>
+<<<<<<< HEAD
+					 <div class="eb-toolbar__dropdown-menu eb-toolbar__dropdown-menu--signin dropdown-menu bottom-right" data-eb-toolbar-dropdown >
+=======
 					 <div class="eb-toolbar__dropdown-menu eb-toolbar__dropdown-menu--signin dropdown-menu bottom-right" data-eb-toolbar-dropdown>
+>>>>>>> master
 						<div class="eb-arrow"></div>
 						<div class="popbox-dropdown">
 							<div class="popbox-dropdown__hd">
@@ -265,14 +384,28 @@ defined('_JEXEC') or die('Unauthorized Access');
 						</div>
 					</div>
 
+<<<<<<< HEAD
+					
+
+=======
+>>>>>>> master
 				</div>
 				<?php } ?>
 
 
+<<<<<<< HEAD
+
+
+				<?php if ($showMoreSettings) { ?>
+				<div class="o-nav__item is-signin dropdown_" data-original-title="<?php echo JText::_('COM_EB_TOOLBAR_MORE_SETTINGS');?>" data-placement="top" data-eb-provide="tooltip">
+
+					<a href="javascript:void(0);" class="o-nav__link eb-toolbar__link has-avatar dropdown-toggle_" data-bp-toggle="dropdown" data-eb-toolbar-manage-toggle>
+=======
 				<?php if (!$this->isMobile() && $showMoreSettings) { ?>
 				<div class="o-nav__item is-signin dropdown_" data-original-title="More Settings" data-placement="top" data-eb-provide="tooltip">
 
 					<a href="javascript:void(0);" class="o-nav__link eb-toolbar__link has-avatar dropdown-toggle_" data-bp-toggle="dropdown">
+>>>>>>> master
 						<div class="eb-toolbar__avatar">
 							<img src="<?php echo $this->profile->getAvatar();?>" alt="<?php echo $this->html('string.escape', $this->profile->getName());?>" width="24" height="24" />
 						</div>
@@ -545,6 +678,157 @@ defined('_JEXEC') or die('Unauthorized Access');
 						</div>
 
 					</div>
+<<<<<<< HEAD
+
+					<?php if ($this->isMobile() || $this->isTablet()) { ?>
+					<div class="eb-toolbar__item eb-toolbar__item--mobile-manage" data-eb-mobile-manage-toolbar>
+						<nav class="o-nav eb-toolbar__o-nav">
+							<?php if ($this->acl->get('add_entry')) { ?>
+							<div class="o-nav__item">
+								<a class="o-nav__link eb-toolbar__link" href="<?php echo EB::_('index.php?option=com_easyblog&view=dashboard&layout=entries&filter=drafts');?>">
+									<i class="fa fa-file-text t-sm-visible"></i>
+									<span><?php echo JText::_('COM_EB_TOOLBAR_DRAFTS');?></span>
+								</a>
+							</div>
+							<div class="o-nav__item">
+								<a class="o-nav__link eb-toolbar__link" href="<?php echo EB::_('index.php?option=com_easyblog&view=dashboard&layout=entries');?>">
+									<i class="fa fa-file-text t-sm-visible"></i>
+									<span><?php echo JText::_('COM_EASYBLOG_TOOLBAR_MANAGE_POSTS');?></span>
+								</a>
+							</div>
+							<?php } ?>
+
+							<?php if ($this->acl->get('create_post_templates')) { ?>
+							<div class="o-nav__item">
+								<a class="o-nav__link eb-toolbar__link" href="<?php echo EB::_('index.php?option=com_easyblog&view=dashboard&layout=templates');?>">
+									<i class="fa fa-window-maximize t-sm-visible"></i>
+									<span><?php echo JText::_('COM_EASYBLOG_DASHBOARD_HEADING_POST_TEMPLATES');?></span>
+								</a>
+							</div>
+							<?php } ?>
+
+							<?php if (EB::isSiteAdmin() || ($this->acl->get('moderate_entry') || ($this->acl->get('manage_pending') && $this->acl->get('publish_entry')))) { ?>
+							<div class="o-nav__item">
+								<a class="o-nav__link eb-toolbar__link" href="<?php echo EB::_('index.php?option=com_easyblog&view=dashboard&layout=moderate');?>">
+									<i class="fa fa-ticket"></i>
+									<span><?php echo JText::_('COM_EASYBLOG_TOOLBAR_MANAGE_PENDING');?></span>
+									<?php if ($totalPending) { ?>
+									<div class="eb-toolbar__indicator-counter"><?php echo $totalPending;?></div>
+									<?php } ?>
+								</a>
+							</div>
+							<?php } ?>
+
+							<?php if (EB::isSiteAdmin() || ($this->acl->get('moderate_entry') || ($this->acl->get('manage_pending') && $this->acl->get('publish_entry')))) { ?>
+							<div class="o-nav__item">
+								<a class="o-nav__link eb-toolbar__link" href="<?php echo EB::_('index.php?option=com_easyblog&view=dashboard&layout=reports');?>">
+									<i class="fa fa-exclamation-triangle"></i> 
+									<span><?php echo JText::_('COM_EB_REPORT_POSTS');?></span>
+									<?php if ($totalReportPosts) { ?>
+									<div class="eb-toolbar__indicator-counter"><?php echo $totalReportPosts;?></div>
+									<?php } ?>
+								</a>
+							</div>
+							<?php } ?>
+
+							<?php if ($this->acl->get('manage_comment') && EB::comment()->isBuiltin()) { ?>
+							<div class="o-nav__item">
+								<a class="o-nav__link eb-toolbar__link" href="<?php echo EB::_('index.php?option=com_easyblog&view=dashboard&layout=comments');?>">
+									<i class="fa fa-comments"></i>
+									<span><?php echo JText::_('COM_EASYBLOG_TOOLBAR_MANAGE_COMMENTS');?></span>
+									<?php if ($totalPendingComments) { ?>
+									<div class="eb-toolbar__indicator-counter"><?php echo $totalPendingComments; ?></div>
+									<?php } ?>
+								</a>
+							</div>
+							<?php } ?>
+
+							<?php if ($this->acl->get('create_category')) { ?>
+							<div class="o-nav__item">
+								<a class="o-nav__link eb-toolbar__link" href="<?php echo EB::_('index.php?option=com_easyblog&view=dashboard&layout=categories');?>">
+									<i class="fa fa-folder-o"></i>
+									<span><?php echo JText::_('COM_EASYBLOG_TOOLBAR_MANAGE_CATEGORIES');?></span>
+								</a>
+							</div>
+							<?php } ?>
+
+							<?php if ($this->acl->get('create_tag')) { ?>
+							<div class="o-nav__item">
+								<a class="o-nav__link eb-toolbar__link" href="<?php echo EB::_('index.php?option=com_easyblog&view=dashboard&layout=tags');?>">
+									<i class="fa fa-tags"></i> 
+									<span><?php echo JText::_('COM_EASYBLOG_TOOLBAR_MANAGE_TAGS');?></span>
+								</a>
+							</div>
+							<?php } ?>
+
+							<?php if ($this->config->get('main_favourite_post')) { ?>
+							<div class="o-nav__item">
+								<a class="o-nav__link eb-toolbar__link" href="<?php echo EB::_('index.php?option=com_easyblog&view=dashboard&layout=favourites');?>">
+									<i class="fa fa-star"></i> 
+									<span><?php echo JText::_('COM_EB_FAVOURITE_POSTS');?></span>
+								</a>
+							</div>
+							<?php } ?>
+
+							<?php if ($this->config->get('layout_teamblog') && $this->acl->get('create_team_blog')) { ?>
+							<div class="o-nav__item">
+								<a class="o-nav__link eb-toolbar__link" href="<?php echo EB::_('index.php?option=com_easyblog&view=dashboard&layout=teamblogs');?>">
+									<i class="fa fa-users"></i>
+									<span><?php echo JText::_('COM_EASYBLOG_TOOLBAR_TEAMBLOGS');?></span>
+								</a>
+							</div>
+							<?php } ?>
+
+							<?php if ((EB::isTeamAdmin() || EB::isSiteAdmin()) && $this->acl->get('create_team_blog')){ ?>
+							<div class="o-nav__item">
+								<a class="o-nav__link eb-toolbar__link" href="<?php echo EBR::_('index.php?option=com_easyblog&view=dashboard&layout=requests');?>">
+									<i class="fa fa-users"></i> 
+									<span><?php echo JText::_('COM_EASYBLOG_TOOLBAR_TEAM_REQUESTS');?></span>
+									<?php if ($totalTeamRequests) { ?>
+									<div class="eb-toolbar__indicator-counter"><?php echo $totalTeamRequests;?></div>
+									<?php } ?>
+								</a>
+							</div>
+							<?php } ?>
+
+							<?php if ($this->acl->get('allow_subscription')) { ?>
+							<div class="o-nav__item">
+								<a class="o-nav__link eb-toolbar__link" href="<?php echo EB::_('index.php?option=com_easyblog&view=subscription');?>">
+									<i class="fa fa-envelope t-sm-visible"></i>
+									<span><?php echo JText::_('COM_EASYBLOG_TOOLBAR_MANAGE_SUBSCRIPTIONS');?></span>
+								</a>
+							</div>
+							<?php } ?>
+
+							<div class="o-nav__item">
+								<a class="o-nav__link eb-toolbar__link" href="<?php echo EB::getEditProfileLink();?>">
+									<i class="fa fa-pencil-square-o t-sm-visible"></i>
+									<span><?php echo JText::_('COM_EASYBLOG_TOOLBAR_EDIT_PROFILE');?></span>
+								</a>
+							</div>
+							
+							<?php if ($this->config->get('gdpr_enabled') && $this->config->get('integrations_easysocial_editprofile') && EB::easysocial()->exists()) { ?>
+							<div class="o-nav__item">
+								<a class="o-nav__link eb-toolbar__link" href="javascript:void(0);" data-gdpr-download-link>
+									<i class="fa fa-download t-sm-visible"></i>
+									<span><?php echo JText::_('COM_EB_GDPR_DOWNLOAD_INFORMATION');?></span>
+								</a>
+							</div>
+							<?php } ?>
+
+							<div class="o-nav__item">
+								<a class="o-nav__link eb-toolbar__link" href="javascript:void(0);" data-blog-toolbar-logout>
+									<i class="fa fa-power-off t-sm-visible"></i>
+									<span><?php echo JText::_('COM_EASYBLOG_TOOLBAR_SIGN_OUT');?></span>
+								</a>
+							</div>
+
+						</nav>
+					</div>
+					<?php } ?>
+
+=======
+>>>>>>> master
 				</div>
 				<?php } ?>
 			</nav>

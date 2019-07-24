@@ -34,6 +34,15 @@ class SocialEventAppVideosHookNotificationLikes extends SocialAppHooks
 
 			// Get the video object
 			$video = ES::video($item->uid, SOCIAL_TYPE_EVENT, $item->context_ids);
+<<<<<<< HEAD
+			$event = ES::event($video->table->uid);
+
+			$item->image = $video->getThumbnail();
+
+			// We need to determine if the user is the owner
+			if ($video->user_id == $item->target_id && $item->target_type == SOCIAL_TYPE_USER) {
+				$item->title = JText::sprintf($this->getPlurality('APP_EVENT_VIDEOS_NOTIFICATIONS_LIKES_USER_VIDEO', $users), $names, $video->title, $event->title);
+=======
 
 			$item->image = $video->getThumbnail();
 			$item->content = $video->title;
@@ -41,6 +50,7 @@ class SocialEventAppVideosHookNotificationLikes extends SocialAppHooks
 			// We need to determine if the user is the owner
 			if ($video->user_id == $item->target_id && $item->target_type == SOCIAL_TYPE_USER) {
 				$item->title = JText::sprintf($this->getPlurality('APP_EVENT_VIDEOS_NOTIFICATIONS_LIKES_USER_VIDEO', $users), $names);
+>>>>>>> master
 
 				return;
 			}

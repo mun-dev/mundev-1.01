@@ -1,7 +1,11 @@
 <?php
 /**
 * @package		EasyDiscuss
+<<<<<<< HEAD
+* @copyright	Copyright (C) 2010 - 2019 Stack Ideas Sdn Bhd. All rights reserved.
+=======
 * @copyright	Copyright (C) 2010 - 2015 Stack Ideas Sdn Bhd. All rights reserved.
+>>>>>>> master
 * @license		GNU/GPL, see LICENSE.php
 * EasyBlog is free software. This version may have been modified pursuant
 * to the GNU General Public License, and as distributed it includes or
@@ -196,7 +200,11 @@ class EasyDiscussModelPostTypes extends EasyDiscussAdminModel
 	 * @since	4.0.14
 	 * @access	public
 	 */
+<<<<<<< HEAD
+	public function getPostTypes($categoryId = null, $order = 'ASC', $searchBar = false)
+=======
 	public function getPostTypes($categoryId = null, $order = 'ASC')
+>>>>>>> master
 	{
 		$db = ED::db();
 		$query = array();
@@ -218,7 +226,16 @@ class EasyDiscussModelPostTypes extends EasyDiscussAdminModel
 		$query[] = '(';
 		$query[] = 'a.' . $db->qn('type') . '=' . $db->Quote('global');
 		$query[] = 'OR';
+<<<<<<< HEAD
+        $query[] = 'a.' . $db->qn('type') . '=' . $db->Quote('');
+
+		if ($searchBar) {
+			$query[] = 'OR';
+			$query[] = 'a.' . $db->qn('type') . '=' . $db->Quote('category');
+		}
+=======
 		$query[] = 'a.' . $db->qn('type') . '=' . $db->Quote('');
+>>>>>>> master
 
 		if ($categoryId) {
 			$query[] = 'OR (';

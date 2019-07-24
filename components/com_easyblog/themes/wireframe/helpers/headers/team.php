@@ -92,6 +92,10 @@ defined('_JEXEC') or die('Unauthorized Access');
 
 <?php if (!empty($team->description) && $this->config->get('main_includeteamblogdescription')) { ?>
 <div class="eb-authors-bio">
+<<<<<<< HEAD
+	<?php echo $this->html('string.truncater', $team->description, 350); ?>
+=======
 	<?php echo $this->html('string.truncater', nl2br(strip_tags($team->description)), 350); ?>
+>>>>>>> master
 </div>
 <?php } ?>

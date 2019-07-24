@@ -1,7 +1,11 @@
 <?php
 /**
 * @package      EasyBlog
+<<<<<<< HEAD
+* @copyright    Copyright (C) 2010 - 2019 Stack Ideas Sdn Bhd. All rights reserved.
+=======
 * @copyright    Copyright (C) 2010 - 2017 Stack Ideas Sdn Bhd. All rights reserved.
+>>>>>>> master
 * @license      GNU/GPL, see LICENSE.php
 * EasyBlog is free software. This version may have been modified pursuant
 * to the GNU General Public License, and as distributed it includes or
@@ -40,7 +44,11 @@ defined('_JEXEC') or die('Unauthorized Access');
 					<th width="1%" class="center">
 						<?php echo $this->html('grid.checkAll'); ?>
 					</th>
+<<<<<<< HEAD
+					<th width="10%">
+=======
 					<th>
+>>>>>>> master
 						<?php echo JText::_('COM_EASYBLOG_TABLE_COLUMN_SUBSCRIBED_TYPE'); ?>
 					</th>
 					<th width="35%" class="center">
@@ -69,10 +77,17 @@ defined('_JEXEC') or die('Unauthorized Access');
 							<?php echo $row->bname;?><?php echo ($filter == 'blogger') ? ' (' . $row->busername. ')' : ''; ?>
 						<?php } ?>
 					</td>
+<<<<<<< HEAD
+
+					<td class="center">
+						<a href="index.php?option=com_easyblog&view=subscriptions&layout=form&id=<?php echo $row->id;?>"><?php echo $row->email;?></a> 
+						(<?php echo $row->fullname;?>)
+=======
 					
 
 					<td class="center">
 						<?php echo (empty($row->name)) ? $row->fullname :  $row->name;?> (<?php echo $row->email;?>)
+>>>>>>> master
 					</td>
 
 					<td class="center">

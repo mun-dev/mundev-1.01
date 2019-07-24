@@ -1,7 +1,11 @@
 <?php
 /**
 * @package		EasyBlog
+<<<<<<< HEAD
+* @copyright	Copyright (C) 2010 - 2019 Stack Ideas Sdn Bhd. All rights reserved.
+=======
 * @copyright	Copyright (C) 2010 - 2017 Stack Ideas Sdn Bhd. All rights reserved.
+>>>>>>> master
 * @license		GNU/GPL, see LICENSE.php
 * EasyBlog is free software. This version may have been modified pursuant
 * to the GNU General Public License, and as distributed it includes or
@@ -11,11 +15,24 @@
 */
 defined('_JEXEC') or die('Unauthorized Access');
 ?>
+<<<<<<< HEAD
+<div id="eb" class="eb-mod mod-easyblogshowcase--hero st-4 mod-easyblogshowcase<?php echo $modules->getWrapperClass(); ?>  <?php echo $modules->isMobile() ? 'is-mobile' : '';?>">
+	<div class="eb-gallery-stage" 
+		data-eb-module-showcase 
+		data-autoplay="<?php echo $autoplay;?>" 
+		data-interval="<?php echo $autoplayInterval;?>">
+		<div class="eb-gallery-viewport">
+			<div class="swiper-container gallery-top" data-container>
+				<div class="swiper-wrapper">
+				<?php foreach ($posts as $post) { ?>
+				<div class="eb-gallery-item swiper-slide">
+=======
 <div id="eb" class="eb-mod st-4 mod-easyblogshowcase<?php echo $modules->getWrapperClass(); ?>  <?php echo $modules->isMobile() ? 'is-mobile' : '';?>"  data-eb-module-showcase>
 	<div class="eb-gallery" data-autoplay="<?php echo $autoplay;?>" data-interval="<?php echo $autoplayInterval;?>">
 		<div class="eb-gallery-stage">
 			<div class="eb-gallery-viewport">
 				<?php foreach ($posts as $post) { ?><div class="eb-gallery-item"> <!--PLEASE KEEP THIS DOM THIS WAY TO REMOVE WHITESPACING-->
+>>>>>>> master
 					<div class="eb-gallery-box" style="background-image: url('<?php echo $post->postCover;?>') !important;">
 						<div class="eb-gallery-body">
 							<?php if ($params->get('authoravatar', true)) { ?>
@@ -51,9 +68,15 @@ defined('_JEXEC') or die('Unauthorized Access');
 							</div>
 
 							<?php if ($params->get('showratings', true)) { ?>
+<<<<<<< HEAD
+								<div class="eb-rating">
+									<?php echo EB::ratings()->html($post, 'ebmostshowcase-' . $post->id . '-ratings', JText::_('MOD_SHOWCASE_RATE_BLOG_ENTRY'), $disabled); ?>
+								</div>
+=======
 							    <div class="eb-rating">
 							        <?php echo EB::ratings()->html($post, 'ebmostshowcase-' . $post->id . '-ratings', JText::_('MOD_SHOWCASE_RATE_BLOG_ENTRY'), $disabled); ?>
 							    </div>
+>>>>>>> master
 							<?php } ?>
 
 							<?php if ($params->get('showreadmore', true)) { ?>
@@ -63,6 +86,62 @@ defined('_JEXEC') or die('Unauthorized Access');
 							<?php } ?>
 						</div>
 					</div>
+<<<<<<< HEAD
+				</div>
+				<?php } ?>
+				</div>
+			</div>
+		</div>
+
+		<div class="eb-gallery-foot">
+
+			<?php if (count($posts) > 1) { ?>
+				<div class="eb-gallery-foot__prev">
+					<div class="eb-gallery-buttons">
+						<div class="eb-gallery-button eb-gallery-prev-button" data-featured-previous>
+							<i class="fa fa-angle-left"></i>
+						</div>	
+					</div>
+				</div>
+			<?php } ?>
+
+			<div class="eb-gallery-foot__content">
+				<div class="swiper-container gallery-thumbs" data-thumbs
+				data-free-mode="1"
+				data-slides-per-view="4"
+				data-space-between="10"
+				data-watch-slides-visibility="1"
+				data-watch-slides-progress="1">
+					<div class="swiper-wrapper">
+					<?php $i = 0; ?>
+					<?php foreach ($posts as $post) { ?>
+						<div class="swiper-slide">
+							<div class="eb-gallery-slide-item ">
+								<div class="eb-gallery-slide-item__img">
+									<div class="eb-gallery-menu-thumb" style="background-image: url('<?php echo $post->postCover;?>');"></div>
+								</div>
+								<div class="eb-gallery-slide-item__desc">
+									<?php echo $post->title;?>
+								</div>
+							</div>
+						</div>
+						<?php $i++; ?>
+					<?php } ?>
+					</div>
+				</div>
+			</div>
+
+			<?php if (count($posts) > 1) { ?>
+				<div class="eb-gallery-foot__next">
+					<div class="eb-gallery-buttons">
+						<div class="eb-gallery-button eb-gallery-prev-button" data-featured-next>
+							<i class="fa fa-angle-right"></i>
+						</div>
+					</div>
+				</div>
+			<?php } ?>
+
+=======
 				</div><?php } ?> <!--PLEASE KEEP THIS DOM THIS WAY TO REMOVE WHITESPACING-->
 			</div>
 
@@ -106,6 +185,7 @@ defined('_JEXEC') or die('Unauthorized Access');
 					</div>
 				</div>
 			</div>
+>>>>>>> master
 		</div>
 	</div>
 </div>

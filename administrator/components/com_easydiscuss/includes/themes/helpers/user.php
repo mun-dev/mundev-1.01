@@ -1,7 +1,11 @@
 <?php
 /**
 * @package		EasyDiscuss
+<<<<<<< HEAD
+* @copyright	Copyright (C) 2010 - 2019 Stack Ideas Sdn Bhd. All rights reserved.
+=======
 * @copyright	Copyright (C) 2010 - 2015 Stack Ideas Sdn Bhd. All rights reserved.
+>>>>>>> master
 * @license		GNU/GPL, see LICENSE.php
 * EasyDiscuss is free software. This version may have been modified pursuant
 * to the GNU General Public License, and as distributed it includes or
@@ -18,8 +22,11 @@ class EasyDiscussThemesHelperUser
 	 *
 	 * @since	4.0
 	 * @access	public
+<<<<<<< HEAD
+=======
 	 * @param	string
 	 * @return
+>>>>>>> master
 	 */
 	public static function role(DiscussProfile $user)
 	{
@@ -36,8 +43,11 @@ class EasyDiscussThemesHelperUser
 	 *
 	 * @since	4.0
 	 * @access	public
+<<<<<<< HEAD
+=======
 	 * @param	string
 	 * @return	
+>>>>>>> master
 	 */
 	public static function pm($targetId = null, $layout = 'list')
 	{
@@ -89,10 +99,15 @@ class EasyDiscussThemesHelperUser
 	 *
 	 * @since	4.0
 	 * @access	public
+<<<<<<< HEAD
+	 */
+	public static function avatar(DiscussProfile $user, $options = array(), $isAnonymous = false, $renderAvatarImageOnly = false)
+=======
 	 * @param	string
 	 * @return
 	 */
 	public static function avatar(DiscussProfile $user, $options = array())
+>>>>>>> master
 	{
 		$config = ED::config();
 
@@ -104,6 +119,13 @@ class EasyDiscussThemesHelperUser
 		// default to true
 		$popbox = isset($options['popbox']) ? $options['popbox'] : $config->get('layout_avatar_popbox');
 
+<<<<<<< HEAD
+		// Render user profile permalink
+		// Do not render the user permalink if that is guest user or anonymous post 
+		$userPermalink = !$user->id || $isAnonymous ? 'javascript:void(0);' : $user->getPermalink();
+
+=======
+>>>>>>> master
 		// If the Jomsocial messaging integration enabled, we need to initialize the script.
 		$jomsocial = ED::jomsocial();
 
@@ -132,6 +154,12 @@ class EasyDiscussThemesHelperUser
 			$easysocialPopbox = false;
 		}
 
+<<<<<<< HEAD
+		// Show text avatar name
+		$textAvatarName = $user->getNameInitial($isAnonymous)->text;
+
+=======
+>>>>>>> master
 		$theme = ED::themes();
 		$theme->set('user', $user);
 		$theme->set('rank', $rank);
@@ -139,10 +167,50 @@ class EasyDiscussThemesHelperUser
 		$theme->set('status', $status);
 		$theme->set('size', $size);
 		$theme->set('popbox', $popbox);
+<<<<<<< HEAD
+		$theme->set('isAnonymous', $isAnonymous);
+		$theme->set('userPermalink', $userPermalink);
+		$theme->set('textAvatarName', $textAvatarName);
 		$theme->set('easysocialPopbox', $easysocialPopbox);
+		$theme->set('renderAvatarImageOnly', $renderAvatarImageOnly);
+=======
+		$theme->set('easysocialPopbox', $easysocialPopbox);
+>>>>>>> master
 
 		$output = $theme->output('site/html/user.avatar');
 
 		return $output;
 	}
+<<<<<<< HEAD
+
+	/**
+	 * Generates anonymous user html tag
+	 *
+	 * @since	4.1.9
+	 * @access	public
+	 */
+	public static function anonymous(DiscussProfile $user, $isAnonymous = false, $options = array())
+	{
+		$config = ED::config();
+
+		$size = isset($options['size']) ? $options['size'] : 'sm';
+
+		$showProfileImage = $config->get('layout_avatar');
+
+		// show text avatar name
+		$textAvatarName = $user->getNameInitial($isAnonymous)->text;
+
+		$theme = ED::themes();
+		$theme->set('user', $user);
+		$theme->set('size', $size);
+		$theme->set('isAnonymous', $isAnonymous);
+		$theme->set('textAvatarName', $textAvatarName);
+		$theme->set('showProfileImage', $showProfileImage);
+
+		$output = $theme->output('site/html/user.anonymous');
+
+		return $output;
+	}	
+=======
+>>>>>>> master
 }

@@ -132,9 +132,17 @@ class SocialAlbums extends EasySocial
 
 		foreach($rows as $row)
 		{
+<<<<<<< HEAD
+			$datestr = ($row->assigned_date && $row->assigned_date !== '0000-00-00 00:00:00') ? $row->assigned_date : $row->created;
+
+			$date = ES::date($datestr);
+			$format = JText::_('COM_EASYSOCIAL_ALBUMS_GROUP_DATE_FORMAT');
+			$index = $date->format($format);
+=======
 			$date 	= ES::date($row->created);
 			$format	= JText::_('COM_EASYSOCIAL_ALBUMS_GROUP_DATE_FORMAT');
 			$index 	= $date->format($format);
+>>>>>>> master
 
 			if(!isset($albums[ $index ]))
 			{

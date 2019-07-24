@@ -402,6 +402,91 @@ class EasyBlogControllerBlogs extends EasyBlogController
 	}
 
 	/**
+<<<<<<< HEAD
+	 * Import post templates from the other site
+	 *
+	 * @since	5.3
+	 * @access	public
+	 */
+	public function importPostTemplates()
+	{	
+		// Check for token
+		EB::checkToken();
+
+		// Check for ACL access
+		$this->checkAccess('blog');
+
+		$return = 'index.php?option=com_easyblog&view=blogs&layout=templates';
+		$file = $this->input->files->get('file');
+
+		if (!$file) {
+			$this->info->set(JText::_('COM_EB_POST_TEMPLATES_NO_FILE_SELECTED_ERROR_MESSAGE'), 'error');
+			return $this->app->redirect($return);
+		}
+
+		if (!isset($file['tmp_name']) || empty($file['tmp_name'])) {
+			$this->info->set('COM_EASYBLOG_SETTINGS_IMPORT_ERROR_FILE_INVALID', 'error');
+			return $this->app->redirect($return);
+		}
+
+		$content = file_get_contents($file['tmp_name']);
+		
+		$templates = json_decode($content);
+		$total = 0;
+
+		foreach ($templates as $template) {
+			$table = EB::table('PostTemplate');
+			$table->bind($template);
+			$table->store();
+			$total++;
+		}
+		
+		$message = JText::sprintf('COM_EB_POST_TEMPLATES_IMPORT_SUCCESS_MESSAGE', $total);
+
+		$this->info->set($message, 'success');
+		return $this->app->redirect($return);
+	}
+
+	/**
+	 * Export post templates from the site
+	 *
+	 * @since	5.3
+	 * @access	public
+	 */
+	public function exportTemplates()
+	{
+		// Check for token
+		EB::checkToken();
+		$model = EB::model('Blogs');
+
+		// Check for ACL access
+		$this->checkAccess('blog');
+
+		$ids = $this->input->get('cid', array(), 'array');
+
+		// The purpose of this is to generate the name for the exported files
+		// So it won't override the previous and same file
+		$key = implode('|', $ids) . '|' . EB::date()->toSql();
+
+		$templates = $model->exportTemplates($ids);
+
+		// Convert the templates objects into JSON format
+		$content = json_encode($templates);
+
+		$resource = fopen('php://output', 'w');
+
+		fwrite($resource, $content);
+
+		header('Content-Type: text/json; charset=utf-8');
+		header('Content-Disposition: attachment; filename=' . md5($key) . '.json');
+
+		fclose($resource);
+		exit;
+	}
+
+	/**
+=======
+>>>>>>> master
 	 * Deletes a post template from the site
 	 *
 	 * @since	5.0
@@ -510,7 +595,15 @@ class EasyBlogControllerBlogs extends EasyBlogController
 		foreach ($ids as $id) {
 			$post = EB::post($id);
 
+<<<<<<< HEAD
+			if ($this->getTask() == 'restore') {
+				$post->restore();	
+			} else {
+				$post->publish();	
+			}
+=======
 			$post->publish();
+>>>>>>> master
 		}
 
 		$message = JText::_('COM_EASYBLOG_BLOGS_PUBLISHED_SUCCESSFULLY');

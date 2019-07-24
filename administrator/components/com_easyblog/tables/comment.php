@@ -320,9 +320,18 @@ class EasyBlogTableComment extends EasyBlogTable
 		// Determines if this is a new comment
 		$isNew = !$this->id ? true : false;
 
+<<<<<<< HEAD
+		if ($isNew) {
+			// @rule: Update the ordering as long as this is a new comment. Regardless of the publishing status
+			$this->updateOrdering();
+
+			// log the IP address of commentor as long as this is a new comment.
+			$this->ip = @$_SERVER['REMOTE_ADDR'];
+=======
 		// @rule: Update the ordering as long as this is a new comment. Regardless of the publishing status
 		if ($isNew) {
 			$this->updateOrdering();
+>>>>>>> master
 		}
 
 		// Import plugins
@@ -343,6 +352,17 @@ class EasyBlogTableComment extends EasyBlogTable
 		// @rule: Store after the ordering is updated
 		$state = parent::store();
 
+<<<<<<< HEAD
+		if (!$isNew) {
+			$actionlog = EB::actionlog();
+			$actionlog->log('COM_EB_ACTIONLOGS_COMMENT_UPDATED', 'comment', array(
+				'link' => 'index.php?option=com_easyblog&view=comments&layout=form&id=' . $this->id,
+				'postTitle' => $this->getBlog()->getTitle()
+			));
+		}
+		
+=======
+>>>>>>> master
 		// @rule: Run point integrations here.
 		if ($isNew && $this->published == 1 && $state) {
 
@@ -517,6 +537,14 @@ class EasyBlogTableComment extends EasyBlogTable
 			}
 		}
 
+<<<<<<< HEAD
+		$actionlog = EB::actionlog();
+		$actionlog->log('COM_EB_ACTIONLOGS_COMMENT_DELETED', 'comment', array(
+			'postTitle' => $this->getBlog()->getTitle()
+		));
+
+=======
+>>>>>>> master
 		return $state;
 	}
 
@@ -647,6 +675,15 @@ class EasyBlogTableComment extends EasyBlogTable
 		// Store the item
 		$state = $this->store($pending);
 
+<<<<<<< HEAD
+		$actionlog = EB::actionlog();
+		$actionlog->log('COM_EB_ACTIONLOGS_COMMENT_UNPUBLISH', 'comment', array(
+			'link' => 'index.php?option=com_easyblog&view=comments&layout=form&id=' . $this->id,
+			'postTitle' => $this->getBlog()->getTitle()
+		));
+
+=======
+>>>>>>> master
 		return $state;
 	}
 
@@ -682,6 +719,15 @@ class EasyBlogTableComment extends EasyBlogTable
 			$this->updateSent();
 		}
 
+<<<<<<< HEAD
+		$actionlog = EB::actionlog();
+		$actionlog->log('COM_EB_ACTIONLOGS_COMMENT_PUBLISH', 'comment', array(
+			'link' => 'index.php?option=com_easyblog&view=comments&layout=form&id=' . $this->id,
+			'postTitle' => $this->getBlog()->getTitle()
+		));
+
+=======
+>>>>>>> master
 		return $state;
 	}
 

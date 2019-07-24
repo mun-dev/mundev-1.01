@@ -1,7 +1,11 @@
 <?php
 /**
 * @package      EasyDiscuss
+<<<<<<< HEAD
+* @copyright    Copyright (C) 2010 - 2019 Stack Ideas Sdn Bhd. All rights reserved.
+=======
 * @copyright    Copyright (C) 2010 - 2017 Stack Ideas Sdn Bhd. All rights reserved.
+>>>>>>> master
 * @license      GNU/GPL, see LICENSE.php
 * EasyDiscuss is free software. This version may have been modified pursuant
 * to the GNU General Public License, and as distributed it includes or
@@ -18,9 +22,13 @@ defined('_JEXEC') or die('Unauthorized Access');
             <div class="o-flag">
             <?php if ($params->get('showavatar')) { ?>
                 <div class="o-flag__img t-lg-mr--md">
+<<<<<<< HEAD
+                    <?php echo ED::themes()->html('user.avatar', $user, array('rank' => true, 'status' => true, 'size' => 'md')); ?>
+=======
                     <a class="o-avatar" href="<?php echo $user->getLink(); ?>">
                         <img src="<?php echo $user->getAvatar(); ?>">
                     </a>
+>>>>>>> master
                 </div>
             <?php } ?>
                 <div class="o-flag__body">

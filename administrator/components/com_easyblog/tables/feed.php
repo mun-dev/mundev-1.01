@@ -1,8 +1,14 @@
 <?php
 /**
+<<<<<<< HEAD
+* @package		EasyBlog
+* @copyright	Copyright (C) 2010 - 2019 Stack Ideas Sdn Bhd. All rights reserved.
+* @license		GNU/GPL, see LICENSE.php
+=======
 * @package  EasyBlog
 * @copyright Copyright (C) 2010 - 2018 Stack Ideas Sdn Bhd. All rights reserved.
 * @license  GNU/GPL, see LICENSE.php
+>>>>>>> master
 * EasyBlog is free software. This version may have been modified pursuant
 * to the GNU General Public License, and as distributed it includes or
 * is derivative of works licensed under the GNU General Public License or
@@ -52,12 +58,21 @@ class EasyBlogTableFeed extends EasyBlogTable
 
 	function getCategoryName()
 	{
+<<<<<<< HEAD
+		$db = EB::db();
+
+		if (!empty($this->item_category)) {
+			$query  = 'SELECT `title` FROM `#__easyblog_category` WHERE `id` = ' . $db->Quote( $this->item_category );
+			$db->setQuery( $query );
+			return $db->loadResult();
+=======
 	    $db = EB::db();
 
 	    if (!empty($this->item_category)) {
 	        $query  = 'SELECT `title` FROM `#__easyblog_category` WHERE `id` = ' . $db->Quote( $this->item_category );
 	        $db->setQuery( $query );
 	        return $db->loadResult();
+>>>>>>> master
 		}
 
 		return '';

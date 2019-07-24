@@ -587,4 +587,45 @@ class EasySocialControllerVideos extends EasySocialController
 
 		return $this->view->call(__FUNCTION__, $video);
 	}
+<<<<<<< HEAD
+
+	/**
+	 * Process video link from the video form
+	 *
+	 * @since	3.1.6
+	 * @access	public
+	 */
+	public function processLink()
+	{
+		// Get the link from the video form
+		$link = $this->input->get('link', '', 'default');
+
+		// Remove any space on the left or right side of the string
+		$link = trim($link);
+
+		$video = ES::video();
+
+		if ($video->hasExceededLimit()) {
+			return $this->ajax->reject(JText::_('COM_EASYSOCIAL_VIDEOS_EXCEEDED_LIMIT'));
+		}
+
+		if (!$video->isValidUrl($link)) {
+			return $this->ajax->reject(JText::_('COM_ES_VIDEO_LINK_EMBED_NOT_SUPPORTED'));
+		}
+
+		// Format the video link
+		$link = $video->format($link);
+
+		$crawler = ES::crawler();
+		$data = $crawler->scrape($link);
+
+		// Make there is oembed data if not do not proceed
+		if (!$data || !isset($data->oembed) || !$data->oembed || empty($data->oembed) || is_null($data->oembed)) {
+			return $this->ajax->reject(JText::_('COM_ES_VIDEO_LINK_EMBED_NOT_SUPPORTED'));
+		}
+
+		return $this->ajax->resolve($data);
+	}
+=======
+>>>>>>> master
 }

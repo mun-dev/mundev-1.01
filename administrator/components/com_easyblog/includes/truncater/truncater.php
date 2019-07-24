@@ -1,7 +1,11 @@
 <?php
 /**
 * @package		EasyBlog
+<<<<<<< HEAD
+* @copyright	Copyright (C) 2010 - 2019 Stack Ideas Sdn Bhd. All rights reserved.
+=======
 * @copyright	Copyright (C) 2010 - 2018 Stack Ideas Sdn Bhd. All rights reserved.
+>>>>>>> master
 * @license		GNU/GPL, see LICENSE.php
 * EasyBlog is free software. This version may have been modified pursuant
 * to the GNU General Public License, and as distributed it includes or
@@ -108,12 +112,21 @@ class EasyBlogTruncater extends EasyBlog
 		// Strip out known codes
 		$this->stripMedia($post, $media);
 
+<<<<<<< HEAD
+		// Strip out elements blocks such as buttons #1627
+		$this->stripElementBlocks($post);
+
+=======
+>>>>>>> master
 		// remove js script tag
 		$post->text = $this->strip_only($post->text, '<script>', true);
 		$post->text = $this->strip_only($post->text, '<object>', true);
 		$post->text = EB::string()->trimEmptySpace($post->text);
 
+<<<<<<< HEAD
+=======
 
+>>>>>>> master
 		// Strip out known codes
 		$this->stripCodes($post);
 
@@ -279,6 +292,100 @@ class EasyBlogTruncater extends EasyBlog
 	}
 
 	/**
+<<<<<<< HEAD
+	 * Remove common elements blocks such as button.
+	 *
+	 * @since	5.3.0
+	 * @access	public
+	 */
+	public function stripElementBlocks(EasyBlogPost &$post)
+	{
+		static $_cache = array();
+
+		$elementBlocks = array('buttons', 'note');
+
+		if ($post->isEbd()) {
+
+			// check if this post already been process or not for the tobeRemoveBlocks.
+			if (!isset($_cache[$post->id])) {
+
+				// check if this ducument as any elements blocks or not.
+				$document = EB::document($post->document);
+
+				$blocks = $document->getBlocks();
+				$tobeRemoveBlocks = array();
+				$nestedBlocks = array();
+				$nestedBlocksUid = array();
+
+				foreach ($blocks as $block) {
+
+					if (in_array($block->type, $elementBlocks)) {
+						$tobeRemoveBlocks[] = $block;
+						continue;
+					}
+
+					if (isset($block->blocks) && is_array($block->blocks) && $block->type != 'section') {
+						foreach ($block->blocks as $nestedBlock) {
+							if (!in_array($nestedBlock->uid, $nestedBlocksUid)) {
+								$nestedBlocks[] = $nestedBlock;
+								$nestedBlocksUid[] = $nestedBlock->uid;
+							}
+						}
+					}
+
+					// Containers block needs to be handled differently
+					if (isset($block->blocks) && is_array($block->blocks) && $block->type == 'section') {
+						foreach ($block->blocks as $nestedBlock) {
+
+							// Nested block could be a text block which is also nested
+							if ($nestedBlock->nested && isset($nestedBlock->blocks) && is_array($nestedBlock->blocks)) {
+								foreach ($nestedBlock->blocks as $nestedBlockChild) {
+									if (!in_array($nestedBlockChild->uid, $nestedBlocksUid)) {
+										$nestedBlocks[] = $nestedBlockChild;
+										$nestedBlocksUid[] = $nestedBlockChild->uid;
+									}
+								}
+							}
+
+							// Other nested blocks
+							if (!in_array($nestedBlock->uid, $nestedBlocksUid)) {
+								$nestedBlocks[] = $nestedBlock;
+								$nestedBlocksUid[] = $nestedBlock->uid;
+							}
+						}
+					}
+				}
+
+				// Go through each of the nested blocks
+				if ($nestedBlocks) {
+					foreach ($nestedBlocks as $nestedBlock) {
+						if (in_array($nestedBlock->type, $elementBlocks)) {
+							$tobeRemoveBlocks[] = $nestedBlock;
+							continue;
+						}
+					}
+				}
+
+				$_cache[$post->id] = $tobeRemoveBlocks;
+			}
+
+			$tobeRemoveBlocks = $_cache[$post->id];
+
+			if ($tobeRemoveBlocks) {
+				foreach ($tobeRemoveBlocks as $tb) {
+					$tobeRemoveContent = EB::blocks()->renderViewableBlock($tb);
+
+					if ($tobeRemoveContent) {
+						$post->text = JString::str_ireplace($tobeRemoveContent, '', $post->text);
+					}
+				}
+			}
+		}
+	}
+
+	/**
+=======
+>>>>>>> master
 	 * Remove the processed media from the content so that the truncation can display the content properly.
 	 *
 	 * @since	5.1
@@ -402,6 +509,10 @@ class EasyBlogTruncater extends EasyBlog
 		// Remove uneccessary html tags to avoid unclosed html tags
 		$post->text = $this->stripTags($post->text);
 
+<<<<<<< HEAD
+
+=======
+>>>>>>> master
 		// Remove blank spaces since the word calculation should not include new lines or blanks.
 		$post->text = trim($post->text);
 
@@ -593,7 +704,10 @@ class EasyBlogTruncater extends EasyBlog
 		// we need to strip the javascript tag 1st before further process on stripping other html tags. #1751
 		$text = EB::truncater()->strip_only($text, 'script', true);
 
+<<<<<<< HEAD
+=======
 
+>>>>>>> master
 		// Replace all of the html tags with white space to avoid the text from being clustered together. #475
 		$text = preg_replace('#<[^>]+>#', ' ', $text);
 

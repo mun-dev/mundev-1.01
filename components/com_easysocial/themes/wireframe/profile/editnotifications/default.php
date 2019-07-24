@@ -47,7 +47,14 @@ defined('_JEXEC') or die('Unauthorized Access');
 										<tr>
 											<td><span class=""><?php echo $rule->getTitle(); ?></span></td>
 											<td>
+<<<<<<< HEAD
+												<i class="fa fa-question-circle" style="cursor: pointer"
+												<?php echo $this->html( 'bootstrap.popover' , $rule->getTitle() , $rule->getDescription()  , 'bottom' ); ?>
+
+												></i>
+=======
 												<i class="fa fa-question-circle" <?php echo $this->html( 'bootstrap.popover' , $rule->getTitle() , $rule->getDescription()  , 'bottom' ); ?>></i>
+>>>>>>> master
 											</td>
 											<td class="t-lg-p--md t-text--center">
 												<?php if ($rule->system_published) { ?>

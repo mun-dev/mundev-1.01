@@ -21,6 +21,10 @@ class EasyBlogTableField extends EasyBlogTable
 	public $help = null;
 	public $state = null;
 	public $required = null;
+<<<<<<< HEAD
+	public $ordering = null;
+=======
+>>>>>>> master
 	public $type = null;
 	public $params = null;
 	public $options = null;
@@ -207,5 +211,62 @@ class EasyBlogTableField extends EasyBlogTable
 		$className = $model->getFieldClassValue($fieldId, $postId);
 
 		return $className;
+<<<<<<< HEAD
+	}
+
+	/**
+	 * Move ordering 
+	 *
+	 * @since	5.3.0
+	 * @access	public
+	 */
+	public function moveOrder($direction)
+	{
+		$currentOrdering = $this->ordering;
+		$newOrdering = ($direction < 0) ? $currentOrdering - 1 : $currentOrdering + 1;
+
+		// now we need to find the field that being affected.
+		$affectedField = EB::table('Field');
+		$affectedField->load(array('group_id' => $this->group_id, 'ordering' => $newOrdering));
+
+		// update the current field.
+		$this->ordering = $newOrdering;
+		$state = $this->store();
+
+		if ($state) {
+
+			// now adjust the ordering of the field that being affected.
+			if ($affectedField->id) {
+				$affectedField->ordering = $currentOrdering;
+				$affectedField->store();
+			}
+		}
+
+		return $state;
+	}
+
+	/**
+	 * Override parent's implementation of store
+	 *
+	 * @since	5.3.0
+	 * @access	public
+	 */
+	public function store($updateNulls = false)
+	{
+		$isNew = ($this->id) ? false : true;
+
+		if ($isNew && $this->group_id) {
+			// lets get the max ordering for this group
+			$model = EB::model('Fields');
+			$maxOrdering = $model->getMaxOrdering($this->group_id);
+
+			$this->ordering = $maxOrdering + 1;
+		}
+
+		$state = parent::store();
+		return $state;
+	}
+=======
 	}	
+>>>>>>> master
 }

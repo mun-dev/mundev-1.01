@@ -11,7 +11,11 @@
 */
 defined('_JEXEC') or die('Unauthorized Access');
 ?>
+<<<<<<< HEAD
+<div class="eb-side-main-action" data-show-undo>
+=======
 <div class="eb-side-main-action">
+>>>>>>> master
 	<div class="eb-composer-actions" data-eb-composer-form="actions">
 	<?php if ($templateEditor) { ?>
 
@@ -37,8 +41,14 @@ defined('_JEXEC') or die('Unauthorized Access');
 
 		<!-- for user to has the publishig rights -->
 		<?php if (($post->isBlank() || ($post->isNew() && !$post->isPending()) || $post->isUnpublished() || $post->isPostUnpublished()) && !$post->isScheduled() && $this->acl->get('publish_entry')) { ?>
+<<<<<<< HEAD
+		<a href="javascript:void(0);" class="btn btn-eb-primary btn--lg btn-block btn-publish" data-composer-publish data-undo-enabled="<?php echo $undoPublishing; ?>">
+			<span class="eb-publish-text"><?php echo JText::_('COM_EASYBLOG_PUBLISH_POST'); ?></span>
+			<span class="eb-publishing-text" data-counting-down><?php echo JText::_('COM_EB_PUBLISHING_POST'); ?></span>
+=======
 		<a href="javascript:void(0);" class="btn btn-eb-primary btn--lg btn-block btn-publish" data-composer-publish>
 			<?php echo JText::_('COM_EASYBLOG_PUBLISH_POST'); ?>
+>>>>>>> master
 			<span class="btn-hint">
 				<?php echo JText::_('COM_EASYBLOG_PUBLISH_POST_BUTTON_TIPS'); ?>
 			</span>
@@ -59,7 +69,11 @@ defined('_JEXEC') or die('Unauthorized Access');
 		<?php } ?>
 
 		<?php if ((!$post->isBlank() && !$post->isNew() && $post->isDraft() && !$post->isPostUnpublished()) && $this->acl->get('publish_entry')) { ?>
+<<<<<<< HEAD
+		<a href="javascript:void(0);" class="btn btn-eb-primary btn--lg btn-block btn-update" data-composer-publish >
+=======
 		<a href="javascript:void(0);" class="btn btn-eb-primary btn--lg btn-block btn-update" data-composer-publish>
+>>>>>>> master
 			<?php echo JText::_('COM_EASYBLOG_UPDATE_POST'); ?><br />
 			<span class="btn-hint"><?php echo JText::_('COM_EASYBLOG_UPDATE_POST_TIPS'); ?></span>
 		</a>
@@ -74,6 +88,14 @@ defined('_JEXEC') or die('Unauthorized Access');
 		</a>
 		<?php } ?>
 
+<<<<<<< HEAD
+		<div class="eb-side-main-action__undo-info">
+			<a href="javascript:void(0);" class="" data-undo-publish><?php echo JText::_('COM_EB_UNDO_PUBLISHING'); ?></a>
+			<a href="javascript:void(0);" class="" data-publish-now><?php echo JText::_('COM_EB_PUBLISH_NOW'); ?></a>
+		</div>
+
+=======
+>>>>>>> master
 		<?php if ($post->isBlank() || $post->isPublished() || ($post->isDraft() && !$post->isPostUnpublished())) { ?>
 		<a href="javascript:void(0);" class="btn btn-eb-default btn--lg btn-block btn-draft" data-composer-save-draft>
 			<?php echo JText::_('COM_EASYBLOG_SAVE_AS_DRAFT_BUTTON');?>
@@ -88,18 +110,32 @@ defined('_JEXEC') or die('Unauthorized Access');
 
 		<div class="eb-side-main-action__ft t-lg-mt--md">
 			<div>
+<<<<<<< HEAD
+				<a href="javascript:void(0);" class="btn btn-eb-default-o btn-sm" data-composer-preview>
+					<i class="fa fa-eye"></i>&nbsp; <?php echo JText::_('COM_EASYBLOG_PREVIEW_POST'); ?>
+=======
 				<a href="javascript:void(0);" class="t-text--primary" data-composer-preview>
 					<?php echo JText::_('COM_EASYBLOG_PREVIEW_POST'); ?>
+>>>>>>> master
 				</a>
 			</div>
 			<div>
 				<?php if ($post->isPending() && $post->canModerate()) { ?>
+<<<<<<< HEAD
+				<a href="javascript:void(0);" class="btn btn-eb-danger-o btn-sm" data-composer-reject>
+					<i class="fa fa-ban"></i>&nbsp;  <?php echo JText::_('COM_EASYBLOG_COMPOSER_REJECT_POST_BUTTON'); ?>
+				</a>
+				<?php } else if (!$post->isBlank()) { ?>
+				<a href="javascript:void(0);" class="btn btn-eb-danger-o btn-sm" data-composer-trash>
+					<i class="fa fa-trash"></i>&nbsp; <?php echo JText::_('COM_EASYBLOG_MOVE_TO_TRASH'); ?>
+=======
 				<a href="javascript:void(0);" class="t-text--danger" data-composer-reject>
 					<?php echo JText::_('COM_EASYBLOG_COMPOSER_REJECT_POST_BUTTON'); ?>
 				</a>
 				<?php } else if (!$post->isBlank()) { ?>
 				<a href="javascript:void(0);" class="t-text--danger" data-composer-trash>
 					<?php echo JText::_('COM_EASYBLOG_MOVE_TO_TRASH'); ?>
+>>>>>>> master
 				</a>
 				<?php } ?>
 			</div>

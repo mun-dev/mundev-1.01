@@ -179,7 +179,13 @@ class EasyBlogModelOauth extends EasyBlogAdminModel
 
 		$query 	= 'SELECT * FROM ' . $db->quoteName('#__easyblog_oauth');
 		$query	.= ' WHERE ' . $db->quoteName('type') . '=' . $db->Quote('twitter');
+<<<<<<< HEAD
+
+		//for now, need to comment this out, so that we can fetch all twitter account on the site
+		// $query 	.= ' AND ' . $db->quoteName('system') . '=' . $db->Quote(0);
+=======
 		$query 	.= ' AND ' . $db->quoteName('system') . '=' . $db->Quote(0);
+>>>>>>> master
 
 		$db->setQuery($query);
 		$result = $db->loadObjectList();

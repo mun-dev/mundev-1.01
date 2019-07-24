@@ -343,6 +343,50 @@ class EB
 	}
 
 	/**
+<<<<<<< HEAD
+	 * Retrieve available Joomla languages
+	 *
+	 * @since	5.3.0
+	 * @access	public
+	 */
+	public static function getLanguages($selected = '', $subname = true)
+	{
+		static $languages = array();
+
+		$key = $selected . (int) $subname;
+
+		if (isset($languages[$key])) {
+			return $languages[$key];
+		}
+
+		$languages = JLanguageHelper::createLanguageList($selected , constant('JPATH_SITE'), true, true);
+		$results = array();
+
+		// Retrieve the correct metadata for the language
+		foreach ($languages as $language) {
+			$metaLanguage = JLanguageHelper::getMetadata($language['value']);
+
+			$obj = new stdClass();
+			$obj->text = $metaLanguage['name'];
+			$obj->value = $language['value'];
+
+			$results[] = $obj;
+		}
+
+		if (!$subname) {
+			for ($i = 0; $i < count($results); $i++) {
+				$results[$i]->text = preg_replace('#\(.*?\)#i', '', $results[$i]->text);
+			}
+		}
+
+		$languages[$key] = $results;
+
+		return $languages[$key];
+	}
+
+	/**
+=======
+>>>>>>> master
 	 * Retrieve the current language tag set
 	 *
 	 * @since	4.0
@@ -699,11 +743,19 @@ class EB
 	 * @since	4.0
 	 * @access	public
 	 */
+<<<<<<< HEAD
+	public static function blogimage($path, $uri, $storageType = 'joomla')
+	{
+		require_once(dirname(__FILE__) . '/blogimage/blogimage.php');
+
+		$image = new EasyBlogBlogImage($path, $uri, $storageType);
+=======
 	public static function blogimage($path, $uri)
 	{
 		require_once(dirname(__FILE__) . '/blogimage/blogimage.php');
 
 		$image = new EasyBlogBlogImage($path, $uri);
+>>>>>>> master
 
 		return $image;
 	}
@@ -1224,7 +1276,11 @@ class EB
 
 			$config = EB::config();
 			$provider = $config->get('main_login_provider');
+<<<<<<< HEAD
+
+=======
 			
+>>>>>>> master
 			// Get the current URI which you trying to access
 			$currentUri = EBR::getCurrentURI();
 			$returnURL = '?return=' . base64_encode($currentUri);
@@ -1809,11 +1865,22 @@ class EB
 	 * @since	5.1.9
 	 * @access	public
 	 */
+<<<<<<< HEAD
+	public static function setMeta($id, $type, $defaultViewDesc = '', $pagination = null)
+	{
+		$doc = JFactory::getDocument();
+		$config = EB::config();
+		$jConfig = EB::jconfig();
+
+		$app = JFactory::getApplication();
+		$robotsMenu = '';
+=======
 	public static function setMeta($id, $type, $defaultViewDesc = '')
 	{
 		$doc = JFactory::getDocument();
 		$config = EB::config();
 		$app = JFactory::getApplication();
+>>>>>>> master
 
 		// Try to load the meta for the content
 		$meta = EB::table('Meta');
@@ -1852,7 +1919,11 @@ class EB
 				$meta->description = $biography;
 			}
 
+<<<<<<< HEAD
+			if (!$meta->keywords && !empty($author->title)) {
+=======
 			if (!empty($author->title)) {
+>>>>>>> master
 				$meta->keywords = $author->title;
 			}
 		}
@@ -1900,7 +1971,10 @@ class EB
 			}
 		}
 
+<<<<<<< HEAD
+=======
 
+>>>>>>> master
 		// Check if the descriptin or keysword still empty or not. if yes, try to get from joomla menu.
 		if (empty($meta->description) && empty($meta->keywords)) {
 			$active = JFactory::getApplication()->getMenu()->getActive();
@@ -1910,6 +1984,10 @@ class EB
 
 				$description = $params->get('menu-meta_description', '');
 				$keywords = $params->get('menu-meta_keywords', '');
+<<<<<<< HEAD
+				$robotsMenu = $params->get('robots', $jConfig->get('robots'));
+=======
+>>>>>>> master
 
 				if (!empty($description) || !empty($keywords)) {
 					$meta = new stdClass();
@@ -1937,6 +2015,20 @@ class EB
 			$meta->description = $defaultViewDesc . ' - ' . EB::jconfig()->get('MetaDesc');
 		}
 
+<<<<<<< HEAD
+		// Need to append the pagination number under meta description for prevent duplicate description content
+		if ($pagination && is_object($pagination)) {
+			$page = $pagination->get('pages.current');
+
+			// Append the current page if necessary
+			if ($page > 1 && $meta->description) {
+				$paginationTitle = JText::sprintf('COM_EASYBLOG_PAGE_NUMBER', $page) . ' - ';
+				$meta->description = $paginationTitle . $meta->description;
+			}
+		}
+
+=======
+>>>>>>> master
 		if ($meta->keywords) {
 			$doc->setMetadata('keywords', $meta->keywords);
 		}
@@ -1948,8 +2040,17 @@ class EB
 		// Admin probably disabled indexing
 		if (isset($meta->indexing) && !$meta->indexing) {
 			$doc->setMetadata('robots', 'noindex,follow');
+<<<<<<< HEAD
+
+		// If there is active menu and unable to return any data from the meta table
+		// Then retrieve the robots data from this active menu item 
+		} elseif ($robotsMenu && ((isset($meta->id) && !$meta->id) || (!isset($meta->robots)))) {
+			$doc->setMetadata('robots', $robotsMenu);
+		}
+=======
 		}
 
+>>>>>>> master
 	}
 
 	/**
@@ -2062,12 +2163,31 @@ class EB
 			return $default;
 		}
 
+<<<<<<< HEAD
+		// check if the current menu item is belong to current view or not.
+		$app = JFactory::getApplication();
+		$xQuery = $item->query;
+		$currentView = $app->input->get('view', '', 'cmd');
+
+		if (isset($xQuery['option']) && $xQuery['option'] == 'com_easyblog'
+			&& isset($xQuery['view']) && $xQuery['view'] == $currentView) {
+
+			// @task: Let's get the page title from the menu.
+			$title = $item->params->get('page_title', '');
+
+			// If a title is found, just use the configured title.
+			if ($title && $useMenuForTitle) {
+				return $title;
+			}
+
+=======
 		// @task: Let's get the page title from the menu.
 		$title = $item->params->get('page_title', '');
 
 		// If a title is found, just use the configured title.
 		if ($title && $useMenuForTitle) {
 			return $title;
+>>>>>>> master
 		}
 
 		return $default;
@@ -4074,6 +4194,39 @@ class EB
 	}
 
 	/**
+<<<<<<< HEAD
+	 * Allows caller to pass in an array of data to normalize the data
+	 *
+	 * @since	5.3.0
+	 * @access	public
+	 */
+	public static function normalize($data, $key, $default = null)
+	{
+		if (!$data) {
+			return $default;
+		}
+
+		// $key cannot be an array
+		if (is_array($key)) {
+			$key = $key[0];
+		}
+
+		// Object datatype
+		if (is_object($data) && isset($data->$key)) {
+			return $data->$key;
+		}
+
+		// Array datatype
+		if (is_array($data) && isset($data[$key])) {
+			return $data[$key];
+		}
+
+		return $default;
+	}
+
+	/**
+=======
+>>>>>>> master
 	 * Normalize directory separator
 	 *
 	 * @since	5.1

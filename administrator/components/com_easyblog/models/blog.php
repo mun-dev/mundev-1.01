@@ -439,6 +439,10 @@ class EasyBlogModelBlog extends EasyBlogAdminModel
 
 		// Normalize options
 		$fieldsFilter = isset($options['fieldsFilter']) ? $options['fieldsFilter'] : null;
+<<<<<<< HEAD
+		$strictMode = isset($options['strictMode']) ? $options['strictMode'] : false;
+=======
+>>>>>>> master
 		$fieldsFilterRule = isset($options['fieldsFilterRule']) ? $options['fieldsFilterRule'] : 'include';
 		$paginationType = isset($options['paginationType']) ? $options['paginationType'] : 'normal';
 
@@ -958,6 +962,71 @@ class EasyBlogModelBlog extends EasyBlogAdminModel
 		// 			'1' => array('3'),
 		// 			'2' => array('2', '1')
 		// 		);
+<<<<<<< HEAD
+		// $strictMode = true;
+		// Custom Fields filter
+		$fieldAclQ = '';
+
+		if ($fieldsFilter) {
+			$fieldQueries = array();
+			$filterCount = $strictMode ? 0 : count($fieldsFilter);
+			
+			$gid = EB::getUserGids();
+			$gids = '';
+
+			if (count($gid) > 0) {
+				foreach ($gid as $id) {
+				$gids .= (empty($gids)) ? $id : ',' . $id;
+				}
+			}
+
+			$fieldAclQ .= ' AND (';
+			$fieldAclQ .= ' facl.' . $db->quoteName('acl_id') . ' IN(' . $gids . ')';
+			$fieldAclQ .= ' AND facl.' . $db->quoteName('acl_type') . ' = ' . $db->Quote('read');
+			$fieldAclQ .= ' OR facl.' . $db->quotename('id') . ' IS NULL';
+			$fieldAclQ .= ' )';
+
+			foreach ($fieldsFilter as $fieldId => $values) {
+
+				if ($strictMode) {
+					foreach ($values as $value) {
+						$filterCount++;
+						$fieldQ = 'select distinct `post_id` from `#__easyblog_fields_values` as fv';
+						$fieldQ .= ' LEFT JOIN `#__easyblog_fields` as f ON fv.`field_id` = f.`id`';
+						$fieldQ .= ' LEFT JOIN ' . $db->quoteName('#__easyblog_fields_groups_acl') . ' AS facl';
+						$fieldQ .= ' ON f.' . $db->quoteName('group_id') . ' = facl.' . $db->quoteName('group_id');
+						$fieldQ .= ' WHERE `field_id` = ' . $db->Quote($fieldId) . ' AND `value` = ' . $db->Quote($value);
+
+						// We need to check whether the user is belong to one of the group
+						$fieldQ .= $fieldAclQ;
+
+						$fieldQueries[] = $fieldQ;
+					}
+				} else {
+					$fieldValueQuery = array();
+
+					foreach ($values as $value) {
+						$fieldValueQuery[] = '`value` = ' . $db->Quote($value);
+					}
+
+					$fieldValueQuery = (count($fieldValueQuery) ? implode(' OR ', $fieldValueQuery) : '');
+
+					$fieldQ = 'select distinct `post_id` from `#__easyblog_fields_values` as fv';
+					$fieldQ .= ' LEFT JOIN `#__easyblog_fields` as f ON fv.`field_id` = f.`id`';
+					$fieldQ .= ' LEFT JOIN ' . $db->quoteName('#__easyblog_fields_groups_acl') . ' AS facl';
+					$fieldQ .= ' ON f.' . $db->quoteName('group_id') . ' = facl.' . $db->quoteName('group_id');
+					$fieldQ .= ' WHERE `field_id` = ' . $db->Quote($fieldId) . ' AND (';
+					$fieldQ .= $fieldValueQuery;
+					$fieldQ .= ')';
+
+					// We need to check whether the user is belong to one of the group
+					$fieldQ .= $fieldAclQ;
+
+					$fieldQueries[] = $fieldQ;
+				}
+			}
+			
+=======
 
 		// Custom Fields filter
 		if ($fieldsFilter) {
@@ -1000,17 +1069,28 @@ class EasyBlogModelBlog extends EasyBlogAdminModel
 				$fieldQueries[] = $fieldQ;
 			}
 
+>>>>>>> master
 			$union = (count($fieldQueries) > 1) ? implode(') UNION ALL (', $fieldQueries) : $fieldQueries[0];
 			$union = '(' . $union . ')';
 
 			$filterCount = $filterCount - 1;
 
+<<<<<<< HEAD
+			// AND condition Or strictMode enabled.
+			$fieldQuery = '(select * from (' . $union . ') as x group by x.`post_id` having (count(x.`post_id`) > ' . $filterCount . ')) as customFields';
+
+			// if this is exclude mode, we use OR condition.
+			// or strictMode turn off.
+			// OR condition
+			if (!$strictMode || $fieldsFilterRule != 'include') {
+=======
 			// // AND condition
 			$fieldQuery = '(select * from (' . $union . ') as x group by x.`post_id` having (count(x.`post_id`) > ' . $filterCount . ')) as customFields';
 
 			// if this is exclude mode, we use OR condition.
 			// OR condition
 			if ($fieldsFilterRule != 'include') {
+>>>>>>> master
 				$fieldQuery = '(select * from (' . $union . ') as x group by x.`post_id`) as customFields';
 			}
 
@@ -1021,6 +1101,11 @@ class EasyBlogModelBlog extends EasyBlogAdminModel
 				$query .= ' LEFT JOIN ' . $fieldQuery . ' ON customFields.`post_id` = a.`id`';
 				$queryWhere .= ' AND customFields.`post_id` IS NULL';
 			}
+<<<<<<< HEAD
+
+
+=======
+>>>>>>> master
 		}
 
 		if ($sort == 'random') {
@@ -1034,7 +1119,11 @@ class EasyBlogModelBlog extends EasyBlogAdminModel
 		$query .= $queryOrder;
 		$query .= $queryLimit;
 
+<<<<<<< HEAD
+		// Debugging
+=======
 		// // Debugging
+>>>>>>> master
 		// echo str_ireplace('#__', 'jos_', $query);
 		// echo '<br><br>';
 		// exit;

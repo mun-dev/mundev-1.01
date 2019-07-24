@@ -24,7 +24,11 @@ class EasyBlogViewSearch extends EasyBlogView
 	public function display($tmpl = null)
 	{
 		// Set the meta tags for search
+<<<<<<< HEAD
+		EB::setMeta(META_ID_SEARCH, META_TYPE_VIEW);
+=======
 		EB::setMeta(META_ID_SEARCH, META_TYPE_SEARCH);
+>>>>>>> master
 
 		// Set the page title
 		$title = EB::getPageTitle(JText::_('COM_EASYBLOG_SEARCH_PAGE_TITLE'));
@@ -77,6 +81,13 @@ class EasyBlogViewSearch extends EasyBlogView
 					$row->intro = EB::audio()->strip($row->intro);
 					$row->content = EB::audio()->strip($row->content);
 
+<<<<<<< HEAD
+					// Strip <script> tag from the content
+					$row->intro = EB::truncater()->strip_only($row->intro, '<script>', true);
+					$row->content = EB::truncater()->strip_only($row->content, '<script>', true);
+
+=======
+>>>>>>> master
 					// Format the content so that we can apply our search highlighting
 					$content = preg_replace('/\s+/', ' ', strip_tags($row->content));
 

@@ -22,7 +22,11 @@ defined('_JEXEC') or die('Unauthorized Access');
 
 		<div class="eb-composer-category">
 			<div class="eb-composer-category-list">
+<<<<<<< HEAD
+				<div class="eb-composer-category-viewport" data-eb-composer-category-viewport data-multiple-categories="<?php echo $this->config->get('layout_composer_multiple_categories'); ?>">
+=======
 				<div class="eb-composer-category-viewport" data-eb-composer-category-viewport>
+>>>>>>> master
 					<div class="eb-hint hint-loading layout-overlay style-gray size-sm hide" data-eb-composer-category-loader>
 						<div>
 							<i class="eb-hint-icon"><span class="eb-loader-o size-sm"></span></i>

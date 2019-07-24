@@ -1,7 +1,11 @@
 <?php
 /**
 * @package		EasyBlog
+<<<<<<< HEAD
+* @copyright	Copyright (C) 2010 - 2019 Stack Ideas Sdn Bhd. All rights reserved.
+=======
 * @copyright	Copyright (C) 2010 - 2017 Stack Ideas Sdn Bhd. All rights reserved.
+>>>>>>> master
 * @license		GNU/GPL, see LICENSE.php
 * EasyBlog is free software. This version may have been modified pursuant
 * to the GNU General Public License, and as distributed it includes or
@@ -15,6 +19,16 @@ require_once(JPATH_COMPONENT . '/controller.php');
 
 class EasyBlogControllerSubscriptions extends EasyBlogController
 {
+<<<<<<< HEAD
+	public function __construct()
+	{
+		parent::__construct();
+
+		$this->registerTask('apply', 'save');
+	}
+
+=======
+>>>>>>> master
 	/**
 	 * Create new subscribers on the site
 	 *
@@ -40,6 +54,113 @@ class EasyBlogControllerSubscriptions extends EasyBlogController
 
 			return $this->app->redirect('index.php?option=com_easyblog&view=subscriptions');
 		}
+<<<<<<< HEAD
+		$subscription = EB::table('Subscriptions');
+
+		// check for the current email is it already subscribed
+		$isSubscribed = $subscription->isSubscribed($email, 0, 'site');
+
+		if ($isSubscribed) {
+			$this->info->set('COM_EASYBLOG_SUBSCRIPTION_ALREADY_SUBSCRIBED_ERROR', 'error');
+
+			return $this->app->redirect('index.php?option=com_easyblog&view=subscriptions');
+		}
+
+		// Get the model from the site
+		$model = EB::model('Subscription');
+		$subscription = $model->addSiteSubscription($email, '', $name);
+
+		$redirect = 'index.php?option=com_easyblog&view=subscriptions';
+
+		if ($subscription === EASYBLOG_SUBSCRIPTION_DOUBLE_OPT_IN) {
+			$this->info->set('As the site runs on double opt-in, we have sent a confirmation e-mail to the user to confirm subscription. Their e-mail will not appear in the list until they click on the link in the e-mail');
+			return $this->app->redirect($redirect);
+		}
+
+		$actionlog = EB::actionlog();
+		$actionlog->log('COM_EB_ACTIONLOGS_SUBSCRIPTIONS_CREATED', 'subscriptions', array(
+			'link' => 'index.php?option=com_easyblog&view=subscriptions&layout=form&id=' . $subscription->id,
+			'userEmail' => $email
+		));
+
+
+		$this->info->set('COM_EASYBLOG_SUBSCRIPTIONS_ADDED_SUCCESS', 'success');
+		return $this->app->redirect($redirect);
+	}
+
+	/**
+	 * Saves changes to an existing subscription
+	 *
+	 * @since	5.3
+	 * @access	public
+	 */
+	public function save()
+	{
+		$id = $this->input->get('id', 0, 'int');
+
+		$redirect = 'index.php?option=com_easyblog&view=subscriptions';
+
+		$subscription = EB::table('Subscriptions');
+		$subscription->load($id);
+
+		$task = $this->getTask();
+
+		if ($task == 'apply') {
+			$redirect = 'index.php?option=com_easyblog&view=subscriptions&layout=form&id=' . $subscription->id;	
+		}
+
+		$subscription->utype = $this->input->get('type', 'site', 'word');
+		$subscription->uid = $this->input->get('cid_' . $subscription->utype, 0, 'int');
+
+		$subscription->fullname = $this->input->get('fullname', '', 'string');
+		$subscription->email = $this->input->get('email', '', 'email');
+
+		// If the subscription type is entry or category, ensure that there is a uid
+		if ($subscription->utype !== 'site' && !$subscription->uid) {
+
+			if ($subscription->utype == 'entry') {
+				$this->info->set('COM_EASYBLOG_SUBSCRIPTION_PLEASE_SELECT_ENTRY', 'error');
+			}
+
+			if ($subscription->utype == 'category') {
+				$this->info->set('COM_EASYBLOG_SUBSCRIPTION_PLEASE_SELECT_CATEGORY', 'error');
+			}
+
+			if ($subscription->utype == 'blogger') {
+				$this->info->set('COM_EASYBLOG_SUBSCRIPTION_PLEASE_SELECT_BLOGGER', 'error');
+			}
+
+			if ($subscription->utype == 'team') {
+				$this->info->set('COM_EASYBLOG_SUBSCRIPTION_PLEASE_SELECT_TEAM', 'error');
+			}
+
+			$redirect = 'index.php?option=com_easyblog&view=subscriptions&layout=form&id=' . $subscription->id;
+
+			return $this->app->redirect($redirect);
+		}
+
+		// check for the current email is it already subscribed
+		$isSubscribed = $subscription->isSubscribed($subscription->email, $subscription->uid, $subscription->utype);
+
+		if ($isSubscribed) {
+			$this->info->set('COM_EASYBLOG_SUBSCRIPTION_ALREADY_SUBSCRIBED_ERROR', 'error');
+			$redirect = 'index.php?option=com_easyblog&view=subscriptions&layout=form&id=' . $subscription->id;
+			
+			return $this->app->redirect($redirect);
+		}
+
+		$subscription->store(true, true);
+
+		$actionlog = EB::actionlog();
+		$actionlog->log('COM_EB_ACTIONLOGS_SUBSCRIPTIONS_UPDATED', 'subscriptions', array(
+			'link' => 'index.php?option=com_easyblog&view=subscriptions&layout=form&id=' . $subscription->id,
+			'userEmail' => $subscription->email
+		));
+
+		$this->info->set('COM_EASYBLOG_SUBSCRIPTION_SAVED_SUCCESS', 'success');
+
+		return $this->app->redirect($redirect);
+=======
 
 		// Get the model from the site
 		$model 	= EB::model('Subscription');
@@ -48,6 +169,7 @@ class EasyBlogControllerSubscriptions extends EasyBlogController
 
 		EB::info()->set(JText::_('COM_EASYBLOG_SUBSCRIPTIONS_ADDED_SUCCESS'), 'success');
 		return $this->app->redirect('index.php?option=com_easyblog&view=subscriptions');
+>>>>>>> master
 	}
 
 	/**
@@ -90,6 +212,14 @@ class EasyBlogControllerSubscriptions extends EasyBlogController
 			$table = EB::table('Subscriptions');
 			$table->load((int) $id);
 			$table->delete();
+<<<<<<< HEAD
+
+			$actionlog = EB::actionlog();
+			$actionlog->log('COM_EB_ACTIONLOGS_SUBSCRIPTIONS_DELETED', 'subscriptions', array(
+				'userEmail' => $table->email
+			));
+=======
+>>>>>>> master
 		}
 
 		$this->info->set('COM_EASYBLOG_SUBSCRIPTION_DELETED', 'success');

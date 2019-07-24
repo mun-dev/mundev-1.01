@@ -95,6 +95,26 @@ defined('_JEXEC') or die('Unauthorized Access');
 				<?php
 				foreach ($users as $user) {
 					$userObj = ES::user($user->id);
+<<<<<<< HEAD
+					$hasOtherOauthClientAssociated = false;
+					$userTypes = array('joomla');
+
+					if ($userObj->type != 'joomla') {
+						$oauthModel = ES::model('Oauth');
+						$hasOtherOauthClientAssociated = $oauthModel->getOauthClientAssociatedList($userObj->id);
+
+						if ($hasOtherOauthClientAssociated) {
+
+							// reset Joomla user type if this user has associated with their social account
+							$userTypes = array();
+
+							foreach ($hasOtherOauthClientAssociated as $oauthData) {
+								$userTypes[] = $oauthData->client;
+							}
+						}
+					}
+=======
+>>>>>>> master
 				?>
 				<tr data-user-item
 					data-name="<?php echo $userObj->getName();?>"
@@ -110,7 +130,19 @@ defined('_JEXEC') or die('Unauthorized Access');
 					<?php } ?>
 
 					<td style="text-align:left;">
+<<<<<<< HEAD
+
+						<div class="es-social-icons-wrapper">
+							<?php foreach ($userTypes as $userType) { ?>
+								<div class="">
+									<i class="fab fa-<?php echo $userType;?>" data-es-provide="tooltip" data-original-title="<?php echo JText::sprintf('COM_EASYSOCIAL_USERS_USER_ACCOUNT_TYPE', $userType);?>"></i>
+								</div>
+							<?php } ?>
+						</div>
+
+=======
 						<i class="fab fa-<?php echo $userObj->type;?> t-lg-mr--md" data-es-provide="tooltip" data-original-title="<?php echo JText::sprintf('COM_EASYSOCIAL_USERS_USER_ACCOUNT_TYPE', $userObj->type);?>"></i>
+>>>>>>> master
 						<a href="<?php echo FRoute::_( 'index.php?option=com_easysocial&view=users&layout=form&id=' . $user->id );?>"
 							data-user-insert
 							data-id="<?php echo $user->id;?>"

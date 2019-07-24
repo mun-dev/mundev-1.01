@@ -1,8 +1,14 @@
 <?php
 /**
+<<<<<<< HEAD
+* @package      EasyBlog
+* @copyright    Copyright (C) 2010 - 2019 Stack Ideas Sdn Bhd. All rights reserved.
+* @license      GNU/GPL, see LICENSE.php
+=======
 * @package		EasyBlog
 * @copyright	Copyright (C) 2010 - 2017 Stack Ideas Sdn Bhd. All rights reserved.
 * @license		GNU/GPL, see LICENSE.php
+>>>>>>> master
 * EasyBlog is free software. This version may have been modified pursuant
 * to the GNU General Public License, and as distributed it includes or
 * is derivative of works licensed under the GNU General Public License or
@@ -84,6 +90,39 @@ defined('_JEXEC') or die('Unauthorized Access');
 					<input class="form-control" type="password" id="password2" name="password2" />
 				</div>
 			</div>
+<<<<<<< HEAD
+
+			<div class="form-group">
+					<?php echo $this->html('dashboard.label', 'COM_EB_JOOMLA_TIMEZONE'); ?>
+
+				<div class="col-md-5">
+				<select name="timezone" class="form-control">
+					<option value="UTC" <?php if ($userTimezone === 'UTC' || !$userTimezone) { ?>selected="selected"<?php } ?>><?php echo JText::_('COM_EB_JOOMLA_TIMEZONE_USE_DEFAULT'); ?></option>
+					<?php foreach ($joomlaTimezone as $group => $countries) { ?>
+						<optgroup label="<?php echo $group;?>">
+						<?php foreach ($countries as $country) { ?>
+							<option value="<?php echo $country; ?>" <?php echo $userTimezone === $country ? 'selected="selected"' : ''; ?>><?php echo $country;?></option>
+						<?php } ?>
+						</optgroup>
+					<?php } ?>
+				</select>
+				</div>
+			</div>
+
+			<div class="form-group">
+					<?php echo $this->html('dashboard.label', 'COM_EB_JOOMLA_LANGUAGE'); ?>
+
+				<div class="col-md-5">
+				<select name="language" class="form-control">
+					<option value="" selected="selected"><?php echo JText::_('COM_EB_JOOMLA_LANGUAGE_USE_DEFAULT'); ?></option>
+					<?php foreach ($languages as $language) { ?>
+						<option value="<?php echo $language->value; ?>" <?php echo $userLanguage == $language->value ? 'selected="selected"' : ''; ?>><?php echo $language->text;?></option>
+					<?php } ?>
+				</select>
+				</div>
+			</div>
+=======
+>>>>>>> master
 			<?php } ?>
 		</div>
 	</div>

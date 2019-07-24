@@ -12,15 +12,42 @@
 defined('_JEXEC') or die('Unauthorized Access');
 ?>
 <style type="text/css">
+<<<<<<< HEAD
+
+#eb .eb-header .eb-toolbar,
+#eb .eb-toolbar__search { background-color: <?php echo $this->config->get('layout_toolbarcolor', '#333333');?>;}
+
+#eb .eb-header .eb-toolbar,
+#eb .eb-toolbar__item--search {border-color: <?php echo $this->config->get('layout_toolbarbordercolor', '#333333');?>; }
+
+#eb .eb-toolbar__search-close-btn > a, 
+#eb .eb-toolbar__search-close-btn > a:hover, 
+#eb .eb-toolbar__search-close-btn > a:focus, 
+#eb .eb-toolbar__search-close-btn > a:active,
+#eb .eb-header .eb-toolbar .eb-toolbar__search-input,
+#eb .eb-header .eb-toolbar .o-nav__item .eb-toolbar__link,
+#eb .eb-toolbar .btn-search-submit { color: <?php echo $this->config->get('layout_toolbartextcolor', '#FFFFFF')?> !important; }
+#eb .eb-toolbar__search .eb-filter-select-group__drop {
+	border-top-color: <?php echo $this->config->get('layout_toolbartextcolor', '#FFFFFF')?>;
+}
+=======
 #eb .eb-header .eb-toolbar { background-color: <?php echo $this->config->get('layout_toolbarcolor', '#333333');?>;}
 #eb .eb-header .eb-toolbar,
 #eb .eb-toolbar__item--search {border-color: <?php echo $this->config->get('layout_toolbarbordercolor', '#333333');?>; }
 #eb .eb-header .eb-toolbar .o-nav__item .eb-toolbar__link { color: <?php echo $this->config->get('layout_toolbartextcolor', '#FFFFFF')?>; }
+>>>>>>> master
 #eb .eb-header .eb-toolbar .o-nav__item.is-active .eb-toolbar__link,
 #eb .eb-header .eb-toolbar .o-nav__item .eb-toolbar__link:hover, 
 #eb .eb-header .eb-toolbar .o-nav__item .eb-toolbar__link:focus,
 #eb .eb-header .eb-toolbar .o-nav__item .eb-toolbar__link:active { background-color: <?php echo $this->config->get('layout_toolbaractivecolor', '#5c5c5c')?>; }
+<<<<<<< HEAD
+
+#eb .eb-toolbar__search .eb-filter-select-group,
+#eb .eb-toolbar__link.has-composer,
+#eb .eb-toolbar .btn-search-submit {background-color: <?php echo $this->config->get('layout_toolbarcomposerbackgroundcolor', '#428bca')?> !important; }
+=======
 #eb .eb-toolbar__link.has-composer {background-color: <?php echo $this->config->get('layout_toolbarcomposerbackgroundcolor', '#428bca')?>; }
+>>>>>>> master
 #eb .eb-reading-progress {background: <?php echo $this->config->get('main_reading_background');?> !important;color: <?php echo $this->config->get('main_reading_foreground');?> !important;}
 #eb .eb-reading-progress::-webkit-progress-bar {background: <?php echo $this->config->get('main_reading_background');?> !important;}
 #eb .eb-reading-progress__container {background-color: <?php echo $this->config->get('main_reading_background');?> !important;}

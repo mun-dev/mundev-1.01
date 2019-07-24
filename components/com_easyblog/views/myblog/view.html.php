@@ -32,9 +32,12 @@ class EasyBlogViewMyblog extends EasyBlogView
 		// Load up the author profile
 		$author = EB::user($this->my->id);
 
+<<<<<<< HEAD
+=======
 		// Set meta tags for blogger
 		EB::setMeta($this->my->id, META_ID_BLOGGERS);
 
+>>>>>>> master
 		// Set the breadcrumbs
 		$this->setPathway(JText::_('COM_EASYBLOG_BLOGGERS_BREADCRUMB'), EB::_('index.php?option=com_easyblog&view=blogger'));
 		$this->setPathway($author->getName());
@@ -63,6 +66,12 @@ class EasyBlogViewMyblog extends EasyBlogView
         $title = $author->getName() . ' - ' . EB::getPageTitle(JText::_('COM_EASYBLOG_MY_BLOG_PAGE_TITLE'));
         $this->setPageTitle($title, $pagination, $this->config->get('main_pagetitle_autoappend'));
 
+<<<<<<< HEAD
+		// Set meta tags for blogger
+		EB::setMeta($this->my->id, META_ID_BLOGGERS, '', $pagination);
+
+=======
+>>>>>>> master
         // Format the posts
         $posts = EB::formatter('list', $posts);
 

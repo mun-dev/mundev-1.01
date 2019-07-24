@@ -50,8 +50,11 @@ class EasyBlogDate extends EasyBlog
 	 *
 	 * @since	5.0
 	 * @access	public
+<<<<<<< HEAD
+=======
 	 * @param	string
 	 * @return
+>>>>>>> master
 	 */
 	public function getTimezone()
 	{
@@ -66,8 +69,11 @@ class EasyBlogDate extends EasyBlog
 	 *
 	 * @since	5.0
 	 * @access	public
+<<<<<<< HEAD
+=======
 	 * @param	string
 	 * @return
+>>>>>>> master
 	 */
 	public function toMySQL($local = false)
 	{
@@ -79,8 +85,11 @@ class EasyBlogDate extends EasyBlog
 	 *
 	 * @deprecated	4.0
 	 * @access	public
+<<<<<<< HEAD
+=======
 	 * @param	string
 	 * @return
+>>>>>>> master
 	 */
 	public function toFormat($format)
 	{
@@ -355,4 +364,60 @@ class EasyBlogDate extends EasyBlog
 
 		return $format;
 	}
+<<<<<<< HEAD
+
+	static $tmpState = null;
+
+	/**
+	 * Initializes timezones.
+	 *
+	 * @since	5.3.0
+	 * @access	public
+	 */
+	public function getJoomlaTimezone()
+	{
+		// Get available time zones.
+		$zones = DateTimeZone::listIdentifiers();
+		$joomlaTimezone = array(
+			'Africa' => null,
+			'America' => null,
+			'Antartica' => null,
+			'Arctic' => null,
+			'Asia' => null,
+			'Atlantic' => null,
+			'Australia' => null,
+			'Europe' => null,
+			'Indian' => null,
+			'Pacific' => null
+		);
+
+		foreach ($joomlaTimezone as $group => &$val) {
+			// Set the temporary state
+			self::$tmpState = $group;
+
+			// Perform filtering of the current group
+			$match = array_filter($zones, array($this, 'filterByGroup'));
+
+			$val = $match;
+		}
+
+		return $joomlaTimezone;
+	}
+
+	/**
+	 * Performs array filtering of the timezone.
+	 *
+	 * @since	5.3.0
+	 * @access	public
+	 */
+	public static function filterByGroup($var)
+	{
+		if (stristr($var, self::$tmpState) === false) {
+			return false;
+		}
+
+		return true;
+	}
+=======
+>>>>>>> master
 }

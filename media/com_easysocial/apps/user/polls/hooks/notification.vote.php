@@ -55,6 +55,10 @@ class SocialUserAppPollsHookNotificationVote
 		}
 
 		$item->content = $content;
+<<<<<<< HEAD
+		$item->userOverride = ES::user($users[0]);
+=======
+>>>>>>> master
 
 		if ($item->cmd == 'polls.vote.item') {
 			// Convert the names to stream-ish

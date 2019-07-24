@@ -2088,7 +2088,11 @@ class EasyDiscussPost extends EasyDiscuss
 		$key = $this->post->id;
 
 		if (!isset($items[$key])) {
+<<<<<<< HEAD
+			if (isset($this->attachments_cnt) && !$this->isReply()) {
+=======
 			if (isset($this->attachments_cnt)) {
+>>>>>>> master
 				$items[$key] = $this->attachments_cnt;
 			} else if (isset($this->post->attachments_cnt)) {
 				$items[$key] = $this->post->attachments_cnt;
@@ -6772,6 +6776,13 @@ class EasyDiscussPost extends EasyDiscuss
 			// Get the url
 			$url = $this->getFieldData('siteurl', $this->params);
 
+<<<<<<< HEAD
+			if (empty($url)) {
+				return false;
+			}
+
+=======
+>>>>>>> master
 			// Sanitize the url
 			if ($url) {
 				if (stristr($url[0], 'http://') === false && stristr($url[0], 'https://') === false) {
@@ -6799,7 +6810,11 @@ class EasyDiscussPost extends EasyDiscuss
 			// We need to check if the user have set a value in the site details when posting a new question or replies.
 			// If yes, we need to always use that informations.
 			foreach ($siteDetailsTemp as $siteDetail => $key) {
+<<<<<<< HEAD
+				$siteDetailsPost->$siteDetail = isset($key[0]) ? $key[0] : '';
+=======
 				$siteDetailsPost->$siteDetail = $key[0];
+>>>>>>> master
 
 				// Check for the value.
 				if (isset($key[0]) && $key[0]) {

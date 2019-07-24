@@ -1,7 +1,11 @@
 <?php
 /**
 * @package		EasyBlog
+<<<<<<< HEAD
+* @copyright	Copyright (C) 2010 - 2019 Stack Ideas Sdn Bhd. All rights reserved.
+=======
 * @copyright	Copyright (C) 2010 - 2017 Stack Ideas Sdn Bhd. All rights reserved.
+>>>>>>> master
 * @license		GNU/GPL, see LICENSE.php
 * EasyBlog is free software. This version may have been modified pursuant
 * to the GNU General Public License, and as distributed it includes or
@@ -43,12 +47,22 @@ class EasyBlogControllerAcl extends EasyBlogController
 		$id = $this->input->get('id', 0, 'int');
 		$name = $this->input->get('name', '', 'cmd');
 
+<<<<<<< HEAD
+		$link = 'index.php?option=com_easyblog&view=acls&layout=form&id=' . $id;
+
+		// Ensure that the composite keys are provided.
+		if (empty($id)) {
+			$this->info->set('COM_EASYBLOG_ACL_INVALID_ID_ERROR', 'error');
+
+			return $this->app->redirect($Link);
+=======
 		// Ensure that the composite keys are provided.
 		if (empty($id)) {
 
 			$this->info->set('COM_EASYBLOG_ACL_INVALID_ID_ERROR', 'error');
 
 			return $this->app->redirect('index.php?option=com_easyblog&view=acls&layout=form&id=' . $id);
+>>>>>>> master
 		}
 
 		// Get the data from the post
@@ -86,6 +100,26 @@ class EasyBlogControllerAcl extends EasyBlogController
 		// Insert new rules
 		$state = $model->insertRuleset($id, $data);
 
+<<<<<<< HEAD
+		$groupTitle = $model->getUsergroupTitle($id);
+
+		$actionlog = EB::actionlog();
+		$actionlog->log('COM_EB_ACTIONLOGS_ACL_UPDATE', 'acls', array(
+			'link' => $link,
+			'group' => JText::_($groupTitle)
+		));
+
+		if (!$state) {
+			$this->info->set('COM_EASYBLOG_ACL_ERROR_SAVING_ACL', 'error');
+
+			return $this->app->redirect($link);
+		}
+
+		$url = 'index.php?option=com_easyblog&view=acls';
+		
+		if ($task == 'apply') {
+			$url = $link;
+=======
 		if (!$state) {
 			$this->info->set('COM_EASYBLOG_ACL_ERROR_SAVING_ACL', 'error');
 
@@ -95,6 +129,7 @@ class EasyBlogControllerAcl extends EasyBlogController
 		$url = 'index.php?option=com_easyblog&view=acls';
 		if ($task == 'apply') {
 			$url = 'index.php?option=com_easyblog&view=acls&layout=form&id=' . $id;
+>>>>>>> master
 		}
 
 		$this->info->set('COM_EASYBLOG_ACL_SAVE_SUCCESS', 'success');

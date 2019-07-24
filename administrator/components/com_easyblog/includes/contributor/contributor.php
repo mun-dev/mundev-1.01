@@ -82,6 +82,34 @@ class EasyBlogContributor extends EasyBlog
 	}
 
 	/**
+<<<<<<< HEAD
+	 * Determine if the the contributor is from EasySocial
+	 *
+	 * @since	5.3.0
+	 * @access	public
+	 */
+	public function isEasySocial($type = null)
+	{
+		$easysocial = array(
+			EASYBLOG_POST_SOURCE_EASYSOCIAL_GROUP,
+			EASYBLOG_POST_SOURCE_EASYSOCIAL_EVENT,
+			EASYBLOG_POST_SOURCE_EASYSOCIAL_PAGE
+		);
+
+		if (!$type) {
+			$type = $this->type;
+		}
+
+		if (in_array($type, $easysocial)) {
+			return true;
+		}
+
+		return false;
+	}
+
+	/**
+=======
+>>>>>>> master
 	 * generate contribution access sql that used with blogs
 	 *
 	 * @since	5.0

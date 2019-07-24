@@ -102,7 +102,11 @@ defined('_JEXEC') or die('Unauthorized Access');
 <?php  if ($author->getBiography() && $viewOptions->biography) { ?>
 <div class="eb-authors-bio">
 	<?php if ($this->params->get('author_truncate_bio', true)) { ?>
+<<<<<<< HEAD
+		<?php echo $this->html('string.truncater', $author->getBiography(), 350); ?>
+=======
 		<?php echo $this->html('string.truncater', strip_tags($author->getBiography()), 350); ?>
+>>>>>>> master
 	<?php } else { ?>
 		<?php echo $author->getBiography();?>
 	<?php } ?>

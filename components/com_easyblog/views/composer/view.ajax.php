@@ -1,7 +1,11 @@
 <?php
 /**
 * @package		EasyBlog
+<<<<<<< HEAD
+* @copyright	Copyright (C) 2010 - 2019 Stack Ideas Sdn Bhd. All rights reserved.
+=======
 * @copyright	Copyright (C) 2010 - 2018 Stack Ideas Sdn Bhd. All rights reserved.
+>>>>>>> master
 * @license		GNU/GPL, see LICENSE.php
 * EasyBlog is free software. This version may have been modified pursuant
 * to the GNU General Public License, and as distributed it includes or
@@ -595,4 +599,36 @@ class EasyBlogViewComposer extends EasyBlogView
 
 		return $this->ajax->resolve($url);
 	}
+<<<<<<< HEAD
+
+	/**
+	 * Saves the user preferences of the block browser
+	 *
+	 * @since	5.3.0
+	 * @access	public
+	 */
+	public function saveUserBlocksParams()
+	{
+		EB::requireLogin();
+
+		$preferences = $this->input->get('preferences', array(), 'array');
+
+		if (!$preferences) {
+			return;
+		}
+
+		$preferences = new JRegistry($preferences);
+		
+		$user = EB::user();
+		$params = $user->getParams();
+
+		$params->set('composer', $preferences->toString());
+
+		$user->params = $params->toString();
+		$user->store();
+
+		return $this->ajax->resolve();
+	}
+=======
+>>>>>>> master
 }

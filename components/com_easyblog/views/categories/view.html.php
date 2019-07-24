@@ -1,7 +1,11 @@
 <?php
 /**
 * @package		EasyBlog
+<<<<<<< HEAD
+* @copyright	Copyright (C) 2010 - 2019 Stack Ideas Sdn Bhd. All rights reserved.
+=======
 * @copyright	Copyright (C) 2010 - 2018 Stack Ideas Sdn Bhd. All rights reserved.
+>>>>>>> master
 * @license		GNU/GPL, see LICENSE.php
 * EasyBlog is free software. This version may have been modified pursuant
 * to the GNU General Public License, and as distributed it includes or
@@ -33,9 +37,12 @@ class EasyBlogViewCategories extends EasyBlogView
 
 	public function display($tmpl = null)
 	{
+<<<<<<< HEAD
+=======
 		// Set meta tags for bloggers
 		EB::setMeta(META_ID_GATEGORIES, META_TYPE_VIEW);
 
+>>>>>>> master
 		// If the active menu is this view, we should not make the breadcrumb linkable.
 		if (!EBR::isCurrentActiveMenu('categories')) {
 			$this->setPathway(JText::_('COM_EASYBLOG_CATEGORIES_BREADCRUMB'), '');
@@ -64,6 +71,13 @@ class EasyBlogViewCategories extends EasyBlogView
 
 		// Get the pagination
 		$pagination	= $model->getPagination();
+<<<<<<< HEAD
+
+		// Set meta tags for bloggers
+		EB::setMeta(META_ID_GATEGORIES, META_TYPE_VIEW, '', $pagination);
+
+=======
+>>>>>>> master
 		$pagination = $pagination->getPagesLinks();
 
 		$themes = EB::themes();
@@ -113,7 +127,11 @@ class EasyBlogViewCategories extends EasyBlogView
 	/**
 	 * Displays a list of blog posts on the site filtered by a category.
 	 *
+<<<<<<< HEAD
+	 * @since	5.3.0
+=======
 	 * @since	5.1
+>>>>>>> master
 	 * @access	public
 	 */
 	public function listings()
@@ -134,8 +152,11 @@ class EasyBlogViewCategories extends EasyBlogView
 		}
 
 		EB::cache()->set($category, 'category');
+<<<<<<< HEAD
+=======
 		// Set the meta description for the category
 		EB::setMeta($category->id, META_TYPE_CATEGORY);
+>>>>>>> master
 
 		// Set a canonical link for the category page.
 		$this->canonical($category->getExternalPermalink(null, true), false);
@@ -194,6 +215,10 @@ class EasyBlogViewCategories extends EasyBlogView
 			EB::accessNestedCategoriesId($category, $catIds);
 		}
 
+<<<<<<< HEAD
+
+=======
+>>>>>>> master
 		$category->nestedLink = $nestedLinks;
 
 		// Get the category model
@@ -216,6 +241,10 @@ class EasyBlogViewCategories extends EasyBlogView
 
 			$filterVars = $this->input->input->getArray();
 			$filterMode = $this->input->get('filtermode', 'include');
+<<<<<<< HEAD
+			$strictMode = $this->input->get('strictmode', false, 'bool');
+=======
+>>>>>>> master
 
 			foreach ($filterVars as $key => $value) {
 
@@ -229,6 +258,10 @@ class EasyBlogViewCategories extends EasyBlogView
 			}
 			$options['fieldsFilter'] = $fields;
 			$options['fieldsFilterRule'] = $filterMode;
+<<<<<<< HEAD
+			$options['strictMode'] = $strictMode;
+=======
+>>>>>>> master
 
 		} else if ($filterSaved) {
 			$params = json_decode($filterSaved->params);
@@ -249,6 +282,14 @@ class EasyBlogViewCategories extends EasyBlogView
 			$options['fieldsFilter'] = $fields;
 		}
 
+<<<<<<< HEAD
+		$themes = EB::themes();
+
+		// Default sorting behavior
+		$options['ordering'] = $themes->getParam('ordering');
+
+=======
+>>>>>>> master
 		// Get the posts in the category
 		$data = $model->getPosts($catIds, $limit, array(), array(), $options);
 
@@ -273,9 +314,13 @@ class EasyBlogViewCategories extends EasyBlogView
 						'cacheTags' => false,
 						'cacheAuthors' => false,
 						'loadAuthor' => false
+<<<<<<< HEAD
+			);
+=======
 						);
 
 			$themes = EB::themes();
+>>>>>>> master
 
 			if ($themes->getParam('post_comment_counter', 0)) {
 				$options['cacheCommentCount'] = true;
@@ -335,6 +380,12 @@ class EasyBlogViewCategories extends EasyBlogView
 		$title = EB::getPageTitle(JText::_($category->title), $useMenuForTitle);
 		$this->setPageTitle($title, $pagination, $this->config->get('main_pagetitle_autoappend'));
 
+<<<<<<< HEAD
+		// Set the meta description for the category
+		EB::setMeta($category->id, META_TYPE_CATEGORY, '', $pagination);
+
+=======
+>>>>>>> master
 		// Set the return url
 		$return = $category->getExternalPermalink();
 
@@ -344,6 +395,13 @@ class EasyBlogViewCategories extends EasyBlogView
 		// To be able to standardize the category headers we need to declare properties available on the table
 		$category->isCategorySubscribed = $isCategorySubscribed;
 
+<<<<<<< HEAD
+		$gridLayout = $themes->getParam('grid_layout', 4);
+
+		$gridView = $themes->getParam('grid_view', 0);
+
+=======
+>>>>>>> master
 		$this->set('subscriptionId', $subscriptionId);
 		$this->set('allowCat', $allowCat);
 		$this->set('category', $category);
@@ -354,7 +412,19 @@ class EasyBlogViewCategories extends EasyBlogView
 		$this->set('privacy', $privacy);
 		$this->set('isCategorySubscribed', $isCategorySubscribed);
 		$this->set('hasPinterestEmbedCode', $hasPinterestEmbedCode);
+<<<<<<< HEAD
+		$this->set('gridLayout', $gridLayout);
+
+		if ($gridView) {
+			return parent::display('blogs/categories/grid/default');
+		}
 
 		parent::display('blogs/categories/item');
 	}
 }
+=======
+
+		parent::display('blogs/categories/item');
+	}
+}
+>>>>>>> master

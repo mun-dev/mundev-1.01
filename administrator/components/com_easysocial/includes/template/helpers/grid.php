@@ -157,9 +157,15 @@ class ThemesHelperGrid extends ThemesHelperAbstract
 
 			$task = isset($tasks[$obj->$key]) ? $tasks[$obj->$key] : '';
 		}
+<<<<<<< HEAD
+
+		$class = isset($classes[$obj->$key]) ? $classes[$obj->$key] : '';
+
+=======
 		
 		$class = isset($classes[$obj->$key]) ? $classes[$obj->$key] : '';
 		
+>>>>>>> master
 		$tooltip = isset($tooltips[$obj->$key]) ? JText::_($tooltips[$obj->$key]) : '';
 
 		$theme = FD::themes();
@@ -375,7 +381,11 @@ class ThemesHelperGrid extends ThemesHelperAbstract
 
 
 		if (count($arr) > 0) {
+<<<<<<< HEAD
+
+=======
 			
+>>>>>>> master
 			foreach ($arr as $element) {
 
 				if (is_array($element)) {
@@ -423,7 +433,11 @@ class ThemesHelperGrid extends ThemesHelperAbstract
 		$theme->set('id', $id );
 		$theme->set('attributes', $attributes);
 		$theme->set('ismultiple', $isMultiple);
+<<<<<<< HEAD
+
+=======
 		
+>>>>>>> master
 		return $theme->output('admin/html/grid.selectlist');
 	}
 
@@ -480,6 +494,19 @@ class ThemesHelperGrid extends ThemesHelperAbstract
 
 	public function textarea($name, $value = '', $id = '', $attributes = '')
 	{
+<<<<<<< HEAD
+		if (is_array($attributes)) {
+			$attributes	= implode(' ' , $attributes);
+		}
+
+		$theme = ES::get('Themes');
+		$theme->set('name', $name);
+		$theme->set('value', $value);
+		$theme->set('id', $id);
+		$theme->set('attributes', $attributes);
+
+		return $theme->output('admin/html/grid.textarea');
+=======
 		if( is_array( $attributes ) )
 		{
 			$attributes	= implode( ' ' , $attributes );
@@ -492,6 +519,7 @@ class ThemesHelperGrid extends ThemesHelperAbstract
 		$theme->set( 'attributes'	, $attributes );
 
 		return $theme->output( 'admin/html/grid.textarea' );
+>>>>>>> master
 	}
 
 	/**

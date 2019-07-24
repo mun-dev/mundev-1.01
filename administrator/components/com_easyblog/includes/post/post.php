@@ -911,7 +911,11 @@ class EasyBlogPost extends EasyBlog
 		// Merge the new params
 		if ($newParams) {
 			$newParams = json_encode($newParams);
+<<<<<<< HEAD
+
+=======
 			
+>>>>>>> master
 			$newRegistry = new JRegistry($newParams);
 			$data = $newRegistry->toArray();
 
@@ -928,7 +932,10 @@ class EasyBlogPost extends EasyBlog
 	 *
 	 * @since	5.0
 	 * @access	public
+<<<<<<< HEAD
+=======
 	 * @return	bool	Determines if the storing state is success
+>>>>>>> master
 	 */
 	public function trash()
 	{
@@ -940,6 +947,15 @@ class EasyBlogPost extends EasyBlog
 		// We do not want to run any validation since it's going to be trashed.
 		$options = array('validateData' => false, 'normalizeData' => false, 'processAutopost' => false, 'skipCategoriesUpdate' => true, 'skipTagsUpdate' => true, 'skipCustomFields' => true);
 
+<<<<<<< HEAD
+		$actionlog = EB::actionlog();
+		$actionlog->log('COM_EB_ACTIONLOGS_POST_TRASHED', 'post', array(
+			'link' => $this->getEditLink(),
+			'postTitle' => JText::_($this->title)
+		));
+
+=======
+>>>>>>> master
 		return $this->save($options);
 	}
 
@@ -968,13 +984,26 @@ class EasyBlogPost extends EasyBlog
 	 *
 	 * @since	5.0
 	 * @access	public
+<<<<<<< HEAD
+=======
 	 * @return	bool	Determines if the storing state is success
+>>>>>>> master
 	 */
 	public function archive()
 	{
 		$this->state = EASYBLOG_POST_ARCHIVED;
 
 		$options = array('validateData' => false, 'normalizeData' => false, 'skipCategoriesUpdate' => true, 'skipTagsUpdate' => true, 'skipCustomFields' => true);
+<<<<<<< HEAD
+
+		$actionlog = EB::actionlog();
+		$actionlog->log('COM_EB_ACTIONLOGS_POST_ARCHIVED', 'post', array(
+			'link' => $this->getEditLink(),
+			'postTitle' => JText::_($this->title)
+		));
+
+=======
+>>>>>>> master
 		return $this->save($options);
 	}
 
@@ -990,6 +1019,16 @@ class EasyBlogPost extends EasyBlog
 		$this->state = EASYBLOG_POST_NORMAL;
 
 		$options = array('validateData' => false, 'normalizeData' => false, 'skipCategoriesUpdate' => true, 'skipTagsUpdate' => true, 'skipCustomFields' => true);
+<<<<<<< HEAD
+
+		$actionlog = EB::actionlog();
+		$actionlog->log('COM_EB_ACTIONLOGS_POST_UNARCHIVED', 'post', array(
+			'link' => $this->getEditLink(),
+			'postTitle' => JText::_($this->title)
+		));
+
+=======
+>>>>>>> master
 		return $this->save($options);
 	}
 
@@ -1004,6 +1043,16 @@ class EasyBlogPost extends EasyBlog
 		$this->locked = true;
 
 		$options = array('validateData' => false, 'normalizeData' => false, 'skipCategoriesUpdate' => true, 'skipTagsUpdate' => true, 'skipCustomFields' => true);
+<<<<<<< HEAD
+
+		$actionlog = EB::actionlog();
+		$actionlog->log('COM_EB_ACTIONLOGS_POST_LOCKED', 'post', array(
+			'link' => $this->getEditLink(),
+			'postTitle' => JText::_($this->title)
+		));
+
+=======
+>>>>>>> master
 		return $this->save($options);
 	}
 
@@ -1020,6 +1069,15 @@ class EasyBlogPost extends EasyBlog
 
 		$options = array('validateData' => false, 'normalizeData' => false, 'skipCategoriesUpdate' => true, 'skipTagsUpdate' => true, 'skipCustomFields' => true);
 
+<<<<<<< HEAD
+		$actionlog = EB::actionlog();
+		$actionlog->log('COM_EB_ACTIONLOGS_POST_UNLOCKED', 'post', array(
+			'link' => $this->getEditLink(),
+			'postTitle' => JText::_($this->title)
+		));
+
+=======
+>>>>>>> master
 		return $this->save($options);
 	}
 
@@ -1120,6 +1178,16 @@ class EasyBlogPost extends EasyBlog
 	 */
 	public function publish($options = array(), $forceNotNew = false)
 	{
+<<<<<<< HEAD
+		$hasNormalizeData = isset($options['normalizeData']) && $options['normalizeData'] ? $options['normalizeData'] : false;
+
+		// Skip this if the publish post process do not need to normalize the post data
+		if (!$hasNormalizeData) {
+			$options = array_merge($options, array('normalizeData' => false));
+		}
+
+=======
+>>>>>>> master
 		// Set the publishing state
 		$this->published = EASYBLOG_POST_PUBLISHED;
 		$this->state = EASYBLOG_POST_NORMAL;
@@ -1130,7 +1198,11 @@ class EasyBlogPost extends EasyBlog
 		}
 
 		// Set the save options
+<<<<<<< HEAD
+		$options = array_merge(array(), array('validateData' => false, 'skipCategoriesUpdate' => true, 'skipTagsUpdate' => true, 'skipCustomFields' => true), $options);
+=======
 		$options = array_merge(array(), array('validateData' => false, 'normalizeData' => false, 'skipCategoriesUpdate' => true, 'skipTagsUpdate' => true, 'skipCustomFields' => true), $options);
+>>>>>>> master
 
 		return $this->save($options);
 	}
@@ -1148,6 +1220,15 @@ class EasyBlogPost extends EasyBlog
 		// Set the save options
 		$options = array_merge(array(), array('validateData' => false, 'normalizeData' => false, 'skipCategoriesUpdate' => true, 'skipTagsUpdate' => true, 'skipCustomFields' => true), $options);
 
+<<<<<<< HEAD
+		$actionlog = EB::actionlog();
+		$actionlog->log('COM_EB_ACTIONLOGS_POST_RESTORED', 'post', array(
+			'link' => $this->getEditLink(),
+			'postTitle' => JText::_($this->title)
+		));
+
+=======
+>>>>>>> master
 		return $this->save($options);
 	}
 
@@ -1221,7 +1302,11 @@ class EasyBlogPost extends EasyBlog
 	 * @since	4.0
 	 * @access	public
 	 */
+<<<<<<< HEAD
+	public function unpublish($options = array())
+=======
 	public function unpublish()
+>>>>>>> master
 	{
 		// Set the state
 		$this->published = EASYBLOG_POST_UNPUBLISHED;
@@ -1460,6 +1545,22 @@ class EasyBlogPost extends EasyBlog
 	}
 
 	/**
+<<<<<<< HEAD
+	 * Init save options
+	 *
+	 * @since	5.3
+	 * @access	public
+	 */
+	public function initSaveOptions($options = array())
+	{
+		// Set the save options
+		$options = array_merge(array(), self::$defaultSaveOptions, $options);
+		$this->saveOptions = $options;
+	}
+
+	/**
+=======
+>>>>>>> master
 	 * Saves a blog post on the site. This method ensures that all saving process goes through the same routine.
 	 *
 	 * @since	5.1
@@ -1468,9 +1569,13 @@ class EasyBlogPost extends EasyBlog
 	public function save($options = array(), $debug = false)
 	{
 		// Set the save options
+<<<<<<< HEAD
+		$this->initSaveOptions($options);
+=======
 		$options = array_merge(array(), self::$defaultSaveOptions, $options);
 
 		$this->saveOptions = $options;
+>>>>>>> master
 
 		// Execute pre-saving routines
 		$this->preSave($debug);
@@ -1643,8 +1748,21 @@ class EasyBlogPost extends EasyBlog
 			$this->triggerAfterSave();
 		}
 
+<<<<<<< HEAD
+		$actionlog = EB::actionlog();
+
 		// When this post is being submitted for approval we want to notify site administrator's
 		if ($this->isBeingSubmittedForApproval()) {
+
+			$actionlog->log('COM_EB_ACTIONLOGS_POST_SUBMIT_APPROVAL', 'post', array(
+				'link' => $this->getEditLink(),
+				'postTitle' => JText::_($this->title)
+			));
+
+=======
+		// When this post is being submitted for approval we want to notify site administrator's
+		if ($this->isBeingSubmittedForApproval()) {
+>>>>>>> master
 			$this->notify(true, false);
 		}
 
@@ -1676,6 +1794,14 @@ class EasyBlogPost extends EasyBlog
 		// When this post is being published, we should add post actions here.
 		if ($this->isBeingPublished()) {
 
+<<<<<<< HEAD
+			$actionlog->log('COM_EB_ACTIONLOGS_POST_BEING_PUBLISHED', 'post', array(
+				'link' => $this->getEditLink(),
+				'postTitle' => JText::_($this->title)
+			));
+
+=======
+>>>>>>> master
 			// Send notifications to subscribers
 			if (!$this->isPasswordProtected() && !$this->saveOptions['skipNotifications']) {
 				$this->notify();
@@ -1720,12 +1846,27 @@ class EasyBlogPost extends EasyBlog
 			}
 
 		} else {
+<<<<<<< HEAD
+			if ($this->isPublished() && !$this->isBeingTrashed()) {
+=======
 			if ($this->isPublished()) {
+>>>>>>> master
 				// This action is an edit post
 				EB::easysocial()->createBlogStream($this, false);
 			}
 		}
 
+<<<<<<< HEAD
+		// Approval by an admin
+		if ($this->isBeingApproved()) {
+			$actionlog->log('COM_EB_ACTIONLOGS_POST_APPROVAL', 'post', array(
+				'link' => $this->getEditLink(),
+				'postTitle' => JText::_($this->title)
+			));
+		}
+
+=======
+>>>>>>> master
 		// When the post is approved, we want to notify the author
 		if ($this->isBeingApproved() && $this->config->get('notification_approval')) {
 			// We do not need to notify the world that the post is published because it's already handled above under
@@ -1735,12 +1876,28 @@ class EasyBlogPost extends EasyBlog
 		// When this post is being unpublished, we should add triggers here.
 		if ($this->isBeingUnpublished()) {
 
+<<<<<<< HEAD
+			$actionlog->log('COM_EB_ACTIONLOGS_POST_UNPUBLISHED', 'post', array(
+				'link' => $this->getEditLink(),
+				'postTitle' => JText::_($this->title)
+			));
+
+=======
+>>>>>>> master
 			// If the post is being unpublished, remove them from the stream
 			EB::jomsocial()->removePostStream($this);
 		}
 
 		// When this post is rejected by the moderator, we should add triggers here
 		if ($this->isBeingRejected()) {
+<<<<<<< HEAD
+			
+			$actionlog->log('COM_EB_ACTIONLOGS_POST_REJECTED', 'post', array(
+				'link' => $this->getEditLink(),
+				'postTitle' => JText::_($this->title)
+			));
+=======
+>>>>>>> master
 
 			// When a post is rejected, add the necessary data on the reject table so we can determine why it's being rejected
 			$reject = EB::table('PostReject');
@@ -1998,6 +2155,10 @@ class EasyBlogPost extends EasyBlog
 		$data = $this->toPostData();
 
 		if ($this->doctype == 'ebd') {
+<<<<<<< HEAD
+
+=======
+>>>>>>> master
 			// if this is a ebd, then we need to update the content column from easyblog_post table as well.
 			$document = EB::document($this->document);
 
@@ -2651,6 +2812,15 @@ class EasyBlogPost extends EasyBlog
 		// Delete all other 3rd party integrations
 		$this->deleteOtherRelations();
 
+<<<<<<< HEAD
+		$actionlog = EB::actionlog();
+		$actionlog->log('COM_EB_ACTIONLOGS_POST_DELETED', 'post', array(
+			'link' => $this->getEditLink(),
+			'postTitle' => JText::_($this->title)
+		));
+
+=======
+>>>>>>> master
 		return $state;
 	}
 
@@ -3296,6 +3466,26 @@ class EasyBlogPost extends EasyBlog
 
 		// we need to remove anything style attribute then reformat to show width 100%
 		// skip this process if detect that image tag contain float attribute, because user would like to show the correct format from the email content
+<<<<<<< HEAD
+		$data['blogIntro'] = preg_replace('/(<[^>]+) style="((?!float).)*?"/i', '$1', $data['blogIntro']);
+		$data['blogContent'] = preg_replace('/(<[^>]+) style="((?!float).)*?"/i', '$1', $data['blogContent']);
+
+		// Loop through all <img> tags
+		$pattern4 = '/<img[^>]+>/ims';
+		$imgFloatProperties = array('float: left;', 'float:left;', 'float: right;', 'float:right;');
+		$replaceImgProperties = array('float: left; max-width: 100%;', 'float:left; max-width: 100%;', 'float: right; max-width: 100%;', 'float:right; max-width: 100%;');
+
+		if (preg_match_all($pattern4, $data['blogIntro'] . $data['blogContent'], $matches4)) {
+
+			foreach ($matches4 as $match) {
+
+				// Replace all occurences of width/height
+				$clean = preg_replace('/(width|height)=["\'\d%\s]+/ims', "", $match);
+
+				// Inject max-width style property into all the content image tag
+				$clean = str_replace($imgFloatProperties, $replaceImgProperties, $clean); 
+
+=======
 		$data['blogIntro'] = preg_replace('/(<[^>]+) style="(?!float).*?"/i', '$1', $data['blogIntro']);
 		$data['blogContent'] = preg_replace('/(<[^>]+) style="(?!float).*?"/i', '$1', $data['blogContent']);
 
@@ -3307,13 +3497,18 @@ class EasyBlogPost extends EasyBlog
 			foreach ($matches3 as $match) {
 				// Replace all occurences of width/height
 				$clean = preg_replace('/(width|height)=["\'\d%\s]+/ims', "", $match);
+>>>>>>> master
 				// Replace with result within html
 				$data['blogIntro'] = str_replace($match, $clean, $data['blogIntro']);
 				$data['blogContent'] = str_replace($match, $clean, $data['blogContent']);
 			}
 		}
 
+<<<<<<< HEAD
+		// we need to inject max-width 100% for image tag which doesn't have any style attribute.
+=======
 		// we need to inject width 100% for image tag
+>>>>>>> master
 		$data['blogIntro'] = str_ireplace('src="', 'max-width="100%" style="max-width:100%" src="', $data['blogIntro']);
 		$data['blogContent'] = str_ireplace('src="', 'max-width="100%" style="max-width:100%" src="', $data['blogContent']);
 
@@ -4084,6 +4279,16 @@ class EasyBlogPost extends EasyBlog
 	public function validateContent()
 	{
 		$content = "";
+<<<<<<< HEAD
+		$contentType = $this->config->get('main_post_min_by');
+
+		// Ensure that enable content minimum check
+		$hasCheckMinContentLength = $this->saveOptions['checkMinContentLength'] && $this->config->get('main_post_min');
+
+		// Add extra space only for minimum content type set to word
+		$addExtraSpace = $hasCheckMinContentLength && $contentType == 'words' ? ' ' : '';
+=======
+>>>>>>> master
 
 		// Skip validation for ebd until we figure out
 		// how to do normalizeDocument().
@@ -4112,7 +4317,13 @@ class EasyBlogPost extends EasyBlog
 					$output = html_entity_decode($output);
 
 					// Add extra space for the sentence between the HTML tag before stripped it #1669
+<<<<<<< HEAD
+					if ($hasCheckMinContentLength && $contentType == 'words') {
+						$output = preg_replace('#\<(.+?)\>#', '<$1> ', $output);
+					}
+=======
 					$output = preg_replace('#\<(.+?)\>#', '<$1> ', $output);
+>>>>>>> master
 
 					// strip html tags to precise length count.
 					$output = strip_tags($output, '<iframe>');
@@ -4121,7 +4332,12 @@ class EasyBlogPost extends EasyBlog
 					$output = trim($output);
 
 					// need to add extra space for each of the block, if not that last word will stick with the next block content
+<<<<<<< HEAD
+					// so if the validate minimum content type set to word, it will only count for 1
+					$content .= $output . $addExtraSpace;
+=======
 					$content .= $output . ' ';
+>>>>>>> master
 				}
 
 				$valid[] = $isValid;
@@ -4147,23 +4363,35 @@ class EasyBlogPost extends EasyBlog
 		}
 
 		// Ensure content exceeds minimum required length.
+<<<<<<< HEAD
+		if ($hasCheckMinContentLength) {
+=======
 		if ($this->saveOptions['checkMinContentLength'] && $this->config->get('main_post_min')) {
 
 			$contentType = $this->config->get('main_post_min_by');
+>>>>>>> master
 
 			if ($contentType == 'characters') {
 				$length = EBString::strlen($content);
 				$minLength = $this->config->get('main_post_length');
+<<<<<<< HEAD
+=======
 
+>>>>>>> master
 				$message = 'COM_EASYBLOG_CONTENT_LESS_THAN_MIN_LENGTH';
 			}
 
 			if ($contentType == 'words') {
+<<<<<<< HEAD
+				$length = EB::string()->countWord($content);
+				$minLength = $this->config->get('main_post_length_words');
+=======
 
 				$length = EB::string()->countWord($content);
 
 				$minLength = $this->config->get('main_post_length_words');
 
+>>>>>>> master
 				$message = 'COM_EB_CONTENT_LESS_THAN_MIN_WORDS';
 			}
 
@@ -4408,7 +4636,11 @@ class EasyBlogPost extends EasyBlog
 		if ($includeChildBlocks) {
 
 			$availableBlocks = array();
+<<<<<<< HEAD
+
+=======
 			
+>>>>>>> master
 			if (!empty($blocks)) {
 				foreach ($blocks as $block) {
 
@@ -4419,7 +4651,11 @@ class EasyBlogPost extends EasyBlog
 				}
 
 				return $availableBlocks;
+<<<<<<< HEAD
+			}
+=======
 			}		
+>>>>>>> master
 		}
 
 		return $blocks;
@@ -4459,7 +4695,11 @@ class EasyBlogPost extends EasyBlog
 		if ($this->doctype != 'ebd') {
 			return false;
 		}
+<<<<<<< HEAD
+
+=======
 		
+>>>>>>> master
 		// Retrieve a list of available block type under this blog content
 		$blocks = $this->getBlocks(null, true);
 		$hasPinterest = false;
@@ -5044,10 +5284,18 @@ class EasyBlogPost extends EasyBlog
 		$scheme = $uri->toString(array('scheme'));
 		$scheme = str_replace('://', ':', $scheme);
 
+<<<<<<< HEAD
+		// To be safe, we remove style attribute (if any)
+		$this->text = preg_replace('/(<[^>]+) style=".*?"/i', '$1', $this->text);
+
+		// Also remove any style block found in content
+		$this->text = preg_replace('/<style\b[^>]*>(.*?)<\/style>/is', "", $this->text);
+=======
 		$this->text = preg_replace('/(<[^>]+) style=".*?"/i', '$1', $this->text);
 
 		// To be safe, we remove style attribute (if any)
 		$this->text = preg_replace('/(<[^>]+) style=".*?"/i', '$1', $this->text);
+>>>>>>> master
 
 		$this->text = str_replace('src="//', 'src="' . $scheme . '//', $this->text);
 		$this->text = preg_replace("#<p>(\s|&nbsp;|</?\s?br\s?/?>)*</?p>#", "", $this->text);
@@ -5072,7 +5320,11 @@ class EasyBlogPost extends EasyBlog
 
 		// Remove any form tag from the content
 		$this->text = preg_replace('/<form\b[^>]*>(.*?)<\/form>/is', "", $this->text);
+<<<<<<< HEAD
+
+=======
 		
+>>>>>>> master
 		// Remove any script tag
 		$this->text = preg_replace('/<script\b[^>]*>(.*?)<\/script>/is', "", $this->text);
 
@@ -5902,6 +6154,21 @@ class EasyBlogPost extends EasyBlog
 	}
 
 	/**
+<<<<<<< HEAD
+	 * Determines if the post is being trashed
+	 *
+	 * @since	5.0
+	 * @access	public
+	 */
+	public function isBeingRestored()
+	{
+		return $this->original->state == EASYBLOG_POST_TRASHED
+			&& $this->state == EASYBLOG_POST_PUBLISHED;
+	}
+
+	/**
+=======
+>>>>>>> master
 	 * Determines if this is a new post
 	 *
 	 * @since	5.1
@@ -6548,6 +6815,10 @@ class EasyBlogPost extends EasyBlog
 
 
 				if (isset($firstImage->uri)) {
+<<<<<<< HEAD
+
+=======
+>>>>>>> master
 					$firstImageUrl = $mm->getUrl($firstImage->uri);
 					$firstImagePath = $mm->getPath($firstImage->uri);
 					$firstImageFileName = $mm->getFilename($firstImage->uri);
@@ -6561,6 +6832,10 @@ class EasyBlogPost extends EasyBlog
 						$image = EB::blogimage($firstImagePath, $firstImageUrl);
 						$url = $image->getSource($size, false, $protocol);
 					}
+<<<<<<< HEAD
+
+=======
+>>>>>>> master
 				}
 
 				$isExternalUrl = strpos($url, 'http') !== false || strpos($url, '//') === 0;
@@ -6627,6 +6902,12 @@ class EasyBlogPost extends EasyBlog
 
 		if (!isset($cache[$index])) {
 
+<<<<<<< HEAD
+			// Load up the media manager library
+			$mm = EB::mediamanager();
+
+=======
+>>>>>>> master
 			// If there's no image data for this post, skip this altogether
 			if (!$this->image && $useFirstImage) {
 
@@ -6651,12 +6932,31 @@ class EasyBlogPost extends EasyBlog
 				}
 			}
 
+<<<<<<< HEAD
+			if (strpos($this->image, 'amazon:') !== false) {
+
+				$adapter = $mm->getAdapter('amazon');
+				$url = $adapter->generateImageURL($this->image, $size);
+
+				if (!$url) {
+					return $default;
+				}
+
+				$cache[$index] = $url;
+				return $url;
+			}
+
+			// Ensure that the image is normalized
+			$this->normalizeBlogImage();
+
+=======
 			// Ensure that the image is normalized
 			$this->normalizeBlogImage();
 
 			// Load up the media manager library
 			$mm = EB::mediamanager();
 
+>>>>>>> master
 			$url = $mm->getUrl($this->image);
 			$path = $mm->getPath($this->image);
 			$fileName = $mm->getFilename($this->image);
@@ -7079,6 +7379,10 @@ class EasyBlogPost extends EasyBlog
 			$hasFields = false;
 
 			foreach ($categories as $category) {
+<<<<<<< HEAD
+
+=======
+>>>>>>> master
 				$categoryFields = $category->getCustomFields();
 
 				if ($categoryFields !== false) {
@@ -7359,12 +7663,43 @@ class EasyBlogPost extends EasyBlog
 	/**
 	 * Determines if the current user can create a new post
 	 *
+<<<<<<< HEAD
+	 * @since	5.3.0
+	 * @access	public
+	 */
+	public function canCreate($sourceId = 0, $sourceType = '')
+	{
+		if (EB::isSiteAdmin()) {
+			return true;
+		}
+
+		if (!$this->acl->get('add_entry')) {
+			return false;
+		}
+
+		// Determines if the source id and source type is provided
+		$sourceId = $this->input->get('source_id', $sourceId, 'int');
+		$sourceType = $this->input->get('source_type', $sourceType, 'default');
+
+		if ($sourceId && $sourceType) {
+			if (EB::contributor()->isEasySocial($sourceType)) {
+				$contribution = EB::contributor()->load($sourceId, $sourceType);
+
+				if (!$contribution->canCreatePost()) {
+					return false;
+				}
+			}
+		}
+
+		return true;
+=======
 	 * @since	5.0
 	 * @access	public
 	 */
 	public function canCreate()
 	{
 		return $this->acl->get('add_entry') || EB::isSiteAdmin($this->user->id);
+>>>>>>> master
 	}
 
 	/**
@@ -7546,7 +7881,10 @@ class EasyBlogPost extends EasyBlog
 				$document = EB::document($this->document);
 				$content = $document->getEditableContent();
 			}
+<<<<<<< HEAD
+=======
 
+>>>>>>> master
 		} else {
 
 			// Format the post content now
@@ -7847,6 +8185,15 @@ class EasyBlogPost extends EasyBlog
 		// @JomSocial Integrations
 		EB::jomsocial()->createFeaturedBlogStream($this);
 
+<<<<<<< HEAD
+		$actionlog = EB::actionlog();
+		$actionlog->log('COM_EB_ACTIONLOGS_POST_FEATURED', 'post', array(
+			'link' => $this->getEditLink(),
+			'postTitle' => JText::_($this->title)
+		));
+
+=======
+>>>>>>> master
 		// Notify author of the blog post that their blog post is featured on the site
 		$this->notify(false, 0, true);
 
@@ -7861,6 +8208,15 @@ class EasyBlogPost extends EasyBlog
 	 */
 	public function removeFeatured()
 	{
+<<<<<<< HEAD
+		$actionlog = EB::actionlog();
+		$actionlog->log('COM_EB_ACTIONLOGS_POST_UNFEATURED', 'post', array(
+			'link' => $this->getEditLink(),
+			'postTitle' => JText::_($this->title)
+		));
+
+=======
+>>>>>>> master
 		return $this->deleteFeatured();
 	}
 

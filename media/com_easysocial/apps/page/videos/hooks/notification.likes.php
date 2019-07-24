@@ -38,11 +38,19 @@ class SocialPageAppVideosHookNotificationLikes extends SocialAppHooks
 
 			// Set the video image
 			$item->image = $video->getThumbnail();
+<<<<<<< HEAD
+			$page = ES::page($video->table->uid);
+
+			// We need to determine if the user is the owner
+			if ($video->user_id == $item->target_id && $item->target_type == SOCIAL_TYPE_USER) {
+				$item->title = JText::sprintf($this->getPlurality('APP_PAGE_VIDEOS_NOTIFICATIONS_LIKES_USER_VIDEO', $users), $names, $video->title, $page->title);
+=======
 			$item->content = $video->title;
 
 			// We need to determine if the user is the owner
 			if ($video->user_id == $item->target_id && $item->target_type == SOCIAL_TYPE_USER) {
 				$item->title = JText::sprintf($this->getPlurality('APP_PAGE_VIDEOS_NOTIFICATIONS_LIKES_USER_VIDEO', $users), $names);
+>>>>>>> master
 				return;
 			}
 

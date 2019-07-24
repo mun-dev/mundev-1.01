@@ -1,8 +1,14 @@
 <?php
 /**
+<<<<<<< HEAD
+* @package		EasyBlog
+* @copyright	Copyright (C) 2010 - 2019 Stack Ideas Sdn Bhd. All rights reserved.
+* @license		GNU/GPL, see LICENSE.php
+=======
 * @package      EasyBlog
 * @copyright    Copyright (C) 2010 - 2018 Stack Ideas Sdn Bhd. All rights reserved.
 * @license      GNU/GPL, see LICENSE.php
+>>>>>>> master
 * EasyBlog is free software. This version may have been modified pursuant
 * to the GNU General Public License, and as distributed it includes or
 * is derivative of works licensed under the GNU General Public License or
@@ -14,6 +20,45 @@ defined('_JEXEC') or die('Unauthorized Access');
 class EasyBlogThemesHelperForm extends EasyBlogThemesHelperAbstract
 {
 	/**
+<<<<<<< HEAD
+	 * Renders an article browser form
+	 *
+	 * @since	5.3.0
+	 * @access	public
+	 */
+	public function article($name, $value, $id = null, $attributes = array())
+	{
+		if (is_null($id)) {
+			$id = $name;
+		}
+
+		$articleTitle = '';
+
+		// Get the title of the article
+		if ($value) {
+
+			// Get the article title
+			$article = JTable::getInstance('Content');
+			$article->load((int) $value);
+
+			$articleTitle = $article->title;
+		}
+
+		$attributes = implode(' ', $attributes);
+
+		$theme = EB::themes();
+		$theme->set('articleTitle', $articleTitle);
+		$theme->set('id', $id);
+		$theme->set('name', $name);
+		$theme->set('value', $value);
+		$theme->set('attributes', $attributes);
+
+		return $theme->output('admin/html/form/article');
+	}
+
+	/**
+=======
+>>>>>>> master
 	 * Renders the label for generic forms
 	 *
 	 * @since	5.1
@@ -145,6 +190,44 @@ class EasyBlogThemesHelperForm extends EasyBlogThemesHelperAbstract
 	}
 
 	/**
+<<<<<<< HEAD
+	 * Renders a simple text input
+	 *
+	 * @since   5.3
+	 * @access  public
+	 */
+	public function textarea($name, $value = '', $id = null, $options = array())
+	{
+		$class = 'form-control';
+		$placeholder = '';
+		$attributes = '';
+
+		if (isset($options['attr']) && $options['attr']) {
+			$attributes = $options['attr'];
+		}
+
+		if (isset($options['class']) && $options['class']) {
+			$class = $options['class'];
+		}
+
+		if (isset($options['placeholder']) && $options['placeholder']) {
+			$placeholder = JText::_($options['placeholder']);
+		}
+
+		$theme = EB::themes();
+		$theme->set('attributes', $attributes);
+		$theme->set('name', $name);
+		$theme->set('id', $id);
+		$theme->set('value', $value);
+		$theme->set('class', $class);
+		$theme->set('placeholder', $placeholder);
+
+		return $theme->output('admin/html/form/textarea');
+	}
+
+	/**
+=======
+>>>>>>> master
 	 * Renders a author browser form
 	 *
 	 * @since	5.1
@@ -299,12 +382,52 @@ class EasyBlogThemesHelperForm extends EasyBlogThemesHelperAbstract
 	}
 
 	/**
+<<<<<<< HEAD
+	 * Renders a blog post browser form
+	 *
+	 * @since	5.3
+	 * @access	public
+	 */
+	public function browseBlog($name, $value, $id = null, $attributes = array())
+	{
+		if (is_null($id)) {
+			$id = $name;
+		}
+
+		$blogTitle = '';
+
+		if ($value) {
+			$blog = EB::table('Post');
+			$blog->load($value);
+
+			$blogTitle = JText::_($blog->title);
+		}
+
+		$attributes = implode(' ', $attributes);
+
+		$theme = EB::themes();
+		$theme->set('blogTitle', $blogTitle);
+		$theme->set('id', $id);
+		$theme->set('name', $name);
+		$theme->set('value', $value);
+		$theme->set('attributes', $attributes);
+
+		return $theme->output('admin/html/form/blog');
+	}
+
+	/**
+=======
+>>>>>>> master
 	 * Renders a dropdown
 	 *
 	 * @since	5.1
 	 * @access	public
 	 */
+<<<<<<< HEAD
+	public function dropdown($name, $selected ='', $values = array(), $options = array(), $useValue = false)
+=======
 	public function dropdown($name, $selected ='', $values = array(), $options = array())
+>>>>>>> master
 	{
 		$class = 'form-control';
 		$attributes = '';
@@ -323,6 +446,10 @@ class EasyBlogThemesHelperForm extends EasyBlogThemesHelperAbstract
 		$theme->set('name', $name);
 		$theme->set('class', $class);
 		$theme->set('selected', $selected);
+<<<<<<< HEAD
+		$theme->set('useValue', $useValue);
+=======
+>>>>>>> master
 
 		return $theme->output('admin/html/form/dropdown');
 	}

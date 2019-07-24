@@ -2657,6 +2657,27 @@ $.fn.route = function(options) {
 		var customTitle = this.attr('custom-title');
 		var title = this.attr('title');
 
+<<<<<<< HEAD
+		// Override title
+		if (customTitle) {
+			title = customTitle;
+		}
+
+		if (title) {
+			var appendTitle = $.joomla.appendTitle;
+
+			if (appendTitle === "before") {
+				title = $.joomla.sitename + ((title) ? " - " + title : "");
+			}
+
+			if (appendTitle === "after") {
+				title = ((title) ? title + " - " : "") + $.joomla.sitename;
+			}
+		} else {
+
+			// Try to get the page title from document
+			title = $(document).find('title').text();
+=======
 		if (customTitle) {
 			var title = customTitle;
 		} else {
@@ -2676,6 +2697,7 @@ $.fn.route = function(options) {
 				// Try to get the page title from document
 				title = $(document).find('title').text();
 			}
+>>>>>>> master
 		}
 
 		// Creating a unique timestamp that will be associated with the state.

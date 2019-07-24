@@ -26,6 +26,13 @@ defined('_JEXEC') or die('Unauthorized Access');
 	</div>
 
 	<div class="eb-comp-toolbar-dropdown-menu__bd">
+<<<<<<< HEAD
+		<?php if ($this->config->get('location_service_provider') != 'osm') { ?>
+			<?php echo $this->output('site/composer/toolbar/maps'); ?>
+		<?php } else { ?>
+			<?php echo $this->output('site/composer/toolbar/osm'); ?>
+		<?php } ?>
+=======
 		
 		<div class="eb-comp-location-wrap" data-location-container data-google-apikey="<?php echo !empty($gMapkey) ? $gMapkey : '';?>">
 			
@@ -70,5 +77,6 @@ defined('_JEXEC') or die('Unauthorized Access');
 			</div>
 		</div>
 
+>>>>>>> master
 	</div>
 </div>

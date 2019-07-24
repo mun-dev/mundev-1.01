@@ -15,6 +15,10 @@ EasySocial.Controller('Videos.Form', {
 		"{forms}": "[data-form-source]",
 		"{linkForm}": "[data-form-link]",
 		"{uploadForm}": "[data-form-upload]",
+<<<<<<< HEAD
+		"{linkSource}": "[data-video-link]",
+=======
+>>>>>>> master
 
 		// Mentions
 		"{mentions}": "[data-mentions]",
@@ -25,6 +29,10 @@ EasySocial.Controller('Videos.Form', {
 		"{videoId}": "[data-video-id]",
 		"{fileUploaded}": "[data-file-uploaded]",
 		"{videoTitle}": "[data-video-title]",
+<<<<<<< HEAD
+		"{videoDescription}": "[data-video-desc]",
+=======
+>>>>>>> master
 		"{saveButton}": "[data-save-button]"
 	}
 }, function(self, opts, base) { return {
@@ -211,6 +219,38 @@ EasySocial.Controller('Videos.Form', {
 		});
 	},
 
+<<<<<<< HEAD
+	"{linkSource} focusout": function(el){
+		var url = el.val();
+
+		if (url.length < 1) {
+			return;
+		}
+
+		self.linkForm().addClass('is-loading');
+
+		self.clearError(self.linkForm());
+
+		EasySocial.ajax('site/controllers/videos/processLink', {
+			"link" : url
+		}).done(function(data){
+			if (data['title']) {
+				self.videoTitle().val(data['title']);
+			}
+
+			if (data['description']) {
+				self.videoDescription().val(data['description']);
+			}
+
+			self.linkForm().removeClass('is-loading');
+		}).fail(function(message){
+			self.linkForm().removeClass('is-loading');
+			self.showError(self.linkForm(), message);
+		});
+	},
+
+=======
+>>>>>>> master
 	"{saveButton} click": function(ele, event) {
 
 		var title = self.videoTitle().val();

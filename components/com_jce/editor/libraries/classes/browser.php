@@ -341,12 +341,41 @@ class WFFileBrowser extends JObject
 
     protected function checkPathAccess($path)
     {
+<<<<<<< HEAD
+        $filters = $this->get('filter');
+
+        if (!empty($filters)) {
+            $path = ltrim($path, '/');
+
+            foreach ($filters as $filter) {
+                $filter = trim($filter);
+                
+                // show this folder
+                if ($filter{0} === "+") {
+                    $path_parts     = explode('/', $path);
+                    $filter_parts   = explode('/', substr($filter, 1));
+
+                    // filter match
+                    if (!(empty(array_intersect_assoc($filter_parts, $path_parts)))) {
+                        return true;
+                    }
+                    
+                } else if ($filter{0} === "-") {
+                    return $path !== substr($filter, 1);
+                } else {
+                    return $filter !== $path;
+                }
+            }
+
+            return false;
+=======
         $filter = $this->get('filter');
 
         if (!empty($filter)) {
             $path = ltrim($path, '/');
 
             return !in_array($path, (array) $filter);
+>>>>>>> master
         }
 
         return true;
@@ -387,6 +416,11 @@ class WFFileBrowser extends JObject
         $filesystem = $this->getFileSystem();
         $list = $filesystem->getFolders($relative, $filter, $sort);
 
+<<<<<<< HEAD
+        $list = array_filter($list, function ($item) {
+            return $this->checkPathAccess($item['id']);
+        });
+=======
         $filters = $this->get('filter');
 
         // remove filtered items
@@ -411,6 +445,7 @@ class WFFileBrowser extends JObject
             }*/
             });
         }
+>>>>>>> master
 
         return $list;
     }
@@ -1279,9 +1314,15 @@ class WFFileBrowser extends JObject
                 }
             } else {
                 $data = array(
+<<<<<<< HEAD
+                    'name' => basename($result->path),
+                );
+
+=======
                     'name' => basename($result->path)
                 );
                 
+>>>>>>> master
                 $event = $this->fireEvent('on' . ucfirst($result->type) . 'Rename', array($destination));
 
                 // merge event data with default values
@@ -1376,9 +1417,15 @@ class WFFileBrowser extends JObject
                     }
                 } else {
                     $data = array(
+<<<<<<< HEAD
+                        'name' => $filesystem->toRelative($result->path),
+                    );
+
+=======
                         'name' => $filesystem->toRelative($result->path)
                     );
                     
+>>>>>>> master
                     $event = $this->fireEvent('on' . ucfirst($result->type) . 'Copy', array($item));
 
                     // merge event data with default values
@@ -1464,9 +1511,15 @@ class WFFileBrowser extends JObject
                     }
                 } else {
                     $data = array(
+<<<<<<< HEAD
+                        'name' => $filesystem->toRelative($result->path),
+                    );
+
+=======
                         'name' => $filesystem->toRelative($result->path)
                     );
                     
+>>>>>>> master
                     $event = $this->fireEvent('on' . ucfirst($result->type) . 'Move', array($item));
 
                     // merge event data with default values
