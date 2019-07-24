@@ -1,7 +1,11 @@
 <?php
 /**
 * @package		EasyBlog
+<<<<<<< HEAD
 * @copyright	Copyright (C) 2010 - 2019 Stack Ideas Sdn Bhd. All rights reserved.
+=======
+* @copyright	Copyright (C) 2010 - 2014 Stack Ideas Sdn Bhd. All rights reserved.
+>>>>>>> master
 * @license		GNU/GPL, see LICENSE.php
 * EasyBlog is free software. This version may have been modified pursuant
 * to the GNU General Public License, and as distributed it includes or
@@ -163,6 +167,7 @@ class EasyBlogControllerTwitter extends EasyBlogController
 		// Regardless of the state, delete the record.
 		$table->delete();
 
+<<<<<<< HEAD
 		$actionlog = EB::actionlog();
 		$actionlog->log('COM_EB_ACTIONLOGS_AUTOPOSTING_TWITTER_REVOKED', 'autoposting', array(
 			'link' => 'index.php?option=com_easyblog&view=autoposting&layout=twitter'
@@ -172,6 +177,12 @@ class EasyBlogControllerTwitter extends EasyBlogController
 		EB::info()->set(JText::_('COM_EASYBLOG_AUTOPOST_TWITTER_SUCCESS_REVOKING_ACCESS'), 'success');
 
 		$redirect = 'index.php?option=com_easyblog&view=autoposting&layout=twitter';
+=======
+		// If there's a problem revoking the app, just delete the record and let the user know
+		EB::info()->set(JText::_('COM_EASYBLOG_AUTOPOST_TWITTER_SUCCESS_REVOKING_ACCESS'), 'success');
+
+		$redirect 	= 'index.php?option=com_easyblog&view=autoposting&layout=twitter';
+>>>>>>> master
 		$this->app->redirect($redirect);
 	}
 
@@ -197,11 +208,14 @@ class EasyBlogControllerTwitter extends EasyBlogController
 		$model 	= EB::model('Settings');
 		$model->save($post);
 
+<<<<<<< HEAD
 		$actionlog = EB::actionlog();
 		$actionlog->log('COM_EB_ACTIONLOGS_AUTOPOSTING_TWITTER_UPDATED', 'autoposting', array(
 			'link' => 'index.php?option=com_easyblog&view=autoposting&layout=twitter'
 		));
 
+=======
+>>>>>>> master
 		// Redirect the user
 		EB::info()->set(JText::_('COM_EASYBLOG_AUTOPOSTING_TWITTER_SAVE_SUCCESS'), 'success');
 

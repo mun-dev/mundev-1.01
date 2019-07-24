@@ -114,7 +114,11 @@ defined('_JEXEC') or die('Restricted access');
 					                    <?php if (!$post->isLastReplyAnonymous()) { ?>
 					                        <?php echo $this->html('user.avatar', $post->getLastReplier(), array('rank' => false, 'size' => 'sm')); ?>
 					                    <?php } else { ?>
+<<<<<<< HEAD
 					                        <?php echo $this->html('user.anonymous', $post->getOwner(), $post->isAnonymous()); ?>
+=======
+					                        <?php echo $this->output('site/html/user.anonymous') ?>
+>>>>>>> master
 					                    <?php } ?> 
 			                        </div>
 			                    </li>

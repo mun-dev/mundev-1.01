@@ -721,8 +721,11 @@ class EasySocialViewEvents extends EasySocialSiteView
 
 			$navigation->previousPageTitle = $previous->format('COM_EASYSOCIAL_DATE_DMY');
 			$navigation->nextPageTitle = $next->format('COM_EASYSOCIAL_DATE_DMY');
+<<<<<<< HEAD
 
 			$title = JText::sprintf('COM_EASYSOCIAL_PAGE_TITLE_EVENTS_FILTER_DATE', ES::date($input, false)->format(JText::_('COM_EASYSOCIAL_DATE_DMY')));
+=======
+>>>>>>> master
 		}
 
 		if ($filter === 'week1') {

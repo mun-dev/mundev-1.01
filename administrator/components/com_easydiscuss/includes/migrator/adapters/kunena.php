@@ -710,6 +710,7 @@ class EasyDiscussMigratorKunena extends EasyDiscussMigratorBase
 			foreach ($files as $kAttachment){
 				$attachment	= ED::table('Attachments');
 
+<<<<<<< HEAD
 				// It seems that there is a new column `filename_real` added in their attachment table since version 3.1.0 and at year 2013
 				// We will take the value of `filename_real` instead of `filename` IF the column `filename_real` exsists
 				if (!is_null($kAttachment->filename_real) && $kAttachment->filename_real) {
@@ -726,6 +727,11 @@ class EasyDiscussMigratorKunena extends EasyDiscussMigratorBase
 				$attachment->set('uid', $post->id);
 				$attachment->set('size', $kAttachment->size);
 				
+=======
+				$attachment->set('uid', $post->id);
+				$attachment->set('size', $kAttachment->size);
+				$attachment->set('title', $kAttachment->filename);
+>>>>>>> master
 				$attachment->set('published', DISCUSS_ID_PUBLISHED);
 				$attachment->set('mime', $kAttachment->filetype);
 

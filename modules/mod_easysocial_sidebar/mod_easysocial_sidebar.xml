@@ -2,12 +2,20 @@
 <extension version="3.1" type="module" client="site" method="upgrade">
 	<name>EasySocial Sidebar</name>
 	<author>Stack Ideas Sdn Bhd</author>
+<<<<<<< HEAD
 	<creationDate>18th July 2019</creationDate>
+=======
+	<creationDate>4th July 2019</creationDate>
+>>>>>>> master
 	<copyright>Copyright (C) 2009 - 2018 Stack Ideas Sdn Bhd. All rights reserved.</copyright>
 	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
 	<authorEmail>support@stackideas.com</authorEmail>
 	<authorUrl>https://stackideas.com</authorUrl>
+<<<<<<< HEAD
 	<version>3.0.21</version>
+=======
+	<version>3.0.19</version>
+>>>>>>> master
 	<description><![CDATA[This module allows you to place the sidebar of a profile, group, page or event anywhere on your template]]></description>
 	<files>
 		<folder>adapters</folder>

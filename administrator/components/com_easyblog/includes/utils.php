@@ -111,6 +111,7 @@ class EasyBlog
 		return $responsive;
 	}
 
+<<<<<<< HEAD
 	/**
 	 * Determines if this is a tablet layout
 	 *
@@ -128,6 +129,8 @@ class EasyBlog
 		return $responsive;
 	}
 
+=======
+>>>>>>> master
 	public function getError()
 	{
 		if (!$this->hasErrors()) {

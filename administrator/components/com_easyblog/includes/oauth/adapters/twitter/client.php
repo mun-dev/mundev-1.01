@@ -328,9 +328,12 @@ class EasyBlogClientTwitter extends EasyBlogTwitterOAuth
 		// Get the message template to use to push to Twitter
 		$content = !empty($oauth->message) ? $oauth->message : $this->config->get('main_twitter_message');
 
+<<<<<<< HEAD
 		// Add support for multilingual message. #1635
 		$content = JText::_($content);
 
+=======
+>>>>>>> master
 		// Default vars to search / replace
 		$search = array();
 		$replace = array();

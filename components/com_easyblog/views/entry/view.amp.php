@@ -165,11 +165,14 @@ class EasyBlogViewEntry extends EasyBlogView
 			$ampImageUrl = EB::getAmpPlaceholderImage();
 		}
 
+<<<<<<< HEAD
 		$pageTitle = $post->getPagePostTitle();
 
 		$socialEnabled = $this->socialEnabled($params);
 
 		$theme->set('pageTitle', $pageTitle);
+=======
+>>>>>>> master
 		$theme->set('ampContent', $ampContent);
 		$theme->set('post', $post);
 		$theme->set('url', $url);
@@ -185,7 +188,10 @@ class EasyBlogViewEntry extends EasyBlogView
 		$theme->set('isRtl', $lang->isRTL());
 		$theme->set('availableBlocks', $availableBlocks);
 		$theme->set('ampImageUrl', $ampImageUrl);
+<<<<<<< HEAD
 		$theme->set('socialEnabled', $socialEnabled);
+=======
+>>>>>>> master
 
 		$blogHtml = $theme->output('site/blogs/entry/amp');
 
@@ -194,6 +200,7 @@ class EasyBlogViewEntry extends EasyBlogView
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Make social buttons are enabled
 	 *
 	 * @since   5.3
@@ -209,6 +216,8 @@ class EasyBlogViewEntry extends EasyBlogView
 	}
 
 	/**
+=======
+>>>>>>> master
 	 * Get available block in post
 	 *
 	 * @since   5.1

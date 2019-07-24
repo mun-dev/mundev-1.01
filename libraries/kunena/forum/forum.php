@@ -165,7 +165,11 @@ abstract class KunenaForum
 	 */
 	public static function isDev()
 	{
+<<<<<<< HEAD
 		if ('5.1.13.1' == '@' . 'kunenaversion' . '@')
+=======
+		if ('5.1.12.1' == '@' . 'kunenaversion' . '@')
+>>>>>>> master
 		{
 			return true;
 		}
@@ -296,7 +300,11 @@ abstract class KunenaForum
 	 */
 	protected static function buildVersion()
 	{
+<<<<<<< HEAD
 		if ('5.1.13.1' == '@' . 'kunenaversion' . '@')
+=======
+		if ('5.1.12.1' == '@' . 'kunenaversion' . '@')
+>>>>>>> master
 		{
 			$file = JPATH_MANIFESTS . '/packages/pkg_kunena.xml';
 
@@ -307,17 +315,30 @@ abstract class KunenaForum
 			}
 			else
 			{
+<<<<<<< HEAD
 				self::$version = strtoupper('5.1.13.1');
+=======
+				self::$version = strtoupper('5.1.12.1');
+>>>>>>> master
 			}
 		}
 		else
 		{
+<<<<<<< HEAD
 			self::$version = strtoupper('5.1.13.1');
 		}
 
 		self::$version_major = substr(self::$version, 0, 3);
 		self::$version_date  = ('2019-07-22' == '@' . 'kunenaversiondate' . '@') ? Factory::getDate()->format('Y-m-d') : '2019-07-22';
 		self::$version_name  = ('Mimas' == '@' . 'kunenaversionname' . '@') ? 'Git Repository' : 'Mimas';
+=======
+			self::$version = strtoupper('5.1.12.1');
+		}
+
+		self::$version_major = substr(self::$version, 0, 3);
+		self::$version_date  = ('2019-04-22' == '@' . 'kunenaversiondate' . '@') ? Factory::getDate()->format('Y-m-d') : '2019-04-22';
+		self::$version_name  = ('Kerberos' == '@' . 'kunenaversionname' . '@') ? 'Git Repository' : 'Kerberos';
+>>>>>>> master
 	}
 
 	/**

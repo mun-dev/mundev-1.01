@@ -95,6 +95,7 @@ defined('_JEXEC') or die('Unauthorized Access');
 				<?php
 				foreach ($users as $user) {
 					$userObj = ES::user($user->id);
+<<<<<<< HEAD
 					$hasOtherOauthClientAssociated = false;
 					$userTypes = array('joomla');
 
@@ -112,6 +113,8 @@ defined('_JEXEC') or die('Unauthorized Access');
 							}
 						}
 					}
+=======
+>>>>>>> master
 				?>
 				<tr data-user-item
 					data-name="<?php echo $userObj->getName();?>"
@@ -127,6 +130,7 @@ defined('_JEXEC') or die('Unauthorized Access');
 					<?php } ?>
 
 					<td style="text-align:left;">
+<<<<<<< HEAD
 
 						<div class="es-social-icons-wrapper">
 							<?php foreach ($userTypes as $userType) { ?>
@@ -136,6 +140,9 @@ defined('_JEXEC') or die('Unauthorized Access');
 							<?php } ?>
 						</div>
 
+=======
+						<i class="fab fa-<?php echo $userObj->type;?> t-lg-mr--md" data-es-provide="tooltip" data-original-title="<?php echo JText::sprintf('COM_EASYSOCIAL_USERS_USER_ACCOUNT_TYPE', $userObj->type);?>"></i>
+>>>>>>> master
 						<a href="<?php echo FRoute::_( 'index.php?option=com_easysocial&view=users&layout=form&id=' . $user->id );?>"
 							data-user-insert
 							data-id="<?php echo $user->id;?>"

@@ -1,8 +1,14 @@
 <?php
 /**
+<<<<<<< HEAD
 * @package		EasyBlog
 * @copyright	Copyright (C) 2010 - 2019 Stack Ideas Sdn Bhd. All rights reserved.
 * @license		GNU/GPL, see LICENSE.php
+=======
+* @package      EasyBlog
+* @copyright    Copyright (C) 2010 - 2017 Stack Ideas Sdn Bhd. All rights reserved.
+* @license      GNU/GPL, see LICENSE.php
+>>>>>>> master
 * EasyBlog is free software. This version may have been modified pursuant
 * to the GNU General Public License, and as distributed it includes or
 * is derivative of works licensed under the GNU General Public License or
@@ -218,12 +224,17 @@ class EasyBlogModelSubscription extends EasyBlogAdminModel
 		return $result;
 	}
 
+<<<<<<< HEAD
 	public function addSiteSubscription($email, $userId = '0', $fullname = '')
+=======
+	function addSiteSubscription($email, $userId = '0', $fullname = '')
+>>>>>>> master
 	{
 		$config = EB::config();
 		$acl = EB::acl();
 		$my = JFactory::getUser();
 
+<<<<<<< HEAD
 		if (!$acl->get('allow_subscription') && (!$my->id && !$config->get('main_allowguestsubscribe'))) {
 			return false;
 		}
@@ -250,6 +261,26 @@ class EasyBlogModelSubscription extends EasyBlogAdminModel
 		}
 		
 		return $subscription;
+=======
+		if ($acl->get('allow_subscription') || (empty($my->id) && $config->get('main_allowguestsubscribe'))) {
+			$date = EB::date();
+
+			$subscription = EB::table('Subscriptions');
+
+			$subscription->uid = '0';
+			$subscription->utype = EBLOG_SUBSCRIPTION_SITE;
+			$subscription->email = $email;
+
+			if ($userId) {
+				$subscription->user_id = $userId;
+			}
+
+			$subscription->fullname = $fullname;
+			$subscription->created = EB::date()->toMySQL();
+
+			return $subscription->store();
+		}
+>>>>>>> master
 	}
 
 	function updateSiteSubscriptionEmail($sid, $userid, $email)

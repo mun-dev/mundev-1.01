@@ -251,7 +251,13 @@ defined('_JEXEC') or die('Unauthorized Access');
 				<div class="o-nav__item is-signin dropdown_" data-ed-provide="tooltip" data-original-title="<?php echo JText::_('COM_EASYDISCUSS_TOOLBAR_MORE_SETTINGS');?>">
 					<a href="javascript:void(0);" class="o-nav__link ed-toolbar__link has-avatar dropdown-toggle_" data-ed-toggle="dropdown">
 						<div class="ed-toolbar__avatar">
+<<<<<<< HEAD
 							<?php echo $this->html('user.avatar', $this->profile, array(), false, true); ?>
+=======
+							<div class="o-avatar o-avatar--sm">
+								<img src="<?php echo $this->profile->getAvatar();?>">
+							</div>
+>>>>>>> master
 						</div>
 					</a>
 

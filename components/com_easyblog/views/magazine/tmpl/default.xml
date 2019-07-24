@@ -12,9 +12,18 @@
 	</state>
 
 	<fields name="params">
+<<<<<<< HEAD
 
 		<fieldset name="request" label="COM_EASYBLOG_MAGAZINE_MENU" addfieldpath="/administrator/components/com_easyblog/elements">
 			<field name="magazine_style" type="themefiles" default="layout_1" folder="blogs/magazine" label="COM_EASYBLOG_MAGAZINE_STYLE" description="COM_EASYBLOG_MAGAZINE_STYLE_DESC" />
+=======
+		<fieldset name="request" label="COM_EASYBLOG_MAGAZINE_MENU">
+			<field name="magazine_style" type="list" default="layout_1" class="btn-group" label="COM_EASYBLOG_MAGAZINE_STYLE" description="COM_EASYBLOG_MAGAZINE_STYLE_DESC">
+				<option value="layout_1">COM_EASYBLOG_MAGAZINE_STYLE_LAYOUT_1</option>
+				<option value="layout_2">COM_EASYBLOG_MAGAZINE_STYLE_LAYOUT_2</option>
+				<option value="layout_3">COM_EASYBLOG_MAGAZINE_STYLE_LAYOUT_3</option>
+			</field>
+>>>>>>> master
 		</fieldset>
 
 		<fieldset name="leading_article_options" label="COM_EASYBLOG_MAGAZINE_MENU_LEADING_ARTICLE" addfieldpath="/administrator/components/com_easyblog/elements">

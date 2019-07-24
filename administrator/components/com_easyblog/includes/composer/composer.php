@@ -585,6 +585,7 @@ class EasyBlogComposer extends EasyBlog
 			$legacyEditorNamespace = 'site/composer/editor/legacyj4';
 		}
 
+<<<<<<< HEAD
 		$userParams = $user->getParams();
 		$composerPreferences = $userParams->get('composer', null);
 
@@ -596,6 +597,9 @@ class EasyBlogComposer extends EasyBlog
 
 		$theme = EB::template();
 		$theme->set('composerPreferences', $composerPreferences);
+=======
+		$theme = EB::template();
+>>>>>>> master
 		$theme->set('templateEditor', false);
 		$theme->set('returnUrl', $returnUrl);
 		$theme->set('alert', $alert);
@@ -621,7 +625,10 @@ class EasyBlogComposer extends EasyBlog
 		$theme->set('aclRuleSets', $aclRuleSets);
 		$theme->set('draftEditLink', $draftEditLink);
 		$theme->set('defaultTags', $defaultTags);
+<<<<<<< HEAD
 		$theme->set('undoPublishing', $undoPublishing);
+=======
+>>>>>>> master
 
 		// Determines if the source id and source type is provided
 		$sourceId = $this->input->get('source_id', 0, 'int');
@@ -729,7 +736,10 @@ class EasyBlogComposer extends EasyBlog
 
 		$theme = EB::template();
 		$theme->set('postTemplate', $postTemplate);
+<<<<<<< HEAD
 		$theme->set('composerPreferences', null);
+=======
+>>>>>>> master
 		$theme->set('templateEditor', true);
 		$theme->set('alert', $alert);
 		$theme->set('displayFieldsTab', $displayFieldsTab);
@@ -749,7 +759,10 @@ class EasyBlogComposer extends EasyBlog
 		$theme->set('legacyEditorNamespace', $legacyEditorNamespace);
 		$theme->set('defaultTags', $defaultTags);
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> master
 		$output = $theme->output('site/composer/manager');
 
 		return $output;

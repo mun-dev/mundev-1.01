@@ -32,7 +32,11 @@ defined('_JEXEC') or die('Unauthorized Access');
 							<div class="o-col-sm">
 								<div class="o-flag">
 									<div class="o-flag__image o-flag--top">
+<<<<<<< HEAD
 										<?php echo ED::themes()->html('user.avatar', $post->getOwner(), array('rank' => true, 'status' => true, 'size' => 'md')); ?>
+=======
+										<?php echo ED::themes()->html('user.avatar', $post->getOwner(), array('rank' => false, 'status' => true)); ?>
+>>>>>>> master
 									</div>
 									<div class="o-flag__body">
 										<a href="<?php echo $post->getOwner()->getLink();?>" class="ed-user-name"><?php echo $post->getOwner()->getName();?></a>

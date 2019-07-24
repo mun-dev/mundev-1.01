@@ -100,7 +100,10 @@ var exports = function() {
 	};
 
 	$.fn.scrollTo = function( target, duration, settings ){
+<<<<<<< HEAD
 
+=======
+>>>>>>> master
 		if( typeof duration == 'object' ){
 			settings = duration;
 			duration = 0;

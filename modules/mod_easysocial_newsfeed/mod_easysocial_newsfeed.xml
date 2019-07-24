@@ -2,12 +2,20 @@
 <extension version="3.1" type="module" client="site" method="upgrade">
 	<name>EasySocial NewsFeed</name>
 	<author>Stack Ideas Sdn Bhd</author>
+<<<<<<< HEAD
 	<creationDate>18th July 2019</creationDate>
+=======
+	<creationDate>4th July 2019</creationDate>
+>>>>>>> master
 	<copyright>Copyright (C) 2009 - 2018 Stack Ideas Sdn Bhd. All rights reserved.</copyright>
 	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
 	<authorEmail>support@stackideas.com</authorEmail>
 	<authorUrl>https://stackideas.com</authorUrl>
+<<<<<<< HEAD
 	<version>3.0.21</version>
+=======
+	<version>3.0.19</version>
+>>>>>>> master
 	<description><![CDATA[Newsfeed module that allows filtering activity streams on the dashboard]]></description>
 	<files>
 		<folder>scripts</folder>

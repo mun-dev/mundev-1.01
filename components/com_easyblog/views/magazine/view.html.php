@@ -124,7 +124,10 @@ class EasyBlogViewMagazine extends EasyBlogView
 		// Set view all link
 		$viewAll = EBR::_('index.php?option=com_easyblog&view=latest');
 
+<<<<<<< HEAD
 		// Set the meta tags for this page
+=======
+>>>>>>> master
 		EB::setMeta(0, META_TYPE_VIEW);
 
 		$this->set('return', $return);
@@ -133,7 +136,10 @@ class EasyBlogViewMagazine extends EasyBlogView
 		$this->set('posts', $posts);
 
 		$magazineLayout = $params->get('magazine_style');
+<<<<<<< HEAD
 
+=======
+>>>>>>> master
 		parent::display('blogs/magazine/' . $magazineLayout);
 	}
 }

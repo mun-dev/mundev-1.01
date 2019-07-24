@@ -1,7 +1,11 @@
 <?php
 /**
 * @package		EasyBlog
+<<<<<<< HEAD
 * @copyright	Copyright (C) 2010 - 2019 Stack Ideas Sdn Bhd. All rights reserved.
+=======
+* @copyright	Copyright (C) 2010 - 2017 Stack Ideas Sdn Bhd. All rights reserved.
+>>>>>>> master
 * @license		GNU/GPL, see LICENSE.php
 * EasyBlog is free software. This version may have been modified pursuant
 * to the GNU General Public License, and as distributed it includes or
@@ -139,16 +143,23 @@ class EasyBlogControllerLinkedIn extends EasyBlogController
 		$client->setAccess($table->access_token);
 
 		// Revoke the access
+<<<<<<< HEAD
 		$state = $client->revoke();
+=======
+		$state	= $client->revoke();
+>>>>>>> master
 
 		// Regardless of the state, delete the record.
 		$table->delete();
 
+<<<<<<< HEAD
 		$actionlog = EB::actionlog();
 		$actionlog->log('COM_EB_ACTIONLOGS_AUTOPOSTING_LINKEDIN_REVOKED', 'autoposting', array(
 			'link' => 'index.php?option=com_easyblog&view=autoposting&layout=linkedin'
 		));
 
+=======
+>>>>>>> master
 		// If there's a problem revoking the app, just delete the record and let the user know
 		EB::info()->set(JText::_('COM_EASYBLOG_AUTOPOST_LINKEDIN_SUCCESS_REVOKING_ACCESS'), 'success');
 
@@ -184,11 +195,14 @@ class EasyBlogControllerLinkedIn extends EasyBlogController
 		$model = EB::model('Settings');
 		$model->save($post);
 
+<<<<<<< HEAD
 		$actionlog = EB::actionlog();
 		$actionlog->log('COM_EB_ACTIONLOGS_AUTOPOSTING_LINKEDIN_UPDATED', 'autoposting', array(
 			'link' => 'index.php?option=com_easyblog&view=autoposting&layout=linkedin'
 		));
 
+=======
+>>>>>>> master
 		// Redirect the user
 		EB::info()->set(JText::_('COM_EASYBLOG_AUTOPOSTING_LINKEDIN_SAVE_SUCCESS'), 'success');
 

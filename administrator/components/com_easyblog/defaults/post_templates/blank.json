@@ -3,6 +3,10 @@
 	"title": "COM_EASYBLOG_COMPOSER_TEMPLATES_TITLE_BLANK",
 	"data": {},
 	"system": "2",
+<<<<<<< HEAD
 	"screenshot": "/components/com_easyblog/assets/images/template-blank.png",
 	"ordering": "1"
+=======
+	"screenshot": "/components/com_easyblog/assets/images/template-blank.png"
+>>>>>>> master
 }

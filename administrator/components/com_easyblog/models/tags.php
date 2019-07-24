@@ -1,7 +1,11 @@
 <?php
 /**
 * @package		EasyBlog
+<<<<<<< HEAD
 * @copyright	Copyright (C) 2010 - 2019 Stack Ideas Sdn Bhd. All rights reserved.
+=======
+* @copyright	Copyright (C) 2010 - 2017 Stack Ideas Sdn Bhd. All rights reserved.
+>>>>>>> master
 * @license		GNU/GPL, see LICENSE.php
 * EasyBlog is free software. This version may have been modified pursuant
 * to the GNU General Public License, and as distributed it includes or
@@ -166,6 +170,7 @@ class EasyBlogModelTags extends EasyBlogAdminModel
 	 */
 	public function unpublishItems($ids)
 	{
+<<<<<<< HEAD
 		$state = $this->setColumn($ids, 'published', false);
 
 		foreach ($ids as $id) {
@@ -180,6 +185,9 @@ class EasyBlogModelTags extends EasyBlogAdminModel
 		}
 
 		return $state;
+=======
+		return $this->setColumn($ids, 'published', false);
+>>>>>>> master
 	}
 
 	/**
@@ -190,6 +198,7 @@ class EasyBlogModelTags extends EasyBlogAdminModel
 	 */
 	public function publishItems($ids)
 	{
+<<<<<<< HEAD
 		$state = $this->setColumn($ids, 'published', true);
 
 		foreach ($ids as $id) {
@@ -204,6 +213,9 @@ class EasyBlogModelTags extends EasyBlogAdminModel
 		}
 
 		return $state;
+=======
+		return $this->setColumn($ids, 'published', true);
+>>>>>>> master
 	}
 
 	public function searchTag($title)
@@ -835,6 +847,7 @@ class EasyBlogModelTags extends EasyBlogAdminModel
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Delete blog posts association with the tags
 	 *
 	 * @since	5.2
@@ -852,6 +865,8 @@ class EasyBlogModelTags extends EasyBlogAdminModel
 	}
 
 	/**
+=======
+>>>>>>> master
 	 * Retrieve a list of tags on the site
 	 *
 	 * @since	5.2

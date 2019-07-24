@@ -54,11 +54,16 @@ class EasyBlogThemesHelperString
 	/**
 	 * Truncates a string at a centrain length and add a more link
 	 *
+<<<<<<< HEAD
 	 * @deprecated	5.0
+=======
+	 * @since   5.0
+>>>>>>> master
 	 * @access  public
 	 */
 	public static function truncater($text, $max = 250)
 	{
+<<<<<<< HEAD
 		return self::truncate($text, $max, '');
 	}
 
@@ -93,9 +98,24 @@ class EasyBlogThemesHelperString
 		$theme->set('original', $text);
 		$theme->set('showMore', $showMore);
 		$theme->set('overrideReadmore', $overrideReadmore);
+=======
+		$theme = EB::template();
+		$length = EBString::strlen($text);
+
+		$uid = uniqid();
+
+		$theme->set('uid', $uid);
+		$theme->set('length', $length);
+		$theme->set('text', $text);
+		$theme->set('max', $max);
+>>>>>>> master
 
 		$output = $theme->output('admin/html/string.truncater');
 
 		return $output;
+<<<<<<< HEAD
 	}	
+=======
+	}
+>>>>>>> master
 }

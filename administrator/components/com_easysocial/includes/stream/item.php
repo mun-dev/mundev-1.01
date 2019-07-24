@@ -328,10 +328,15 @@ class SocialStreamItem extends EasySocial
 		if ($this->last_userid && $this->last_action && $this->my->id != $this->last_userid) {
 
 			$model = ES::model('Blocks');
+<<<<<<< HEAD
 			$table = ES::table('Users');
 
 			// user being blocked and deleted from site. #2339 #3430
 			if ($model->isBlocked($this->my->id, $this->last_userid, true, true) || !$table->exists($this->last_userid)) {
+=======
+			// user being blocked. #2339
+			if ($model->isBlocked($this->my->id, $this->last_userid, true, true)) {
+>>>>>>> master
 				return false;
 			}
 

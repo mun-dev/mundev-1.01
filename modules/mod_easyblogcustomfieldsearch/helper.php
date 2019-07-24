@@ -1,7 +1,11 @@
 <?php
 /**
 * @package		EasyBlog
+<<<<<<< HEAD
 * @copyright	Copyright (C) 2010 - 2019 Stack Ideas Sdn Bhd. All rights reserved.
+=======
+* @copyright	Copyright (C) 2010 - 2018 Stack Ideas Sdn Bhd. All rights reserved.
+>>>>>>> master
 * @license		GNU/GPL, see LICENSE.php
 * EasyBlog is free software. This version may have been modified pursuant
 * to the GNU General Public License, and as distributed it includes or
@@ -53,7 +57,10 @@ class modCustomFieldHelper extends EasyBlog
 		$query .= ' OR acl.' . $db->quotename('id') . ' IS NULL';
 		$query .= ' )';
 
+<<<<<<< HEAD
 		$query .= ' GROUP BY a.' . $db->quoteName('id');
+=======
+>>>>>>> master
 		$query .= ' ORDER BY a.' . $db->quoteName($options['sorting']) . ' ASC';
 
 		$db->setQuery($query);

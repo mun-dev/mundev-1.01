@@ -21,7 +21,10 @@ class EasyBlogTableField extends EasyBlogTable
 	public $help = null;
 	public $state = null;
 	public $required = null;
+<<<<<<< HEAD
 	public $ordering = null;
+=======
+>>>>>>> master
 	public $type = null;
 	public $params = null;
 	public $options = null;
@@ -208,6 +211,7 @@ class EasyBlogTableField extends EasyBlogTable
 		$className = $model->getFieldClassValue($fieldId, $postId);
 
 		return $className;
+<<<<<<< HEAD
 	}
 
 	/**
@@ -262,4 +266,7 @@ class EasyBlogTableField extends EasyBlogTable
 		$state = parent::store();
 		return $state;
 	}
+=======
+	}	
+>>>>>>> master
 }

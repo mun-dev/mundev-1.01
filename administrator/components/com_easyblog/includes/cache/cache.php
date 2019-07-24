@@ -508,7 +508,10 @@ class EasyBlogCache extends EasyBlog
 				$f->params = $row->f_params;
 				$f->created = $row->f_created;
 				$f->options = $row->f_options;
+<<<<<<< HEAD
 				$f->ordering = $row->f_ordering;
+=======
+>>>>>>> master
 
 				$fTbl = EB::table('Field');
 				$fTbl->bind($f);

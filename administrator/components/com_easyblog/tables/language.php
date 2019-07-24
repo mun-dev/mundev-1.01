@@ -1,7 +1,11 @@
 <?php
 /**
 * @package		EasyBlog
+<<<<<<< HEAD
 * @copyright	Copyright (C) 2010 - 2019 Stack Ideas Sdn Bhd. All rights reserved.
+=======
+* @copyright	Copyright (C) 2010 - 2018 Stack Ideas Sdn Bhd. All rights reserved.
+>>>>>>> master
 * @license		GNU/GPL, see LICENSE.php
 * EasyBlog is free software. This version may have been modified pursuant
 * to the GNU General Public License, and as distributed it includes or
@@ -26,9 +30,16 @@ class EasyBlogTableLanguage extends EasyBlogTable
 
 	public function __construct(&$db)
 	{
+<<<<<<< HEAD
 		parent::__construct('#__easyblog_languages', 'id', $db);
 	}
 
+=======
+		parent::__construct( '#__easyblog_languages' , 'id' , $db );
+	}
+
+
+>>>>>>> master
 	/**
 	 * Installs a language file
 	 *
@@ -45,9 +56,15 @@ class EasyBlogTableLanguage extends EasyBlogTable
 
 		if (!$key) {
 			$this->setError(JText::_('COM_EASYBLOG_INVALID_API_KEY_PROVIDED'));
+<<<<<<< HEAD
 			return false;
 		}
 
+=======
+			return false;			
+		}
+		
+>>>>>>> master
 		// Get the download url
 		$url = $params->get('download');
 
@@ -75,10 +92,17 @@ class EasyBlogTableLanguage extends EasyBlogTable
 
 		$folder = JPATH_ROOT . '/tmp/' . $hash;
 
+<<<<<<< HEAD
 		jimport('joomla.filesystem.archive');
 
 		// Extract the language's archive file
 		$state = JArchive::extract($storage, $folder);
+=======
+		jimport( 'joomla.filesystem.archive' );
+
+		// Extract the language's archive file
+		$state 		= JArchive::extract($storage, $folder);
+>>>>>>> master
 
 		// Throw some errors when we are unable to extract the zip file.
 		if (!$state) {
@@ -87,7 +111,11 @@ class EasyBlogTableLanguage extends EasyBlogTable
 		}
 
 		// Read the meta data
+<<<<<<< HEAD
 		$raw = JFile::read($folder . '/meta.json');
+=======
+		$raw  = JFile::read($folder . '/meta.json');
+>>>>>>> master
 		$meta = json_decode($raw);
 
 		foreach ($meta->resources as $resource) {
@@ -101,7 +129,11 @@ class EasyBlogTableLanguage extends EasyBlogTable
 			}
 
 			// Build the source and target files
+<<<<<<< HEAD
 			$destFile = $dest . '/' . $this->locale . '.' . $resource->title;
+=======
+			$destFile 	= $dest . '/' . $this->locale . '.' . $resource->title;
+>>>>>>> master
 			$sourceFile = $folder . '/' . $resource->path . '/' . $this->locale . '.' . $resource->title;
 
 			// Ensure that the source file exists
@@ -115,7 +147,11 @@ class EasyBlogTableLanguage extends EasyBlogTable
 			}
 			
 			// Try to copy the file
+<<<<<<< HEAD
 			$state = JFile::copy($sourceFile, $destFile);
+=======
+			$state		= JFile::copy($sourceFile, $destFile);
+>>>>>>> master
 
 			if (!$state) {
 				$this->setError(JText::_('COM_EASYBLOG_LANGUAGES_ERROR_COPYING_FILES'));
@@ -128,7 +164,11 @@ class EasyBlogTableLanguage extends EasyBlogTable
 		JFolder::delete($folder);
 
 		// Once the language files are copied accordingly, update the state
+<<<<<<< HEAD
 		$this->state = EBLOG_LANGUAGES_INSTALLED;
+=======
+		$this->state 	= EBLOG_LANGUAGES_INSTALLED;
+>>>>>>> master
 
 		return $this->store();
 	}
@@ -136,7 +176,11 @@ class EasyBlogTableLanguage extends EasyBlogTable
 	/**
 	 * Allows caller to uninstall a language
 	 *
+<<<<<<< HEAD
 	 * @since	5.3.0
+=======
+	 * @since	1.4
+>>>>>>> master
 	 * @access	public
 	 */
 	public function uninstall()
@@ -158,6 +202,12 @@ class EasyBlogTableLanguage extends EasyBlogTable
 			foreach ($files as $file) {
 				JFile::delete($file);
 			}
+<<<<<<< HEAD
+=======
+
+			// Remove the path file as well.
+			JFolder::delete($path);
+>>>>>>> master
 		}
 
 		$this->state = EBLOG_LANGUAGES_NOT_INSTALLED;
@@ -169,22 +219,37 @@ class EasyBlogTableLanguage extends EasyBlogTable
 		return $this->state == EBLOG_LANGUAGES_INSTALLED;
 	}
 
+<<<<<<< HEAD
 	public function getPath($metaPath)
 	{
 		switch ($metaPath) {
+=======
+	public function getPath( $metaPath )
+	{
+		switch( $metaPath )
+		{
+>>>>>>> master
 			case 'admin':
 			case 'fields':
 			case 'plugins':
 			case 'plugin':
 			case 'menu':
 			case 'apps':
+<<<<<<< HEAD
 				$path = JPATH_ROOT . '/administrator';
+=======
+				$path 	= JPATH_ROOT . '/administrator';
+>>>>>>> master
 			break;
 
 			case 'site':
 			case 'module':
 			default:
+<<<<<<< HEAD
 				$path = JPATH_ROOT;
+=======
+				$path	= JPATH_ROOT;
+>>>>>>> master
 			break;
 		}
 

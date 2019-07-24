@@ -1,7 +1,11 @@
 <?php
 /**
 * @package		EasyBlog
+<<<<<<< HEAD
 * @copyright	Copyright (C) 2010 - 2019 Stack Ideas Sdn Bhd. All rights reserved.
+=======
+* @copyright	Copyright (C) 2010 - 2018 Stack Ideas Sdn Bhd. All rights reserved.
+>>>>>>> master
 * @license		GNU/GPL, see LICENSE.php
 * EasyBlog is free software. This version may have been modified pursuant
 * to the GNU General Public License, and as distributed it includes or
@@ -238,6 +242,7 @@ class EasyBlogMediaManagerLocalSource extends EasyBlogMediaManagerAbstractSource
 			return EB::exception('COM_EASYBLOG_IMAGE_MANAGER_UPLOAD_ERROR');
 		}
 
+<<<<<<< HEAD
 		$isImage = $this->isImage($filePath, $file['type']);
 
 		// Image optimization
@@ -246,6 +251,8 @@ class EasyBlogMediaManagerLocalSource extends EasyBlogMediaManagerAbstractSource
 			$optimizer->optimize($filePath);
 		}
 
+=======
+>>>>>>> master
 		// Should we resize the original image?
 		if (isset($file['type']) && $this->isImage($filePath, $file['type']) && $this->config->get('main_resize_original_image') && !$this->isGifImage($file['type'])) {
 			$width = $this->config->get('main_original_image_width');
@@ -256,7 +263,11 @@ class EasyBlogMediaManagerLocalSource extends EasyBlogMediaManagerAbstractSource
 		}
 
 		// Build variations if it is an image file
+<<<<<<< HEAD
 		if (isset($file['type']) && $isImage) {
+=======
+		if (isset($file['type']) && $this->isImage($filePath, $file['type'])) {
+>>>>>>> master
 			EB::imageset()->initDimensions($filePath);
 		}
 
@@ -467,6 +478,11 @@ class EasyBlogMediaManagerLocalSource extends EasyBlogMediaManagerAbstractSource
 	 *
 	 * @since	5.0
 	 * @access	public
+<<<<<<< HEAD
+=======
+	 * @param	string
+	 * @return
+>>>>>>> master
 	 */
 	public function renameVariations($sourceUri, $targetUri)
 	{
@@ -478,6 +494,11 @@ class EasyBlogMediaManagerLocalSource extends EasyBlogMediaManagerAbstractSource
 	 *
 	 * @since	5.0
 	 * @access	public
+<<<<<<< HEAD
+=======
+	 * @param	string
+	 * @return
+>>>>>>> master
 	 */
 	public function move($source, $target)
 	{

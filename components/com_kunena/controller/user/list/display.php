@@ -141,7 +141,11 @@ class ComponentKunenaControllerUserListDisplay extends KunenaControllerDisplay
 	{
 		$page      = $this->pagination->pagesCurrent;
 		$pages     = $this->pagination->pagesTotal;
+<<<<<<< HEAD
 		$pagesText = ($page > 1 ? " - " . Text::_('COM_KUNENA_PAGES') . " {$page}" : '');
+=======
+		$pagesText = $page > 1 ? " ({$page}/{$pages})" : '';
+>>>>>>> master
 
 		$app       = Factory::getApplication();
 		$menu_item = $app->getMenu()->getActive();
@@ -155,7 +159,11 @@ class ComponentKunenaControllerUserListDisplay extends KunenaControllerDisplay
 
 			if (!empty($params_title))
 			{
+<<<<<<< HEAD
 				$title = $params->get('page_title') . $pagesText;
+=======
+				$title = $params->get('page_title');
+>>>>>>> master
 				$this->setTitle($title);
 			}
 			else
@@ -171,7 +179,11 @@ class ComponentKunenaControllerUserListDisplay extends KunenaControllerDisplay
 			}
 			else
 			{
+<<<<<<< HEAD
 				$keywords = $this->config->board_title . ', ' . Text::_('COM_KUNENA_VIEW_USER_LIST') . $pagesText;
+=======
+				$keywords = $this->config->board_title . ', ' . Text::_('COM_KUNENA_VIEW_USER_LIST');
+>>>>>>> master
 				$this->setKeywords($keywords);
 			}
 
@@ -182,7 +194,11 @@ class ComponentKunenaControllerUserListDisplay extends KunenaControllerDisplay
 			}
 			else
 			{
+<<<<<<< HEAD
 				$description = Text::_('COM_KUNENA_VIEW_USER_LIST') . ': ' . $this->config->board_title . $pagesText;
+=======
+				$description = Text::_('COM_KUNENA_VIEW_USER_LIST') . ': ' . $this->config->board_title;
+>>>>>>> master
 				$this->setDescription($description);
 			}
 		}

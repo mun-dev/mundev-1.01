@@ -1,8 +1,14 @@
 <?php
 /**
+<<<<<<< HEAD
 * @package		EasyBlog
 * @copyright	Copyright (C) 2010 - 2019 Stack Ideas Sdn Bhd. All rights reserved.
 * @license		GNU/GPL, see LICENSE.php
+=======
+* @package  EasyBlog
+* @copyright Copyright (C) 2010 - 2018 Stack Ideas Sdn Bhd. All rights reserved.
+* @license  GNU/GPL, see LICENSE.php
+>>>>>>> master
 * EasyBlog is free software. This version may have been modified pursuant
 * to the GNU General Public License, and as distributed it includes or
 * is derivative of works licensed under the GNU General Public License or
@@ -23,6 +29,7 @@ if (EB::isJoomla40()) {
 
 class EBString extends EBStringBase
 {
+<<<<<<< HEAD
 	/**
 	 * Override str_ireplace function from joomla
 	 * Refer this ticket, #1899
@@ -34,6 +41,8 @@ class EBString extends EBStringBase
 	{
 		return str_ireplace($search, $replace, $subject, $count);
 	}
+=======
+>>>>>>> master
 }
 
 class EBFactory
@@ -65,7 +74,11 @@ class EBFactory
 	public static function getEditor($editorType = null)
 	{
 		if (!$editorType) {
+<<<<<<< HEAD
 
+=======
+			
+>>>>>>> master
 			$config = EB::config();
 			$jConfig = EB::jConfig();
 
@@ -75,7 +88,11 @@ class EBFactory
 			// if use build-in composer, we should check from the global configuration setting
 			if ($editorType == 'composer') {
 				$editorType = $jConfig->get('editor');
+<<<<<<< HEAD
 			}
+=======
+			}			
+>>>>>>> master
 		}
 
 		if (EB::isJoomla40()) {
@@ -84,7 +101,11 @@ class EBFactory
 			$editor = JFactory::getEditor($editorType);
 
 			if ($editorType == 'none') {
+<<<<<<< HEAD
 				JHtml::_('behavior.core');
+=======
+				JHtml::_('behavior.core');	
+>>>>>>> master
 			}
 		}
 

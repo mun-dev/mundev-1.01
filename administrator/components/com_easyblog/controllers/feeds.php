@@ -1,8 +1,14 @@
 <?php
 /**
+<<<<<<< HEAD
 * @package		EasyBlog
 * @copyright	Copyright (C) 2010 - 2019 Stack Ideas Sdn Bhd. All rights reserved.
 * @license		GNU/GPL, see LICENSE.php
+=======
+* @package  EasyBlog
+* @copyright Copyright (C) 2010 - 2018 Stack Ideas Sdn Bhd. All rights reserved.
+* @license  GNU/GPL, see LICENSE.php
+>>>>>>> master
 * EasyBlog is free software. This version may have been modified pursuant
 * to the GNU General Public License, and as distributed it includes or
 * is derivative of works licensed under the GNU General Public License or
@@ -78,11 +84,14 @@ class EasyBlogControllerFeeds extends EasyBlogController
 				return $this->app->redirect('index.php?option=com_easyblog&view=feeds');
 
 			}
+<<<<<<< HEAD
 
 			$actionlog = EB::actionlog();
 			$actionlog->log('COM_EB_ACTIONLOGS_FEEDS_DELETED', 'feeds', array(
 				'feedTitle' => $feed->title
 			));
+=======
+>>>>>>> master
 		}
 
 		$this->info->set('COM_EASYBLOG_BLOGS_FEEDS_DELETE_SUCCESS', 'success');
@@ -112,8 +121,11 @@ class EasyBlogControllerFeeds extends EasyBlogController
 		$feed->load($id);
 		$feed->bind($post);
 
+<<<<<<< HEAD
 		$isNew = $id ? false : true;
 
+=======
+>>>>>>> master
 		if (!$feed->item_creator) {
 			EB::info()->set('COM_EASYBLOG_BLOGS_FEEDS_ERROR_AUTHOR', 'error');
 
@@ -179,6 +191,7 @@ class EasyBlogControllerFeeds extends EasyBlogController
 		$feed->params = $params->toString();
 		$state = $feed->store();
 
+<<<<<<< HEAD
 		$actionString = $isNew ? 'COM_EB_ACTIONLOGS_FEEDS_CREATED' : 'COM_EB_ACTIONLOGS_FEEDS_UPDATED';
 		$actionlog = EB::actionlog();
 		$actionlog->log($actionString, 'feeds', array(
@@ -186,6 +199,8 @@ class EasyBlogControllerFeeds extends EasyBlogController
 			'feedTitle' => $feed->title
 		));
 
+=======
+>>>>>>> master
 		if (!$state) {
 			EB::info()->set($feed->getError(), 'error');
 
@@ -241,6 +256,7 @@ class EasyBlogControllerFeeds extends EasyBlogController
 			$this->info->set(JText::_('COM_EASYBLOG_BLOGS_FEEDS_ERROR_PUBLISH'), 'error');
 		}
 
+<<<<<<< HEAD
 		foreach ($feeds as $id) {
 			$feed = EB::table('Feed');
 			$feed->load($id);
@@ -251,6 +267,8 @@ class EasyBlogControllerFeeds extends EasyBlogController
 				'feedTitle' => $feed->title
 			));
 		}
+=======
+>>>>>>> master
 		return $this->app->redirect('index.php?option=com_easyblog&view=feeds');
 
 	}
@@ -284,6 +302,7 @@ class EasyBlogControllerFeeds extends EasyBlogController
 			$this->info->set(JText::_('COM_EASYBLOG_BLOGS_FEEDS_ERROR_UNPUBLISH'), 'error');
 		}
 
+<<<<<<< HEAD
 		foreach ($feeds as $id) {
 			$feed = EB::table('Feed');
 			$feed->load($id);
@@ -295,6 +314,8 @@ class EasyBlogControllerFeeds extends EasyBlogController
 			));
 		}
 
+=======
+>>>>>>> master
 		return $this->app->redirect('index.php?option=com_easyblog&view=feeds');
 	}
 }

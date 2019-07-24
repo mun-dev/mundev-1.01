@@ -1,7 +1,11 @@
 <?php
 /**
 * @package		EasyBlog
+<<<<<<< HEAD
 * @copyright	Copyright (C) 2010 - 2019 Stack Ideas Sdn Bhd. All rights reserved.
+=======
+* @copyright	Copyright (C) 2010 Stack Ideas Private Limited. All rights reserved.
+>>>>>>> master
 * @license		GNU/GPL, see LICENSE.php
 * EasyBlog is free software. This version may have been modified pursuant
 * to the GNU General Public License, and as distributed it includes or
@@ -9,7 +13,11 @@
 * other free or open source software licenses.
 * See COPYRIGHT.php for copyright notices and details.
 */
+<<<<<<< HEAD
 defined('_JEXEC') or die('Unauthorized Access');
+=======
+defined('_JEXEC') or die('Restricted access');
+>>>>>>> master
 
 jimport('joomla.html.html');
 jimport('joomla.form.formfield');

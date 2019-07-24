@@ -437,6 +437,7 @@ class EasyDiscussThemes extends EasyDiscuss
 		$this->categoryTheme = $theme;
 	}
 
+<<<<<<< HEAD
 	/**
 	 * Generates text/avatar image class 
 	 *
@@ -457,4 +458,6 @@ class EasyDiscussThemes extends EasyDiscuss
 
 		return $avatarClass;
 	}	
+=======
+>>>>>>> master
 }

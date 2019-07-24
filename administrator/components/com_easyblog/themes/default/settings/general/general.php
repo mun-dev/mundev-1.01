@@ -87,6 +87,7 @@ defined('_JEXEC') or die('Unauthorized Access');
 		</div>
 
 		<div class="panel">
+<<<<<<< HEAD
 			<?php echo $this->html('panel.heading', 'COM_EB_AUTO_ARCHIVING'); ?>
 
 			<div class="panel-body">
@@ -104,6 +105,8 @@ defined('_JEXEC') or die('Unauthorized Access');
 		</div>
 
 		<div class="panel">
+=======
+>>>>>>> master
 			<?php echo $this->html('panel.heading', 'COM_EB_GDPR'); ?>
 
 			<div class="panel-body">

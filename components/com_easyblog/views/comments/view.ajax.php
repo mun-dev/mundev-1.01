@@ -1,7 +1,11 @@
 <?php
 /**
 * @package		EasyBlog
+<<<<<<< HEAD
 * @copyright	Copyright (C) 2010 - 2019 Stack Ideas Sdn Bhd. All rights reserved.
+=======
+* @copyright	Copyright (C) 2010 - 2018 Stack Ideas Sdn Bhd. All rights reserved.
+>>>>>>> master
 * @license		GNU/GPL, see LICENSE.php
 * EasyBlog is free software. This version may have been modified pursuant
 * to the GNU General Public License, and as distributed it includes or
@@ -364,11 +368,16 @@ class EasyBlogViewComments extends EasyBlogView
 	/**
 	 * Displays the terms and condition popup
 	 *
+<<<<<<< HEAD
 	 * @since	5.3.0
+=======
+	 * @since	5.1
+>>>>>>> master
 	 * @access	public
 	 */
 	public function terms()
 	{
+<<<<<<< HEAD
 		$text = '';
 
 		if ($this->config->get('comment_tnc_article') && $this->config->get('comment_tnc_articleid')) {
@@ -382,6 +391,10 @@ class EasyBlogViewComments extends EasyBlogView
 			$text = $this->config->get('comment_tnctext');
 			$text = nl2br($text);
 		}
+=======
+		$text = $this->config->get('comment_tnctext');
+		$text = nl2br($text);
+>>>>>>> master
 
 		$theme = EB::template();
 		$theme->set('text', $text);

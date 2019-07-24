@@ -1,7 +1,11 @@
 <?php
 /**
 * @package		EasyBlog
+<<<<<<< HEAD
 * @copyright	Copyright (C) 2010 - 2019 Stack Ideas Sdn Bhd. All rights reserved.
+=======
+* @copyright	Copyright (C) 2010 - 2018 Stack Ideas Sdn Bhd. All rights reserved.
+>>>>>>> master
 * @license		GNU/GPL, see LICENSE.php
 * EasyBlog is free software. This version may have been modified pursuant
 * to the GNU General Public License, and as distributed it includes or
@@ -156,7 +160,10 @@ define('EBLOG_VARIATION_SYSTEM_TYPE', 'system');
 // Media sources
 define('EBLOG_MEDIA_SOURCE_LOCAL', 'local');
 define('EBLOG_MEDIA_SOURCE_FLICKR', 'flickr');
+<<<<<<< HEAD
 define('EBLOG_MEDIA_SOURCE_AMAZON', 'amazon');
+=======
+>>>>>>> master
 define('EBLOG_MEDIA_SOURCE_JOMSOCIAL', 'jomsocial');
 define('EBLOG_MEDIA_SOURCE_EASYSOCIAL', 'easysocial');
 
@@ -179,8 +186,11 @@ define('EBLOG_SESSION_NAMESPACE', 'easyblog');
 // Language server
 define('EBLOG_KEYWORDS_SERVER', 'https://services.stackideas.com/keywords/easyblog');
 define('EBLOG_LANGUAGES_SERVER', 'https://services.stackideas.com/translations/easyblog');
+<<<<<<< HEAD
 define('EASYBLOG_OPTIMIZER_SERVER', 'https://services.stackideas.com/optimizer');
 
+=======
+>>>>>>> master
 define('EBLOG_LANGUAGES_INSTALLED', 1);
 define('EBLOG_LANGUAGES_NOT_INSTALLED', 0);
 define('EBLOG_LANGUAGES_NEEDS_UPDATING', 3);
@@ -268,9 +278,13 @@ define('EASYBLOG_SUBSCRIPTION_DOUBLE_OPT_IN', 2);
 define('EASYBLOG_SUBSCRIPTION_WITHOUT_CONFIRMATION_EMAIL', 3);
 
 // stream context type
+<<<<<<< HEAD
 define('EASYBLOG_STREAM_CONTEXT_TYPE', 'blog');
 
 // media storage type
 define('EASYBLOG_MEDIA_STORAGE_TYPE_JOOMLA', 'joomla');
 define('EASYBLOG_MEDIA_STORAGE_TYPE_AMAZON', 'amazon');
 
+=======
+define('EASYBLOG_STREAM_CONTEXT_TYPE', 'blog');
+>>>>>>> master

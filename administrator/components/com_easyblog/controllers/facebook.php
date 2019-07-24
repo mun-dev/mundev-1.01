@@ -1,7 +1,11 @@
 <?php
 /**
 * @package		EasyBlog
+<<<<<<< HEAD
 * @copyright	Copyright (C) 2010 - 2019 Stack Ideas Sdn Bhd. All rights reserved.
+=======
+* @copyright	Copyright (C) 2010 - 2017 Stack Ideas Sdn Bhd. All rights reserved.
+>>>>>>> master
 * @license		GNU/GPL, see LICENSE.php
 * EasyBlog is free software. This version may have been modified pursuant
 * to the GNU General Public License, and as distributed it includes or
@@ -143,11 +147,14 @@ class EasyBlogControllerFacebook extends EasyBlogController
 		// Regardless of the state, delete the record.
 		$table->delete();
 
+<<<<<<< HEAD
 		$actionlog = EB::actionlog();
 		$actionlog->log('COM_EB_ACTIONLOGS_AUTOPOSTING_FACEBOOK_REVOKED', 'autoposting', array(
 			'link' => 'index.php?option=com_easyblog&view=autoposting&layout=facebook'
 		));
 
+=======
+>>>>>>> master
 		// If there's a problem revoking the app, just delete the record and let the user know
 		if ($state === false) {
 			$this->info->set(JText::_('COM_EASYBLOG_AUTOPOST_FACEBOOK_ERROR_REVOKING_ACCESS'), 'error');
@@ -207,11 +214,14 @@ class EasyBlogControllerFacebook extends EasyBlogController
 		$model = EB::model('Settings');
 		$model->save($post);
 
+<<<<<<< HEAD
 		$actionlog = EB::actionlog();
 		$actionlog->log('COM_EB_ACTIONLOGS_AUTOPOSTING_FACEBOOK_UPDATED', 'autoposting', array(
 			'link' => 'index.php?option=com_easyblog&view=autoposting&layout=facebook'
 		));
 
+=======
+>>>>>>> master
 		// Redirect the user
 		EB::info()->set(JText::_('COM_EASYBLOG_AUTOPOSTING_FACEBOOK_SAVE_SUCCESS'), 'success');
 

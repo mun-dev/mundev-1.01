@@ -1,7 +1,11 @@
 <?php
 /**
 * @package		EasyBlog
+<<<<<<< HEAD
 * @copyright	Copyright (C) 2010 - 2019 Stack Ideas Sdn Bhd. All rights reserved.
+=======
+* @copyright	Copyright (C) 2010 - 2017 Stack Ideas Sdn Bhd. All rights reserved.
+>>>>>>> master
 * @license		GNU/GPL, see LICENSE.php
 * EasyBlog is free software. This version may have been modified pursuant
 * to the GNU General Public License, and as distributed it includes or
@@ -30,6 +34,7 @@ abstract class EasyBlogBlockHandlerAbstract
 		$type = EBString::strtoupper($this->type);
 
 		$this->title = JText::_('COM_EASYBLOG_BLOCKS_HANDLER_' . $type . '_TITLE');
+<<<<<<< HEAD
 
 		if ($block->keywords) {
 			$this->keywords = $block->keywords;
@@ -40,6 +45,9 @@ abstract class EasyBlogBlockHandlerAbstract
 			$this->keywords = JText::_('COM_EASYBLOG_BLOCKS_HANDLER_' . $type . '_KEYWORDS');
 		}
 		
+=======
+		$this->keywords = JText::_('COM_EASYBLOG_BLOCKS_HANDLER_' . $type . '_KEYWORDS');
+>>>>>>> master
 		$this->table = $block;
 	}
 

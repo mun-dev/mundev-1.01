@@ -1,7 +1,11 @@
 <?php
 /**
 * @package		EasyBlog
+<<<<<<< HEAD
 * @copyright	Copyright (C) 2010 - 2019 Stack Ideas Sdn Bhd. All rights reserved.
+=======
+* @copyright	Copyright (C) 2010 - 2017 Stack Ideas Sdn Bhd. All rights reserved.
+>>>>>>> master
 * @license		GNU/GPL, see LICENSE.php
 * EasyBlog is free software. This version may have been modified pursuant
 * to the GNU General Public License, and as distributed it includes or
@@ -26,8 +30,12 @@ class EBMM extends EasyBlog
 		'gif'	=> 'image',
 		'bmp'	=> 'image',
 		'jpeg'	=> 'image',
+<<<<<<< HEAD
 		'webp' => 'image',
 		
+=======
+
+>>>>>>> master
 		// Videos
 		'mp4'	=> 'video',
 		'swf'	=> 'video',
@@ -50,6 +58,7 @@ class EBMM extends EasyBlog
 	);
 
 	/**
+<<<<<<< HEAD
 	 * Mapping of extension to mimetype
 	 * @var Array
 	 */
@@ -960,6 +969,8 @@ class EBMM extends EasyBlog
 	);
 
 	/**
+=======
+>>>>>>> master
 	 * Maps the given place with the specific icons
 	 * @var Array
 	 */
@@ -971,7 +982,10 @@ class EBMM extends EasyBlog
 		'place/shared' => 'fa fa-cloud',
 		'place/flickr' => 'fa fa-flickr',
 		'place/dropbox' => 'fa fa-dropbox',
+<<<<<<< HEAD
 		'place/amazon' => 'fa fa-amazon',
+=======
+>>>>>>> master
 		'place/album' => 'fa fa-folder',
 		'place/jomsocial' => 'fa fa-folder',
 		'place/easysocial' => 'fa fa-folder',
@@ -1315,10 +1329,13 @@ class EBMM extends EasyBlog
 			return EBLOG_MEDIA_SOURCE_LOCAL;
 		}
 
+<<<<<<< HEAD
 		if ($this->isAmazonPlace($placeId)) {
 			return EBLOG_MEDIA_SOURCE_AMAZON;
 		}
 
+=======
+>>>>>>> master
 		// Determines if this is an album or flickr place
 		if ($this->isAlbumPlace($placeId) || $this->isFlickrPlace($placeId)) {
 			$parts = explode(':', $placeId);
@@ -1341,7 +1358,11 @@ class EBMM extends EasyBlog
 	{
 		$placeId = self::getPlaceId($uri);
 
+<<<<<<< HEAD
 		$info = array(
+=======
+		return (object) array(
+>>>>>>> master
 			'id' => $placeId,
 			'title' => self::getPlaceName($placeId),
 			'icon' => self::getPlaceIcon($placeId),
@@ -1349,8 +1370,11 @@ class EBMM extends EasyBlog
 			'uri' => $placeId,
 			'key' => self::getKey($placeId)
 		);
+<<<<<<< HEAD
 
 		return (object) $info;
+=======
+>>>>>>> master
 	}
 
 	/**
@@ -1385,6 +1409,7 @@ class EBMM extends EasyBlog
 			$places[] = $this->getPlace('flickr');
 		}
 
+<<<<<<< HEAD
 		// Amazon S3 Integrations
 		// if ($config->get('main_amazon_enabled') && $config->get('main_amazon_access') != '' && $config->get('main_amazon_secret') && $acl->get('media_places_amazon')) {
 		if ($config->get('main_amazon_enabled') && $config->get('main_amazon_access') != '' && $config->get('main_amazon_secret')) {
@@ -1393,6 +1418,8 @@ class EBMM extends EasyBlog
 			$places[] = $this->getPlace('amazon');
 		}
 
+=======
+>>>>>>> master
 		// EasySocial
 		if ($config->get('integrations_easysocial_album') && $acl->get('media_places_album') && EB::easysocial()->exists()) {
 			$places[] = $this->getPlace('easysocial');
@@ -1466,11 +1493,14 @@ class EBMM extends EasyBlog
 			}
 		}
 
+<<<<<<< HEAD
 		// If this is an album place
 		if (self::isAmazonPlace($placeId)) {
 			$placeName = 'amazon';
 		}
 
+=======
+>>>>>>> master
 		return JText::_('COM_EASYBLOG_MM_PLACE_' . strtoupper($placeName));
 	}
 
@@ -1500,10 +1530,13 @@ class EBMM extends EasyBlog
 			$placeName = 'flickr';
 		}
 
+<<<<<<< HEAD
 		if (self::isAmazonPlace($placeId)) {
 			$placeName = 'amazon';
 		}
 
+=======
+>>>>>>> master
 		return self::$icons["place/$placeName"];
 	}
 
@@ -1631,6 +1664,7 @@ class EBMM extends EasyBlog
 			));
 		}
 
+<<<<<<< HEAD
 		// Amazon Article place
 		if (self::isAmazonPlace($placeId)) {
 
@@ -1653,6 +1687,8 @@ class EBMM extends EasyBlog
 			));
 		}
 
+=======
+>>>>>>> master
 		// If there's no acl defined, we should use the default acl
 		if (!isset($acl)) {
 			$acl = self::$acl;
@@ -1781,6 +1817,7 @@ class EBMM extends EasyBlog
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Retrieve mime type based on extension
 	 *
 	 * @since	5.3.0
@@ -1796,13 +1833,19 @@ class EBMM extends EasyBlog
 
 
 	/**
+=======
+>>>>>>> master
 	 * Returns path from uri
 	 * user:605/foo/bar.jpg => /var/www/site.com/images/easyblog_images/605/foo/bar.jpg
 	 *
 	 * @since	5.0
 	 * @access	public
 	 */
+<<<<<<< HEAD
 	public static function getPath($uri, $root = JPATH_ROOT, $prefix = '')
+=======
+	public static function getPath($uri, $root = JPATH_ROOT)
+>>>>>>> master
 	{
 		// TODO: Strip off . & .. for security reasons or add other types of security measures.
 
@@ -1876,6 +1919,7 @@ class EBMM extends EasyBlog
 
 		$isRootFolder = $placeId == $uri;
 
+<<<<<<< HEAD
 		$relativePath = @$places[$placeId];
 
 		// check if we need to append prefix to the folder or not.
@@ -1884,6 +1928,9 @@ class EBMM extends EasyBlog
 		}
 
 		$path = $root . '/' . $relativePath;
+=======
+		$path = $root . '/' . @$places[$placeId];
+>>>>>>> master
 
 		if (!$isRootFolder) {
 			$path .= '/' . substr($uri, strpos($uri, '/') + 1);
@@ -2020,7 +2067,11 @@ class EBMM extends EasyBlog
 	 * @since	5.1
 	 * @access	public
 	 */
+<<<<<<< HEAD
 	public function render($postId = null)
+=======
+	public function render()
+>>>>>>> master
 	{
 		// Get a list of places
 		$places = self::getPlaces();
@@ -2556,7 +2607,11 @@ class EBMM extends EasyBlog
 	 */
 	public static function isMoveablePlace($placeId)
 	{
+<<<<<<< HEAD
 		if ($placeId == 'easysocial' || $placeId == 'jomsocial' || $placeId == 'flickr' || self::isAmazonPlace($placeId)) {
+=======
+		if ($placeId == 'easysocial' || $placeId == 'jomsocial' || $placeId == 'flickr') {
+>>>>>>> master
 			return false;
 		}
 
@@ -2573,6 +2628,11 @@ class EBMM extends EasyBlog
 	 *
 	 * @since	5.0
 	 * @access	public
+<<<<<<< HEAD
+=======
+	 * @param	string
+	 * @return
+>>>>>>> master
 	 */
 	public static function isPostPlace($placeId)
 	{
@@ -2580,6 +2640,7 @@ class EBMM extends EasyBlog
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Determines if this is a post place
 	 *
 	 * @since	5.0
@@ -2592,15 +2653,23 @@ class EBMM extends EasyBlog
 	}
 
 	/**
+=======
+>>>>>>> master
 	 * Determines if this place is a user's media
 	 *
 	 * @since	5.0
 	 * @access	public
+<<<<<<< HEAD
+=======
+	 * @param	string
+	 * @return
+>>>>>>> master
 	 */
 	public static function isUserPlace($placeId)
 	{
 		return preg_match('/^user\:/i', $placeId);
 	}
+<<<<<<< HEAD
 
 	/**
 	 * Determines if this is a amazon place
@@ -2612,4 +2681,6 @@ class EBMM extends EasyBlog
 	{
 		return preg_match('/^amazon\:/i', $placeId);
 	}
+=======
+>>>>>>> master
 }

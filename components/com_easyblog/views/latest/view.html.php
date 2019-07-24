@@ -140,7 +140,10 @@ class EasyBlogViewLatest extends EasyBlogView
 		if ($filter == 'field') {
 			$filterVars = $this->input->input->getArray();
 			$filterMode = $this->input->get('filtermode', 'include');
+<<<<<<< HEAD
 			$strictMode = $this->input->get('strictmode', false, 'bool');
+=======
+>>>>>>> master
 
 			foreach ($filterVars as $key => $value) {
 
@@ -162,7 +165,10 @@ class EasyBlogViewLatest extends EasyBlogView
 
 			$options['fieldsFilterRule'] = $filterMode;
 			$options['fieldsFilter'] = $fields;
+<<<<<<< HEAD
 			$options['strictMode'] = $strictMode;
+=======
+>>>>>>> master
 		} else if ($filterSaved) {
 			$params = json_decode($filterSaved->params);
 
@@ -189,12 +195,17 @@ class EasyBlogViewLatest extends EasyBlogView
 		$max = 0;
 		$limit = EB::getViewLimit();
 
+<<<<<<< HEAD
 		$themes = EB::themes();
 
 		// Determine if loadmore should be shown by adding one extra limit into the query
 		$paginationStyle = $themes->getParam('pagination_style', 'normal');
 
 		if ($paginationStyle == 'autoload') {
+=======
+		// Determine if loadmore should be shown by adding one extra limit into the query
+		if ($this->config->get('listing_pagination_style') == 'autoload') {
+>>>>>>> master
 			$max = $limit + 1;
 			$options['paginationType'] = 'loadmore';
 		}
@@ -207,7 +218,11 @@ class EasyBlogViewLatest extends EasyBlogView
 
 		if ($data) {
 
+<<<<<<< HEAD
 			if ($paginationStyle == 'autoload' && count($data) == $max) {
+=======
+			if ($this->config->get('listing_pagination_style') == 'autoload' && count($data) == $max) {
+>>>>>>> master
 				$showLoadMore = true;
 
 				// Take out the last post
@@ -227,6 +242,11 @@ class EasyBlogViewLatest extends EasyBlogView
 					'loadAuthor' => false
 					);
 
+<<<<<<< HEAD
+=======
+		$themes = EB::themes();
+
+>>>>>>> master
 		if ($themes->getParam('post_comment_counter', 0)) {
 			$options['cacheCommentCount'] = true;
 		}
@@ -289,7 +309,11 @@ class EasyBlogViewLatest extends EasyBlogView
 		$this->canonical($canoLink);
 
 		// Meta should be set later because formatter would have cached the post already.
+<<<<<<< HEAD
 		EB::setMeta(META_ID_LATEST, META_TYPE_VIEW, '', $pagination);
+=======
+		EB::setMeta(META_ID_LATEST, META_TYPE_VIEW);
+>>>>>>> master
 
 		// Get the current url
 		$return = EBR::current();
@@ -304,9 +328,13 @@ class EasyBlogViewLatest extends EasyBlogView
 		$this->set('currentPageLink', $currentPageLink);
 		$this->set('hasPinterestEmbedCode', $hasPinterestEmbedCode);
 
+<<<<<<< HEAD
 		$templateFile = $params->get('layout_style', 'default');
 		$namespace = 'blogs/latest/' . $templateFile;
 
 		parent::display($namespace);
+=======
+		parent::display('blogs/latest/default');
+>>>>>>> master
 	}
 }

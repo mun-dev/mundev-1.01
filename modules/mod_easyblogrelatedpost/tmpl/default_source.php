@@ -21,7 +21,11 @@ defined('_JEXEC') or die('Unauthorized Access');
 
 	<?php if ($params->get('showdate' , true)) { ?>
 		<div class="mod-muted mod-small">
+<<<<<<< HEAD
 			<?php echo $post->getDisplayDate($params->get('sourcedate', ''))->format($params->get('dateformat', JText::_('DATE_FORMAT_LC3'))); ?>
+=======
+			<?php echo $post->getCreationDate()->format($params->get('dateformat', JText::_('DATE_FORMAT_LC3'))); ?>
+>>>>>>> master
 		</div>
 	<?php } ?>
 </div>

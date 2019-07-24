@@ -1,7 +1,11 @@
 <?php
 /**
 * @package		EasyBlog
+<<<<<<< HEAD
 * @copyright	Copyright (C) 2010 - 2019 Stack Ideas Sdn Bhd. All rights reserved.
+=======
+* @copyright	Copyright (C) 2010 - 2017 Stack Ideas Sdn Bhd. All rights reserved.
+>>>>>>> master
 * @license		GNU/GPL, see LICENSE.php
 * EasyBlog is free software. This version may have been modified pursuant
 * to the GNU General Public License, and as distributed it includes or
@@ -36,10 +40,16 @@ defined('_JEXEC') or die('Unauthorized Access');
 
 	<?php if ($params->get('photo_show', true) && $post->cover) { ?>
 		<div class="eb-mod-thumb <?php echo $photoAlignment ? " is-" . $photoAlignment : '';?> <?php echo (isset($photoLayout->full) && $photoLayout->full) ? "is-full" : '';?>">
+<<<<<<< HEAD
 
 			<?php if (isset($photoLayout->crop) && $photoLayout->crop) { ?>
 				<a href="<?php echo $post->getPermalink();?>" class="eb-mod-image-cover"
 					title="<?php echo EB::themes()->escape($post->getImageTitle());?>" 
+=======
+			
+			<?php if (isset($photoLayout->crop) && $photoLayout->crop) { ?>
+				<a href="<?php echo $post->getPermalink();?>" class="eb-mod-image-cover"
+>>>>>>> master
 					style="
 						background-image: url('<?php echo $post->cover;?>');
 						<?php if (isset($photoLayout->full) && $photoLayout->full) { ?>
@@ -53,7 +63,10 @@ defined('_JEXEC') or die('Unauthorized Access');
 				</a>
 			<?php } else { ?>
 				<a href="<?php echo $post->getPermalink();?>" class="eb-mod-image"
+<<<<<<< HEAD
 					title="<?php echo EB::themes()->escape($post->getImageTitle());?>" 
+=======
+>>>>>>> master
 					style="
 						<?php if (isset($photoLayout->full) && $photoLayout->full) { ?>
 						width: 100%;
@@ -68,7 +81,11 @@ defined('_JEXEC') or die('Unauthorized Access');
 	<?php } ?>
 
 	<div class="eb-mod-title">
+<<<<<<< HEAD
 		<a href="<?php echo $post->getPermalink(); ?>" class="eb-mod-media-title" title="<?php echo EB::themes()->escape($post->title); ?>"><?php echo $post->title;?></a>
+=======
+		<a href="<?php echo $post->getPermalink(); ?>" class="eb-mod-media-title"><?php echo $post->title;?></a>
+>>>>>>> master
 	</div>
 
 <?php } ?>
@@ -89,4 +106,8 @@ defined('_JEXEC') or die('Unauthorized Access');
 			<?php echo $post->summary; ?>
 		<?php } ?>
 	</div>
+<<<<<<< HEAD
 <?php } ?>
+=======
+<?php } ?>
+>>>>>>> master

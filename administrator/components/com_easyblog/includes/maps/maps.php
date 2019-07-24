@@ -27,6 +27,7 @@ class EasyBlogMaps extends EasyBlog
 			return;
 		}
 
+<<<<<<< HEAD
 		// Generate a unique id
 		$uid = uniqid();
 
@@ -52,6 +53,18 @@ class EasyBlogMaps extends EasyBlog
 		}
 
 		// without Google maps API key
+=======
+		$language = $this->config->get('main_locations_blog_language');
+	    $gMapkey = $this->config->get('googlemaps_api_key');
+	    $gPlacesMapkey = $this->config->get('googleplaces_api_key');
+
+	    // with Google maps API key
+	    if (!$loaded && $gMapkey) {
+	        $this->doc->addScript('https://maps.googleapis.com/maps/api/js?key=' . $gMapkey . '&language=' . $language);
+	    }
+
+	    // without Google maps API key
+>>>>>>> master
 		if (!$loaded && !$gMapkey) {
 			$this->doc->addScript('https://maps.googleapis.com/maps/api/js?sensor=true&language=' . $language);
 		}
@@ -63,12 +76,22 @@ class EasyBlogMaps extends EasyBlog
 		$minZoom = $this->config->get('main_locations_min_zoom_level');
 		$defaultZoom = $this->config->get('main_locations_default_zoom_level', '17');
 
+<<<<<<< HEAD
+=======
+		// Generate a unique id
+		$uid = uniqid();
+
+>>>>>>> master
 		$namespace = 'site/maps/static';
 		$mapUrl = "https://maps.googleapis.com/maps/api/staticmap?center=" . $post->latitude . "," . $post->longitude . "&size=1280x1280&markers=color:red|label:S|" . $post->latitude . "," . $post->longitude . "&key=" . $gMapkey;
 
 		if (!$this->config->get('main_locations_static_maps')) {
 			$namespace = 'site/maps/interactive';
+<<<<<<< HEAD
 			$mapUrl = "https://www.google.com/maps/embed/v1/place?key=" . $gMapkey . "&q=" . str_replace(' ', '%20', $post->address);
+=======
+			$mapUrl = "https://www.google.com/maps/embed/v1/place?key=" . $gPlacesMapkey . "&q=" . str_replace(' ', '%20', $post->address);
+>>>>>>> master
 
 			// For interactive maps, only two kind of map type is supported, roadmap and satellite.
 			$mapType = 'ROADMAP';

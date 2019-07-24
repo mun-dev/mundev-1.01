@@ -1,7 +1,11 @@
 <?php
 /**
 * @package		EasyBlog
+<<<<<<< HEAD
 * @copyright	Copyright (C) 2010 - 2019 Stack Ideas Sdn Bhd. All rights reserved.
+=======
+* @copyright	Copyright (C) 2010 - 2018 Stack Ideas Sdn Bhd. All rights reserved.
+>>>>>>> master
 * @license		GNU/GPL, see LICENSE.php
 * EasyBlog is free software. This version may have been modified pursuant
 * to the GNU General Public License, and as distributed it includes or
@@ -11,7 +15,10 @@
 */
 defined('_JEXEC') or die('Unauthorized Access');
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> master
 require_once(JPATH_COMPONENT . '/controller.php');
 
 class EasyBlogControllerLanguages extends EasyBlogController
@@ -33,9 +40,12 @@ class EasyBlogControllerLanguages extends EasyBlogController
 
 		EB::info()->set(JText::_('COM_EASYBLOG_LANGUAGE_PURGED_SUCCESSFULLY'), 'success');
 
+<<<<<<< HEAD
 		$actionlog = EB::actionlog();
 		$actionlog->log('COM_EB_ACTIONLOGS_LANGUAGES_PURGED', 'languages');
 
+=======
+>>>>>>> master
 		$this->app->redirect('index.php?option=com_easyblog&view=languages');
 	}
 
@@ -51,9 +61,12 @@ class EasyBlogControllerLanguages extends EasyBlogController
 
 		$this->info->set(JText::_('COM_EASYBLOG_LANGUAGE_DISCOVERED_SUCCESSFULLY'), 'success');
 
+<<<<<<< HEAD
 		$actionlog = EB::actionlog();
 		$actionlog->log('COM_EB_ACTIONLOGS_LANGUAGES_DISCOVERED', 'languages');
 
+=======
+>>>>>>> master
 		return $this->app->redirect('index.php?option=com_easyblog&view=languages');
 	}
 
@@ -77,11 +90,14 @@ class EasyBlogControllerLanguages extends EasyBlogController
 
 			$state = $table->install();
 
+<<<<<<< HEAD
 			$actionlog = EB::actionlog();
 			$actionlog->log('COM_EB_ACTIONLOGS_LANGUAGES_INSTALLED', 'languages', array(
 				'locale' => $table->locale
 			));
 
+=======
+>>>>>>> master
 			if (!$state) {
 				EB::info()->set($table->getError(), 'error');
 				return $this->app->redirect('index.php?option=com_easyblog&view=languages');
@@ -120,11 +136,14 @@ class EasyBlogControllerLanguages extends EasyBlogController
 
 			$table->uninstall();
 			$table->delete();
+<<<<<<< HEAD
 
 			$actionlog = EB::actionlog();
 			$actionlog->log('COM_EB_ACTIONLOGS_LANGUAGES_UNINSTALLED', 'languages', array(
 				'locale' => $table->locale
 			));
+=======
+>>>>>>> master
 		}
 
 		EB::info()->set(JText::_('COM_EASYBLOG_LANGUAGE_UNINSTALLED_SUCCESSFULLY'), 'success');

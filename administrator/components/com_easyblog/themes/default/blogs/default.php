@@ -125,7 +125,11 @@ defined('_JEXEC') or die('Unauthorized Access');
 							<?php echo JHTML::_('grid.sort', 'COM_EASYBLOG_BLOGS_HITS', 'a.hits', $orderDirection, $order); ?>
 						</th>
 
+<<<<<<< HEAD
 						<th width="5%" nowrap="nowrap center">
+=======
+						<th width="1%" nowrap="nowrap center">
+>>>>>>> master
 							<?php echo JHTML::_('grid.sort', 'COM_EASYBLOG_ID', 'a.id', $orderDirection, $order); ?>
 						</th>
 					
@@ -191,7 +195,11 @@ defined('_JEXEC') or die('Unauthorized Access');
 
 							<!-- Only render this on the mobile device -->
 							<div class="mt-5 hidden-desktop">
+<<<<<<< HEAD
 								<div class="btn-group">
+=======
+							    <div class="btn-group">
+>>>>>>> master
 									<a class="btn btn-default btn-sm" data-notify-item data-blog-id="<?php echo $row->id;?>" data-eb-provide="tooltip" data-title="<?php echo JText::_('COM_EASYBLOG_BLOGS_NOTIFY_TOOLTIP');?>">
 										<i class="fa fa-envelope fa-14"></i>
 									</a>
@@ -212,7 +220,11 @@ defined('_JEXEC') or die('Unauthorized Access');
 											<?php } ?>
 										<?php } ?>
 									<?php } ?>
+<<<<<<< HEAD
 								</div>
+=======
+							    </div>
+>>>>>>> master
 							</div>
 						</td>
 

@@ -1,8 +1,14 @@
 <?php
 /**
+<<<<<<< HEAD
 * @package      EasyDiscuss
 * @copyright    Copyright (C) 2010 - 2019 Stack Ideas Sdn Bhd. All rights reserved.
 * @license      GNU/GPL, see LICENSE.php
+=======
+* @package		EasyDiscuss
+* @copyright	Copyright (C) 2010 - 2015 Stack Ideas Sdn Bhd. All rights reserved.
+* @license		GNU/GPL, see LICENSE.php
+>>>>>>> master
 * EasyDiscuss is free software. This version may have been modified pursuant
 * to the GNU General Public License, and as distributed it includes or
 * is derivative of works licensed under the GNU General Public License or
@@ -11,6 +17,10 @@
 */
 defined('_JEXEC') or die('Unauthorized Access');
 ?>
+<<<<<<< HEAD
+=======
+
+>>>>>>> master
 <div class="ed-badges-entry">
     <div class="ed-badge ed-badge--entry">
         <div class="o-flag ed-badge--flag">
@@ -40,8 +50,13 @@ defined('_JEXEC') or die('Unauthorized Access');
 		                    <div class="o-flag__image">
 		                        <div class="o-avatar-status is-online">
 		                            <div class="o-avatar-status__indicator"></div>
+<<<<<<< HEAD
 		                            <a href="<?php echo $user->getLink(); ?>">
                                         <?php echo $this->html('user.avatar', $user, array('size' => 'md'), false, true); ?>
+=======
+		                            <a href="<?php echo $user->getLink(); ?>" class="o-avatar">
+		                                <img src="<?php echo $user->getAvatar(); ?>"/>
+>>>>>>> master
 		                            </a>
 		                        </div>
 		                    </div>

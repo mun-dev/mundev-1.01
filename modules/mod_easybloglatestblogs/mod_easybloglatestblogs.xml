@@ -2,12 +2,21 @@
 <extension type="module" version="3.0" client="site" method="upgrade">
 	<name>EasyBlog - Latest Blogs Module</name>
 	<author>Stack Ideas Sdn Bhd</author>
+<<<<<<< HEAD
 	<creationDate>18th July 2019</creationDate>
 	<copyright>Copyright 2009 - 2019 Stack Ideas Sdn Bhd. All rights reserved.</copyright>
 	<license>GPL License v2</license>
 	<authorEmail>support@stackideas.com</authorEmail>
 	<authorUrl>http://stackideas.com</authorUrl>
 	<version>5.3.2</version>
+=======
+	<creationDate>30th April 2019</creationDate>
+	<copyright>Copyright 2009 - 2015 Stack Ideas Sdn Bhd. All rights reserved.</copyright>
+	<license>GPL License v2</license>
+	<authorEmail>support@stackideas.com</authorEmail>
+	<authorUrl>http://stackideas.com</authorUrl>
+	<version>5.2.14</version>
+>>>>>>> master
 	<description>
 		<![CDATA[Latest blogs by module for your EasyBlog's component.]]></description>
 	<languages>
@@ -84,11 +93,14 @@
 			</fieldset>
 
 			<fieldset name="standard">
+<<<<<<< HEAD
 				<field name="sourcedate" type="list" default="created" label="MOD_EASYBLOG_POST_DATE_SOURCE" description="MOD_EASYBLOG_POST_DATE_SOURCE_DESC" >
 					<option value="created">COM_EASYBLOG_POST_DATE_SOURCE_CREATION</option>
 					<option value="modified">COM_EASYBLOG_POST_DATE_SOURCE_MODIFIED</option>
 					<option value="publish_up">COM_EASYBLOG_POST_DATE_SOURCE_PUBLISHING</option>
 				</field>
+=======
+>>>>>>> master
 				<field name="dateformat" type="text" default="d F Y" label="MOD_EASYBLOG_DATE_FORMAT" description="MOD_EASYBLOG_DATE_FORMAT_DESC" />
 				<field name="showintro" type="list" default="0" label="MOD_EASYBLOG_CONTENT_SOURCE" description="MOD_EASYBLOG_CONTENT_SOURCE_DESC" >
 					<option value="-1">MOD_EASYBLOG_DO_NOT_SHOW_ANY_CONTENTS</option>

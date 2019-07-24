@@ -50,7 +50,11 @@ defined('_JEXEC') or die('Unauthorized Access');
 
 					<?php if ($post->isAnonymous()) { ?>
 						<div class="o-flag__image o-flag--top">
+<<<<<<< HEAD
 							<?php echo $this->html('user.anonymous', $post->getOwner(), $post->isAnonymous()); ?>
+=======
+							<?php echo $this->output('site/html/user.anonymous') ?>
+>>>>>>> master
 						</div>
 					<?php } ?>
 

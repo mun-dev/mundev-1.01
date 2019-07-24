@@ -41,6 +41,7 @@ defined('_JEXEC') or die('Unauthorized Access');
 			</div>
 		</div>
 
+<<<<<<< HEAD
 		<div class="panel">
 			<?php echo $this->html('panel.heading', $fieldsets->author['grid']->label, $fieldsets->author['grid']->info); ?>
 
@@ -49,6 +50,8 @@ defined('_JEXEC') or die('Unauthorized Access');
 			</div>
 		</div>
 
+=======
+>>>>>>> master
 	</div>
 
 	<div class="col-lg-6">

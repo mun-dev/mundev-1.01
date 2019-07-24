@@ -234,12 +234,17 @@ class SocialUserAppPhotos extends SocialAppItem
 		}
 
 		if ($includePrivacy) {
+<<<<<<< HEAD
+=======
+
+>>>>>>> master
 			if ($privacyRule == 'photos.view') {
 				// we need to check the photo's album privacy to see if user allow to view or not.
 				if (!$privacy->validate('photos.view', $photo->id, SOCIAL_TYPE_PHOTO, $item->actor->id)) {
 					return;
 				}
 
+<<<<<<< HEAD
 				// Also check for its album privacy
 				if ($photo->album_id) {
 					$uid = $photo->album_id;
@@ -253,6 +258,8 @@ class SocialUserAppPhotos extends SocialAppItem
 					}
 				}
 
+=======
+>>>>>>> master
 			} else {
 
 				if ($useAlbum && $privacyRule =='albums.view') {

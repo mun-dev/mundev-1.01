@@ -1,7 +1,11 @@
 <?php
 /**
 * @package		EasyBlog
+<<<<<<< HEAD
 * @copyright	Copyright (C) 2010 - 2019 Stack Ideas Sdn Bhd. All rights reserved.
+=======
+* @copyright	Copyright (C) 2010 - 2015 Stack Ideas Sdn Bhd. All rights reserved.
+>>>>>>> master
 * @license		GNU/GPL, see LICENSE.php
 * EasyBlog is free software. This version may have been modified pursuant
 * to the GNU General Public License, and as distributed it includes or
@@ -18,6 +22,11 @@ class EasyBlogAcl extends EasyBlog
 	 *
 	 * @since	5.0
 	 * @access	public
+<<<<<<< HEAD
+=======
+	 * @param	string
+	 * @return
+>>>>>>> master
 	 */
 	public static function getRuleSet($cid = '')
 	{
@@ -57,13 +66,18 @@ class EasyBlogAcl extends EasyBlog
 
 			$groupIds = $db->loadColumn();
 
+<<<<<<< HEAD
 			if (!$groupIds) {
+=======
+			if(! $groupIds) {
+>>>>>>> master
 				// something went wrong. this user did not have any Joomla group ;(
 				$groupIds = array('1'); // default to Public group.
 			}
 
 			$groups = self::getEasyBlogAclGroups($groupIds);
 
+<<<<<<< HEAD
 			// if there is no acls return, that means the Joomla groups that are assigned to this user,
 			// admin has yet to configure the EB ACL. Probably a new joomla user group.
 			// Lets treat this user as guest. # 1920
@@ -71,6 +85,8 @@ class EasyBlogAcl extends EasyBlog
 				$groups = self::getEasyBlogAclGroups(array('1'));
 			}
 
+=======
+>>>>>>> master
 			// Allow explicit overrides in the groups
 			// If user A is in group A (allow) and group B (not allowed) , user A should be allowed
 			$result = array();
@@ -202,6 +218,11 @@ class EasyBlogAcl extends EasyBlog
 	 *
 	 * @since	5.0
 	 * @access	public
+<<<<<<< HEAD
+=======
+	 * @param	string
+	 * @return
+>>>>>>> master
 	 */
 	public static function getFilterAttributes()
 	{
@@ -235,16 +256,25 @@ class EasyBlogAcl extends EasyBlog
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Retrieves a list of rules
 	 *
 	 * @since	5.0
 	 * @access	public
+=======
+	 * Retrieve the rule
+	 *
+>>>>>>> master
 	 */
 	private static function getFilterRule($contentId)
 	{
 		static $_cache = array();
 
+<<<<<<< HEAD
 		if (!isset($_cache[$contentId])) {
+=======
+		if (! isset($_cache[$contentId])) {
+>>>>>>> master
 
 			$db 	= EB::db();
 			$query	= 'SELECT * FROM ' . $db->nameQuote( '#__easyblog_acl_filters' ) . ' '
@@ -257,7 +287,11 @@ class EasyBlogAcl extends EasyBlog
 			if (!$result) {
 				$_cache[$contentId] = false;
 			} else {
+<<<<<<< HEAD
 				$filter = EB::table('AclFilter');
+=======
+				$filter 	= EB::table('AclFilter');
+>>>>>>> master
 				$filter->bind( $result );
 
 				$_cache[$contentId] = $filter;
@@ -267,6 +301,7 @@ class EasyBlogAcl extends EasyBlog
 		return $_cache[$contentId];
 	}
 
+<<<<<<< HEAD
 	/**
 	 * Rules mapping
 	 *
@@ -288,6 +323,29 @@ class EasyBlogAcl extends EasyBlog
 							$rulesets->rules->{$action}	= $rule->status;
 						}
 					} else {
+=======
+
+	private static function mapRules( $result , $rules , $rulesets )
+	{
+		foreach( $result as $items )
+		{
+			foreach( $items as $rule )
+			{
+				if( isset( $rules[ $rule->acl_id ] ) )
+				{
+					$action	= $rules[ $rule->acl_id ]->action;
+
+					if(isset($rulesets->rules->{$action}))
+					{
+						// 'No' explicitly win
+						if($rulesets->rules->{$action} == '0')
+							continue;
+						else
+							$rulesets->rules->{$action}	= $rule->status;
+					}
+					else
+					{
+>>>>>>> master
 						$rulesets->rules->{$action}	= $rule->status;
 					}
 				}
@@ -302,6 +360,11 @@ class EasyBlogAcl extends EasyBlog
 	 *
 	 * @since	5.0
 	 * @access	public
+<<<<<<< HEAD
+=======
+	 * @param	string
+	 * @return
+>>>>>>> master
 	 */
 	private static function getRules()
 	{

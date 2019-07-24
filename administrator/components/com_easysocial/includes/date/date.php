@@ -47,6 +47,7 @@ class SocialDate
 		return $this->date->toFormat( $format, $local );
 	}
 
+<<<<<<< HEAD
 	/**
 	 * Override parent's format behavior
 	 *
@@ -59,6 +60,12 @@ class SocialDate
 			$format = JText::_($format);
 		}
 
+=======
+	// override the parent so that it always use the 'local' date when format.
+	public function format($format = 'DATE_FORMAT_LC2', $local = true, $translate = true )
+	{
+		$format = JText::_($format);
+>>>>>>> master
 		return $this->date->toFormat($format , $local , $translate);
 	}
 

@@ -1,8 +1,14 @@
 <?php
 /**
+<<<<<<< HEAD
 * @package		EasyBlog
 * @copyright	Copyright (C) 2010 - 2019 Stack Ideas Sdn Bhd. All rights reserved.
 * @license		GNU/GPL, see LICENSE.php
+=======
+* @package  EasyBlog
+* @copyright Copyright (C) 2010 - 2018 Stack Ideas Sdn Bhd. All rights reserved.
+* @license  GNU/GPL, see LICENSE.php
+>>>>>>> master
 * EasyBlog is free software. This version may have been modified pursuant
 * to the GNU General Public License, and as distributed it includes or
 * is derivative of works licensed under the GNU General Public License or
@@ -37,6 +43,7 @@ class EasyBlogControllerFields extends EasyBlogController
 		$this->registerTask('saveNewGroup', 'saveGroup');
 	}
 
+<<<<<<< HEAD
 	/**
 	 * Rebuilding custom fields ordering
 	 *
@@ -119,6 +126,8 @@ class EasyBlogControllerFields extends EasyBlogController
 
 		$this->app->redirect('index.php?option=com_easyblog&view=fields&filter_groups=' . $groupId);
 	}
+=======
+>>>>>>> master
 
 	/**
 	 * Toggles publishing for custom fields
@@ -228,11 +237,14 @@ class EasyBlogControllerFields extends EasyBlogController
 			$field->load($id);
 
 			$field->delete();
+<<<<<<< HEAD
 
 			$actionlog = EB::actionlog();
 			$actionlog->log('COM_EB_ACTIONLOGS_CUSTOM_FIELDS_DELETED', 'languages', array(
 				'fieldTitle' => $field->title
 			));
+=======
+>>>>>>> master
 		}
 
 		$this->info->set(JText::_('COM_EASYBLOG_FIELDS_DELETED_SUCCESSFULLY'), 'success');
@@ -311,8 +323,11 @@ class EasyBlogControllerFields extends EasyBlogController
 		$group = EB::table('FieldGroup');
 		$group->load($id);
 
+<<<<<<< HEAD
 		$isNew = $id ? false : true;
 
+=======
+>>>>>>> master
 		// Check all the boxes if empty
 		if (!$write || !$read) {
 			$usergroupsIds = EB::getUsergroupsIds(true);
@@ -322,7 +337,11 @@ class EasyBlogControllerFields extends EasyBlogController
 			}
 
 			 if (!$read) {
+<<<<<<< HEAD
 				$read = $usergroupsIds;
+=======
+			 	$read = $usergroupsIds;
+>>>>>>> master
 			 }
 		}
 
@@ -342,6 +361,7 @@ class EasyBlogControllerFields extends EasyBlogController
 			EB::info()->set(JText::_('COM_EASYBLOG_FIELDS_GROUP_SAVED_SUCCESS'), 'success');
 		}
 
+<<<<<<< HEAD
 		$actionString = $isNew ? 'COM_EB_ACTIONLOGS_CUSTOM_FIELDS_GROUPS_CREATED' : 'COM_EB_ACTIONLOGS_CUSTOM_FIELDS_GROUPS_UPDATED';
 		
 		$actionlog = EB::actionlog();
@@ -350,6 +370,8 @@ class EasyBlogControllerFields extends EasyBlogController
 			'groupTitle' => $group->title
 		));
 
+=======
+>>>>>>> master
 		$task = $this->getTask();
 
 		if ($task == 'applyGroup') {
@@ -390,11 +412,14 @@ class EasyBlogControllerFields extends EasyBlogController
 
 			// Delete the field group
 			$group->delete();
+<<<<<<< HEAD
 
 			$actionlog = EB::actionlog();
 			$actionlog->log('COM_EB_ACTIONLOGS_CUSTOM_FIELDS_GROUPS_DELETED', 'languages', array(
 				'groupTitle' => $group->title
 			));
+=======
+>>>>>>> master
 		}
 
 		$this->info->set(JText::_('COM_EASYBLOG_FIELDS_GROUP_DELETED_SUCCESSFULLY'), 'success');
@@ -426,8 +451,11 @@ class EasyBlogControllerFields extends EasyBlogController
 		$field = EB::table('Field');
 		$field->load($id);
 
+<<<<<<< HEAD
 		$isNew = $id ? false : true;
 
+=======
+>>>>>>> master
 		$task = $this->getTask();
 
 		// Default redirection url
@@ -504,6 +532,7 @@ class EasyBlogControllerFields extends EasyBlogController
 			$redirect = 'index.php?option=com_easyblog&view=fields&layout=form&id=' . $field->id;
 		}
 
+<<<<<<< HEAD
 		$actionString = $isNew ? 'COM_EB_ACTIONLOGS_CUSTOM_FIELDS_CREATED' : 'COM_EB_ACTIONLOGS_CUSTOM_FIELDS_UPDATED';
 		
 		$actionlog = EB::actionlog();
@@ -512,6 +541,8 @@ class EasyBlogControllerFields extends EasyBlogController
 			'fieldTitle' => $field->title
 		));
 
+=======
+>>>>>>> master
 		if (!$state) {
 			$this->info->set($field->getError(), 'error');
 			return $this->app->redirect('index.php?option=com_easyblog&view=fields&layout=form');

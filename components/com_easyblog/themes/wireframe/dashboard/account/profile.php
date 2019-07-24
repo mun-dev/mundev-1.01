@@ -1,8 +1,14 @@
 <?php
 /**
+<<<<<<< HEAD
 * @package      EasyBlog
 * @copyright    Copyright (C) 2010 - 2019 Stack Ideas Sdn Bhd. All rights reserved.
 * @license      GNU/GPL, see LICENSE.php
+=======
+* @package		EasyBlog
+* @copyright	Copyright (C) 2010 - 2017 Stack Ideas Sdn Bhd. All rights reserved.
+* @license		GNU/GPL, see LICENSE.php
+>>>>>>> master
 * EasyBlog is free software. This version may have been modified pursuant
 * to the GNU General Public License, and as distributed it includes or
 * is derivative of works licensed under the GNU General Public License or
@@ -84,6 +90,7 @@ defined('_JEXEC') or die('Unauthorized Access');
 					<input class="form-control" type="password" id="password2" name="password2" />
 				</div>
 			</div>
+<<<<<<< HEAD
 
 			<div class="form-group">
 					<?php echo $this->html('dashboard.label', 'COM_EB_JOOMLA_TIMEZONE'); ?>
@@ -114,6 +121,8 @@ defined('_JEXEC') or die('Unauthorized Access');
 				</select>
 				</div>
 			</div>
+=======
+>>>>>>> master
 			<?php } ?>
 		</div>
 	</div>

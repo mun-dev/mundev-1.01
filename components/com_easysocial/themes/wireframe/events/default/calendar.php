@@ -21,7 +21,11 @@ defined('_JEXEC') or die('Unauthorized Access');
 							<i class="fa fa-chevron-left t-fs--sm"></i>
 						</th>
 
+<<<<<<< HEAD
 						<th class="switch <?php echo !empty($events) ? 'has-events' : ''; ?>" colspan="5"
+=======
+						<th class="switch <?php echo !empty($events) ? 'has-events' : ''; ?>" colspan="5" 
+>>>>>>> master
 							data-month="<?php echo $calendar->year . '-' . $calendar->month; ?>">
 							<div class="t-text--center">
 								<a href="javascript:void(0);" class="t-text--muted">
@@ -90,6 +94,7 @@ defined('_JEXEC') or die('Unauthorized Access');
 							<td class="day <?php if (!empty($days[$dayNumber])) { ?>has-events<?php }  echo $calendarDate == $today? ' is-today':'';?>" data-date="<?php echo $calendarDate; ?>">
 								<div>
 									<?php if ($calendarDate == $today) { ?>
+<<<<<<< HEAD
 									<a href="<?php echo ESR::events(array('filter' => 'date'));?>"
 										title="<?php echo JText::_('COM_EASYSOCIAL_PAGE_TITLE_EVENTS_FILTER_TODAY'); ?> - <?php echo FD::date($calendarDate, false)->format(JText::_('COM_EASYSOCIAL_DATE_DMY')); ?>"
 										data-route><?php echo $dayNumber;?></a>
@@ -100,6 +105,18 @@ defined('_JEXEC') or die('Unauthorized Access');
 									<?php } else { ?>
 									<a href="<?php echo ESR::events(array('filter' => 'date', 'date' => $calendarDate));?>"
 										title="<?php echo JText::sprintf('COM_EASYSOCIAL_PAGE_TITLE_EVENTS_FILTER_DATE', ES::date($calendarDate, false)->format(JText::_('COM_EASYSOCIAL_DATE_DMY'))); ?>"
+=======
+									<a href="<?php echo ESR::events(array('filter' => 'date'));?>" 
+										title="<?php echo JText::_('COM_EASYSOCIAL_PAGE_TITLE_EVENTS_FILTER_TODAY'); ?> - <?php echo FD::date($calendarDate, false)->format(JText::_('COM_EASYSOCIAL_DATE_DMY')); ?>" 
+										data-route><?php echo $dayNumber;?></a>
+									<?php } else if ($calendarDate == $tomorrow) { ?>
+									<a href="<?php echo ESR::events(array('filter' => 'date', 'date' => $calendarDate));?>" 
+										title="<?php echo JText::_('COM_EASYSOCIAL_PAGE_TITLE_EVENTS_FILTER_TOMORROW'); ?> - <?php echo FD::date($calendarDate, false)->format(JText::_('COM_EASYSOCIAL_DATE_DMY')); ?>" 
+										data-route><?php echo $dayNumber;?></a>
+									<?php } else { ?>
+									<a href="<?php echo ESR::events(array('filter' => 'date', 'date' => $calendarDate));?>" 
+										title="<?php echo JText::sprintf('COM_EASYSOCIAL_PAGE_TITLE_EVENTS_FILTER_DATE', ES::date($calendarDate, false)->format(JText::_('COM_EASYSOCIAL_DATE_DMY'))); ?>" 
+>>>>>>> master
 										data-route><?php echo $dayNumber;?></a>
 
 									<?php } ?>

@@ -239,6 +239,7 @@ class EasyBlogScheduler extends EasyBlog
 
 		return EB::exception('Expired download requests removed', EASYBLOG_MSG_INFO);
 	}
+<<<<<<< HEAD
 
 	/**
 	 * Process auto blog posts archiving.
@@ -275,4 +276,6 @@ class EasyBlogScheduler extends EasyBlog
 
 		return EB::exception(JText::sprintf('COM_EB_SCHEDULER_AUTO_ARCHIVING_SUCCESS', $count), EASYBLOG_MSG_SUCCESS);
 	}
+=======
+>>>>>>> master
 }

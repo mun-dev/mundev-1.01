@@ -12,6 +12,7 @@
 defined('_JEXEC') or die('Unauthorized Access');
 ?>
 <div id="eb" class="eb-mod mod-easyblogpostmap<?php echo $modules->getWrapperClass(); ?>" data-eb-module-postmap>
+<<<<<<< HEAD
 	<div id="locationMap" class="locationMap" style="width:<?php echo $params->get('fluid', true) ? '100%' : $mapWidth.'px'; ?>; height: <?php echo $mapHeight; ?>px;"></div>
 </div>
 <script type="text/javascript">
@@ -64,4 +65,26 @@ defined('_JEXEC') or die('Unauthorized Access');
 		});
 	});
 <?php } ?>
+=======
+	<div class="locationMap" style="width:<?php echo $params->get('fluid', true) ? '100%' : $mapWidth.'px'; ?>; height: <?php echo $mapHeight; ?>px;"></div>
+</div>
+
+<script type="text/javascript">
+EasyBlog.require()
+.script('site/location', 'site/vendors/ratings')
+.done(function($) {
+
+	$("[data-eb-module-postmap]").implement("EasyBlog.Controller.Location.Map", {
+		language: "<?php echo $language; ?>",
+		gMapsKey: "<?php echo $gMapsKey; ?>",
+		zoom: <?php echo $zoom; ?>,
+		fitBounds: <?php echo $fitBounds; ?>,
+		useStaticMap: false,
+		disableMapsUI: <?php echo $mapUi; ?>,
+		locations: <?php echo json_encode($locations); ?>,
+		enableClusterer: <?php echo $enableMarkerClusterer; ?>
+	});
+
+});
+>>>>>>> master
 </script>

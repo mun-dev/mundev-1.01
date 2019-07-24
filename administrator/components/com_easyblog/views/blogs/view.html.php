@@ -209,8 +209,13 @@ class EasyBlogViewBlogs extends EasyBlogAdminView
 		JToolbarHelper::publishList('blogs.publishTemplate');
 		JToolbarHelper::unpublishList('blogs.unpublishTemplate');
 		JToolbarHelper::custom('blogs.copyTemplate', 'copy', '', JText::_('COM_EASYBLOG_DUPLICATE'));
+<<<<<<< HEAD
 		JToolbarHelper::deleteList(JText::_('COM_EASYBLOG_CONFIRM_DELETE_POST_TEMPLATES'), 'blogs.deletePostTemplates');
 		JToolbarHelper::custom('blogs.exportTemplates', 'export', '', JText::_('Export'), true);
+=======
+
+		JToolbarHelper::deleteList(JText::_('COM_EASYBLOG_CONFIRM_DELETE_POST_TEMPLATES'), 'blogs.deletePostTemplates');
+>>>>>>> master
 
 		EB::loadLanguages();
 

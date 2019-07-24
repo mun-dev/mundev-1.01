@@ -1,7 +1,11 @@
 <?php
 /**
 * @package		EasyBlog
+<<<<<<< HEAD
 * @copyright	Copyright (C) 2010 - 2019 Stack Ideas Sdn Bhd. All rights reserved.
+=======
+* @copyright	Copyright (C) 2010 - 2017 Stack Ideas Sdn Bhd. All rights reserved.
+>>>>>>> master
 * @license		GNU/GPL, see LICENSE.php
 * EasyBlog is free software. This version may have been modified pursuant
 * to the GNU General Public License, and as distributed it includes or
@@ -33,6 +37,7 @@ class EasyBlogMediaManagerAbstractSource extends EasyBlog
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Creates a new item object for media manager
 	 *
 	 * @since	5.0
@@ -192,20 +197,15 @@ class EasyBlogMediaManagerAbstractSource extends EasyBlog
 		}
 
 		return true;
-	}
-
-	/**
-	 * Determines if the file is excluded
+=======
+	 * Determines if the current place needs a login screen.
+	 * Should be extended on child if needs overriding.
 	 *
-	 * @since	5.0
+	 * @since	5.1
 	 * @access	public
 	 */
-	public function isExcluded($file)
+	public function hasLogin()
 	{
-		if (preg_match($this->rx_exclude, $file)) {
-			return true;
-		}
-
 		return false;
 	}
 
@@ -218,6 +218,105 @@ class EasyBlogMediaManagerAbstractSource extends EasyBlog
 	private function isDevelopmentMode()
 	{
 		return $this->config->get('main_development') == 'development';
+	}
+
+	/**
+	 * Render folder items from media manager
+	 *
+	 * @since	5.2
+	 * @access	public
+	 */
+	public function renderFolderItems($folder, $nextPage = 1)
+	{
+		return false;
+	}
+
+	/**
+	 * Render folder contents from media manager
+	 *
+	 * @since	5.1
+	 * @access	public
+	 */
+	public function renderFolderContents($folder)
+	{
+		$theme = EB::themes();
+		$theme->set('folder', $folder);
+
+		$html = $theme->output('site/composer/media/contents');
+
+		return $html;
+	}
+
+	protected function rx_variations($filename=null)
+	{
+		$filename = empty($filename) ? '.*' : preg_quote($filename);
+
+		$regex = '/^(' .
+
+			// 3.5 thumbnails
+			EBLOG_BLOG_IMAGE_PREFIX . '|' .
+			EBLOG_USER_VARIATION_PREFIX . '|' .
+			EBLOG_SYSTEM_VARIATION_PREFIX .
+			')_([^_]*)_(' . $filename . ')' .
+
+			// 2.0 thumbnails
+			'|(' . EBLOG_MEDIA_THUMBNAIL_PREFIX . ')(' . $filename . ')/ui';
+
+		return $regex;
+>>>>>>> master
+	}
+
+	/**
+	 * Determines if the file is excluded
+	 *
+	 * @since	5.0
+	 * @access	public
+<<<<<<< HEAD
+=======
+	 * @param	string
+	 * @return
+>>>>>>> master
+	 */
+	public function isExcluded($file)
+	{
+		if (preg_match($this->rx_exclude, $file)) {
+			return true;
+		}
+
+		return false;
+	}
+
+	/**
+<<<<<<< HEAD
+	 * Determines if EasyBlog is running on dev mode
+	 *
+	 * @since	5.1
+	 * @access	public
+	 */
+	private function isDevelopmentMode()
+	{
+		return $this->config->get('main_development') == 'development';
+=======
+	 * Creates a new item object for media manager
+	 *
+	 * @since	5.0
+	 * @access	public
+	 * @param	string
+	 * @return
+	 */
+	protected function createItem($uri)
+	{
+		$item = new stdClass();
+
+		$item->place = EBMM::getPlaceId($uri);
+		$item->title = EBMM::getTitle($uri);
+
+		$item->url = EBMM::getUrl($uri);
+		$item->uri = $uri;
+		$item->key = EBMM::getKey($uri);
+
+		return $item;
+>>>>>>> master
 	}
 
 	/**
@@ -245,6 +344,11 @@ class EasyBlogMediaManagerAbstractSource extends EasyBlog
 	 *
 	 * @since	5.0
 	 * @access	public
+<<<<<<< HEAD
+=======
+	 * @param	string
+	 * @return
+>>>>>>> master
 	 */
 	protected function getFileItem($uri)
 	{
@@ -430,6 +534,10 @@ class EasyBlogMediaManagerAbstractSource extends EasyBlog
 				// Get the item
 				$item = $filegroup['file'][$imageIndex];
 
+<<<<<<< HEAD
+=======
+				dump($item);
+>>>>>>> master
 				if ($item->type != 'image') {
 					continue;
 				}
@@ -536,6 +644,7 @@ class EasyBlogMediaManagerAbstractSource extends EasyBlog
 		return $item;
 	}
 
+<<<<<<< HEAD
 	/**
 	 * Structures the variation object
 	 *
@@ -553,6 +662,8 @@ class EasyBlogMediaManagerAbstractSource extends EasyBlog
 		return $variation;
 	}
 
+=======
+>>>>>>> master
 	public function getVariations($uri, $relative = false)
 	{
 		// Build variations
@@ -639,6 +750,7 @@ class EasyBlogMediaManagerAbstractSource extends EasyBlog
 		return $variations;
 	}
 
+<<<<<<< HEAD
 	/**
 	 * Determines if the current place needs a login screen.
 	 * Should be extended on child if needs overriding.
@@ -696,6 +808,8 @@ class EasyBlogMediaManagerAbstractSource extends EasyBlog
 		return $regex;
 	}
 
+=======
+>>>>>>> master
 	public static function uniqueFilename($folderpath, $filename)
 	{
 		// Break up file parts
@@ -713,6 +827,7 @@ class EasyBlogMediaManagerAbstractSource extends EasyBlog
 		return $filename;
 	}
 
+<<<<<<< HEAD
 	/**
 	 * Alias function for uniqueFilename
 	 *
@@ -725,6 +840,8 @@ class EasyBlogMediaManagerAbstractSource extends EasyBlog
 	}
 
 
+=======
+>>>>>>> master
 	public function upload($file, $folderuri=null)
 	{
 		// If $uri is not given, assume current user
@@ -760,6 +877,27 @@ class EasyBlogMediaManagerAbstractSource extends EasyBlog
 			return EB::exception('COM_EASYBLOG_IMAGE_MANAGER_UPLOAD_ERROR');
 		}
 
+<<<<<<< HEAD
+=======
+		// @TODO: Resize the original image if necessary
+		// if ($image->orientationFixed || $config->get('main_resize_original_image')) {
+
+		// 	$maxWidth  = $config->get('main_original_image_width');
+		// 	$maxHeight = $config->get('main_original_image_height');
+		// 	$quality   = $config->get('main_original_image_quality');
+
+		// 	if ($image->getWidth() > $maxWidth || $image->getHeight() > $maxHeight) {
+		// 		$image->resizeWithin($maxWidth, $maxHeight);
+		// 	}
+
+		// 	$state = $image->save($path, $image->image_type, $quality);
+
+		// 	if ($state===false) {
+		// 		return EB::exception('Unable to resize original image.');
+		// 	}
+		// }
+
+>>>>>>> master
 		// If this is an image, also create image variations.
 		if (@getimagesize($filepath)!==false) {
 
@@ -775,10 +913,59 @@ class EasyBlogMediaManagerAbstractSource extends EasyBlog
 	}
 
 	/**
+<<<<<<< HEAD
+=======
+	 * Deletes a file from the site
+	 *
+	 * @since	5.1
+	 * @access	public
+	 */
+	public function delete($uri)
+	{
+		$item = $this->getItem($uri);
+		$path = EBMM::getPath($uri);
+
+		// Remove folder
+		if ($item->type == 'folder') {
+			$state = JFolder::delete($path);
+
+			if (!$state) {
+				return EB::exception('Unable to remove folder.');
+			}
+		}
+
+		// Remove variations before removing original file,
+		// so if anything goes wrong when removing variations, the
+		// original file is still intact.
+		if ($item->type=='image') {
+
+			$state = $this->deleteVariations($uri);
+
+			if ($state instanceof EasyBlogException) {
+				return $state;
+			}
+		}
+
+		$state = JFile::delete($path);
+
+		if (!$state) {
+			return EB::exception('Unable to remove file.');
+		}
+
+		return true;
+	}
+
+	/**
+>>>>>>> master
 	 * Determines if this item is a legacy image file
 	 *
 	 * @since	5.0
 	 * @access	public
+<<<<<<< HEAD
+=======
+	 * @param	string
+	 * @return
+>>>>>>> master
 	 */
 	public function isLegacyImageVariation()
 	{
@@ -834,10 +1021,20 @@ class EasyBlogMediaManagerAbstractSource extends EasyBlog
 	 *
 	 * @since	5.0
 	 * @access	public
+<<<<<<< HEAD
+=======
+	 * @param	string
+	 * @return
+>>>>>>> master
 	 */
 	public function renameVariations($sourceUri, $targetUri)
 	{
 		$fileName = basename($targetUri);
+<<<<<<< HEAD
+=======
+
+		dump($fileName);
+>>>>>>> master
 	}
 
 	/**
@@ -939,6 +1136,130 @@ class EasyBlogMediaManagerAbstractSource extends EasyBlog
 		return $item;
 	}
 
+<<<<<<< HEAD
+=======
+	/**
+	 * Structures the variation object
+	 *
+	 * @since	5.0
+	 * @access	public
+	 * @param	string
+	 * @return
+	 */
+	public function getVariationItem($name, $url, $fileName)
+	{
+		$variation = new stdClass();
+
+		$variation->name = $name;
+		$variation->url = $url;
+		$variation->filename = $fileName;
+
+		return $variation;
+	}
+
+	public function createVariation($uri, $name, $params)
+	{
+		$config = EB::config();
+
+		// Filepath, filename, folderpath, folderuri
+		$filepath   = EBMM::getPath($uri);
+		$filename   = basename($uri);
+		$folderpath = dirname($filepath);
+		$folderuri  = dirname($uri);
+
+		// Build target name, filename, path, uri, quality.
+		$i = 0; do {
+
+			$target_name = $name . (empty($i) ? '' : $i);
+			$target_filename = EBLOG_USER_VARIATION_PREFIX . '_'
+							   . $target_name
+							   . '-'  . $this->serializeParam($params) . '_'
+							   . $filename;
+			$target_path = $folderpath . '/' . $target_filename;
+			$i++;
+
+		} while(JFile::exists($target_path));
+
+		$target_uri     = $foldeuri . '/' . $target_filename;
+		$target_quality = isset($params->quality) ? $params->quality : $config->get('main_image_quality');
+
+		// TODO: Reject if width/height exceeds
+		// maxVariationWidth: $system->config->get( 'main_media_manager_image_panel_max_variation_image_width' );
+		// maxVariationHeight: $system->config->get( 'main_media_manager_image_panel_max_variation_image_height' );
+
+		// Resize image
+		$image = EB::simpleimage();
+		$image->load($filepath);
+		$image->resize($params->width, $params->height, $params->x, $params->y);
+		$state = $image->save($target_path, $image->image_type, $target_quality);
+
+		if (!$state) {
+			// TODO: Language
+			return EB::exception('COM_EASYBLOG_FAILED_TO_CREATE_VARIATION_PERMISSIONS');
+		}
+
+		// Create variation object
+		$variation = new stdClass();
+		$variation->name = $target_name;
+		$variation->type = 'user';
+		$variation->url = $this->getUrl($target_uri);
+		$variation->width = $params->width;
+		$variation->height = $params->height;
+
+		return $variation;
+	}
+
+	/**
+	 * Remove all image variations from the site
+	 *
+	 * @since	5.0
+	 * @access	public
+	 * @param	string
+	 * @return
+	 */
+	public function deleteVariations($uri)
+	{
+		// Accepts uri or item.
+		if (is_string($uri)) {
+			$item = $this->getItem($uri);
+		} else {
+			$item = $uri;
+		}
+
+		$errors = array();
+
+		foreach ($item->variations as $key => $variation) {
+
+			// Skip original variation
+			if ($key == 'system/original') {
+				continue;
+			}
+
+			// Get the variations path
+			$file = EBMM::getPath($variation->uri);
+
+			if (!JFile::exists($file)) {
+				$errors[] = $file;
+
+				continue;
+			}
+
+			$state = JFile::delete($file);
+
+			if (!$state) {
+				$errors[] = $file;
+			}
+		}
+
+		if (count($errors)) {
+			// TODO: Language
+			return EB::exception('Unable to remove the following image variations: ' . implode(', ', $errors) . '.');
+		}
+
+		return true;
+	}
+
+>>>>>>> master
 	public function serializeParam($params)
 	{
 		$parts = array();

@@ -189,6 +189,7 @@
 			</field>
 			<field name="exclusion" type="multicategoriesparent" label="COM_EASYBLOG_MENU_EXCLUDE_SELECT_CATEGORIES" description="COM_EASYBLOG_MENU_EXCLUDE_SELECT_CATEGORIES_DESC" />
 		</fieldset>
+<<<<<<< HEAD
 
 		<fieldset name="COM_EB_BLOGGER_GRID_VIEW" label="COM_EB_BLOGGER_GRID_VIEW" info="COM_EB_BLOGGER_GRID_VIEW_INFO" id="grid">
 			<field name="grid_view" default="-1" type="radio" class="btn-group" label="COM_EB_ENABLE_GRID_VIEW" description="COM_EB_ENABLE_GRID_VIEW_DESC">
@@ -204,5 +205,7 @@
 				<option value="2">6</option>
 			</field>
 		</fieldset>
+=======
+>>>>>>> master
     </fields>
 </metadata>

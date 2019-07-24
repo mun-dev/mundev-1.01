@@ -12,7 +12,12 @@
 defined('_JEXEC') or die();
 use Joomla\CMS\Language\Text;
 
+<<<<<<< HEAD
 echo $this->subLayout('Widget/Datepicker');
+=======
+$this->addStyleSheet('assets/css/bootstrap.datepicker.css');
+$this->addScript('assets/js/bootstrap.datepicker.js');
+>>>>>>> master
 
 // Load caret.js always before atwho.js script and use it for autocomplete, emojiis...
 $this->addScript('assets/js/jquery.caret.js');

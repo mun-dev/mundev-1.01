@@ -106,6 +106,7 @@ class SocialString
 	 * @since	1.2
 	 * @access	public
 	 */
+<<<<<<< HEAD
 	public function namesToNotifications($userIds, $page = false)
 	{
 		// Ensure that users is an array
@@ -127,6 +128,15 @@ class SocialString
 				$users[] = $user;
 			}
 		}
+=======
+	public function namesToNotifications($users, $page = false)
+	{
+		// Ensure that users is an array
+		$users 	= ES::makeArray($users);
+
+		// Ensure that they are all SocialUser objects
+		$users = ES::user($users);
+>>>>>>> master
 
 		// If the page exists, we need to include it.
 		if ($page) {

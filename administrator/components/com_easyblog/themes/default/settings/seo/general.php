@@ -56,7 +56,10 @@ defined('_JEXEC') or die('Unauthorized Access');
 
 			<div class="panel-body">
 				<?php echo $this->html('settings.toggle', 'main_amp', 'COM_EASYBLOG_SETTINGS_SEO_ENABLE_AMP'); ?>
+<<<<<<< HEAD
 				<?php echo $this->html('settings.toggle', 'social_amp', 'COM_EASYBLOG_SETTINGS_SOCIAL_SHARE_ICON_AMP'); ?>
+=======
+>>>>>>> master
 
 				<?php echo $this->html('settings.menus', 'amp_sidebar_menu', 'COM_EASYBLOG_SETTINGS_SEO_AMP_SIDEBAR_MENU'); ?>
 			</div>

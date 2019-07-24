@@ -20,7 +20,11 @@ defined('_JEXEC') or die('Unauthorized Access');
     </label>
 
     <div class="col-md-7">
+<<<<<<< HEAD
         <?php echo EB::populateCategories('', '', 'select', $name, $this->config->get($name) , true); ?>
+=======
+        <?php echo EB::populateCategories('', '', 'select', '', $this->config->get($name) , true); ?>
+>>>>>>> master
 
         <?php if ($instructions) { ?>
         <div class="alert alert-warning mt-10">

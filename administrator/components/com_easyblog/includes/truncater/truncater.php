@@ -1,7 +1,11 @@
 <?php
 /**
 * @package		EasyBlog
+<<<<<<< HEAD
 * @copyright	Copyright (C) 2010 - 2019 Stack Ideas Sdn Bhd. All rights reserved.
+=======
+* @copyright	Copyright (C) 2010 - 2018 Stack Ideas Sdn Bhd. All rights reserved.
+>>>>>>> master
 * @license		GNU/GPL, see LICENSE.php
 * EasyBlog is free software. This version may have been modified pursuant
 * to the GNU General Public License, and as distributed it includes or
@@ -108,14 +112,21 @@ class EasyBlogTruncater extends EasyBlog
 		// Strip out known codes
 		$this->stripMedia($post, $media);
 
+<<<<<<< HEAD
 		// Strip out elements blocks such as buttons #1627
 		$this->stripElementBlocks($post);
 
+=======
+>>>>>>> master
 		// remove js script tag
 		$post->text = $this->strip_only($post->text, '<script>', true);
 		$post->text = $this->strip_only($post->text, '<object>', true);
 		$post->text = EB::string()->trimEmptySpace($post->text);
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> master
 		// Strip out known codes
 		$this->stripCodes($post);
 
@@ -281,6 +292,7 @@ class EasyBlogTruncater extends EasyBlog
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Remove common elements blocks such as button.
 	 *
 	 * @since	5.3.0
@@ -372,6 +384,8 @@ class EasyBlogTruncater extends EasyBlog
 	}
 
 	/**
+=======
+>>>>>>> master
 	 * Remove the processed media from the content so that the truncation can display the content properly.
 	 *
 	 * @since	5.1
@@ -495,7 +509,10 @@ class EasyBlogTruncater extends EasyBlog
 		// Remove uneccessary html tags to avoid unclosed html tags
 		$post->text = $this->stripTags($post->text);
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> master
 		// Remove blank spaces since the word calculation should not include new lines or blanks.
 		$post->text = trim($post->text);
 
@@ -687,6 +704,10 @@ class EasyBlogTruncater extends EasyBlog
 		// we need to strip the javascript tag 1st before further process on stripping other html tags. #1751
 		$text = EB::truncater()->strip_only($text, 'script', true);
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> master
 		// Replace all of the html tags with white space to avoid the text from being clustered together. #475
 		$text = preg_replace('#<[^>]+>#', ' ', $text);
 

@@ -70,6 +70,7 @@ class SocialRouterStream extends SocialRouterAdapter
 		$vars = array();
 		$total = count($segments);
 
+<<<<<<< HEAD
 		if ($total == 3) {
 
 			// URL: http://site.com/menu/stream/item/ID
@@ -80,6 +81,15 @@ class SocialRouterStream extends SocialRouterAdapter
 
 				return $vars;
 			}
+=======
+		// URL: http://site.com/menu/stream/item/ID
+		if ($total == 3 && $segments[0] == $this->translate('stream') && $segments[1] == $this->translate('stream_layout_item')) {
+			$vars['view'] = 'stream';
+			$vars['layout'] = 'item';
+			$vars['id'] = $segments[2];
+
+			return $vars;
+>>>>>>> master
 		}
 
 		return $vars;

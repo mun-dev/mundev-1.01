@@ -404,6 +404,7 @@ class ThemesHelperHTML extends ThemesHelperAbstract
 	 */
 	public function sidebar($view = '')
 	{
+<<<<<<< HEAD
 		$view = $this->input->get('view', '', 'cmd');
 		$layout = $this->input->get('layout', '', 'cmd');
 
@@ -412,6 +413,13 @@ class ThemesHelperHTML extends ThemesHelperAbstract
 
 		// we should skip this if the user profile sidebar set to hidden
 		if ($view == 'profile' && $this->config->get('users.profile.sidebar') == 'hidden' && !in_array($layout, $excludeProfileLayout)) {
+=======
+		$view = $this->input->get('view', '', 'cmd');		
+		$layout = $this->input->get('layout', '', 'cmd');
+
+		// we should skip this if the user profile sidebar set to hidden
+		if ($view == 'profile' && $this->config->get('users.profile.sidebar') == 'hidden') {
+>>>>>>> master
 			return;
 		}
 

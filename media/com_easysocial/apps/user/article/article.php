@@ -277,11 +277,14 @@ class SocialUserAppArticle extends SocialAppItem
 			$image = htmlspecialchars($joomlaImages->image_fulltext);
 		}
 
+<<<<<<< HEAD
 		// Added initial slashes if the image is hosted locally. #3443
 		if (JString::stristr($image, 'https://') === false && JString::stristr($image, 'http://') === false && !empty($image)) {
 			$image = '/' . ltrim($image, '/');
 		}
 
+=======
+>>>>>>> master
 		return $image;
 	}
 

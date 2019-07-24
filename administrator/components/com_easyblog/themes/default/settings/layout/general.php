@@ -226,7 +226,10 @@ defined('_JEXEC') or die('Unauthorized Access');
 							$listLength[] = JHTML::_('select.option', 'created', JText::_('COM_EASYBLOG_SETTINGS_LAYOUT_POSTS_ORDERING_OPTIONS_LATEST'));
 							$listLength[] = JHTML::_('select.option', 'title', JText::_('COM_EASYBLOG_SETTINGS_LAYOUT_POSTS_ORDERING_OPTIONS_ALPHABET'));
 							$listLength[] = JHTML::_('select.option', 'published', JText::_('COM_EASYBLOG_SETTINGS_LAYOUT_POSTS_ORDERING_PUBLISHED'));
+<<<<<<< HEAD
 							$listLength[] = JHTML::_('select.option', 'hits', JText::_('COM_EB_SETTINGS_LAYOUT_POSTS_ORDERING_VISITS'));
+=======
+>>>>>>> master
 							echo JHTML::_('select.genericlist', $listLength, 'layout_categorypostorder', 'class="form-control"', 'value', 'text', $this->config->get('layout_categorypostorder' , 'created'));
 						?>
 					</div>

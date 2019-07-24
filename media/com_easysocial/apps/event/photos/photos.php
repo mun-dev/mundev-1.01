@@ -369,6 +369,7 @@ class SocialEventAppPhotos extends SocialAppItem
 		// Get photo objects
 		$photos = $this->getPhotoObject($item);
 
+<<<<<<< HEAD
 		$uid = $item->contextId;
 		$element = $item->context;
 
@@ -378,12 +379,18 @@ class SocialEventAppPhotos extends SocialAppItem
 			$element = SOCIAL_TYPE_ALBUM;
 		}
 
+=======
+>>>>>>> master
 		// Get the first photo's album.
 		$album = ES::table('Album');
 		$album->load($photos[0]->album_id);
 
 		// old data compatibility
+<<<<<<< HEAD
 		$verb = ($element != SOCIAL_TYPE_ALBUM && $item->verb == 'create') ? 'add' : $item->verb;
+=======
+		$verb = ($item->verb == 'create') ? 'add' : $item->verb;
+>>>>>>> master
 
 		// Get total number of items uploaded.
 		$count = count($item->contextIds);
@@ -401,7 +408,11 @@ class SocialEventAppPhotos extends SocialAppItem
 			$item->appid = $this->getApp()->id;
 		}
 
+<<<<<<< HEAD
 		$item->comments = ES::comments($uid, $element, $verb, SOCIAL_APPS_GROUP_EVENT, array('url' => ESR::stream(array('layout' => 'item', 'id' => $item->uid, 'sef' => false)),'clusterId' => $item->cluster_id), $item->uid);
+=======
+		$item->comments = ES::comments($item->contextId, $item->context, $verb, SOCIAL_APPS_GROUP_EVENT, array('url' => ESR::stream(array('layout' => 'item', 'id' => $item->uid, 'sef' => false)),'clusterId' => $item->cluster_id), $item->uid);
+>>>>>>> master
 
 		// Get params of the app
 		$params = $this->getParams();

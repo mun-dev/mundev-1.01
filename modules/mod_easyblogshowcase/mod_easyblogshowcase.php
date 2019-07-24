@@ -1,8 +1,14 @@
 <?php
 /**
+<<<<<<< HEAD
 * @package		EasyBlog
 * @copyright	Copyright (C) 2010 - 2019 Stack Ideas Sdn Bhd. All rights reserved.
 * @license		GNU/GPL, see LICENSE.php
+=======
+* @package      EasyBlog
+* @copyright    Copyright (C) 2010 - 2017 Stack Ideas Sdn Bhd. All rights reserved.
+* @license      GNU/GPL, see LICENSE.php
+>>>>>>> master
 * EasyBlog is free software. This version may have been modified pursuant
 * to the GNU General Public License, and as distributed it includes or
 * is derivative of works licensed under the GNU General Public License or
@@ -43,5 +49,9 @@ $layout = $modules->params->get('layout', 'default');
 $autoplay = $modules->params->get('autorotate', false) ? 1 : 0;
 $autoplayInterval = $modules->params->get('autorotate_seconds', 30);
 
+<<<<<<< HEAD
 
 require(JModuleHelper::getLayoutPath('mod_easyblogshowcase', $layout));
+=======
+require(JModuleHelper::getLayoutPath('mod_easyblogshowcase', $layout));
+>>>>>>> master

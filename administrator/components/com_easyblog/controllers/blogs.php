@@ -402,6 +402,7 @@ class EasyBlogControllerBlogs extends EasyBlogController
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Import post templates from the other site
 	 *
 	 * @since	5.3
@@ -484,6 +485,8 @@ class EasyBlogControllerBlogs extends EasyBlogController
 	}
 
 	/**
+=======
+>>>>>>> master
 	 * Deletes a post template from the site
 	 *
 	 * @since	5.0
@@ -592,11 +595,15 @@ class EasyBlogControllerBlogs extends EasyBlogController
 		foreach ($ids as $id) {
 			$post = EB::post($id);
 
+<<<<<<< HEAD
 			if ($this->getTask() == 'restore') {
 				$post->restore();	
 			} else {
 				$post->publish();	
 			}
+=======
+			$post->publish();
+>>>>>>> master
 		}
 
 		$message = JText::_('COM_EASYBLOG_BLOGS_PUBLISHED_SUCCESSFULLY');

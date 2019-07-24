@@ -150,6 +150,7 @@ class pkg_jceInstallerScript
             return true;
         }
 
+<<<<<<< HEAD
         $requirements = '<a href="https://www.joomlacontenteditor.net/support/documentation/editor/requirements" title="Editor Requirements" target="_blank" rel="noopener">https://www.joomlacontenteditor.net/support/documentation/editor/requirements</a>';
 
         // php version check
@@ -162,6 +163,12 @@ class pkg_jceInstallerScript
         // joomla version check
         if (version_compare($jversion->getShortVersion(), '3.6', 'lt')) {
             throw new RuntimeException('JCE requires Joomla 3.6 or later - ' . $requirements);
+=======
+        $jversion = new JVersion();
+
+        if (version_compare($jversion->getShortVersion(), '3.6', 'lt')) {
+            throw new RuntimeException('JCE requires Joomla 3.6 or later.');
+>>>>>>> master
         }
 
         $parent = $installer->getParent();

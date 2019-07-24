@@ -143,14 +143,22 @@ class EasyBlogViewGrid extends EasyBlogView
 		// Set the page title
 		$this->setPageTitle($title, $pagination, $this->config->get('main_pagetitle_autoappend'));
 
+<<<<<<< HEAD
 		// Set the meta tags for this page
 		EB::setMeta(0, META_TYPE_VIEW, '', $pagination);
 
+=======
+>>>>>>> master
 		// Retrieve the pagination for the latest view
 		$pagination = $pagination->getPagesLinks();
 
 		// Add canonical URLs.
 		$this->canonical('index.php?option=com_easyblog');
+<<<<<<< HEAD
+=======
+
+		EB::setMeta(0, META_TYPE_VIEW);
+>>>>>>> master
  
 		// Get the current url
 		$return = EBR::_('index.php?option=com_easyblog', false);

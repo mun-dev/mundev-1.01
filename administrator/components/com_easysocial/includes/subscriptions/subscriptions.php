@@ -232,12 +232,15 @@ class SocialSubscriptions extends EasySocial
 			return false;
 		}
 
+<<<<<<< HEAD
 		$config = ES::config();
 
 		if (!$config->get('notifications.email.enabled')) {
 			return true;
 		}
 
+=======
+>>>>>>> master
 		foreach ($userIds as $userId) {
 
 			$items = $model->getDigestEmailSubscriptions($now, $userId);

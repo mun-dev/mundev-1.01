@@ -133,8 +133,11 @@ class ComponentKunenaControllerTopicFormReplyDisplay extends KunenaControllerDis
 
 		Factory::getApplication()->triggerEvent('onKunenaPrepare', array('kunena.topic', &$this->topic, &$params, 0));
 
+<<<<<<< HEAD
 		$this->headerText   = Text::_('COM_KUNENA_BUTTON_MESSAGE_REPLY') . ': ' . $this->topic->subject;
 
+=======
+>>>>>>> master
 		// Can user edit topic icons?
 		if ($this->config->topicicons && $this->topic->isAuthorised('edit'))
 		{
@@ -151,6 +154,10 @@ class ComponentKunenaControllerTopicFormReplyDisplay extends KunenaControllerDis
 		$this->app->setUserState('com_kunena.postfields', null);
 
 		$this->canSubscribe = $this->canSubscribe();
+<<<<<<< HEAD
+=======
+		$this->headerText   = Text::_('COM_KUNENA_BUTTON_MESSAGE_REPLY') . ': ' . $this->topic->subject;
+>>>>>>> master
 	}
 
 	/**

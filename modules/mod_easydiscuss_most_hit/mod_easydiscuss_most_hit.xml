@@ -2,12 +2,20 @@
 <extension type="module" version="3.0" client="site" method="upgrade">
 	<name>EasyDiscuss - Most Hit Discussions</name>
 	<author>Stack Ideas Sdn Bhd</author>
+<<<<<<< HEAD
 	<creationDate>23rd July 2019</creationDate>
+=======
+	<creationDate>1st July 2019</creationDate>
+>>>>>>> master
 	<copyright>Copyright 2009 - 2016 Stack Ideas. All rights reserved.</copyright>
 	<license>GPL License v2</license>
 	<authorEmail>support@stackideas.com</authorEmail>
 	<authorUrl>http://stackideas.com</authorUrl>
+<<<<<<< HEAD
 	<version>4.1.9</version>
+=======
+	<version>4.1.8</version>
+>>>>>>> master
 	<description><![CDATA[Displays a list of discussions that are most hit throughout the site.]]></description>
 	<languages>
 		<language tag="en-GB">en-GB.mod_easydiscuss_most_hit.ini</language>

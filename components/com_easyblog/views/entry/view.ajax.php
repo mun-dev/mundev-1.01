@@ -1,7 +1,11 @@
 <?php
 /**
 * @package      EasyBlog
+<<<<<<< HEAD
 * @copyright    Copyright (C) 2010 - 2019 Stack Ideas Sdn Bhd. All rights reserved.
+=======
+* @copyright    Copyright (C) 2010 - 2018 Stack Ideas Sdn Bhd. All rights reserved.
+>>>>>>> master
 * @license      GNU/GPL, see LICENSE.php
 * EasyBlog is free software. This version may have been modified pursuant
 * to the GNU General Public License, and as distributed it includes or
@@ -497,6 +501,7 @@ class EasyBlogViewEntry extends EasyBlogView
 			return JError::raiseError(500, JText::_('COM_EASYBLOG_INVALID_ID_PROVIDED'));
 		}
 
+<<<<<<< HEAD
 		$options = array();
 
 		// require to normalise the post data if the post isnew
@@ -505,6 +510,9 @@ class EasyBlogViewEntry extends EasyBlogView
 		}
 
 		$post->publish($options);
+=======
+		$post->publish();
+>>>>>>> master
 		
 		$this->info->set(JText::_('COM_EASYBLOG_POSTS_PUBLISHED_SUCCESS'), 'success');
 

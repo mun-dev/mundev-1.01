@@ -1,7 +1,11 @@
 <?php
 /**
 * @package		EasyBlog
+<<<<<<< HEAD
 * @copyright	Copyright (C) 2010 - 2019 Stack Ideas Sdn Bhd. All rights reserved.
+=======
+* @copyright	Copyright (C) 2010 - 2017 Stack Ideas Sdn Bhd. All rights reserved.
+>>>>>>> master
 * @license		GNU/GPL, see LICENSE.php
 * EasyBlog is free software. This version may have been modified pursuant
 * to the GNU General Public License, and as distributed it includes or
@@ -16,6 +20,7 @@ defined('_JEXEC') or die('Unauthorized Access');
 
 	<div class="eb-box-body">
 		<div class="form-horizontal">
+<<<<<<< HEAD
 			<?php if ($this->acl->get('allow_user_editor')) { ?>
 			<div class="form-group">
 				<?php echo $this->html('dashboard.label', 'COM_EB_SETTINGS_LAYOUT_SELECT_USER_EDITOR', 'user_editor'); ?>
@@ -25,6 +30,8 @@ defined('_JEXEC') or die('Unauthorized Access');
 				</div>
 			</div>
 			<?php } ?>
+=======
+>>>>>>> master
 			<?php if ($this->acl->get('allow_user_blog_title')) { ?>
 			<div class="form-group">
 				<?php echo $this->html('dashboard.label', 'COM_EASYBLOG_DASHBOARD_BLOGGER_BLOG_TITLE');?>
@@ -57,7 +64,11 @@ defined('_JEXEC') or die('Unauthorized Access');
 				<?php echo $this->html('dashboard.label', 'COM_EASYBLOG_DASHBOARD_BLOGGER_BIOGRAPHICAL_INFO');?>
 
 				<div class="col-md-8">
+<<<<<<< HEAD
 					<?php echo $editor->display('biography', $profile->getBiography(), '100%', '300', '10', '10', array('readmore', 'pagebreak', 'jcommentsoff', 'jcommentson', 'article')); ?>
+=======
+					<?php echo $editor->display('biography', $profile->getBiography(), '300', '300', '10', '10', array('image','readmore', 'pagebreak', 'jcommentsoff', 'jcommentson', 'article')); ?>
+>>>>>>> master
 				</div>
 			</div>
 			<div class="form-group">

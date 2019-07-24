@@ -2,12 +2,20 @@
 <extension type="module" version="3.0" client="site" method="upgrade">
 	<name>EasyBlog - Latest Bloggers Module</name>
 	<author>Stack Ideas Sdn Bhd</author>
+<<<<<<< HEAD
 	<creationDate>18th July 2019</creationDate>
+=======
+	<creationDate>30th April 2019</creationDate>
+>>>>>>> master
 	<copyright>Copyright 2009 - 2015 Stack Ideas Sdn Bhd. All rights reserved.</copyright>
 	<license>GPL License v2</license>
 	<authorEmail>support@stackideas.com</authorEmail>
 	<authorUrl>http://stackideas.com</authorUrl>
+<<<<<<< HEAD
 	<version>5.3.2</version>
+=======
+	<version>5.2.14</version>
+>>>>>>> master
 	<description><![CDATA[Latest bloggers module for your EasyBlog's component.]]></description>
 	<languages>
 		<language tag="en-GB">en-GB.mod_easybloglatestblogger.ini</language>
