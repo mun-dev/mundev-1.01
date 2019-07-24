@@ -403,10 +403,17 @@ class KunenaControllerApplicationDisplay extends KunenaControllerDisplay
 		$credits      .= HTMLHelper::_(
 			'kunenaforum.link', 'index.php?option=com_kunena&view=credits',
 			Text::_('COM_KUNENA_POWEREDBY'), '', '', '',
+<<<<<<< HEAD
 			array('style' => 'display: none !important; visibility: visible !important; text-decoration: none !important;')
 		);
 		$credits      .= ' <a href="https://www.kunena.org"
 			target="_blank" rel="noopener noreferrer" style="display: none !important; visibility: visible !important; text-decoration: none !important;">'
+=======
+			array('style' => 'display: inline !important; visibility: visible !important; text-decoration: none !important;')
+		);
+		$credits      .= ' <a href="https://www.kunena.org"
+			target="_blank" rel="noopener noreferrer" style="display: inline !important; visibility: visible !important; text-decoration: none !important;">'
+>>>>>>> master
 			. Text::_('COM_KUNENA') . '</a>';
 
 		if (trim($templateText))
