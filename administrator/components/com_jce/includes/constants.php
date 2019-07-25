@@ -11,11 +11,7 @@
 defined('_JEXEC') or die('RESTRICTED');
 
 // Some shortcuts to make life easier
-<<<<<<< HEAD
 define('WF_VERSION', '2.7.15');
-=======
-define('WF_VERSION', '2.7.14');
->>>>>>> master
 
 // JCE Administration Component
 define('WF_ADMINISTRATOR',     JPATH_ADMINISTRATOR.'/components/com_jce');

@@ -32,11 +32,7 @@ class EasyBlogToolbar extends EasyBlog
 	 * @since   5.2.0
 	 * @access  public
 	 */
-<<<<<<< HEAD
 	public function html($mobile = false, $options = array())
-=======
-	public function html($mobile = false)
->>>>>>> master
 	{
 		$activeMenu = JFactory::getApplication()->getMenu()->getActive();
 		$params = new JRegistry();
@@ -45,7 +41,6 @@ class EasyBlogToolbar extends EasyBlog
 			$params = $activeMenu->params;
 		}
 
-<<<<<<< HEAD
 		$renderToolbarModule = isset($options['renderToolbarModule']) ? $options['renderToolbarModule'] : false;
 
 		$heading = isset($options['showHeader']) && $options['showHeader'] && $renderToolbarModule ? $options['showHeader'] : false;
@@ -61,13 +56,6 @@ class EasyBlogToolbar extends EasyBlog
 			if ((!$heading && !$this->config->get('layout_headers')) && (!$showToolbar || !$canAccessToolbar)) {
 				return;
 			}
-=======
-		$heading = $params->get('show_page_heading', '');
-
-		// If toolbar is disabled altogether, do not render anything
-		if ((!$heading && !$this->config->get('layout_headers')) && (!$this->config->get('layout_toolbar') || !$this->acl->get('access_toolbar'))) {
-			return;
->>>>>>> master
 		}
 
 		// Get the current view
@@ -99,7 +87,6 @@ class EasyBlogToolbar extends EasyBlog
 			$views->$active = true;
 		}
 
-<<<<<<< HEAD
 		$showSearch = isset($options['showSearch']) ? $options['showSearch'] : $this->config->get('layout_search');
 		$showHeader = isset($options['showHeader']) ? $options['showHeader'] : $this->config->get('layout_headers');
 		$showHome = isset($options['showHome']) ? $options['showHome'] : $this->config->get('layout_latest');
@@ -110,8 +97,6 @@ class EasyBlogToolbar extends EasyBlog
 		$showArchives = isset($options['showArchives']) ? $options['showArchives'] : $this->config->get('layout_archives');
 		$showCalendar = isset($options['showCalendar']) ? $options['showCalendar'] : $this->config->get('layout_calendar');
 
-=======
->>>>>>> master
 		// Get toolbar stuffs
 		$title = $this->config->get('main_title');
 		$desc = $this->config->get('main_description');
@@ -210,13 +195,7 @@ class EasyBlogToolbar extends EasyBlog
 
 		$showFooter = true;
 
-<<<<<<< HEAD
 		if (!$showHome && !$showCategories && !$showTags && !$showBloggers && !$showTeamblog && !$showArchives && !$showCalendar) {
-=======
-		if (!$this->config->get('layout_latest') && !$this->config->get('layout_categories') && !$this->config->get('layout_tags')
-			&& !$this->config->get('layout_bloggers') && !$this->config->get('layout_teamblog') && !$this->config->get('layout_archives')
-			&& !$this->config->get('layout_calendar')) {
->>>>>>> master
 			$showFooter = false;
 		}
 
@@ -238,17 +217,10 @@ class EasyBlogToolbar extends EasyBlog
 
 		// Determine if we should show the menu section. #1701
 		$showMenuSection = false;
-<<<<<<< HEAD
 		$menuSection = array('Categories', 'Tags', 'Bloggers', 'Teamblog', 'Archives', 'Calendar');
 
 		foreach ($menuSection as $menu) {
 			if (${"show" . $menu}) {
-=======
-		$menuSection = array('layout_categories', 'layout_tags', 'layout_bloggers', 'layout_teamblog', 'layout_archives', 'layout_calendar');
-
-		foreach ($menuSection as $menu) {
-			if ($this->config->get($menu)) {
->>>>>>> master
 				$showMenuSection = true;
 				break;
 			}
@@ -291,7 +263,6 @@ class EasyBlogToolbar extends EasyBlog
 		$theme->set('showHamburgerIcon', $showHamburgerIcon);
 		$theme->set('showMoreSettings', $showMoreSettings);
 
-<<<<<<< HEAD
 		$theme->set('showHeader', $showHeader);
 		$theme->set('showHome', $showHome);
 		$theme->set('showCategories', $showCategories);
@@ -304,8 +275,6 @@ class EasyBlogToolbar extends EasyBlog
 		$theme->set('showToolbar', $showToolbar);
 		$theme->set('canAccessToolbar', $canAccessToolbar);
 
-=======
->>>>>>> master
 		$namespace = 'site/toolbar/default';
 
 		if ($mobile) {

@@ -806,14 +806,8 @@ class ThemesHelperForm extends ThemesHelperAbstract
 			$attributes = '';
 		}
 
-<<<<<<< HEAD
 		if ($pageTitle) {
 			$attributes .= 'custom-title="' . $pageTitle . '"';
-=======
-		// Default to current page title
-		if (!$pageTitle) {
-			$pageTitle = ES::document()->title;
->>>>>>> master
 		}
 
 		$theme = ES::themes();

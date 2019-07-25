@@ -2,20 +2,12 @@
 <extension type="module" version="3.0" client="site" method="upgrade">
 	<name>EasyBlog - Related Posts Module</name>
 	<author>Stack Ideas Sdn Bhd</author>
-<<<<<<< HEAD
 	<creationDate>18th July 2019</creationDate>
-=======
-	<creationDate>30th April 2019</creationDate>
->>>>>>> master
 	<copyright>Copyright 2009 - 2017 Stack Ideas Sdn Bhd. All rights reserved.</copyright>
 	<license>GPL License v2</license>
 	<authorEmail>support@stackideas.com</authorEmail>
 	<authorUrl>http://stackideas.com</authorUrl>
-<<<<<<< HEAD
 	<version>5.3.2</version>
-=======
-	<version>5.2.14</version>
->>>>>>> master
 	<description>
 		<![CDATA[
 		This module displays a list of related blog post based on the current blog post a user is currently viewing.
@@ -51,24 +43,18 @@
 				<field name="showhits" type="boolean" default="0" label="MOD_EASYBLOG_DISPLAY_POST_HITS" description="MOD_EASYBLOG_DISPLAY_POST_HITS_DESC" />
 				<field name="showreadmore" type="boolean" default="1" label="MOD_EASYBLOG_DISPLAY_READMORE" description="MOD_EASYBLOG_DISPLAY_READMORE_DESC" />
 				<field name="showdate" type="boolean" default="1" label="MOD_EASYBLOG_DISPLAY_DATE" description="MOD_EASYBLOG_DISPLAY_DATE_DESC" />
-<<<<<<< HEAD
 				<field name="sourcedate" type="list" default="created" label="MOD_EASYBLOG_POST_DATE_SOURCE" description="MOD_EASYBLOG_POST_DATE_SOURCE_DESC" >
 					<option value="created">COM_EASYBLOG_POST_DATE_SOURCE_CREATION</option>
 					<option value="modified">COM_EASYBLOG_POST_DATE_SOURCE_MODIFIED</option>
 					<option value="publish_up">COM_EASYBLOG_POST_DATE_SOURCE_PUBLISHING</option>
 				</field>
-=======
->>>>>>> master
 				<field name="showcategory" type="boolean" default="1" label="MOD_EASYBLOG_DISPLAY_CATEGORY" description="MOD_EASYBLOG_DISPLAY_CATEGORY_DESC" />
 				<field name="includesubcategory" type="boolean" default="0" label="MOD_EASYBLOG_INCLUDE_SUBCATEGORIES" description="MOD_EASYBLOG_INCLUDE_SUBCATEGORIES_DESC" />
 
 				<field name="sortby" type="list" default="0" label="MOD_EASYBLOG_SORT_POSTS_BY" description="MOD_EASYBLOG_SORT_POSTS_BY_DESC">
 					<option value="latest">MOD_EASYBLOG_SORT_POSTS_BY_CREATED</option>
 					<option value="modified">MOD_EASYBLOG_SORT_POSTS_BY_MODIFIED</option>
-<<<<<<< HEAD
 					<option value="publish_up">COM_EASYBLOG_POST_DATE_SOURCE_PUBLISHING</option>
-=======
->>>>>>> master
 				</field>
 			</fieldset>
 

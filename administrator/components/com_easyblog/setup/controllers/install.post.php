@@ -57,11 +57,8 @@ class EasyBlogControllerInstallPost extends EasyBlogSetupController
 
 		$results[] = $this->removeFoundry();
 
-<<<<<<< HEAD
 		$results[] = $this->installActionLogs();
 
-=======
->>>>>>> master
 		// Now we need to update the #__update_sites row to include the api key as well as the domain
 		$this->updateJoomlaUpdater();
 
@@ -393,7 +390,6 @@ class EasyBlogControllerInstallPost extends EasyBlogSetupController
 	}
 
 	/**
-<<<<<<< HEAD
 	 * Inserts necessary data for action logs
 	 *
 	 * @since	5.3.0
@@ -433,8 +429,6 @@ class EasyBlogControllerInstallPost extends EasyBlogSetupController
 	}
 
 	/**
-=======
->>>>>>> master
 	 * Install reactions on the site
 	 *
 	 * @since	5.1
@@ -1027,11 +1021,7 @@ class EasyBlogControllerInstallPost extends EasyBlogSetupController
 						$allowedAcl = array(18, 19, 37, 39);
 					} else {
 						// other groups
-<<<<<<< HEAD
 						$allowedAcl = array(1, 3, 4, 6, 8, 10, 11, 12, 13, 14, 15, 16 ,17, 18, 19, 21, 23, 24, 25, 27, 28, 30, 33, 34, 35, 36 , 37, 39, 40, 41, 42, 46, 48);
-=======
-						$allowedAcl = array(1, 3, 4, 6, 8, 10, 11, 12, 13, 14, 15, 16 ,17, 18, 19, 21, 23, 24, 25, 27, 28, 30, 33, 34, 35, 36 , 37, 39, 40, 41, 42, 46);
->>>>>>> master
 					}
 
 					$groups[$id] = $allowedAcl;

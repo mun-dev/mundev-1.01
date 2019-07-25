@@ -1,15 +1,9 @@
 <?php
 /**
 * @package      EasyDiscuss
-<<<<<<< HEAD
 * @copyright    Copyright (C) 2010 - 2019 Stack Ideas Sdn Bhd. All rights reserved.
 * @license      GNU/GPL, see LICENSE.php
 * EasyDiscuss is free software. This version may have been modified pursuant
-=======
-* @copyright    Copyright (C) 2010 - 2016 Stack Ideas Sdn Bhd. All rights reserved.
-* @license      GNU/GPL, see LICENSE.php
-* Komento is free software. This version may have been modified pursuant
->>>>>>> master
 * to the GNU General Public License, and as distributed it includes or
 * is derivative of works licensed under the GNU General Public License or
 * other free or open source software licenses.
@@ -41,13 +35,7 @@ defined('_JEXEC') or die('Restricted access');
 				<div class="o-flag">
 					<div class="o-avatar-status<?php echo ($post->getOwner()->isOnline()) ? ' is-online': ' is-offline'; ?>">
 						<div class="o-flag__image">
-<<<<<<< HEAD
 							<?php echo ED::themes()->html('user.avatar', $post->getOwner(), array('rank' => true, 'status' => true, 'size' => 'md')); ?>
-=======
-							<a class="o-avatar" href="<?php echo $post->getOwner()->getLink(); ?>">
-								<img width="40" src="<?php echo $post->getOwner()->getAvatar(); ?>" class="avatar">
-							</a>
->>>>>>> master
 						</div>
 					</div>
 					<div class="o-flag__body">
@@ -127,13 +115,7 @@ defined('_JEXEC') or die('Restricted access');
 				<div class="o-avatar-list">
 				<?php foreach ($post->getParticipants() as $participant) { ?>
 					<div class="o-avatar-list__item">
-<<<<<<< HEAD
 						<?php echo ED::themes()->html('user.avatar', $participant, array('rank' => true, 'status' => true, 'size' => 'md')); ?>
-=======
-						<a href="" class="o-avatar o-avatar--sm">
-							<img src="<?php echo $participant->getAvatar(); ?>"/>
-						</a>
->>>>>>> master
 					</div>
 				<?php } ?>
 				</div>

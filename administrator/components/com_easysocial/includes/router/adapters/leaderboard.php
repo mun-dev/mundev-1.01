@@ -55,28 +55,16 @@ class SocialRouterLeaderBoard extends SocialRouterAdapter
 	 */
 	public function parse(&$segments)
 	{
-<<<<<<< HEAD
 		$vars = array();
 		$total = count($segments);
 
 		// Since there is only 1 view in the leaderboard view.
 		if ($total == 1 && ($segments[0] == $this->translate('leaderboard') || $segments[0] == 'leaderboard')) {
 			$vars['view'] = 'leaderboard';
-=======
-		$total = count($segments);
-
-		// Since there is only 1 view in the leaderboard view.
-		if ($total == 1 && $segments[0] == $this->translate('leaderboard')) {
-			$vars['view']	= 'leaderboard';
->>>>>>> master
 
 			return $vars;
 		}
 
-<<<<<<< HEAD
-=======
-
->>>>>>> master
 		return $vars;
 	}
 

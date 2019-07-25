@@ -496,13 +496,10 @@ class EasyBlogModules extends EasyBlog
 			$class .= ' is-mobile';
 		}
 
-<<<<<<< HEAD
 		if ($this->isTablet()) {
 			$class .= ' is-tablet';
 		}
 
-=======
->>>>>>> master
 		return $class;
 	}
 

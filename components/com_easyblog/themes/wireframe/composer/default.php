@@ -43,10 +43,7 @@ body {
 	data-composer-compare-id="<?php echo $compareId ? $compareId : ''; ?>"
 	data-composer-mobile="<?php echo $this->isMobile() || $this->isIpad() ? 1 : 0;?>"
 	data-exit-alert="<?php echo $this->config->get('main_composer_exit_alert') ? 1 : 0;?>"
-<<<<<<< HEAD
 	data-map-integration="<?php echo $this->config->get('location_service_provider', 'maps') ?>"
-=======
->>>>>>> master
 	>
 
 	<?php echo $composer->renderManager($post->uid); ?>

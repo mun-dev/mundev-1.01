@@ -50,11 +50,6 @@ class EasyBlogDate extends EasyBlog
 	 *
 	 * @since	5.0
 	 * @access	public
-<<<<<<< HEAD
-=======
-	 * @param	string
-	 * @return
->>>>>>> master
 	 */
 	public function getTimezone()
 	{
@@ -69,11 +64,6 @@ class EasyBlogDate extends EasyBlog
 	 *
 	 * @since	5.0
 	 * @access	public
-<<<<<<< HEAD
-=======
-	 * @param	string
-	 * @return
->>>>>>> master
 	 */
 	public function toMySQL($local = false)
 	{
@@ -85,11 +75,6 @@ class EasyBlogDate extends EasyBlog
 	 *
 	 * @deprecated	4.0
 	 * @access	public
-<<<<<<< HEAD
-=======
-	 * @param	string
-	 * @return
->>>>>>> master
 	 */
 	public function toFormat($format)
 	{
@@ -364,7 +349,6 @@ class EasyBlogDate extends EasyBlog
 
 		return $format;
 	}
-<<<<<<< HEAD
 
 	static $tmpState = null;
 
@@ -418,6 +402,4 @@ class EasyBlogDate extends EasyBlog
 
 		return true;
 	}
-=======
->>>>>>> master
 }

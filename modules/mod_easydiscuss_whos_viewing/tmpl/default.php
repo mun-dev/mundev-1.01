@@ -1,11 +1,7 @@
 <?php
 /**
 * @package      EasyDiscuss
-<<<<<<< HEAD
 * @copyright    Copyright (C) 2010 - 2019 Stack Ideas Sdn Bhd. All rights reserved.
-=======
-* @copyright    Copyright (C) 2010 - 2017 Stack Ideas Sdn Bhd. All rights reserved.
->>>>>>> master
 * @license      GNU/GPL, see LICENSE.php
 * EasyDiscuss is free software. This version may have been modified pursuant
 * to the GNU General Public License, and as distributed it includes or
@@ -19,15 +15,7 @@ defined('_JEXEC') or die('Unauthorized Access');
     <div class="ed-mod__section">
         <div class="o-avatar-list">
             <?php foreach($users as $user) { ?>
-<<<<<<< HEAD
                 <?php echo ED::themes()->html('user.avatar', $user, array('status' => true, 'size' => 'md')); ?>
-=======
-                <div class="o-avatar-list__item">
-                    <a href="<?php echo $user->getLink();?>" class="o-avatar o-avatar--sm" rel="ed-tooltip"  data-ed-provide="tooltip" data-placement="top" data-original-title="<?php echo ED::string()->escape($user->getName());?>">
-                        <img src="<?php echo $user->getAvatar();?>" alt="<?php echo ED::string()->escape($user->getName());?>" />
-                    </a>    
-                </div>
->>>>>>> master
             <?php } ?>
         </div>
     </div>

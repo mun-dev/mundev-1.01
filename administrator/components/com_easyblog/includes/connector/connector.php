@@ -1,11 +1,7 @@
 <?php
 /**
 * @package		EasyBlog
-<<<<<<< HEAD
 * @copyright	Copyright (C) 2010 - 2019 Stack Ideas Sdn Bhd. All rights reserved.
-=======
-* @copyright	Copyright (C) 2010 - 2017 Stack Ideas Sdn Bhd. All rights reserved.
->>>>>>> master
 * @license		GNU/GPL, see LICENSE.php
 * EasyBlog is free software. This version may have been modified pursuant
 * to the GNU General Public License, and as distributed it includes or
@@ -98,7 +94,6 @@ class EasyBlogConnector
 	}
 
 	/**
-<<<<<<< HEAD
 	 * Adds an argument to send to the remote
 	 *
 	 * @since	5.0
@@ -112,8 +107,6 @@ class EasyBlogConnector
 	}
 
 	/**
-=======
->>>>>>> master
 	 * Method to add multiple query data's in an array
 	 *
 	 * @since	5.0

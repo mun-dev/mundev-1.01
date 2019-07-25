@@ -75,7 +75,6 @@ class EasySocialModDatingSearchHelper
 	public static function getRelationshipOptions($relationshipField)
 	{
 		$options = array();
-<<<<<<< HEAD
 		$json = ES::json();
 
 		$ignoreStatus = array('relationship', 'engaged', 'married', 'complicated');
@@ -100,21 +99,6 @@ class EasySocialModDatingSearchHelper
 				}
 
 				// we do not want to show those status with targe,
-=======
-
-		// load up relationshop options.
-		$file = JPATH_ROOT . '/media/com_easysocial/apps/fields/user/relationship/config/config.json';
-		$contents = JFile::read($file);
-
-		$ignoreStatus = array('relationship', 'engaged', 'married', 'complicated');
-
-		$json = ES::json();
-		$data = $json->decode($contents);
-		if ($data && isset($data->relationshiptype) && isset($data->relationshiptype->option)) {
-			foreach ($data->relationshiptype->option as $item) {
-
-				// we do not want to show those status with targe, 
->>>>>>> master
 				// e.g. 'relationship with ...', 'engaged with ...' and etc.
 
 				if (!in_array($item->value, $ignoreStatus)) {
@@ -174,11 +158,7 @@ class EasySocialModDatingSearchHelper
 					$obj->title = JText::_($item->title);
 					$obj->value = $item->value;
 					$options[] = $obj;
-<<<<<<< HEAD
 				}
-=======
-				} 
->>>>>>> master
 			}
 
 			// Other

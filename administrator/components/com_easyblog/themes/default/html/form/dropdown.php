@@ -13,11 +13,7 @@ defined('_JEXEC') or die('Unauthorized Access');
 ?>
 <select name="<?php echo $name;?>" class="<?php echo $class;?>" <?php echo $attributes;?>>
 	<?php foreach ($values as $key => $value) { ?>
-<<<<<<< HEAD
 	<option value="<?php echo $useValue ? $value : $key;?>" <?php echo $selected == $key ? 'selected="selected"' : '';?>>
-=======
-	<option value="<?php echo $key;?>" <?php echo $selected == $key ? 'selected="selected"' : '';?>>
->>>>>>> master
 		<?php echo JText::_($value);?>
 	</option>
 	<?php } ?>

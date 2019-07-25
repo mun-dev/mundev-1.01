@@ -1,11 +1,7 @@
 <?php
 /**
 * @package		EasyBlog
-<<<<<<< HEAD
 * @copyright	Copyright (C) 2010 - 2019 Stack Ideas Sdn Bhd. All rights reserved.
-=======
-* @copyright	Copyright (C) 2010 - 2017 Stack Ideas Sdn Bhd. All rights reserved.
->>>>>>> master
 * @license		GNU/GPL, see LICENSE.php
 * EasyBlog is free software. This version may have been modified pursuant
 * to the GNU General Public License, and as distributed it includes or
@@ -19,7 +15,6 @@ require_once(JPATH_COMPONENT . '/controller.php');
 
 class EasyBlogControllerSubscriptions extends EasyBlogController
 {
-<<<<<<< HEAD
 	public function __construct()
 	{
 		parent::__construct();
@@ -27,8 +22,6 @@ class EasyBlogControllerSubscriptions extends EasyBlogController
 		$this->registerTask('apply', 'save');
 	}
 
-=======
->>>>>>> master
 	/**
 	 * Create new subscribers on the site
 	 *
@@ -54,7 +47,6 @@ class EasyBlogControllerSubscriptions extends EasyBlogController
 
 			return $this->app->redirect('index.php?option=com_easyblog&view=subscriptions');
 		}
-<<<<<<< HEAD
 		$subscription = EB::table('Subscriptions');
 
 		// check for the current email is it already subscribed
@@ -160,16 +152,6 @@ class EasyBlogControllerSubscriptions extends EasyBlogController
 		$this->info->set('COM_EASYBLOG_SUBSCRIPTION_SAVED_SUCCESS', 'success');
 
 		return $this->app->redirect($redirect);
-=======
-
-		// Get the model from the site
-		$model 	= EB::model('Subscription');
-		$state  = $model->addSiteSubscription($email, '', $name);
-
-
-		EB::info()->set(JText::_('COM_EASYBLOG_SUBSCRIPTIONS_ADDED_SUCCESS'), 'success');
-		return $this->app->redirect('index.php?option=com_easyblog&view=subscriptions');
->>>>>>> master
 	}
 
 	/**
@@ -212,14 +194,11 @@ class EasyBlogControllerSubscriptions extends EasyBlogController
 			$table = EB::table('Subscriptions');
 			$table->load((int) $id);
 			$table->delete();
-<<<<<<< HEAD
 
 			$actionlog = EB::actionlog();
 			$actionlog->log('COM_EB_ACTIONLOGS_SUBSCRIPTIONS_DELETED', 'subscriptions', array(
 				'userEmail' => $table->email
 			));
-=======
->>>>>>> master
 		}
 
 		$this->info->set('COM_EASYBLOG_SUBSCRIPTION_DELETED', 'success');

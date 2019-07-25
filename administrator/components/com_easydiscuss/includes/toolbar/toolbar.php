@@ -1,11 +1,7 @@
 <?php
 /**
 * @package      EasyDiscuss
-<<<<<<< HEAD
 * @copyright    Copyright (C) 2010 - 2019 Stack Ideas Sdn Bhd. All rights reserved.
-=======
-* @copyright    Copyright (C) 2010 - 2015 Stack Ideas Sdn Bhd. All rights reserved.
->>>>>>> master
 * @license      GNU/GPL, see LICENSE.php
 * EasyBlog is free software. This version may have been modified pursuant
 * to the GNU General Public License, and as distributed it includes or
@@ -228,11 +224,7 @@ class EasyDiscussToolbar extends EasyDiscuss
 
 		if ($this->config->get('layout_post_types')) {
 			$postTypesModel = ED::model('PostTypes');
-<<<<<<< HEAD
 			$postTypes = $postTypesModel->getPostTypes(null, 'ASC', true);
-=======
-			$postTypes = $postTypesModel->getPostTypes();
->>>>>>> master
 		}
 
 		// determine which user menu link should show

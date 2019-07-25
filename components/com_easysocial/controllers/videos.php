@@ -587,7 +587,6 @@ class EasySocialControllerVideos extends EasySocialController
 
 		return $this->view->call(__FUNCTION__, $video);
 	}
-<<<<<<< HEAD
 
 	/**
 	 * Process video link from the video form
@@ -626,6 +625,4 @@ class EasySocialControllerVideos extends EasySocialController
 
 		return $this->ajax->resolve($data);
 	}
-=======
->>>>>>> master
 }

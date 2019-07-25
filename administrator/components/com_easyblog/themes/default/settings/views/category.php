@@ -40,7 +40,6 @@ defined('_JEXEC') or die('Unauthorized Access');
 				<?php echo $this->output('admin/settings/views/fields/renderer', array('fields' => $fieldsets->category['comments']->fields, 'key' => 'category')); ?>
 			</div>
 		</div>
-<<<<<<< HEAD
 		<div class="panel">
 			<?php echo $this->html('panel.heading', $fieldsets->category['grid']->label, $fieldsets->category['grid']->info); ?>
 
@@ -48,8 +47,6 @@ defined('_JEXEC') or die('Unauthorized Access');
 				<?php echo $this->output('admin/settings/views/fields/renderer', array('fields' => $fieldsets->category['grid']->fields, 'key' => 'category')); ?>
 			</div>
 		</div>
-=======
->>>>>>> master
 	</div>
 
 	<div class="col-lg-6">

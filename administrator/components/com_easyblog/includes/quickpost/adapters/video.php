@@ -1,11 +1,7 @@
 <?php
 /**
 * @package		EasyBlog
-<<<<<<< HEAD
 * @copyright	Copyright (C) 2010 - 2019 Stack Ideas Sdn Bhd. All rights reserved.
-=======
-* @copyright	Copyright (C) 2010 - 2014 Stack Ideas Sdn Bhd. All rights reserved.
->>>>>>> master
 * @license		GNU/GPL, see LICENSE.php
 * EasyBlog is free software. This version may have been modified pursuant
 * to the GNU General Public License, and as distributed it includes or
@@ -22,15 +18,8 @@ class EasyBlogQuickPostVideo extends EasyBlogQuickPostAbstract
 	/**
 	 * Processes the content
 	 *
-<<<<<<< HEAD
 	 * @since	5.3.0
 	 * @access	public
-=======
-	 * @since	4.0
-	 * @access	public
-	 * @param	string
-	 * @return
->>>>>>> master
 	 */
 	public function bind(&$blog)
 	{
@@ -63,15 +52,8 @@ class EasyBlogQuickPostVideo extends EasyBlogQuickPostAbstract
 	/**
 	 * Validates the quick post submission
 	 *
-<<<<<<< HEAD
 	 * @since	5.3.0
 	 * @access	public
-=======
-	 * @since	4.0
-	 * @access	public
-	 * @param	string
-	 * @return
->>>>>>> master
 	 */
 	public function validate()
 	{
@@ -100,15 +82,8 @@ class EasyBlogQuickPostVideo extends EasyBlogQuickPostAbstract
 	/**
 	 * Formats a quick post content
 	 *
-<<<<<<< HEAD
 	 * @since	5.3.0
 	 * @access	public
-=======
-	 * @since	4.0
-	 * @access	public
-	 * @param	string
-	 * @return
->>>>>>> master
 	 */
 	public function format(EasyBlogPost &$blog)
 	{
@@ -136,11 +111,6 @@ class EasyBlogQuickPostVideo extends EasyBlogQuickPostAbstract
 	 *
 	 * @since	5.0
 	 * @access	public
-<<<<<<< HEAD
-=======
-	 * @param	string
-	 * @return	
->>>>>>> master
 	 */
 	public static function getAndRemoveVideo($content)
 	{

@@ -6,10 +6,6 @@
 		"document",
 		"blocks",
 		"layout",
-<<<<<<< HEAD
-=======
-		"side-menu",
->>>>>>> master
 		"search",
 		"brand",
 		"toolbar",
@@ -23,13 +19,9 @@
 		"dashboard",
 		"magazine",
 		"grid",
-<<<<<<< HEAD
 		"card",
 		"modules",
 		"integrations",
-=======
-		"modules",
->>>>>>> master
 		"patch"
 	]
 }

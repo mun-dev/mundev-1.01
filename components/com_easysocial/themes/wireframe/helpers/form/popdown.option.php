@@ -12,11 +12,7 @@
 defined('_JEXEC') or die('Unauthorized Access');
 ?>
 <?php if (!$selected) { ?>
-<<<<<<< HEAD
 <a href="<?php echo $url;?>" style="padding: 12px 20px;" <?php echo $attributes;?>>
-=======
-<a href="<?php echo $url;?>" style="padding: 12px 20px;" title="<?php echo $pageTitle; ?>" <?php echo $attributes;?>>
->>>>>>> master
 <?php } ?>
 
 	<b>

@@ -66,11 +66,7 @@ bbcodeSettings = {
 								});
 							}});
 						}
-<<<<<<< HEAD
 					},{separator:'|' },{name: 'Video', className: 'videodropdownbutton', dropMenu: [{name:  'Provider', className: 'videourlprovider', beforeInsert:function() {
-=======
-					},{separator:'|' },{className: 'ebaybutton',name: 'Ebay',key: 'E',openWith: '[ebay]',closeWith: '[/ebay]'},{name: 'Video', className: 'videodropdownbutton', dropMenu: [{name:  'Provider', className: 'videourlprovider', beforeInsert:function() {
->>>>>>> master
 							jQuery('#videosettings-modal-submit').click(function(event) {
 								event.preventDefault();
 

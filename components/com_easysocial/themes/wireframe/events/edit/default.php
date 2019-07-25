@@ -78,7 +78,6 @@ defined('_JEXEC') or die('Unauthorized Access');
 							<div class="o-alert o-alert--warning"><?php echo JText::sprintf('COM_EASYSOCIAL_EVENTS_EDIT_RECURRING_EVENT_APPLY_THIS_INFO', $event->getParent()->getPermalink(true, false, 'edit')); ?></div>
 							<?php } ?>
 
-<<<<<<< HEAD
 							<a href="<?php echo $event->getPermalink();?>" class="btn btn-es-default-o t-lg-pull-left"><?php echo JText::_('COM_ES_CANCEL'); ?></a>
 
 							<?php if ($event->hasRecurringEvents() || $event->isRecurringEvent()) { ?>
@@ -97,35 +96,6 @@ defined('_JEXEC') or die('Unauthorized Access');
 
 							<button type="button" class="btn btn-es-danger-o t-lg-pull-right" data-task="reject" data-edit-save><?php echo JText::_('COM_EASYSOCIAL_REJECT_BUTTON');?></button>
 							<button type="button" class="btn btn-es-primary t-lg-pull-right" data-task="approve" data-edit-save><?php echo JText::_('COM_EASYSOCIAL_APPROVE_BUTTON');?></button>
-=======
-							<div class="t-lg-pull-left">
-								<a href="<?php echo $event->getPermalink();?>" class="btn btn-es-default-o"><?php echo JText::_('COM_ES_CANCEL'); ?></a>
-							</div>
-
-							<div class="t-lg-pull-right">
-								<?php if ($event->hasRecurringEvents() || $event->isRecurringEvent()) { ?>
-
-									<?php if ($event->hasRecurringEvents()) { ?>
-										<button type="button" class="btn btn-es-primary-o" data-edit-save="all"><?php echo JText::_('COM_EASYSOCIAL_EVENTS_EDIT_RECURRING_EVENT_APPLY_ALL_BUTTON'); ?></button>
-									<?php } ?>
-
-									<button type="button" class="btn btn-es-primary" data-edit-save><?php echo JText::_('COM_EASYSOCIAL_EVENTS_EDIT_RECURRING_EVENT_APPLY_THIS_BUTTON'); ?></button>
-								<?php } else { ?>
-									<button type="button" class="btn btn-es-primary" data-task="update" data-edit-save>
-										<?php echo JText::_('COM_ES_UPDATE');?>
-									</button>
-								<?php } ?>
-							</div>
-						<?php } else { ?>
-							<div class="t-lg-pull-left">
-								<a href="<?php echo ESR::manage(array('layout' => 'clusters'));?>" class="btn btn-es-default-o"><?php echo JText::_('COM_EASYSOCIAL_CLOSE_BUTTON'); ?></a>
-							</div>
-
-							<div class="t-lg-pull-right">
-								<button type="button" class="btn btn-es-danger-o" data-task="reject" data-edit-save><?php echo JText::_('COM_EASYSOCIAL_REJECT_BUTTON');?></button>
-								<button type="button" class="btn btn-es-primary" data-task="approve" data-edit-save><?php echo JText::_('COM_EASYSOCIAL_APPROVE_BUTTON');?></button>
-							</div>
->>>>>>> master
 						<?php } ?>
 					</div>
 				</div>

@@ -64,7 +64,6 @@ class SocialScripts extends EasySocial
 	 */
 	public function getJavascriptConfiguration()
 	{
-<<<<<<< HEAD
 		$appendTitle = 'none';
 
 		if ($this->jConfig->getValue('sitename_pagetitles') > 0) {
@@ -74,13 +73,6 @@ class SocialScripts extends EasySocial
 		$siteName = $this->jConfig->getValue('sitename');
 		$locale = JFactory::getLanguage()->getTag();
 
-=======
-		$appendTitle = $this->jConfig->getValue('sitename_pagetitles') == 1 ? 'before' : 'after';
-		$siteName = $this->jConfig->getValue('sitename');
-		$locale = JFactory::getLanguage()->getTag();
-
-
->>>>>>> master
 		// moment locale mapping against joomla language
 		// If the counter part doesn't exist, then we all back to the nearest possible one, or en-gb
 		$momentLangMap = array(
@@ -147,11 +139,7 @@ window.es = {
 	"token": "<?php echo ES::token();?>",
 	"mobile": <?php echo ES::responsive()->isMobile() ? 'true' : 'false'; ?>,
 	"appendTitle": "<?php echo $appendTitle;?>",
-<<<<<<< HEAD
 	"siteName": "<?php echo addslashes($siteName);?>",
-=======
-	"siteName": "<?php echo $siteName;?>",
->>>>>>> master
 	"locale": "<?php echo $locale;?>",
 	"momentLang": "<?php echo $momentLang;?>",
 	"direction": "<?php echo $this->doc->getDirection();?>",

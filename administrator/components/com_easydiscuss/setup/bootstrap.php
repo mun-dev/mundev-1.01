@@ -44,11 +44,7 @@ define('ED_KEY', '44e6ff7f498cd26dc9682d9e938bc03f');
 define('ED_INSTALLER', 'full');
 
 // Only when ED_PACKAGE is running on full package, the ED_PACKAGE should contain the zip's filename
-<<<<<<< HEAD
 define('ED_PACKAGE', 'com_easydiscuss_4.1.9_component_pro.zip');
-=======
-define('ED_PACKAGE', 'com_easydiscuss_4.1.8_component_pro.zip');
->>>>>>> master
 
 // If this is in developer mode, we need to set the session
 if ($developer) {

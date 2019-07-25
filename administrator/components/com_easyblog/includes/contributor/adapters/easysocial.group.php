@@ -1,14 +1,8 @@
 <?php
 /**
-<<<<<<< HEAD
 * @package		EasyBlog
 * @copyright	Copyright (C) 2010 - 2019 Stack Ideas Sdn Bhd. All rights reserved.
 * @license		GNU/GPL, see LICENSE.php
-=======
-* @package      EasyBlog
-* @copyright    Copyright (C) 2010 - 2017 Stack Ideas Sdn Bhd. All rights reserved.
-* @license      GNU/GPL, see LICENSE.php
->>>>>>> master
 * EasyBlog is free software. This version may have been modified pursuant
 * to the GNU General Public License, and as distributed it includes or
 * is derivative of works licensed under the GNU General Public License or
@@ -31,21 +25,14 @@ class EasyBlogContributorEasySocialGroup extends EasyBlogContributorAbstract
 			return;
 		}
 
-<<<<<<< HEAD
 		$this->group = ES::group($id);
-=======
-		$this->group = FD::group($id);
->>>>>>> master
 	}
 
 	public function getHeader()
 	{
 		$output = EB::easysocial()->renderMiniHeader($this->group);
-<<<<<<< HEAD
 
 		// $output .= '<button class="btn btn-default">← Back</button>';
-=======
->>>>>>> master
 		echo $output;
 		return $output;
 	}
@@ -98,7 +85,6 @@ class EasyBlogContributorEasySocialGroup extends EasyBlogContributorAbstract
 
 		return $canView;
 	}
-<<<<<<< HEAD
 
 	public function canCreatePost()
 	{
@@ -139,6 +125,4 @@ class EasyBlogContributorEasySocialGroup extends EasyBlogContributorAbstract
 
 		return true;
 	}
-=======
->>>>>>> master
 }

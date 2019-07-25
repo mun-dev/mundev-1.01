@@ -36,12 +36,9 @@ class EasyBlogControllerSystem extends EasyBlogController
 			return $this->app->redirect('index.php?option=com_easyblog');
 		}
 
-<<<<<<< HEAD
 		$actionlog = EB::actionlog();
 		$actionlog->log('COM_EB_ACTIONLOGS_EASYBLOG_UPDATE', 'system');
 
-=======
->>>>>>> master
 		$this->info->set('EasyBlog updated to the latest version successfully', 'success');
 		return $this->app->redirect('index.php?option=com_easyblog');
 	}

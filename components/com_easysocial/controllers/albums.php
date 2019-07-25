@@ -306,17 +306,12 @@ class EasySocialControllerAlbums extends EasySocialController
 
 		// Set custom date
 		if (isset($post['date'])) {
-<<<<<<< HEAD
 
 			$parts = explode(' ', $album->assigned_date);
 			if ($album->created) {
 				$parts = explode(' ', $album->created);
 			}
 			$album->assigned_date = $post['date'] . ' ' . $parts[1];
-=======
-			$album->assigned_date = $post['date'];
-
->>>>>>> master
 			unset($post['date']);
 		}
 
@@ -334,14 +329,11 @@ class EasySocialControllerAlbums extends EasySocialController
 			$album->notified = SOCIAL_ALBUM_READY_TO_NOTIFY;
 		}
 
-<<<<<<< HEAD
 		// since super admin can create album onbehalf, we need to make sure the 'user_id' is save correctly.
 		if ($album->type == SOCIAL_TYPE_USER && $this->my->id != $album->uid && $this->my->isSiteAdmin()) {
 			$album->user_id = $album->uid;
 		}
 
-=======
->>>>>>> master
 		// hold the previous finalized flag. used in later photo processing.
 		$previousFinalized = null;
 

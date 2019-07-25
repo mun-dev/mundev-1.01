@@ -1,14 +1,8 @@
 <?php
 /**
-<<<<<<< HEAD
 * @package		EasyBlog
 * @copyright	Copyright (C) 2010 - 2019 Stack Ideas Sdn Bhd. All rights reserved.
 * @license		GNU/GPL, see LICENSE.php
-=======
-* @package      EasyBlog
-* @copyright    Copyright (C) 2010 - 2018 Stack Ideas Sdn Bhd. All rights reserved.
-* @license      GNU/GPL, see LICENSE.php
->>>>>>> master
 * EasyBlog is free software. This version may have been modified pursuant
 * to the GNU General Public License, and as distributed it includes or
 * is derivative of works licensed under the GNU General Public License or
@@ -269,7 +263,6 @@ class EasyBlogViewLatest extends EasyBlogView
 		$themes->set('autoload', true);
 		$themes->set('hasPinterestEmbedCode', $hasPinterestEmbedCode);
 
-<<<<<<< HEAD
 		$templateStyle = $params->get('layout_style', 'default');
 		$namespace = 'site/blogs/latest/posts';
 
@@ -278,9 +271,6 @@ class EasyBlogViewLatest extends EasyBlogView
 		}
 
 		$output = $themes->output($namespace);
-=======
-		$output = $themes->output('site/blogs/latest/posts');
->>>>>>> master
 
 		if (!$showLoadMore) {
 			$limitstart = '';

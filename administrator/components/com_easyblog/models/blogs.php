@@ -821,7 +821,6 @@ class EasyBlogModelBlogs extends EasyBlogAdminModel
 		return $this->_pagination;
 	}
 
-<<<<<<< HEAD
 	/**
 	 * Retrieves a list of post for auto archiving process
 	 *
@@ -888,6 +887,4 @@ class EasyBlogModelBlogs extends EasyBlogAdminModel
 
 		return $db->loadObjectList();
 	}
-=======
->>>>>>> master
 }

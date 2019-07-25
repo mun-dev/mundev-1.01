@@ -1,14 +1,8 @@
 <?php
 /**
-<<<<<<< HEAD
 * @package		EasyBlog
 * @copyright	Copyright (C) 2010 - 2019 Stack Ideas Sdn Bhd. All rights reserved.
 * @license		GNU/GPL, see LICENSE.php
-=======
-* @package  EasyBlog
-* @copyright Copyright (C) 2010 - 2018 Stack Ideas Sdn Bhd. All rights reserved.
-* @license  GNU/GPL, see LICENSE.php
->>>>>>> master
 * EasyBlog is free software. This version may have been modified pursuant
 * to the GNU General Public License, and as distributed it includes or
 * is derivative of works licensed under the GNU General Public License or
@@ -113,14 +107,11 @@ class EasyBlogTableCategory extends EasyBlogTable
 
 		$state = parent::delete();
 
-<<<<<<< HEAD
 		$actionlog = EB::actionlog();
 		$actionlog->log('COM_EB_ACTIONLOGS_CATEGORY_DELETE', 'category', array(
 			'categoryTitle' => JText::_($this->title)
 		));
 
-=======
->>>>>>> master
 		return $state;
 	}
 
@@ -1180,7 +1171,6 @@ class EasyBlogTableCategory extends EasyBlogTable
 				$group = isset($cachedCategory['group']) ? $cachedCategory['group'] : null;
 				$fields = isset($cachedCategory['field']) ? $cachedCategory['field'] : null;
 
-<<<<<<< HEAD
 				// need to do manual sorting here
 				if ($fields) {
 					$tmp = array();
@@ -1193,8 +1183,6 @@ class EasyBlogTableCategory extends EasyBlogTable
 					$fields = $tmp;
 				}
 
-=======
->>>>>>> master
 			} else {
 
 				$model = EB::model('Categories');

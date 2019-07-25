@@ -39,12 +39,9 @@ class EasyBlogViewFields extends EasyBlogAdminView
 		$search = $this->app->getUserStateFromRequest( 'com_easyblog.fields.search', 'search', '', 'string' );
 		$search = EBString::trim(EBString::strtolower($search));
 
-<<<<<<< HEAD
 		$order = $this->app->getUserStateFromRequest('com_easyblog.fields.filter_order', 'filter_order', 'id', 'cmd');
 		$orderDirection = $this->app->getUserStateFromRequest('com_easyblog.fields.filter_order_Dir', 'filter_order_Dir', 'asc', 'word');
 
-=======
->>>>>>> master
 		JToolbarHelper::addNew('fields.add');
 		JToolbarHelper::divider();
 		JToolbarHelper::publishList('fields.publish');
@@ -52,7 +49,6 @@ class EasyBlogViewFields extends EasyBlogAdminView
 		JToolBarHelper::divider();
 		JToolbarHelper::deleteList(JText::_('COM_EASYBLOG_FIELDS_DELETE_CONFIRMATION'), 'fields.delete');
 
-<<<<<<< HEAD
 		$showOrdering = (!$filter_groups || $filter_groups == '*') ? false : true;
 
 		// Get the list of custom fields on the site
@@ -62,13 +58,6 @@ class EasyBlogViewFields extends EasyBlogAdminView
 
 		$fields = array();
 		$ordering = array();
-=======
-		// Get the list of custom fields on the site
-		$model = EB::model('Fields');
-		$rows = $model->getItems();
-		$fields = array();
-		$limit = $model->getState('limit');
->>>>>>> master
 
 		if ($rows) {
 			foreach ($rows as $row) {
@@ -76,38 +65,29 @@ class EasyBlogViewFields extends EasyBlogAdminView
 				$field->bind($row);
 
 				$fields[] = $field;
-<<<<<<< HEAD
 
 				$ordering[] = $row->id;
-=======
->>>>>>> master
 			}
 		}
 
 		$pagination = $model->getPagination();
 		$filterGroups = $this->getFilterGroups($filter_groups);
 
-<<<<<<< HEAD
 		// Save ordering
 		$saveOrder = $order == 'ordering' && $orderDirection == 'asc';
 
-=======
->>>>>>> master
 		$this->set('limit', $limit);
 		$this->set('search', $search);
 		$this->set('filterGroups', $filterGroups);
 		$this->set('pagination', $pagination);
 		$this->set('fields', $fields);
 
-<<<<<<< HEAD
 		// for ordering
 		$this->set('showOrdering', $showOrdering);
 		$this->set('saveOrder', $saveOrder);
 		$this->set('ordering', $ordering);
 		$this->set('order', $order);
 		$this->set('orderDirection', $orderDirection);
-=======
->>>>>>> master
 
 		parent::display('fields/default');
 	}

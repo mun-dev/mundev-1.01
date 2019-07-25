@@ -57,7 +57,6 @@ defined('_JEXEC') or die('Restricted access');
 		<?php if (in_array('facebook', $availableBlocks)) { ?>
 			<script async custom-element="amp-facebook" src="https://cdn.ampproject.org/v0/amp-facebook-0.1.js"></script>
 		<?php } ?>
-<<<<<<< HEAD
 
 		<?php if ($socialEnabled) { ?>
 			<script async custom-element="amp-addthis" src="https://cdn.ampproject.org/v0/amp-addthis-0.1.js"></script>
@@ -68,13 +67,6 @@ defined('_JEXEC') or die('Restricted access');
 		<script async custom-element="amp-video" src="https://cdn.ampproject.org/v0/amp-video-0.1.js"></script>
 
 		<title><?php echo $pageTitle; ?></title>
-=======
-		
-		<script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
-		<script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
-
-		<title><?php echo $post->getTitle(); ?></title>
->>>>>>> master
 		<link rel="canonical" href="<?php echo $url; ?>" />
 		<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
 		<link href="https://fonts.googleapis.com/css?family=Heebo" rel="stylesheet">
@@ -110,10 +102,7 @@ defined('_JEXEC') or die('Restricted access');
 			}
 		}
 		</script>
-<<<<<<< HEAD
 				
-=======
->>>>>>> master
 		<style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
 
 		<?php echo $this->output('site/blogs/entry/amp.stylesheets')?>
@@ -180,7 +169,6 @@ defined('_JEXEC') or die('Restricted access');
 
 			<?php echo $ampContent; ?>
 
-<<<<<<< HEAD
 			<?php if ($socialEnabled) { ?>
 				<?php if ($this->config->get('social_button_type') == 'addthis')  { ?>
 					<amp-addthis width="320" height="92"  data-pub-id="<?php echo $this->config->get('social_addthis_customcode'); ?>" data-widget-id="uylx" data-widget-type="inline"></amp-addthis>	
@@ -207,34 +195,6 @@ defined('_JEXEC') or die('Restricted access');
 						<amp-social-share type="whatsapp" data-share-endpoint="whatsapp://send" data-param-text="<?php echo JText::sprintf('COM_EASYBLOG_AMP_WHATSAPP_SHARE', $this->html('string.escape', $post->getTitle())); ?>" width="45" height="33"></amp-social-share>
 					</div>
 				<?php } ?>
-=======
-			<?php if ($this->params->get('post_social_buttons', true)) { ?>
-				<div class="blog-social">
-					<amp-social-share type="email" width="45" height="33"></amp-social-share>
-
-					<?php if ($this->config->get('main_facebook_like', true)) { ?>
-						<amp-social-share type="facebook" data-param-app_id="<?php echo $this->config->get('main_facebook_like_appid'); ?>" width="45" height="33"></amp-social-share>
-					<?php } ?>
-
-					<?php if ($this->config->get('main_twitter_button', true)) { ?>
-						<amp-social-share type="twitter" width="45" height="33"></amp-social-share>
-					<?php } ?>
-
-					<?php if ($this->config->get('main_googleone', true)) { ?>
-						<amp-social-share type="gplus" width="45" height="33"></amp-social-share>
-					<?php } ?>
-
-					<?php if ($this->config->get('main_linkedin_button', true)) { ?>
-						<amp-social-share type="linkedin" width="45" height="33"></amp-social-share>
-					<?php } ?>
-
-					<?php if ($this->config->get('main_pinit_button', true)) { ?>
-						<amp-social-share type="pinterest" width="45" height="33"></amp-social-share>
-					<?php } ?>
-
-					<amp-social-share type="whatsapp" data-share-endpoint="whatsapp://send" data-param-text="<?php echo JText::sprintf('COM_EASYBLOG_AMP_WHATSAPP_SHARE', $this->html('string.escape', $post->getTitle())); ?>" width="45" height="33"></amp-social-share>
-				</div>
->>>>>>> master
 			<?php } ?>
 		</div>
 

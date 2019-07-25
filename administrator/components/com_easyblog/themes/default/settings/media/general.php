@@ -1,11 +1,7 @@
 <?php
 /**
 * @package		EasyBlog
-<<<<<<< HEAD
 * @copyright	Copyright (C) 2010 - 2019 Stack Ideas Sdn Bhd. All rights reserved.
-=======
-* @copyright	Copyright (C) 2010 - 2017 Stack Ideas Sdn Bhd. All rights reserved.
->>>>>>> master
 * @license		GNU/GPL, see LICENSE.php
 * EasyBlog is free software. This version may have been modified pursuant
 * to the GNU General Public License, and as distributed it includes or
@@ -21,10 +17,7 @@ defined('_JEXEC') or die('Unauthorized Access');
 			<?php echo $this->html('panel.heading', 'COM_EASYBLOG_SETTINGS_MEDIA_MANAGER'); ?>
 
 			<div class="panel-body">
-<<<<<<< HEAD
 
-=======
->>>>>>> master
 				<?php echo $this->html('settings.toggle', 'main_media_manager_place_shared_media', 'COM_EASYBLOG_SETTINGS_MEDIA_ENABLE_SHARED_MEDIA'); ?>
 
 				<div class="form-group">
@@ -117,7 +110,6 @@ defined('_JEXEC') or die('Unauthorized Access');
 			</div>
 		</div>
 
-<<<<<<< HEAD
 	</div>
 
 	<div class="col-lg-6">
@@ -131,21 +123,6 @@ defined('_JEXEC') or die('Unauthorized Access');
 			</div>
 		</div>
 
-=======
-		<div class="panel">
-			<?php echo $this->html('panel.heading', 'COM_EASYBLOG_SETTINGS_MEDIA_VIDEOS_TITLE'); ?>
-
-			<div class="panel-body">
-				<?php echo $this->html('settings.text', 'max_video_width', 'COM_EASYBLOG_SETTINGS_MEDIA_MAXIMUM_WIDTH', '', array('postfix' => 'COM_EASYBLOG_PIXELS', 'size' => 5), '', 'text-center'); ?>
-
-				<?php echo $this->html('settings.text', 'max_video_height', 'COM_EASYBLOG_SETTINGS_MEDIA_MAXIMUM_HEIGHT', '', array('postfix' => 'COM_EASYBLOG_PIXELS', 'size' => 5), '', 'text-center'); ?>
-
-			</div>
-		</div>
-	</div>
-
-	<div class="col-lg-6">
->>>>>>> master
 		<div class="panel">
 			<?php echo $this->html('panel.heading', 'COM_EASYBLOG_SETTINGS_MEDIA_ORIGINAL_IMAGE_TITLE', 'COM_EASYBLOG_SETTINGS_MEDIA_ORIGINAL_IMAGE_DESC'); ?>
 
@@ -215,7 +192,6 @@ defined('_JEXEC') or die('Unauthorized Access');
 				</div>
 			</div>
 		</div>
-<<<<<<< HEAD
 
 		<div class="panel">
 			<?php echo $this->html('panel.heading', 'COM_EASYBLOG_SETTINGS_MEDIA_VIDEOS_TITLE'); ?>
@@ -228,7 +204,5 @@ defined('_JEXEC') or die('Unauthorized Access');
 			</div>
 		</div>
 		
-=======
->>>>>>> master
 	</div>
 </div>

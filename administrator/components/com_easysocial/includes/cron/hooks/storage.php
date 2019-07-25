@@ -539,7 +539,6 @@ class SocialCronHooksStorage extends EasySocial
 				$source = JPATH_ROOT . '/' . $audio->getRelativeAlbumArtPath();
 				$destination = '/' . $audio->getRelativeAlbumArtPath();
 
-<<<<<<< HEAD
 				if (JFile::exists($source)) {
 
 					$albumArtState = $storage->push($audio->getAlbumArtFileName(), $source, $destination);
@@ -551,13 +550,6 @@ class SocialCronHooksStorage extends EasySocial
 					}
 				} else {
 					$exception = ES::exception('Audio album art not found.');
-=======
-				$albumArtState = $storage->push($audio->getAlbumArtFileName(), $source, $destination);
-
-				// If there was an error with the album art
-				if ($albumArtState instanceof SocialException) {
-					$exception = $albumArtState;
->>>>>>> master
 					$albumArtState = false;
 				}
 			}
@@ -569,7 +561,6 @@ class SocialCronHooksStorage extends EasySocial
 				$audioTable = $audio->getItem();
 
 				$fileTitle = str_replace(' ', '_', $audioTable->file_title);
-<<<<<<< HEAD
 
 				if (JFile::exists($source)) {
 					$audioFileState = $storage->push($fileTitle, $source, $destination);
@@ -584,15 +575,6 @@ class SocialCronHooksStorage extends EasySocial
 					$audioFileState = false;
 				}
 
-=======
-				$audioFileState = $storage->push($fileTitle, $source, $destination);
-
-				// We also need to test against the audio as the album art might be successfull but the audio failed
-				if ($audioFileState instanceof SocialException) {
-					$exception = $audioFileState;
-					$audioFileState = false;
-				}
->>>>>>> master
 			} else {
 				$audioFileState = true;
 			}
@@ -743,7 +725,6 @@ class SocialCronHooksStorage extends EasySocial
 			// Upload the thumbnail of the video
 			$source = JPATH_ROOT . '/' . $video->getRelativeThumbnailPath();
 			$destination = '/' . $video->getRelativeThumbnailPath();
-<<<<<<< HEAD
 
 			if (JFile::exists($source)) {
 
@@ -756,13 +737,6 @@ class SocialCronHooksStorage extends EasySocial
 				}
 			} else {
 				$exception = ES::exception('Video thumbnail not found.');
-=======
-			$thumbnailState = $storage->push($video->getThumbnailFileName(), $source, $destination);
-
-			// If there was an error with the thumbnails
-			if ($thumbnailState instanceof SocialException) {
-				$exception = $thumbnailState;
->>>>>>> master
 				$thumbnailState = false;
 			}
 
@@ -771,7 +745,6 @@ class SocialCronHooksStorage extends EasySocial
 				$source = JPATH_ROOT . '/' . $video->getRelativeFilePath();
 				$destination = '/' . $video->getRelativeFilePath();
 				$videoTable = $video->getItem();
-<<<<<<< HEAD
 
 				if (JFile::exists($source)) {
 
@@ -788,15 +761,6 @@ class SocialCronHooksStorage extends EasySocial
 					$videoFileState = false;
 				}
 
-=======
-				$videoFileState = $storage->push($videoTable->file_title, $source, $destination);
-
-				// We also need to test against the video as the thumbnail might be successfull but the video failed
-				if ($videoFileState instanceof SocialException) {
-					$exception = $videoFileState;
-					$videoFileState = false;
-				}
->>>>>>> master
 			} else {
 				$videoFileState = true;
 			}
@@ -928,7 +892,6 @@ class SocialCronHooksStorage extends EasySocial
 			// Get the destination file
 			$dest = $file->getStoragePath(true) . '/' . $file->hash;
 
-<<<<<<< HEAD
 			if (JFile::exists($source)) {
 
 				$response = $storage->push($file->name, $source, $dest);
@@ -958,30 +921,6 @@ class SocialCronHooksStorage extends EasySocial
 			}
 
 
-=======
-			$response = $storage->push($file->name, $source, $dest);
-
-			if ($response instanceof SocialException) {
-				$exception = $response;
-				$success = false;
-			} else {
-				$success = $response;
-
-				if ($success) {
-					// Once the file is uploaded successfully delete the file physically.
-					if ($this->deleteable($storageType)) {
-						JFile::delete($source);
-					}
-
-					// Do something here.
-					$file->storage = $storageType;
-					$file->store();
-
-					$total	+= 1;
-				}
-			}
-
->>>>>>> master
 			// Create a new storage log for this transfer
 			$this->log($file->id, 'files', $success, $exception);
 		}

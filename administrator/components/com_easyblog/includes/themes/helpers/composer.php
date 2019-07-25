@@ -80,11 +80,7 @@ class EasyBlogThemesHelperComposer extends EasyBlogThemesHelperAbstract
 	 * @since	5.1
 	 * @access	public
 	 */
-<<<<<<< HEAD
 	public function field($type, $name, $title, $value = null, $attributes = array(), $arrayAttributes = array())
-=======
-	public function field($type, $name, $title, $value = null, $attributes = array())
->>>>>>> master
 	{
 		$title = JText::_($title);
 
@@ -97,13 +93,10 @@ class EasyBlogThemesHelperComposer extends EasyBlogThemesHelperAbstract
 			$attributes = implode(' ', $attributes);
 		}
 
-<<<<<<< HEAD
 		if (!$attributes && $arrayAttributes) {
 			$attributes = $arrayAttributes;
 		}
 		
-=======
->>>>>>> master
 		$theme = EB::themes();
 		$theme->set('type', $type);
 		$theme->set('title', $title);

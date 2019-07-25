@@ -108,12 +108,8 @@ class EasySocialModelOAuth extends EasySocialModel
 	}
 
 	/**
-<<<<<<< HEAD
 	 * Update to the default type after user revoke their oauth clients associated with
 	 * Or update the rest of the oauth client he associated to because user can able to link to their social network more than 1
-=======
-	 * Change back the default type after user revoke their oauth clients associated with
->>>>>>> master
 	 *
 	 * @since	3.1
 	 * @access	public
@@ -122,7 +118,6 @@ class EasySocialModelOAuth extends EasySocialModel
 	{
 		$user = ES::user($userId);
 		$db = ES::db();
-<<<<<<< HEAD
 		$hasOtherOauthClientAssociated = false;
 
 		// Check for the user whether has associated with other social netowrk under this same user account or not.
@@ -137,8 +132,6 @@ class EasySocialModelOAuth extends EasySocialModel
 				}
 			}
 		}
-=======
->>>>>>> master
 
 		$query = array();
 		$query[] = 'UPDATE ' . $db->qn('#__social_users');
@@ -150,7 +143,6 @@ class EasySocialModelOAuth extends EasySocialModel
 
 		return true;
 	}
-<<<<<<< HEAD
 
 	/**
 	 * Gets a list of oauth client data which associated with the same account
@@ -194,6 +186,4 @@ class EasySocialModelOAuth extends EasySocialModel
 
 		return $result;
 	}
-=======
->>>>>>> master
 }

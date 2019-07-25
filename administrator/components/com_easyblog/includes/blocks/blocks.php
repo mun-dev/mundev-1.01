@@ -147,11 +147,6 @@ class EasyBlogBlocks extends EasyBlog
 	 *
 	 * @since	5.0
 	 * @access	public
-<<<<<<< HEAD
-=======
-	 * @param	string
-	 * @return
->>>>>>> master
 	 */
 	public function renderDiffBlocks($block, $arrBlocks)
 	{
@@ -298,11 +293,6 @@ class EasyBlogBlocks extends EasyBlog
 	 *
 	 * @since	5.0
 	 * @access	public
-<<<<<<< HEAD
-=======
-	 * @param	string
-	 * @return
->>>>>>> master
 	 */
 	public function renderInstantBlock($block, $stripTags = false)
 	{
@@ -346,11 +336,6 @@ class EasyBlogBlocks extends EasyBlog
 	 *
 	 * @since	5.0
 	 * @access	public
-<<<<<<< HEAD
-=======
-	 * @param	string
-	 * @return
->>>>>>> master
 	 */
 	public function renderAMPBlock($block, $stripTags = false)
 	{

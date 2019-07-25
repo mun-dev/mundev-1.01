@@ -1,11 +1,7 @@
 <?php
 /**
 * @package		EasyBlog
-<<<<<<< HEAD
 * @copyright	Copyright (C) 2010 - 2019 Stack Ideas Sdn Bhd. All rights reserved.
-=======
-* @copyright	Copyright (C) 2010 - 2017 Stack Ideas Sdn Bhd. All rights reserved.
->>>>>>> master
 * @license		GNU/GPL, see LICENSE.php
 * EasyBlog is free software. This version may have been modified pursuant
 * to the GNU General Public License, and as distributed it includes or
@@ -43,12 +39,9 @@ class EasyBlogControllerSpools extends EasyBlogController
 
 		$this->info->set(JText::_('COM_EASYBLOG_MAILS_PURGED'), 'success');
 
-<<<<<<< HEAD
 		$actionlog = EB::actionlog();
 		$actionlog->log('COM_EB_ACTIONLOGS_MAILS_PURGED', 'spools');
 
-=======
->>>>>>> master
 		return $this->app->redirect('index.php?option=com_easyblog&view=spools');
 	}
 
@@ -71,12 +64,9 @@ class EasyBlogControllerSpools extends EasyBlogController
 
 		$this->info->set('COM_EASYBLOG_SENT_MAILS_PURGED', 'success');
 
-<<<<<<< HEAD
 		$actionlog = EB::actionlog();
 		$actionlog->log('COM_EB_ACTIONLOGS_MAILS_SENT_PURGED', 'spools');
 
-=======
->>>>>>> master
 		return $this->app->redirect('index.php?option=com_easyblog&view=spools');
 	}
 
@@ -177,7 +167,6 @@ class EasyBlogControllerSpools extends EasyBlogController
 
 		$this->info->set('COM_EASYBLOG_EMAILS_TEMPLATE_FILE_SAVED_SUCCESSFULLY', 'success');
 
-<<<<<<< HEAD
 		$actionlog = EB::actionlog();
 		$actionlog->log('COM_EB_ACTIONLOGS_MAIL_TEMPLATE_UPDATED', 'spools', array(
 			'file' => str_ireplace('/', '', $file),
@@ -185,8 +174,5 @@ class EasyBlogControllerSpools extends EasyBlogController
 		));
 
 		return $this->app->redirect('index.php?option=com_easyblog&view=spools&layout=editor');
-=======
-		return $this->app->redirect('index.php?option=com_easyblog&view=spools&layout=editor');		
->>>>>>> master
 	}
 }

@@ -39,11 +39,7 @@ class WFLinkBrowser_Joomlalinks
                 }
 
                 // skip weblinks if it doesn't exist!
-<<<<<<< HEAD
                 if ($name === 'weblinks' && !JComponentHelper::isEnabled('com_' . $name)) {
-=======
-                if ($name === 'weblinks' && !is_file(JPATH_SITE . '/components/com_weblinks/helpers/route.php')) {
->>>>>>> master
                     continue;
                 }
 

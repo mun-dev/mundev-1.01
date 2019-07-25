@@ -198,11 +198,7 @@ defined('_JEXEC') or die('Unauthorized Access');
 				<div class="o-col-sm">
 					<div class="o-flag">
 						<div class="o-flag__image o-flag--top">
-<<<<<<< HEAD
 							<?php echo $this->html('user.anonymous', $post->getOwner(), $post->isAnonymous()); ?>
-=======
-							<?php echo $this->output('site/html/user.anonymous') ?>
->>>>>>> master
 						</div>
 						<div class="o-flag__body">
 							<div class="">

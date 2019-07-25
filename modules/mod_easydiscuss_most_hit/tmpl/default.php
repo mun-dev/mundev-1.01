@@ -43,19 +43,7 @@ defined('_JEXEC') or die('Unauthorized Access');
 					<div class="m-list--inline m-list--has-divider t-lg-mb-sm">
 						<div class="o-flag t-lg-mb--md">
 							<div class="o-flag__image">
-<<<<<<< HEAD
 								<?php echo ED::themes()->html('user.avatar', $post->user, array('rank' => true, 'status' => true, 'size' => 'md')); ?>
-=======
-								<div class="o-avatar-status<?php echo ($post->user->isOnline()) ? ' is-online': ' is-offline'; ?>">
-									<div class="o-avatar-status__indicator"></div>
-									<a href="<?php echo $post->user->getPermalink(); ?>" class="o-avatar o-avatar--sm">
-										<img src="<?php echo $post->user->getAvatar(); ?>"/>
-									</a>
-								</div>
-								<div class="ed-rank-bar t-lg-mt--md">
-									<div class="ed-rank-bar__progress" style="width: <?php echo ED::getUserRankScore($post->user->id); ?>%"></div>
-								</div>
->>>>>>> master
 							</div>
 							<div class="o-flag__body">
 								<a href="<?php echo $post->user->getPermalink(); ?>" class="ed-user-name t-lg-mb--"><?php echo $post->user->getName(); ?></a>
@@ -103,12 +91,6 @@ defined('_JEXEC') or die('Unauthorized Access');
 					<?php } ?>
 				</div>
 
-<<<<<<< HEAD
-=======
-
-
-
->>>>>>> master
 				<?php if ($params->get('showpoststatus', 1)) { ?>
 					<div class="">
 						<?php if ($post->isResolved()) { ?>

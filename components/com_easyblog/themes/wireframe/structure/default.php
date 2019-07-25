@@ -19,14 +19,6 @@ defined('_JEXEC') or die('Unauthorized Access');
 			<?php echo $rtl ? ' is-rtl' : '';?>
 		">
 	<div class="eb-container" data-eb-container>
-<<<<<<< HEAD
-=======
-		<?php if ($this->isMobile()) { ?>
-		<div class="eb-container__side">
-			<?php echo EB::toolbar()->html(true); ?>
-		</div>
-		<?php } ?>
->>>>>>> master
 
 		<div class="eb-container__main">
 			<div class="eb-content">

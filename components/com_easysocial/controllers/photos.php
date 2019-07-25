@@ -43,11 +43,7 @@ class EasySocialControllerPhotos extends EasySocialController
 		}
 
 		// check if the album belong to the user or not. #2759
-<<<<<<< HEAD
 		if ($album->type == SOCIAL_TYPE_USER && !$album->isMine($this->my->id) && !$this->my->isSiteAdmin()) {
-=======
-		if ($album->type == SOCIAL_TYPE_USER && !$album->isMine($this->my->id)) {
->>>>>>> master
 			// throw 500 exception.
 			return $this->view->exception(JText::_('COM_EASYSOCIAL_ALBUMS_INVALID_ALBUM_ID_PROVIDED'));
 		}
@@ -67,13 +63,10 @@ class EasySocialControllerPhotos extends EasySocialController
 		$uid = $album->uid;
 		$type = $album->type;
 
-<<<<<<< HEAD
 		// if this is an user album and the current login is not the onwer of the album but the current logged in user is a SA, then we need to 
 		// use the album->uid as this will be the same as user_id column.
 		$userId = ($album->type == SOCIAL_TYPE_USER && !$album->isMine($this->my->id) && $this->my->isSiteAdmin()) ? $album->uid : $this->my->id;
 
-=======
->>>>>>> master
 		// Load the photo library
 		$lib = ES::photo($uid, $type);
 
@@ -126,11 +119,7 @@ class EasySocialControllerPhotos extends EasySocialController
 		$photo = ES::table('Photo');
 		$photo->uid = $uid;
 		$photo->type = $type;
-<<<<<<< HEAD
 		$photo->user_id = $userId;
-=======
-		$photo->user_id = $this->my->id;
->>>>>>> master
 		$photo->album_id = $album->id;
 		$photo->caption = '';
 		$photo->ordering = 0;
@@ -1123,14 +1112,10 @@ class EasySocialControllerPhotos extends EasySocialController
 		$photo = ES::table('Photo');
 		$photo->uid = $uid;
 		$photo->type = $type;
-<<<<<<< HEAD
 
 		// Unable to store the current logged in user id now
 		// since we allowed site admin to edit other user avatar and cover on frontend
 		$photo->user_id = $uid;
-=======
-		$photo->user_id = $this->my->id;
->>>>>>> master
 		$photo->album_id = $album->id;
 
 		$photo->title = $file['name'];

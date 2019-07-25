@@ -23,12 +23,6 @@ class EasyBlogViewFeatured extends EasyBlogView
 	 */
 	public function display($tmpl = null)
 	{
-<<<<<<< HEAD
-=======
-		// Set the meta tags for this page
-		EB::setMeta(META_ID_FEATURED, META_TYPE_VIEW);
-
->>>>>>> master
 		// Add the RSS headers on the page
 		EB::feeds()->addHeaders('index.php?option=com_easyblog&view=featured');
 
@@ -48,12 +42,9 @@ class EasyBlogViewFeatured extends EasyBlogView
 		// Get the pagination
 		$pagination	= $model->getPagination();
 
-<<<<<<< HEAD
 		// Set the meta tags for this page
 		EB::setMeta(META_ID_FEATURED, META_TYPE_VIEW, '', $pagination);
 
-=======
->>>>>>> master
 		// Format the posts
 		$posts = EB::formatter('list', $posts);
 

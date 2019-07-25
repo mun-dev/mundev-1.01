@@ -12,7 +12,6 @@
 defined('_JEXEC') or die('Unauthorized Access');
 ?>
 <div class="adsense-wrap <?php echo (isset($alignment)) ? $alignment : ''; ?>" style="<?php echo (isset($alignment)) && $alignment == ' alignright' ? 'float:right;' : 'float:left;';?>">
-<<<<<<< HEAD
 	<script type="text/javascript"><!--
 	<?php echo html_entity_decode("$code\n"); ?>
 	//--></script>
@@ -21,13 +20,3 @@ defined('_JEXEC') or die('Unauthorized Access');
 		<script type="text/javascript" src="https://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
 	<?php } ?>
 </div>
-=======
-    <script type="text/javascript"><!--
-    <?php echo html_entity_decode("$code\n"); ?>
-    //--></script>
-
-    <?php if ($this->config->get('integration_google_adsense_script')) { ?>
-    	<script type="text/javascript" src="https://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
-    <?php } ?>
-</div>
->>>>>>> master

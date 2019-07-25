@@ -4,14 +4,8 @@
 		"reset",
 		"component-light",
 		"document",
-<<<<<<< HEAD
 		"blocks",		
 		"layout",
-=======
-		"blocks",
-		"layout",
-		"side-menu",
->>>>>>> master
 		"search",
 		"brand",
 		"toolbar",
@@ -25,13 +19,9 @@
 		"dashboard",
 		"magazine",
 		"grid",
-<<<<<<< HEAD
 		"card",
 		"modules",
 		"integrations",
-=======
-		"modules",
->>>>>>> master
 		"patch"
 	],
 

@@ -74,11 +74,7 @@ class EasyDiscussViewPost extends EasyDiscussView
 				ED::breadcrumbs()->insertCategory($category);
 			}
 
-<<<<<<< HEAD
 			$this->setPathway($post->getTitle());
-=======
-			$this->setPathway($this->escape($post->getTitle()));
->>>>>>> master
 		}
 
 		// Mark as viewed for notifications.
@@ -351,12 +347,8 @@ class EasyDiscussViewPost extends EasyDiscussView
 	 */
 	private function setPageHeaders(EasyDiscussPost $post)
 	{
-<<<<<<< HEAD
 		$postTitle = $post->getTitle();
 		$pageTitle = htmlspecialchars_decode($postTitle, ENT_QUOTES);
-=======
-		$pageTitle = $post->getTitle();
->>>>>>> master
 		$pageContent = strip_tags($post->preview);
 		$pageContent = JString::substr($pageContent, 0, 160);
 

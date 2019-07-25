@@ -1,14 +1,8 @@
 <?php
 /**
-<<<<<<< HEAD
 * @package		EasyBlog
 * @copyright	Copyright (C) 2010 - 2019 Stack Ideas Sdn Bhd. All rights reserved.
 * @license		GNU/GPL, see LICENSE.php
-=======
-* @package      EasyBlog
-* @copyright    Copyright (C) 2010 - 2017 Stack Ideas Sdn Bhd. All rights reserved.
-* @license      GNU/GPL, see LICENSE.php
->>>>>>> master
 * EasyBlog is free software. This version may have been modified pursuant
 * to the GNU General Public License, and as distributed it includes or
 * is derivative of works licensed under the GNU General Public License or
@@ -318,11 +312,7 @@ class EasyBlogViewMediamanager extends EasyBlogView
 		$item = $media->createVariation($uri, $name, $params);
 
 		if ($item instanceof EasyBlogException) {
-<<<<<<< HEAD
 			return $this->ajax->reject($item);
-=======
-			return $this->ajax->reject($state);
->>>>>>> master
 		}
 
 		// Response object is intended to also include

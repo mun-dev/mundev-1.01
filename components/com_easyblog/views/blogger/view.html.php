@@ -37,12 +37,6 @@ class EasyBlogViewBlogger extends EasyBlogView
 	 */
 	public function display($tmpl = null)
 	{
-<<<<<<< HEAD
-=======
-		// Set meta tags for bloggers
-		EB::setMeta(META_ID_BLOGGERS, META_TYPE_VIEW);
-
->>>>>>> master
 		// Set the breadcrumbs only when necessary
 		if (!EBR::isCurrentActiveMenu('blogger')) {
 			$this->setPathway( JText::_('COM_EASYBLOG_BLOGGERS_BREADCRUMB') , '' );
@@ -85,12 +79,9 @@ class EasyBlogViewBlogger extends EasyBlogView
 
 		$pagination = $bloggerModel->getPagination();
 
-<<<<<<< HEAD
 		// Set meta tags for bloggers
 		EB::setMeta(META_ID_BLOGGERS, META_TYPE_VIEW, '', $pagination);
 
-=======
->>>>>>> master
 		// Determine the current page if there's pagination
 		$limitstart = $this->input->get('limitstart', 0, 'int');
 
@@ -263,17 +254,6 @@ class EasyBlogViewBlogger extends EasyBlogView
 			return JError::raiseError(404, JText::_('COM_EASYBLOG_INVALID_AUTHOR_ID_PROVIDED'));
 		}
 
-<<<<<<< HEAD
-=======
-		// Get the authors acl
-		$acl = EB::acl($author->id);
-
-		// Set meta tags for the author if allowed to
-		if ($acl->get('allow_seo')) {
-			EB::setMeta($author->id, META_TYPE_BLOGGER, true);
-		}
-
->>>>>>> master
 		// Set the breadcrumbs
 		if (!EBR::isCurrentActiveMenu('blogger', $author->id) && !EBR::isCurrentActiveMenu('blogger')) {
 			$this->setPathway( JText::_('COM_EASYBLOG_BLOGGERS_BREADCRUMB') , EB::_('index.php?option=com_easyblog&view=blogger') );
@@ -376,7 +356,6 @@ class EasyBlogViewBlogger extends EasyBlogView
 		$title 	= EB::getPageTitle($author->getName());
 		$this->setPageTitle($title, $pagination, $this->config->get('main_pagetitle_autoappend'));
 
-<<<<<<< HEAD
 		// Get the authors acl
 		$acl = EB::acl($author->id);
 
@@ -385,8 +364,6 @@ class EasyBlogViewBlogger extends EasyBlogView
 			EB::setMeta($author->id, META_TYPE_BLOGGER, true, $pagination);
 		}
 
-=======
->>>>>>> master
 		// Check if subscribed
 
 
@@ -405,13 +382,10 @@ class EasyBlogViewBlogger extends EasyBlogView
 		$bloggerModel = EB::model('Blogger');
 		$author->isBloggerSubscribed = $bloggerModel->isBloggerSubscribedEmail($author->id, $this->my->email);
 
-<<<<<<< HEAD
 		$gridLayout = $themes->getParam('grid_layout', 4);
 
 		$gridView = $themes->getParam('grid_view', 0);
 
-=======
->>>>>>> master
 		$this->set('pagination', $pagination);
 		$this->set('return', $return);
 		$this->set('author', $author);
@@ -419,14 +393,11 @@ class EasyBlogViewBlogger extends EasyBlogView
 		$this->set('sort', $sort);
 		$this->set('showIntegration', $showIntegration);
 		$this->set('hasPinterestEmbedCode', $hasPinterestEmbedCode);
-<<<<<<< HEAD
 		$this->set('gridLayout', $gridLayout);
 
 		if ($gridView) {
 			return parent::display('authors/grid/default');
 		}
-=======
->>>>>>> master
 
 		parent::display('authors/item');
 	}

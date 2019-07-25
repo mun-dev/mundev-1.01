@@ -2,20 +2,12 @@
 <extension type="module" version="3.0" client="site" method="upgrade">
 	<name>EasyBlog - Custom Field Search Module</name>
 	<author>Stack Ideas Sdn Bhd</author>
-<<<<<<< HEAD
 	<creationDate>18th July 2019</creationDate>
-=======
-	<creationDate>30th April 2019</creationDate>
->>>>>>> master
 	<copyright>Copyright 2009 - 2017 Stack Ideas Sdn Bhd. All rights reserved.</copyright>
 	<license>GPL License v2</license>
 	<authorEmail>support@stackideas.com</authorEmail>
 	<authorUrl>http://stackideas.com</authorUrl>
-<<<<<<< HEAD
 	<version>5.3.2</version>
-=======
-	<version>5.2.14</version>
->>>>>>> master
 	<description>
 		<![CDATA[Sort blog listing by custom field.]]></description>
 	<languages>
@@ -60,11 +52,8 @@
 					<option value="exclude">MOD_EASYBLOG_EXCLUDE</option>
 				</field>
 
-<<<<<<< HEAD
 				<field name="strictmode" type="boolean" default="0" label="MOD_EB_STRICT_MODE" description="MOD_EB_STRICT_MODE_DESC" />
 
-=======
->>>>>>> master
 				<field name="optionscount" type="text" class="input-mini text-center" default="0" label="MOD_EASYBLOG_TOTAL_FIELD_OPTIONS_TO_DISPLAY" description="MOD_EASYBLOG_TOTAL_FIELD_OPTIONS_TO_DISPLAY_DESC" />
 
 			</fieldset>

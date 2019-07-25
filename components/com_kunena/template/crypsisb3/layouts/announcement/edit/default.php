@@ -13,12 +13,7 @@ defined('_JEXEC') or die;
 use Joomla\CMS\HTML\HTMLHelper;
 use Joomla\CMS\Language\Text;
 
-<<<<<<< HEAD
 echo $this->subLayout('Widget/Datepicker');
-=======
-$this->addStyleSheet('assets/css/bootstrap.datepicker.css');
-$this->addScript('assets/js/bootstrap.datepicker.js');
->>>>>>> master
 ?>
 <h2>
 	<?php echo Text::_('COM_KUNENA_ANN_ANNOUNCEMENTS'); ?>:

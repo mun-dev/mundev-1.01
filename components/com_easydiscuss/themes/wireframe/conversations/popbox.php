@@ -1,11 +1,7 @@
 <?php
 /**
 * @package		EasyDiscuss
-<<<<<<< HEAD
 * @copyright	Copyright (C) 2010 - 2019 Stack Ideas Sdn Bhd. All rights reserved.
-=======
-* @copyright	Copyright (C) 2010 - 2015 Stack Ideas Sdn Bhd. All rights reserved.
->>>>>>> master
 * @license		GNU/GPL, see LICENSE.php
 * EasyDiscuss is free software. This version may have been modified pursuant
 * to the GNU General Public License, and as distributed it includes or
@@ -33,13 +29,7 @@ defined('_JEXEC') or die('Unauthorized Access');
                     <a href="<?php echo $conversation->getPermalink();?>" class="popbox-dropdown-nav__link">
                         <div class="o-flag">
                             <div class="o-flag__image o-flag--top">
-<<<<<<< HEAD
                                 <?php echo $this->html('user.avatar', $conversation->getLastReplier()); ?>
-=======
-                                <span class="o-avatar o-avatar--sm">
-                                    <img src="<?php echo $conversation->getLastReplier()->getAvatar(); ?>"/>
-                                </span>
->>>>>>> master
                             </div>
                             <div class="o-flag__body">
                                 <div class="popbox-dropdown-nav__post">

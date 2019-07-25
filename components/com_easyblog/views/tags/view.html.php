@@ -40,12 +40,6 @@ class EasyBlogViewTags extends EasyBlogView
 	 */
 	public function display($tmpl = null)
 	{
-<<<<<<< HEAD
-=======
-		// Set meta tags for tags view
-		EB::setMeta(META_ID_TAGS, META_TYPE_VIEW);
-
->>>>>>> master
 		// Set breadcrumb
 		$this->setViewBreadcrumb('tags');
 
@@ -76,12 +70,9 @@ class EasyBlogViewTags extends EasyBlogView
 		$result = $model->getTagCloud($limit, $ordering, $sorting, true, $search, false, true);
 		$pagination = $model->getPagination();
 
-<<<<<<< HEAD
 		// Set meta tags for tags view
 		EB::setMeta(META_ID_TAGS, META_TYPE_VIEW, '', $pagination);
 
-=======
->>>>>>> master
 		// Format the tags
 		$tags = EB::formatter('tags', $result, true);
 
@@ -138,12 +129,6 @@ class EasyBlogViewTags extends EasyBlogView
 		// Set page title
 		$this->setPageTitle($tag->getTitle(), '' , $this->config->get('main_pagetitle_autoappend'));
 
-<<<<<<< HEAD
-=======
-		// set meta tags for tags view
-		EB::setMeta(META_ID_TAGS, META_TYPE_VIEW, $tag->getTitle() . ' - ' . EB::getPageTitle($this->config->get('main_title')) );
-
->>>>>>> master
 		// Add canonical URL
 		$limitstart = $this->input->get('limitstart', 0, 'int');
 		$canoLink = 'index.php?option=com_easyblog&view=tags&layout=tag&id=' . $id;
@@ -175,12 +160,9 @@ class EasyBlogViewTags extends EasyBlogView
 		// Get the pagination
 		$pagination	= $blogModel->getPagination();
 
-<<<<<<< HEAD
 		// set meta tags for tags view
 		EB::setMeta(META_ID_TAGS, META_TYPE_VIEW, $tag->getTitle() . ' - ' . EB::getPageTitle($this->config->get('main_title')), $pagination);
 
-=======
->>>>>>> master
 		if (is_object($pagination) && method_exists($pagination, 'setAdditionalUrlParam')) {
 			$pagination->setAdditionalUrlParam('id', $tag->id);
 		}
@@ -241,7 +223,6 @@ class EasyBlogViewTags extends EasyBlogView
 		// Check if the blog listing page got render any pinterest block for the post 
 		$hasPinterestEmbedCode = false;
 
-<<<<<<< HEAD
 		if ($posts) {
 			foreach ($posts as $post) {
 				
@@ -249,13 +230,6 @@ class EasyBlogViewTags extends EasyBlogView
 					$hasPinterestEmbedCode = true;
 					break;
 				}
-=======
-		foreach ($posts as $post) {
-			
-			if ($post->hasPinterest) {
-				$hasPinterestEmbedCode = true;
-				break;
->>>>>>> master
 			}
 		}
 

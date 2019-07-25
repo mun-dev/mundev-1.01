@@ -306,7 +306,6 @@
 		"desc": "COM_EASYBLOG_ACL_DESC_ALLOW_CUSTOM_NOTIFICATIONS",
 		"published": 1,
 		"id": 47
-<<<<<<< HEAD
 	},
 	{
 		"action": "allow_user_editor",
@@ -314,7 +313,5 @@
 		"desc": "COM_EASYBLOG_ACL_DESC_ALLOW_USER_EDITOR",
 		"published": 1,
 		"id": 48
-=======
->>>>>>> master
 	}
 ]

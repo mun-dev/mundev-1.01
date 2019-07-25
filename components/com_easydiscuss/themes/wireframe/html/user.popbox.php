@@ -1,11 +1,7 @@
 <?php
 /**
 * @package      EasyDiscuss
-<<<<<<< HEAD
 * @copyright    Copyright (C) 2010 - 2019 Stack Ideas Sdn Bhd. All rights reserved.
-=======
-* @copyright    Copyright (C) 2010 - 2015 Stack Ideas Sdn Bhd. All rights reserved.
->>>>>>> master
 * @license      GNU/GPL, see LICENSE.php
 * EasyDiscuss is free software. This version may have been modified pursuant
 * to the GNU General Public License, and as distributed it includes or
@@ -24,11 +20,7 @@ defined('_JEXEC') or die('Unauthorized Access');
 					<?php if ($this->config->get('layout_user_online')) { ?>
 						<div class="o-avatar-status__indicator"></div>
 					<?php } ?>
-<<<<<<< HEAD
 					<a class="o-avatar o-avatar--lg <?php echo ED::themes()->renderAvatarClass($user); ?>" href="<?php echo $user->getPermalink();?>">
-=======
-					<a class="o-avatar o-avatar--lg o-avatar--bg-<?php echo $user->getNameInitial()->code;?> <?php echo ($this->config->get('layout_avatar')) ? 'o-avatar--text' : '' ?>" href="<?php echo $user->getPermalink();?>">
->>>>>>> master
 						<?php if ($this->config->get('layout_avatar')) { ?>
 							<img src="<?php echo $user->getAvatar();?>" alt="<?php echo $this->escape($user->getName());?>" />
 						<?php } else { ?>

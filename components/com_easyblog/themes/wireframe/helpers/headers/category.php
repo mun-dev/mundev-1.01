@@ -60,11 +60,7 @@ defined('_JEXEC') or die('Unauthorized Access');
 
 <?php if ($viewOptions->description && $category->description) { ?>
 <div class="eb-category-bio">
-<<<<<<< HEAD
 	<?php echo $this->html('string.truncater', $category->description, 350); ?>
-=======
-	<?php echo $this->html('string.truncater', nl2br(strip_tags($category->description)), 350); ?>
->>>>>>> master
 </div>
 <?php } ?>
 

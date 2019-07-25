@@ -1,11 +1,7 @@
 <?php
 /**
 * @package      EasyBlog
-<<<<<<< HEAD
 * @copyright    Copyright (C) 2010 - 2019 Stack Ideas Sdn Bhd. All rights reserved.
-=======
-* @copyright    Copyright (C) 2010 - 2018 Stack Ideas Sdn Bhd. All rights reserved.
->>>>>>> master
 * @license      GNU/GPL, see LICENSE.php
 * EasyBlog is free software. This version may have been modified pursuant
 * to the GNU General Public License, and as distributed it includes or
@@ -64,16 +60,10 @@ class EasyBlogAdsense extends EasyBlog
 		// Check if author enabled their own adsense
 		$adsense = EB::table('Adsense');
 		$adsense->load($post->getAuthor()->id);
-<<<<<<< HEAD
 		$userCode = $adsense->code;
 
 		if ($adsense->code && $adsense->published) {
 			$code = $userCode;
-=======
-
-		if ($adsense->code && $adsense->published) {
-			$code = $adsense->code;
->>>>>>> master
 			$location = $adsense->display;
 		}
 
@@ -93,12 +83,8 @@ class EasyBlogAdsense extends EasyBlog
 
 		$namespace = 'site/adsense/responsive';
 
-<<<<<<< HEAD
 		// Author's adsense code will not using responsive code
 		if (!$responsive || $userCode) {
-=======
-		if (!$responsive) {
->>>>>>> master
 			$namespace = 'site/adsense/code';
 		}
 

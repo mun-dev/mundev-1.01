@@ -1,11 +1,7 @@
 <?php
 /**
 * @package		EasyBlog
-<<<<<<< HEAD
 * @copyright	Copyright (C) 2010 - 2019 Stack Ideas Sdn Bhd. All rights reserved.
-=======
-* @copyright	Copyright (C) 2010 - 2017 Stack Ideas Sdn Bhd. All rights reserved.
->>>>>>> master
 * @license		GNU/GPL, see LICENSE.php
 * EasyBlog is free software. This version may have been modified pursuant
 * to the GNU General Public License, and as distributed it includes or
@@ -605,7 +601,6 @@ class EasyBlogControllerPosts extends EasyBlogController
 			}
 
 			if (method_exists($post, $task)) {
-<<<<<<< HEAD
 
 				$options = array();
 
@@ -615,9 +610,6 @@ class EasyBlogControllerPosts extends EasyBlogController
 				}
 
 				$post->$task($options);
-=======
-				$post->$task();
->>>>>>> master
 			}
 		}
 
@@ -782,7 +774,6 @@ class EasyBlogControllerPosts extends EasyBlogController
 		return $this->ajax->resolve($message, $data, $editLink);
 	}
 
-<<<<<<< HEAD
 
 	/**
 	 * validate content used by ajax.
@@ -823,8 +814,6 @@ class EasyBlogControllerPosts extends EasyBlogController
 	}
 
 
-=======
->>>>>>> master
 	/**
 	 * Saves a blog post
 	 *
@@ -910,15 +899,12 @@ class EasyBlogControllerPosts extends EasyBlogController
 		if (!$post->isNew()) {
 			$message = 'COM_EASYBLOG_POST_UPDATED_SUCCESS';
 			$state = EASYBLOG_MSG_INFO;
-<<<<<<< HEAD
 
 			$actionlog = EB::actionlog();
 			$actionlog->log('COM_EB_ACTIONLOGS_POST_UPDATED', 'post', array(
 				'link' => $post->getEditLink(),
 				'postTitle' => JText::_($post->getTitle())
 			));
-=======
->>>>>>> master
 		}
 
 		// if this is a pending post, this mean admin is updating the post which is under pending approval.
@@ -1039,10 +1025,7 @@ class EasyBlogControllerPosts extends EasyBlogController
 		$layout = $this->input->get('layout', '', 'string');
 		$filterMode = $this->input->get('filtermode', 'include', 'string');
 		$inclusion = $this->input->get('inclusion', '', 'string');
-<<<<<<< HEAD
 		$strictmode = $this->input->get('strictmode', false, 'bool') ? '1' : '0';
-=======
->>>>>>> master
 
 		$allowedViews = array('latest', 'categories');
 
@@ -1084,15 +1067,9 @@ class EasyBlogControllerPosts extends EasyBlogController
 		$querystr = implode('&',$querystr);
 
 		if (strpos($redirect, '?')) {
-<<<<<<< HEAD
 			$redirect .= '&filter=field&filtermode=' . $filterMode . '&' . $querystr . '&strictmode=' . $strictmode;
 		} else {
 			$redirect .= '?filter=field&filtermode=' . $filterMode . '&' . $querystr . '&strictmode=' . $strictmode;
-=======
-			$redirect .= '&filter=field&filtermode=' . $filterMode . '&' . $querystr;
-		} else {
-			$redirect .= '?filter=field&filtermode=' . $filterMode . '&' . $querystr;
->>>>>>> master
 		}
 
 		return $this->app->redirect($redirect);
@@ -1261,8 +1238,4 @@ class EasyBlogControllerPosts extends EasyBlogController
 
 		return $this->app->redirect($return);
 	}
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> master

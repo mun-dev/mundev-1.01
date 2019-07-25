@@ -56,11 +56,8 @@ class EasyBlogControllerProfile extends EasyBlogController
 			$email = $post['email'];
 			$password = $post['password'];
 			$password2 = $post['password2'];
-<<<<<<< HEAD
 			$timezone = $post['timezone'];
 			$language = $post['language'];
-=======
->>>>>>> master
 
 			if (EBString::strlen($password) || EBString::strlen($password2)) {
 
@@ -72,17 +69,12 @@ class EasyBlogControllerProfile extends EasyBlogController
 			}
 
 			// Store Joomla info
-<<<<<<< HEAD
 			$user = JFactory::getUser();
 
 			$language = $user->setParam('language' , $language);
 			$timezone =  $user->setParam('timezone' , $timezone);
 
 			$data = array('email' => $email, 'password' => $password, 'password2' => $password2, 'language' => $language, 'timezone' => $timezone);
-=======
-			$user 	= JFactory::getUser();
-			$data 	= array('email' => $email, 'password' => $password, 'password2' => $password2);
->>>>>>> master
 
 			// Bind data
 			$user->bind($data);
@@ -150,29 +142,16 @@ class EasyBlogControllerProfile extends EasyBlogController
 
 		$acl = EB::acl();
 
-<<<<<<< HEAD
 		if ($acl->get('add_entry')) {
 
 			$metapost = array();
-=======
-		//save meta
-		if ($acl->get('add_entry')) {
-			//meta post info
-			$metaId = $this->input->get('metaid', 0, 'int');
-			$metapos = array();
-
->>>>>>> master
 			$metapost['keywords'] = $this->input->get('metakeywords', '', 'raw');
 			$metapost['description'] = $this->input->get('metadescription', '', 'raw');
 			$metapost['content_id'] = $this->my->id;
 			$metapost['type'] = META_TYPE_BLOGGER;
 
 			$meta = EB::table('Meta');
-<<<<<<< HEAD
 			$meta->load(array('type' => $metapost['type'], 'content_id' => $metapost['content_id']));
-=======
-			$meta->load($metaId);
->>>>>>> master
 			$meta->bind($metapost);
 			$meta->store();
 		}
@@ -186,13 +165,10 @@ class EasyBlogControllerProfile extends EasyBlogController
 			$userparams->set('facebook_profile_url', $post['facebook_profile_url']);
 		}
 
-<<<<<<< HEAD
 		if (isset($post['user_editor'])) {
 			$userparams->set('user_editor', $post['user_editor']);
 		}
 
-=======
->>>>>>> master
 		$profile->params = $userparams->toString();
 
 		// If user is allowed to save their settings

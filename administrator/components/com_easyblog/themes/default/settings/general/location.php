@@ -14,11 +14,7 @@ defined('_JEXEC') or die('Unauthorized Access');
 <div class="row form-horizontal">
 	<div class="col-lg-6">
 		<div class="panel">
-<<<<<<< HEAD
 			<?php echo $this->html('panel.heading', 'COM_EB_SETTINGS_WORKFLOW_LOCATIONS_MAP_INTEGRATIONS', 'COM_EB_SETTINGS_WORKFLOW_LOCATIONS_MAP_INTEGRATIONS_INFO'); ?>
-=======
-			<?php echo $this->html('panel.heading', 'COM_EASYBLOG_SETTINGS_WORKFLOW_LOCATIONS_MAP_FEATURES', 'COM_EASYBLOG_SETTINGS_WORKFLOW_LOCATIONS_MAP_FEATURES_INFO'); ?>
->>>>>>> master
 
 			<div class="panel-body">
 				<?php echo $this->html('settings.toggle', 'main_locations', 'COM_EASYBLOG_SETTINGS_WORKFLOW_LOCATIONS_ENABLE_LOCATION'); ?>
@@ -29,16 +25,12 @@ defined('_JEXEC') or die('Unauthorized Access');
 					<div class="col-md-7">
 						<select name="location_service_provider" id="location_service_provider" class="form-control" data-location-integration>
 							<option value="maps"<?php echo $this->config->get('location_service_provider') == 'maps' ? ' selected="selected"' : '';?>><?php echo JText::_('COM_EB_SETTINGS_LOCATIONS_SERVICE_PROVIDER_GOOGLEMAPS'); ?></option>
-<<<<<<< HEAD
 							<option value="osm"<?php echo $this->config->get('location_service_provider') == 'osm' ? ' selected="selected"' : '';?>><?php echo JText::_('COM_EB_SETTINGS_LOCATIONS_SERVICE_PROVIDER_OPENSTREETMAP'); ?></option>
-=======
->>>>>>> master
 							<option value="places"<?php echo $this->config->get('location_service_provider') == 'places' ? ' selected="selected"' : '';?>><?php echo JText::_('COM_EB_SETTINGS_LOCATIONS_SERVICE_PROVIDER_GOOGLEPLACES'); ?></option>]
 							<option value="foursquare"<?php echo $this->config->get('location_service_provider') == 'foursquare' ? ' selected="selected"' : '';?>><?php echo JText::_('COM_EB_SETTINGS_LOCATIONS_SERVICE_PROVIDER_FOURSQUARE'); ?></option>
 						</select>
 					</div>
 				</div>
-<<<<<<< HEAD
 			</div>
 		</div>
 		<div class="panel" data-google-settings>
@@ -48,12 +40,6 @@ defined('_JEXEC') or die('Unauthorized Access');
 				<?php echo $this->html('settings.toggle', 'main_locations_static_maps', 'COM_EASYBLOG_SETTINGS_WORKFLOW_LOCATIONS_USE_STATIC_MAPS', '', '', '', 'data-google-settings'); ?>
 
 				<div class="form-group" data-google-settings>
-=======
-
-				<?php echo $this->html('settings.toggle', 'main_locations_static_maps', 'COM_EASYBLOG_SETTINGS_WORKFLOW_LOCATIONS_USE_STATIC_MAPS'); ?>
-
-				<div class="form-group">
->>>>>>> master
 					<?php echo $this->html('form.label', 'COM_EASYBLOG_SETTINGS_WORKFLOW_LOCATIONS_LANGUAGE_CODE', 'main_locations_blog_language'); ?>
 
 					<div class="col-md-7">
@@ -121,11 +107,7 @@ defined('_JEXEC') or die('Unauthorized Access');
 
 	<div class="col-lg-6">
 
-<<<<<<< HEAD
 		<div class="panel<?php echo $this->config->get('location_service_provider') == 'osm' ? ' hide' : '';?>" data-google-settings>
-=======
-		<div class="panel">
->>>>>>> master
 			<?php echo $this->html('panel.heading', 'COM_EASYBLOG_SETTINGS_LOCATIONS_SERVICE_PROVIDER_GOOGLEMAPS'); ?>
 
 			<div class="panel-body">

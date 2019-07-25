@@ -1,14 +1,8 @@
 <?php
 /**
-<<<<<<< HEAD
 * @package		EasyBlog
 * @copyright	Copyright (C) 2010 - 2019 Stack Ideas Sdn Bhd. All rights reserved.
 * @license		GNU/GPL, see LICENSE.php
-=======
-* @package      EasyBlog
-* @copyright    Copyright (C) 2010 - 2018 Stack Ideas Sdn Bhd. All rights reserved.
-* @license      GNU/GPL, see LICENSE.php
->>>>>>> master
 * EasyBlog is free software. This version may have been modified pursuant
 * to the GNU General Public License, and as distributed it includes or
 * is derivative of works licensed under the GNU General Public License or
@@ -20,7 +14,6 @@ defined('_JEXEC') or die('Unauthorized Access');
 class EasyBlogThemesHelperForm extends EasyBlogThemesHelperAbstract
 {
 	/**
-<<<<<<< HEAD
 	 * Renders an article browser form
 	 *
 	 * @since	5.3.0
@@ -57,8 +50,6 @@ class EasyBlogThemesHelperForm extends EasyBlogThemesHelperAbstract
 	}
 
 	/**
-=======
->>>>>>> master
 	 * Renders the label for generic forms
 	 *
 	 * @since	5.1
@@ -190,7 +181,6 @@ class EasyBlogThemesHelperForm extends EasyBlogThemesHelperAbstract
 	}
 
 	/**
-<<<<<<< HEAD
 	 * Renders a simple text input
 	 *
 	 * @since   5.3
@@ -226,8 +216,6 @@ class EasyBlogThemesHelperForm extends EasyBlogThemesHelperAbstract
 	}
 
 	/**
-=======
->>>>>>> master
 	 * Renders a author browser form
 	 *
 	 * @since	5.1
@@ -382,7 +370,6 @@ class EasyBlogThemesHelperForm extends EasyBlogThemesHelperAbstract
 	}
 
 	/**
-<<<<<<< HEAD
 	 * Renders a blog post browser form
 	 *
 	 * @since	5.3
@@ -416,18 +403,12 @@ class EasyBlogThemesHelperForm extends EasyBlogThemesHelperAbstract
 	}
 
 	/**
-=======
->>>>>>> master
 	 * Renders a dropdown
 	 *
 	 * @since	5.1
 	 * @access	public
 	 */
-<<<<<<< HEAD
 	public function dropdown($name, $selected ='', $values = array(), $options = array(), $useValue = false)
-=======
-	public function dropdown($name, $selected ='', $values = array(), $options = array())
->>>>>>> master
 	{
 		$class = 'form-control';
 		$attributes = '';
@@ -446,10 +427,7 @@ class EasyBlogThemesHelperForm extends EasyBlogThemesHelperAbstract
 		$theme->set('name', $name);
 		$theme->set('class', $class);
 		$theme->set('selected', $selected);
-<<<<<<< HEAD
 		$theme->set('useValue', $useValue);
-=======
->>>>>>> master
 
 		return $theme->output('admin/html/form/dropdown');
 	}
