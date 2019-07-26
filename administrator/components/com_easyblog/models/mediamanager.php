@@ -41,20 +41,14 @@ class EasyBlogModelMediaManager extends EasyBlogAdminModel
 	{
 		$db = EB::db();
 
-<<<<<<< HEAD
 		if (is_array($uris)) {
 			foreach ($uris as &$uri) {
 				$uri = $db->Quote($uri);
 			}
-=======
-		foreach ($uris as &$uri) {
-			$uri = $db->Quote($uri);
->>>>>>> master
 		}
 
 		$query = array();
 		$query[] = 'SELECT * FROM ' . $db->qn('#__easyblog_media');
-<<<<<<< HEAD
 
 		if (is_array($uris)) {
 			$query[] = 'WHERE ' . $db->qn('uri') . ' IN(';
@@ -63,11 +57,6 @@ class EasyBlogModelMediaManager extends EasyBlogAdminModel
 		} else {
 			$query[] = 'WHERE ' . $db->qn('uri') . ' = ' . $db->Quote($uris);
 		}
-=======
-		$query[] = 'WHERE ' . $db->qn('uri') . ' IN(';
-		$query[] = implode(',', $uris);
-		$query[] = ')';
->>>>>>> master
 
 		$query = implode(' ', $query);
 		$db->setQuery($query);
@@ -82,7 +71,6 @@ class EasyBlogModelMediaManager extends EasyBlogAdminModel
 	}
 
 	/**
-<<<<<<< HEAD
 	 * Retrieves a list of objects from the database given the uri
 	 *
 	 * @since	5.1
@@ -111,8 +99,6 @@ class EasyBlogModelMediaManager extends EasyBlogAdminModel
 
 
 	/**
-=======
->>>>>>> master
 	 * Retrieves a list of articles on the site
 	 *
 	 * @since	5.0

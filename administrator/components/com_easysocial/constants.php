@@ -263,10 +263,7 @@ define('SOCIAL_TYPE_BADGES', 'badges');
 define('SOCIAL_TYPE_SHARE', 'shares');
 define('SOCIAL_TYPE_AVATAR', 'avatar');
 define('SOCIAL_TYPE_FACEBOOK', 'facebook');
-<<<<<<< HEAD
 define('SOCIAL_TYPE_TWITTER', 'twitter');
-=======
->>>>>>> master
 define('SOCIAL_TYPE_LINKEDIN', 'linkedin');
 define('SOCIAL_TYPE_USERS', 'users');
 define('SOCIAL_TYPE_APPS', 'apps');
@@ -580,17 +577,9 @@ define('SOCIAL_VIDEO_OTHER_RECENT', 1);
 define('SOCIAL_VIDEO_OTHER_CATEGORY', 2);
 
 // SEF urls cache limit
-<<<<<<< HEAD
 define('SOCIAL_SEF_LIMIT', 6000);
 define('SOCIAL_SEF_FILESIZE', 700); // in KB
 
 // media sef format
 define('SOCIAL_MEDIA_SEF_DEFAULT', 'default');
 define('SOCIAL_MEDIA_SEF_WITHUSER', 'withuser');
-=======
-define('SOCIAL_SEF_LIMIT', 10000);
-
-// media sef format
-define('SOCIAL_MEDIA_SEF_DEFAULT', 'default');
-define('SOCIAL_MEDIA_SEF_WITHUSER', 'withuser');
->>>>>>> master

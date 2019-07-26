@@ -1,14 +1,8 @@
 <?php
 /**
-<<<<<<< HEAD
 * @package		EasyBlog
 * @copyright	Copyright (C) 2010 - 2019 Stack Ideas Sdn Bhd. All rights reserved.
 * @license		GNU/GPL, see LICENSE.php
-=======
-* @package  EasyBlog
-* @copyright Copyright (C) 2010 - 2018 Stack Ideas Sdn Bhd. All rights reserved.
-* @license  GNU/GPL, see LICENSE.php
->>>>>>> master
 * EasyBlog is free software. This version may have been modified pursuant
 * to the GNU General Public License, and as distributed it includes or
 * is derivative of works licensed under the GNU General Public License or
@@ -88,11 +82,8 @@ class EasyBlogControllerTeamBlogs extends EasyBlogController
 		$team = EB::table('TeamBlog');
 		$team->load($id);
 
-<<<<<<< HEAD
 		$isNew = $team->id ? false : true;
 
-=======
->>>>>>> master
 		// Bind the posted data
 		$team->bind($post);
 
@@ -100,10 +91,6 @@ class EasyBlogControllerTeamBlogs extends EasyBlogController
 		$team->title = EBString::trim($team->title);
 		$team->alias = EBString::trim($team->alias);
 
-<<<<<<< HEAD
-=======
-
->>>>>>> master
 		// Try to save the team
 		$state = $team->store();
 
@@ -184,7 +171,6 @@ class EasyBlogControllerTeamBlogs extends EasyBlogController
 			}
 		}
 
-<<<<<<< HEAD
 		$actionString = $isNew ? 'COM_EB_ACTIONLOGS_TEAMBLOGS_CREATED' : 'COM_EB_ACTIONLOGS_TEAMBLOGS_UPDATED';
 		$actionlog = EB::actionlog();
 		$actionlog->log($actionString, 'post', array(
@@ -192,8 +178,6 @@ class EasyBlogControllerTeamBlogs extends EasyBlogController
 			'teamTitle' => ucfirst($team->title)
 		));
 
-=======
->>>>>>> master
 		// Set the info
 		$this->info->set('COM_EASYBLOG_TEAMBLOG_SAVED_SUCCESSFULLY', 'success');
 

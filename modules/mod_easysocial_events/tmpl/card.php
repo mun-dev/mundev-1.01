@@ -25,17 +25,10 @@ defined('_JEXEC') or die('Unauthorized Access');
 			<div class="mod-card__avatar-holder">
 				<div class="mod-card__calendar-date">
 					<div class="mod-card__calendar-day">
-<<<<<<< HEAD
 						<?php echo $event->getEventStart()->format('d', true, true, false);?>
 					</div>
 					<div class="mod-card__calendar-mth">
 						<?php echo $event->getEventStart()->format('M', true, true, false);?>
-=======
-						<?php echo $event->getEventStart()->format('d', true);?>
-					</div>
-					<div class="mod-card__calendar-mth">
-						<?php echo $event->getEventStart()->format('M', true);?>
->>>>>>> master
 					</div>
 				</div>
 			</div>

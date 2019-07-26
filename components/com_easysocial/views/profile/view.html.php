@@ -690,15 +690,9 @@ class EasySocialViewProfile extends EasySocialSiteView
 		$options = array();
 
 		$saveLogic = $this->config->get('users.profile.editLogic', 'default');
-<<<<<<< HEAD
 		$user = ES::user($userId);
 
 		if (($saveLogic == 'steps' && ($isLastStep || $task == 'saveclose')) || ($saveLogic != 'steps' && $userId && $task != 'save')) {
-=======
-
-		if (($saveLogic == 'steps' && ($isLastStep || $task == 'saveclose')) || ($saveLogic != 'steps' && $userId && $task != 'save')) {
-			$user = ES::user($userId);
->>>>>>> master
 			return $this->redirect($user->getPermalink(false));
 		}
 
@@ -706,11 +700,7 @@ class EasySocialViewProfile extends EasySocialSiteView
 			$options['layout'] = 'edit';
 
 			if ($userId) {
-<<<<<<< HEAD
 				$options['id'] = $user->getAlias();
-=======
-				$options['id'] = $userId;
->>>>>>> master
 			}
 
 			if ($nextStepId) {

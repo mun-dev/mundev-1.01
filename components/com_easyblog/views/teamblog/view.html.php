@@ -26,12 +26,6 @@ class EasyBlogViewTeamBlog extends EasyBlogView
 		// Set the breadcrumbs for this view
 		$this->setViewBreadcrumb('teamblog');
 
-<<<<<<< HEAD
-=======
-		// Set meta tags for team blog view
-		EB::setMeta(META_ID_TEAMBLOGS, META_TYPE_VIEW);
-
->>>>>>> master
 		// Get the sorting options
 		$sort = $this->input->get('sort', $this->config->get('layout_postorder'));
 
@@ -44,12 +38,9 @@ class EasyBlogViewTeamBlog extends EasyBlogView
 		// Load up the pagination object
 		$pagination	= $model->getPagination(true);
 
-<<<<<<< HEAD
 		// Set meta tags for team blog view
 		EB::setMeta(META_ID_TEAMBLOGS, META_TYPE_VIEW, '', $pagination);
 
-=======
->>>>>>> master
 		// Format the teams
 		$teams = EB::formatter('teamblogs', $teams);
 
@@ -80,12 +71,6 @@ class EasyBlogViewTeamBlog extends EasyBlogView
 			return JError::raiseError(404, JText::_('COM_EASYBLOG_TEAMBLOG_INVALID_ID_PROVIDED'));
 		}
 
-<<<<<<< HEAD
-=======
-		// set meta tags for teamblog view
-		EB::setMeta($id, META_TYPE_TEAM);
-
->>>>>>> master
 		$gid = EB::getUserGids();
 		$isMember = $team->isMember($this->my->id, $gid);
 
@@ -128,12 +113,9 @@ class EasyBlogViewTeamBlog extends EasyBlogView
 		// Get the pagination
 		$pagination	= $model->getPagination();
 
-<<<<<<< HEAD
 		// set meta tags for teamblog view
 		EB::setMeta($id, META_TYPE_TEAM, '', $pagination);
 
-=======
->>>>>>> master
 		// Determines if the team blog is featured
 		$team->isFeatured = EB::isFeatured('teamblog', $team->id);
 

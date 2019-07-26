@@ -26,11 +26,6 @@ EB::ajax()->process();
 EB::loadLanguages();
 EB::loadServices();
 
-<<<<<<< HEAD
-=======
-
-
->>>>>>> master
 // Get controller name if specified
 $app = JFactory::getApplication();
 $controllerName	= $app->input->get('controller', 'easyblog', 'cmd');

@@ -1,14 +1,8 @@
 <?php
 /**
-<<<<<<< HEAD
 * @package		EasyBlog
 * @copyright	Copyright (C) 2010 - 2019 Stack Ideas Sdn Bhd. All rights reserved.
 * @license		GNU/GPL, see LICENSE.php
-=======
-* @package      EasyBlog
-* @copyright    Copyright (C) 2010 - 2017 Stack Ideas Sdn Bhd. All rights reserved.
-* @license      GNU/GPL, see LICENSE.php
->>>>>>> master
 * EasyBlog is free software. This version may have been modified pursuant
 * to the GNU General Public License, and as distributed it includes or
 * is derivative of works licensed under the GNU General Public License or
@@ -19,44 +13,11 @@ defined('_JEXEC') or die('Unauthorized Access');
 
 class EasyBlogSimpleImage
 {
-<<<<<<< HEAD
 	public $image = null;
 	public $type = null;
 	public $path = null;
 	public $width = null;
 	public $height = null;
-=======
-	/**
-	 * Stores the image resource
-	 * @var resource
-	 */
-	public $image = null;
-
-	/**
-	 * Stores the image type
-	 * @var string
-	 */
-	public $type = null;
-
-	/**
-	 * Stores the path to the file
-	 * @var string
-	 */
-	public $path = null;
-
-	/**
-	 * The width of the image
-	 * @var int
-	 */
-	public $width = null;
-
-	/**
-	 * The height of the image
-	 * @var int
-	 */
-	public $height = null;
-
->>>>>>> master
 	public $resource = null;
 
 	/**
@@ -64,11 +25,6 @@ class EasyBlogSimpleImage
 	 *
 	 * @since   5.0
 	 * @access  public
-<<<<<<< HEAD
-=======
-	 * @param   string
-	 * @return
->>>>>>> master
 	 */
 	public function load($filePath)
 	{
@@ -112,13 +68,10 @@ class EasyBlogSimpleImage
 			$this->resource = imagecreatefrompng($this->path);
 		}
 
-<<<<<<< HEAD
 		if (defined('IMAGETYPE_WEBP') && $this->type == IMAGETYPE_WEBP) {
 			$this->resource = imagecreatefromwebp($this->path);	
 		}
 
-=======
->>>>>>> master
 		// Fix the orientation of the image
 		$this->fixOrientation();
    }
@@ -128,11 +81,6 @@ class EasyBlogSimpleImage
 	 *
 	 * @since   5.0
 	 * @access  public
-<<<<<<< HEAD
-=======
-	 * @param   string
-	 * @return
->>>>>>> master
 	 */
 	public function fixOrientation()
 	{
@@ -174,11 +122,6 @@ class EasyBlogSimpleImage
 	 *
 	 * @since   5.0
 	 * @access  public
-<<<<<<< HEAD
-=======
-	 * @param   string
-	 * @return
->>>>>>> master
 	 */
 	public function rotate($degrees)
 	{
@@ -196,11 +139,6 @@ class EasyBlogSimpleImage
 	 *
 	 * @since   5.0
 	 * @access  public
-<<<<<<< HEAD
-=======
-	 * @param   string
-	 * @return
->>>>>>> master
 	 */
 	public function getWidth()
 	{
@@ -212,11 +150,6 @@ class EasyBlogSimpleImage
 	 *
 	 * @since   5.0
 	 * @access  public
-<<<<<<< HEAD
-=======
-	 * @param   string
-	 * @return
->>>>>>> master
 	 */
 	public function getHeight()
 	{
@@ -228,11 +161,6 @@ class EasyBlogSimpleImage
 	 *
 	 * @since   5.0
 	 * @access  public
-<<<<<<< HEAD
-=======
-	 * @param   string
-	 * @return
->>>>>>> master
 	 */
 	public function resizeToHeight($height)
 	{
@@ -247,11 +175,6 @@ class EasyBlogSimpleImage
 	 *
 	 * @since   5.0
 	 * @access  public
-<<<<<<< HEAD
-=======
-	 * @param   string
-	 * @return
->>>>>>> master
 	 */
 	public function resizeToWidth($width)
 	{
@@ -266,11 +189,6 @@ class EasyBlogSimpleImage
 	 *
 	 * @since   5.0
 	 * @access  public
-<<<<<<< HEAD
-=======
-	 * @param   string
-	 * @return
->>>>>>> master
 	 */
 	public function scale($scale)
 	{
@@ -286,21 +204,12 @@ class EasyBlogSimpleImage
 	 *
 	 * @since   5.0
 	 * @access  public
-<<<<<<< HEAD
-=======
-	 * @param   string
-	 * @return
->>>>>>> master
 	 */
 	public function resize($width, $height)
 	{
 		$resource = '';
 
-<<<<<<< HEAD
 		if ($this->type == IMAGETYPE_JPEG || (defined('IMAGETYPE_WEBP') && $this->type == IMAGETYPE_WEBP)) {
-=======
-		if ($this->type == IMAGETYPE_JPEG) {
->>>>>>> master
 			$resource = imagecreatetruecolor($width, $height);
 			imagecopyresampled($resource, $this->resource, 0, 0, 0, 0, $width, $height, $this->getWidth(), $this->getHeight());
 		}
@@ -338,11 +247,6 @@ class EasyBlogSimpleImage
 	 *
 	 * @since   5.0
 	 * @access  public
-<<<<<<< HEAD
-=======
-	 * @param   string
-	 * @return
->>>>>>> master
 	 */
 	public function resizeWithin($maxWidth, $maxHeight)
 	{
@@ -379,11 +283,6 @@ class EasyBlogSimpleImage
 	 *
 	 * @since   5.0
 	 * @access  public
-<<<<<<< HEAD
-=======
-	 * @param   string
-	 * @return
->>>>>>> master
 	 */
 	public function resizeToFit($maxWidth, $maxHeight)
 	{
@@ -427,11 +326,7 @@ class EasyBlogSimpleImage
 		// Build a new image resource
 		$resource = imagecreatetruecolor($newWidth, $newHeight);
 
-<<<<<<< HEAD
 		if ($this->type == IMAGETYPE_JPEG || (defined('IMAGETYPE_WEBP') && $this->type == IMAGETYPE_WEBP)) {
-=======
-		if ($this->type == IMAGETYPE_JPEG) {
->>>>>>> master
 			imagecopyresampled($resource, $this->resource, $newX, $newY, $oriX, $oriY, $finalWidth, $finalHeight, $originalWidth, $originalHeight);
 		}
 
@@ -462,11 +357,6 @@ class EasyBlogSimpleImage
 	 *
 	 * @since   5.0
 	 * @access  public
-<<<<<<< HEAD
-=======
-	 * @param   string
-	 * @return
->>>>>>> master
 	 */
 	public function resizeToFill($maxWidth, $maxHeight)
 	{
@@ -501,11 +391,7 @@ class EasyBlogSimpleImage
 		// Rebuild the image resource
 		$resource = imagecreatetruecolor($maxWidth, $maxHeight);
 
-<<<<<<< HEAD
 		if ($this->type == IMAGETYPE_JPEG || (defined('IMAGETYPE_WEBP') && $this->type == IMAGETYPE_WEBP)) {
-=======
-		if ($this->type == IMAGETYPE_JPEG) {
->>>>>>> master
 			imagecopyresampled($resource, $this->resource, 0, 0, $left, $top, $maxWidth, $maxHeight, $width, $height);
 		}
 
@@ -536,11 +422,6 @@ class EasyBlogSimpleImage
 	 *
 	 * @since   5.0
 	 * @access  public
-<<<<<<< HEAD
-=======
-	 * @param   string
-	 * @return
->>>>>>> master
 	 */
 	public function crop($width, $height)
 	{
@@ -562,11 +443,7 @@ class EasyBlogSimpleImage
 		// Construct a new image resource
 		$resource = imagecreatetruecolor($finalWidth, $finalHeight);
 
-<<<<<<< HEAD
 		if ($this->type == IMAGETYPE_JPEG || (defined('IMAGETYPE_WEBP') && $this->type == IMAGETYPE_WEBP)) {
-=======
-		if ($this->type == IMAGETYPE_JPEG) {
->>>>>>> master
 			imagecopyresampled($resource, $this->resource, $newX, $newY, $oriX, $oriY, $finalWidth, $finalHeight, $finalWidth, $finalHeight);
 		}
 
@@ -596,11 +473,6 @@ class EasyBlogSimpleImage
 	 *
 	 * @since   5.0
 	 * @access  public
-<<<<<<< HEAD
-=======
-	 * @param   string
-	 * @return
->>>>>>> master
 	 */
 	public function write($destination, $compression = 80, $type = null)
 	{
@@ -628,7 +500,6 @@ class EasyBlogSimpleImage
 			ob_end_clean();
 		}
 
-<<<<<<< HEAD
 		if (defined('IMAGETYPE_WEBP') && $type == IMAGETYPE_WEBP) {
 			ob_start();
 			imagewebp($this->resource, null);
@@ -636,8 +507,6 @@ class EasyBlogSimpleImage
 			ob_end_clean();
 		}
 
-=======
->>>>>>> master
 		if (!$contents) {
 			return false;
 		}
@@ -655,11 +524,6 @@ class EasyBlogSimpleImage
 	 *
 	 * @since   5.0
 	 * @access  public
-<<<<<<< HEAD
-=======
-	 * @param   string
-	 * @return
->>>>>>> master
 	 */
 	public function save($filename, $image_type = IMAGETYPE_JPEG, $compression = 80, $permissions = null)
 	{
@@ -671,11 +535,6 @@ class EasyBlogSimpleImage
 	 *
 	 * @since   5.0
 	 * @access  public
-<<<<<<< HEAD
-=======
-	 * @param   string
-	 * @return
->>>>>>> master
 	 */
 	public function output($type = null)
 	{
@@ -692,12 +551,9 @@ class EasyBlogSimpleImage
 		if ($type == IMAGETYPE_PNG) {
 			imagepng($this->resource);
 		}
-<<<<<<< HEAD
 
 		if (defined('IMAGETYPE_WEBP') && $type == IMAGETYPE_WEBP) {
 			imagewebp($this->resource);
 		}
-=======
->>>>>>> master
 	}
 }

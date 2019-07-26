@@ -1,14 +1,8 @@
 <?php
 /**
-<<<<<<< HEAD
 * @package		EasyBlog
 * @copyright	Copyright (C) 2010 - 2019 Stack Ideas Sdn Bhd. All rights reserved.
 * @license		GNU/GPL, see LICENSE.php
-=======
-* @package  EasyBlog
-* @copyright Copyright (C) 2010 - 2018 Stack Ideas Sdn Bhd. All rights reserved.
-* @license  GNU/GPL, see LICENSE.php
->>>>>>> master
 * EasyBlog is free software. This version may have been modified pursuant
 * to the GNU General Public License, and as distributed it includes or
 * is derivative of works licensed under the GNU General Public License or
@@ -80,7 +74,6 @@ class EasyBlogControllerTags extends EasyBlogController
 		// Save the tag
 		$state = $tag->store();
 
-<<<<<<< HEAD
 		$actionString = !$id ? 'COM_EB_ACTIONLOGS_TAG_CREATE' : 'COM_EB_ACTIONLOGS_TAG_UPDATE';
 		$tagLink = 'index.php?option=com_easyblog&view=tags&layout=form&id=' . $tag->id;
 
@@ -90,8 +83,6 @@ class EasyBlogControllerTags extends EasyBlogController
 			'tagTitle' => JText::_($tag->title)
 		));
 
-=======
->>>>>>> master
 		if (!$state) {
 			$this->info->set($tag->getError(), 'error');
 			return $this->app->redirect('index.php?option=com_easyblog&view=tags&layout=form');
@@ -180,11 +171,7 @@ class EasyBlogControllerTags extends EasyBlogController
 
 		// Try to perform the task
 		$method = $task . 'Items';
-<<<<<<< HEAD
 		$model = EB::model('Tags');
-=======
-		$model  = EB::model('Tags');
->>>>>>> master
 		$model->$method($ids);
 
 		$message = 'COM_EASYBLOG_TAGS_TAG_PUBLISHED';

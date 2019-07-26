@@ -81,15 +81,12 @@ class EasyBlogModelFields extends EasyBlogAdminModel
 		$totalQuery	.= $countQuery;
 		$totalQuery	.= ') as x';
 
-<<<<<<< HEAD
 		// now we include the ordering and limits
 		$filter_order = $mainframe->getUserStateFromRequest('com_easyblog.fields.filter_order', 'filter_order', 'id', 'cmd');
 		$filter_order_Dir = $mainframe->getUserStateFromRequest('com_easyblog.fields.filter_order_Dir', 'filter_order_Dir', 'asc', 'word');
 
 		$query[] = 'ORDER BY '.$filter_order.' '.$filter_order_Dir;
 
-=======
->>>>>>> master
 		$limitStart = $this->getState('limitstart');
 		$limit = $this->getState('limit');
 
@@ -274,11 +271,7 @@ class EasyBlogModelFields extends EasyBlogAdminModel
 
 		$query = 'select '.$db->qn('a.id').' as '.$db->qn('cat_fg_id').', '.$db->qn('a.category_id').' as '.$db->qn('cat_fg_category_id').', '.$db->qn('a.group_id').' as '.$db->qn('cat_fg_group_id').', ';
 		$query .= $db->qn('fg.id').' as '.$db->qn('fg_id').', '.$db->qn('fg.title').' as '.$db->qn('fg_title').', '.$db->qn('fg.description').' as '.$db->qn('fg_description').', '.$db->qn('fg.created').' as '.$db->qn('fg_created').', '.$db->qn('fg.state').' as '.$db->qn('fg_state').', '.$db->qn('fg.read').' as '.$db->qn('fg_read').', '.$db->qn('fg.write').' as '.$db->qn('fg_write').', '.$db->qn('fg.params').' as '.$db->qn('fg_params').', ';
-<<<<<<< HEAD
 		$query .= $db->qn('f.id').' as '.$db->qn('f_id').', '.$db->qn('f.group_id').' as '.$db->qn('f_group_id').', '.$db->qn('f.title').' as '.$db->qn('f_title').', '.$db->qn('f.help').' as '.$db->qn('f_help').', '.$db->qn('f.state').' as '.$db->qn('f_state').', '.$db->qn('f.required').' as '.$db->qn('f_required').', '.$db->qn('f.type').' as '.$db->qn('f_type').', '.$db->qn('f.params').' as '.$db->qn('f_params').', '.$db->qn('f.created').' as '.$db->qn('f_created').', '.$db->qn('f.options').' as '.$db->qn('f_options').', ' . $db->qn('f.ordering').' as '.$db->qn('f_ordering') . ',';
-=======
-		$query .= $db->qn('f.id').' as '.$db->qn('f_id').', '.$db->qn('f.group_id').' as '.$db->qn('f_group_id').', '.$db->qn('f.title').' as '.$db->qn('f_title').', '.$db->qn('f.help').' as '.$db->qn('f_help').', '.$db->qn('f.state').' as '.$db->qn('f_state').', '.$db->qn('f.required').' as '.$db->qn('f_required').', '.$db->qn('f.type').' as '.$db->qn('f_type').', '.$db->qn('f.params').' as '.$db->qn('f_params').', '.$db->qn('f.created').' as '.$db->qn('f_created').', '.$db->qn('f.options').' as '.$db->qn('f_options').', ';
->>>>>>> master
 		$query .= $db->qn('fv.id').' as '.$db->qn('fv_id').', '.$db->qn('fv.field_id').' as '.$db->qn('fv_field_id').', '.$db->qn('fv.post_id').' as '.$db->qn('fv_post_id').', '.$db->qn('fv.value').' as '.$db->qn('fv_value');
 		$query .= ' from '.$db->qn('#__easyblog_category_fields_groups').' as a';
 		$query .= ' inner join '.$db->qn('#__easyblog_post_category').' as p on '.$db->qn('a.category_id').' = ' . $db->qn('p.category_id');
@@ -431,7 +424,6 @@ class EasyBlogModelFields extends EasyBlogAdminModel
 		return $db->loadObject();
 	}
 
-<<<<<<< HEAD
 	/**
 	 * Rebuiling ordering
 	 *
@@ -499,6 +491,4 @@ class EasyBlogModelFields extends EasyBlogAdminModel
 
 		return $result ? $result : 0;
 	}
-=======
->>>>>>> master
 }

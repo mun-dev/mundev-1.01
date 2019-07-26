@@ -57,13 +57,8 @@ defined('_JEXEC') or die('Unauthorized Access');
 							<?php if ($option->title && $option->value) { ?>
 								<div class="mt-10">
 									<div class="eb-checkbox<?php echo ($limit && $i >= $limit) ? ' hide' : '';?>" <?php echo ($limit && $i >= $limit) ? 'data-item-hide' : '';?>>
-<<<<<<< HEAD
 										<input type="checkbox" id="<?php echo $field->id . '-' . $option->value; ?>" name="field-<?php echo $field->id;?>[]" value="<?php echo EB::string()->escape($option->value);?>" <?php echo $option->checked ? 'checked' : ''; ?> data-checkbox-option/>
 										<label for="<?php echo $field->id . '-' . $option->value;?>"><?php echo JText::_($option->title);?></label>
-=======
-										<input type="checkbox" id="<?php echo $option->value;?>" name="field-<?php echo $field->id;?>[]" value="<?php echo EB::string()->escape($option->value);?>" <?php echo $option->checked ? 'checked' : ''; ?> data-checkbox-option/>
-										<label for="<?php echo $option->value;?>"><?php echo JText::_($option->title);?></label>
->>>>>>> master
 									</div>
 								</div>
 							<?php $i++; ?>
@@ -87,10 +82,7 @@ defined('_JEXEC') or die('Unauthorized Access');
 		<input type="hidden" name="view" value="<?php echo $view;?>">
 		<input type="hidden" name="layout" value="<?php echo $layout;?>">
 		<input type="hidden" name="filtermode" value="<?php echo $filterMode;?>">
-<<<<<<< HEAD
 		<input type="hidden" name="strictmode" value="<?php echo $strictMode;?>">
-=======
->>>>>>> master
 		<input type="hidden" name="task" value="posts.filterField" />
 
 		<?php if ($catid) { ?>

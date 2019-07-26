@@ -1,11 +1,7 @@
 <?php
 /**
 * @package		EasyBlog
-<<<<<<< HEAD
 * @copyright	Copyright (C) 2010 - 2019 Stack Ideas Sdn Bhd. All rights reserved.
-=======
-* @copyright	Copyright (C) 2010 - 2018 Stack Ideas Sdn Bhd. All rights reserved.
->>>>>>> master
 * @license		GNU/GPL, see LICENSE.php
 * EasyBlog is free software. This version may have been modified pursuant
 * to the GNU General Public License, and as distributed it includes or
@@ -59,7 +55,6 @@ class EasyBlogControllerBloggers extends EasyBlogController
 		// Get the current task so we know if should feature / unfeature items
 		$task = $this->getTask();
 
-<<<<<<< HEAD
 		$actionString = 'COM_EB_ACTIONLOGS_AUTHOR_FEATURED';
 		$message = 'COM_EASYBLOG_BLOGGER_FEATURED_SUCCESSFULLY';
 
@@ -68,8 +63,6 @@ class EasyBlogControllerBloggers extends EasyBlogController
 			$message = 'COM_EASYBLOG_BLOGGER_UNFEATURED_SUCCESSFULLY';
 		}
 
-=======
->>>>>>> master
 		foreach ($ids as $id) {
 			$id = (int) $id;
 
@@ -82,7 +75,6 @@ class EasyBlogControllerBloggers extends EasyBlogController
 			if ($task == 'feature') {
 				$author->setFeatured();
 			}
-<<<<<<< HEAD
 
 			$actionlog = EB::actionlog();
 			$actionlog->log($actionString, 'bloggers', array(
@@ -92,15 +84,6 @@ class EasyBlogControllerBloggers extends EasyBlogController
 		}
 
 
-=======
-		}
-
-		$message = 'COM_EASYBLOG_BLOGGER_FEATURED_SUCCESSFULLY';
-
-		if ($task == 'unfeature') {
-			$message = 'COM_EASYBLOG_BLOGGER_UNFEATURED_SUCCESSFULLY';
-		}
->>>>>>> master
 
 		$this->info->set($message, 'success');
 
@@ -199,15 +182,12 @@ class EasyBlogControllerBloggers extends EasyBlogController
 		// Try to save the user now
 		$state = $user->save();
 
-<<<<<<< HEAD
 		$actionlog = EB::actionlog();
 		$actionlog->log('COM_EB_ACTIONLOGS_AUTHOR_UPDATED', 'bloggers', array(
 			'link' => 'index.php?option=com_easyblog&view=bloggers&layout=form&id=' . $user->id,
 			'authorTitle' => $user->username
 		));
 
-=======
->>>>>>> master
 		if (!$state) {
 
 			$this->info->set($user->getError(), 'error');
@@ -270,13 +250,10 @@ class EasyBlogControllerBloggers extends EasyBlogController
 			$registry->set('theme', $post['theme']);
 		}
 
-<<<<<<< HEAD
 		if (isset($post['user_editor'])) {
 		$registry->set('user_editor', $post['user_editor']);
 		}
 
-=======
->>>>>>> master
 		$author->params = $registry->toString();
 
 		// Try to save the author object now
@@ -484,14 +461,11 @@ class EasyBlogControllerBloggers extends EasyBlogController
 		$model = EB::model('Download');
 		$model->purgeRequests();
 
-<<<<<<< HEAD
 		$actionlog = EB::actionlog();
 		$actionlog->log('COM_EB_ACTIONLOGS_AUTHOR_PURGED_GDPR_DOWNLOADS', 'bloggers', array(
 			'link' => 'index.php?option=com_easyblog&view=bloggers&layout=downloads'
 		));
 
-=======
->>>>>>> master
 		$this->info->set('COM_EB_USER_DOWNLOAD_PURGE_ALL_SUCCESS', 'success');
 		
 		return $this->app->redirect('index.php?option=com_easyblog&view=bloggers&layout=downloads');
@@ -522,7 +496,6 @@ class EasyBlogControllerBloggers extends EasyBlogController
 			$table->load($id);
 
 			$table->delete();
-<<<<<<< HEAD
 
 			$user = JFactory::getUser($table->userid);
 
@@ -530,8 +503,6 @@ class EasyBlogControllerBloggers extends EasyBlogController
 			$actionlog->log('COM_EB_ACTIONLOGS_AUTHOR_DELETED_GDPR_DOWNLOAD', 'bloggers', array(
 				'userTitle' => $user->username
 			));
-=======
->>>>>>> master
 		}
 
 		$this->info->set('COM_EB_USER_DOWNLOAD_DELETE_SUCCESS', 'success');

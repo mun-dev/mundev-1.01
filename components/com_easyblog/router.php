@@ -325,16 +325,12 @@ class EasyBlogRouterBase
 			}
 
 			if (isset($query['query'])) {
-<<<<<<< HEAD
 
 				// we need to rawurlencode on query string to be used as url segments
 				// to avoid invalid characters like percentage (%)
 				// # 1919
 
 				$segments[] = rawurlencode($query['query']);
-=======
-				$segments[] = $query['query'];
->>>>>>> master
 				unset($query['query']);
 			}
 		}
@@ -1071,11 +1067,7 @@ class EasyBlogRouterBase
 				if ($segments[1] == "parsequery") {
 					$vars[ 'layout' ] = EBR::translate($segments[1]);
 				} else {
-<<<<<<< HEAD
 					$vars[ 'query' ] = rawurldecode($segments[1]);
-=======
-					$vars[ 'query' ] = $segments[1];
->>>>>>> master
 				}
 
 			}

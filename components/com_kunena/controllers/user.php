@@ -319,11 +319,7 @@ class KunenaControllerUser extends KunenaController
 			$success = $ban->save();
 
 			// Send report to stopforumspam
-<<<<<<< HEAD
 			$this->report($user->userid);
-=======
-			$this->report($user);
->>>>>>> master
 		}
 		else
 		{
@@ -996,14 +992,11 @@ class KunenaControllerUser extends KunenaController
 
 		if ($birthdate)
 		{
-<<<<<<< HEAD
 			if ($birthdate == '11/30/-0001')
 			{
 				$birthdate = '1901/01/01';
 			}
 
-=======
->>>>>>> master
 			$date = Factory::getDate($birthdate);
 
 			$birthdate = $date->format('Y-m-d');
@@ -1350,42 +1343,24 @@ class KunenaControllerUser extends KunenaController
 	/**
 	 * Reports a user to stopforumspam.com
 	 *
-<<<<<<< HEAD
 	 * @param   int     $user      user
-=======
-	 * @param   mixed   $user      user
->>>>>>> master
 	 * @param   string  $evidence  evidence
 	 *
 	 * @return boolean
 	 * @since Kunena
 	 */
-<<<<<<< HEAD
 	protected function report($userid = 0, $evidence = null)
 	{
 		if (!$this->config->stopforumspam_key || !$userid)
-=======
-	protected function report($user, string $evidence = '')
-	{
-		if (!$this->config->stopforumspam_key || !$user)
->>>>>>> master
 		{
 			return false;
 		}
 
-<<<<<<< HEAD
 		$spammer = Factory::getUser($userid);
 
 		// TODO: remove this query by getting the ip of user by an another way
 		$db = Factory::getDBO();
 		$db->setQuery("SELECT ip FROM #__kunena_messages WHERE userid=" . $userid . " GROUP BY ip ORDER BY `time` DESC", 0, 1);
-=======
-		$spammer = Factory::getUser($user->userid);
-
-		// TODO: remove this query by getting the ip of user by an another way
-		$db = Factory::getDBO();
-		$db->setQuery("SELECT ip FROM #__kunena_messages WHERE userid=" . $user->userid . " GROUP BY ip ORDER BY `time` DESC", 0, 1);
->>>>>>> master
 		$ip = $db->loadResult();
 
 		if (!empty($ip))

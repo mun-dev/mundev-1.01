@@ -1,14 +1,8 @@
 <?php
 /**
-<<<<<<< HEAD
 * @package		EasyBlog
 * @copyright	Copyright (C) 2010 - 2019 Stack Ideas Sdn Bhd. All rights reserved.
 * @license		GNU/GPL, see LICENSE.php
-=======
-* @package  EasyBlog
-* @copyright Copyright (C) 2010 - 2018 Stack Ideas Sdn Bhd. All rights reserved.
-* @license  GNU/GPL, see LICENSE.php
->>>>>>> master
 * EasyBlog is free software. This version may have been modified pursuant
 * to the GNU General Public License, and as distributed it includes or
 * is derivative of works licensed under the GNU General Public License or
@@ -214,14 +208,11 @@ class EasyBlogTableTag extends EasyBlogTable
 			EB::altauserpoints()->assign('plgaup_easyblog_delete_tag', $this->created_by, JText::sprintf('COM_EASYBLOG_AUP_TAG_DELETED', $this->title));			
 		}
 
-<<<<<<< HEAD
 		$actionlog = EB::actionlog();
 		$actionlog->log('COM_EB_ACTIONLOGS_TAG_DELETE', 'tag', array(
 			'tagTitle' => JText::_($this->title)
 		));
 
-=======
->>>>>>> master
 		return parent::delete();
 	}
 
@@ -235,11 +226,7 @@ class EasyBlogTableTag extends EasyBlogTable
 	{
 		$model = EB::model('Tags');
 
-<<<<<<< HEAD
 		return $model->deleteAssociationByTagId($this->id);
-=======
-		return $model->deleteAssociation($this->post_id);
->>>>>>> master
 	}
 
 	/**

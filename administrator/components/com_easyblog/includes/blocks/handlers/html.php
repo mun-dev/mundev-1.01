@@ -13,11 +13,7 @@ defined('_JEXEC') or die('Unauthorized Access');
 
 require_once(__DIR__ . '/abstract.php');
 
-<<<<<<< HEAD
 class EasyBlogBlockHandlerHtml extends EasyBlogBlockHandlerAbstract
-=======
-class EasyBlogBlockHandlerHtml extends EasyBlogBlockHandlerAbstract 
->>>>>>> master
 {
 	public $icon = 'fa fa-code';
 	public $element = 'none';
@@ -34,13 +30,8 @@ class EasyBlogBlockHandlerHtml extends EasyBlogBlockHandlerAbstract
 
 		// We do not want to display the font attributes and font styles
 		$meta->properties['fonts'] = false;
-<<<<<<< HEAD
 
 
-=======
-		
-		
->>>>>>> master
 		return $meta;
 	}
 
@@ -95,7 +86,6 @@ class EasyBlogBlockHandlerHtml extends EasyBlogBlockHandlerAbstract
 		// Strip any <form> tag to avoid nasty issue with form submitting. #1590
 		$content = preg_replace('/<\/?form(.|\s)*?>/', '', $content);
 
-<<<<<<< HEAD
 		// Experimental fix with safari iframe issue for xss protection during rendering. #1928
 		if (preg_match('/(?:<iframe[^>]*)(?:(?:\/>)|(?:>.*?<\/iframe>))/', $content)) {
 			header("X-XSS-Protection: 0");
@@ -129,8 +119,3 @@ class EasyBlogBlockHandlerHtml extends EasyBlogBlockHandlerAbstract
 		return $block->html;
 	}
 }
-=======
-		return $content;
-	}
-}
->>>>>>> master

@@ -1,11 +1,7 @@
 <?php
 /**
 * @package		EasyBlog
-<<<<<<< HEAD
 * @copyright	Copyright (C) 2010 - 2019 Stack Ideas Sdn Bhd. All rights reserved.
-=======
-* @copyright	Copyright (C) 2010 - 2017 Stack Ideas Sdn Bhd. All rights reserved.
->>>>>>> master
 * @license		GNU/GPL, see LICENSE.php
 * EasyBlog is free software. This version may have been modified pursuant
 * to the GNU General Public License, and as distributed it includes or
@@ -38,12 +34,9 @@ class EasyBlogViewLogin extends EasyBlogView
 			$return = base64_encode('index.php?option=com_easyblog&Itemid=' . $itemId);
 		}
 
-<<<<<<< HEAD
 		// Set the meta tags for this page
 		EB::setMeta(0, META_TYPE_VIEW);
 
-=======
->>>>>>> master
 		$this->set('return', $return);
 		parent::display('login/default');
 	}

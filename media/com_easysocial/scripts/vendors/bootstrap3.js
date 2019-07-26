@@ -1322,14 +1322,11 @@ if (window["Foundry/Bootstrap"] == undefined) {
 	  .offset(offset)
 	  .addClass('in')
 
-<<<<<<< HEAD
 	// Add cursor to the background. #3393
 	if (window.es.mobile && this.type == 'popover') {
 		$('body').css('cursor', 'pointer');
 	}
 
-=======
->>>>>>> master
 	// check to see if placing tip in new offset caused the tip to resize itself
 	var actualWidth  = $tip[0].offsetWidth
 	var actualHeight = $tip[0].offsetHeight
@@ -1395,14 +1392,11 @@ if (window["Foundry/Bootstrap"] == undefined) {
 		.emulateTransitionEnd(150) :
 	  complete()
 
-<<<<<<< HEAD
 	// Remove cursor from the background. #3393
 	if (window.es.mobile && this.type == 'popover') {
 		$('body').css('cursor', '');
 	}
 
-=======
->>>>>>> master
 	this.$element.trigger('hidden.bs.' + this.type)
 
 	return this

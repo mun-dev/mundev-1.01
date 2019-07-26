@@ -18,11 +18,8 @@ defined('_JEXEC') or die('Unauthorized Access');
 	data-uri="user:<?php echo $this->my->id;?>"
 	data-acl-upload="<?php echo $this->acl->get('upload_image') ? '1' : '0';?>"
 	data-mobile="<?php echo $this->isMobile() ? 1 : 0;?>"
-<<<<<<< HEAD
 	data-requirements-width="<?php echo JText::_('COM_EB_MM_MINIMUM_WIDTH');?>"
 	data-requirements-height="<?php echo JText::_('COM_EB_MM_MINIMUM_HEIGHT');?>"
-=======
->>>>>>> master
 >
 	<div class="eb-nmm" data-plupload-drop-element>
 
@@ -206,11 +203,8 @@ defined('_JEXEC') or die('Unauthorized Access');
 					</div>	
 				</div>
 				<div class="eb-nmm-main-footer__action" data-mm-actions>
-<<<<<<< HEAD
 					<span class="t-text--danger t-hidden" data-mm-error-message></span>
 
-=======
->>>>>>> master
 					<a href="javascript:void(0);" class="btn btn-eb-primary eb-nmm-main-footer__action-btn btn-nmm-gallery" data-mm-insert-gallery>
 						<?php echo JText::_('COM_EASYBLOG_MM_INSERT_AS_GALLERY');?>
 					</a>

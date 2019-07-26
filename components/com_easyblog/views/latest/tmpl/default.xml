@@ -286,7 +286,6 @@
 			<field name="ebconfig_main_truncate_maxtag" default="-1" type="inputvalue" class="form-control input-mini text-center" label="COM_EB_MENU_TRUNCATE_MAX_PARAGRAPH_JOOMLA" description="COM_EB_MENU_TRUNCATE_MAX_PARAGRAPH_JOOMLA_DESC" />
 		</fieldset>
 
-<<<<<<< HEAD
 
 		<fieldset name="request" addfieldpath="/administrator/components/com_easyblog/elements">
 			<field name="layout_style" type="list" default="layout_1" class="btn-group" label="Layout Style" description="Determine the layout style to be used for the latest view">
@@ -294,9 +293,6 @@
 				<option value="card">Card Layout</option>
 			</field>
 
-=======
-		<fieldset name="request" addfieldpath="/administrator/components/com_easyblog/elements">
->>>>>>> master
 			<field name="post_include_featured" type="radio" default="0" class="btn-group" label="COM_EASYBLOG_INCLUDE_FEATURED_POSTS" description="COM_EASYBLOG_INCLUDE_FEATURED_POSTS_DESC">
 				<option value="0">COM_EASYBLOG_NO</option>
 				<option value="1">COM_EASYBLOG_YES</option>

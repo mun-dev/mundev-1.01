@@ -1,14 +1,8 @@
 <?php
 /**
-<<<<<<< HEAD
 * @package		EasyBlog
 * @copyright	Copyright (C) 2010 - 2019 Stack Ideas Sdn Bhd. All rights reserved.
 * @license		GNU/GPL, see LICENSE.php
-=======
-* @package      EasyBlog
-* @copyright    Copyright (C) 2010 - 2017 Stack Ideas Sdn Bhd. All rights reserved.
-* @license      GNU/GPL, see LICENSE.php
->>>>>>> master
 * EasyBlog is free software. This version may have been modified pursuant
 * to the GNU General Public License, and as distributed it includes or
 * is derivative of works licensed under the GNU General Public License or
@@ -36,11 +30,7 @@ defined('_JEXEC') or die('Unauthorized Access');
 							echo JHTML::_('select.genericlist', $listLength, 'comment_sort', 'class="form-control input-box"', 'value', 'text', $this->config->get('comment_sort' , 'desc'));
 						?>
 					</div>
-<<<<<<< HEAD
 				</div>
-=======
-				</div>                
->>>>>>> master
 
 				<?php echo $this->html('settings.toggle', 'comment_bbcode', 'COM_EASYBLOG_SETTINGS_COMMENTS_ENABLE_BBCODE'); ?>
 
@@ -101,7 +91,6 @@ defined('_JEXEC') or die('Unauthorized Access');
 
 				<?php echo $this->html('settings.toggle', 'comment_tnc', 'COM_EASYBLOG_SETTINGS_COMMENTS_ENABLE_TERMS'); ?>
 
-<<<<<<< HEAD
 				<?php echo $this->html('settings.toggle', 'comment_tnc_article', 'COM_EB_SETTINGS_COMMENTS_TNC_ARTICLE', '', 'data-tnc-article'); ?>
 
 				<div class="form-group <?php echo $this->config->get('comment_tnc_article') ? '' : 'hidden';?>" data-tnc-article-selection>
@@ -113,9 +102,6 @@ defined('_JEXEC') or die('Unauthorized Access');
 				</div>
 
 				<div class="form-group <?php echo $this->config->get('comment_tnc_article') ? 'hidden' : '';?>" data-tnc-text>
-=======
-				<div class="form-group">
->>>>>>> master
 					<?php echo $this->html('form.label', 'COM_EASYBLOG_SETTINGS_COMMENTS_TERMS_TEXT', 'comment_tnctext'); ?>
 
 					<div class="col-md-7">

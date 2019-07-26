@@ -1,11 +1,7 @@
 <?php
 /**
 * @package		EasyBlog
-<<<<<<< HEAD
 * @copyright	Copyright (C) 2010 - 2019 Stack Ideas Sdn Bhd. All rights reserved.
-=======
-* @copyright	Copyright (C) 2010 - 2017 Stack Ideas Sdn Bhd. All rights reserved.
->>>>>>> master
 * @license		GNU/GPL, see LICENSE.php
 * EasyBlog is free software. This version may have been modified pursuant
 * to the GNU General Public License, and as distributed it includes or
@@ -119,11 +115,7 @@ defined('_JEXEC') or die('Unauthorized Access');
 					<?php } ?>
 				<?php } else { ?>
 				<tr>
-<<<<<<< HEAD
 					<td colspan="9" class="empty">
-=======
-					<td colspan="7" class="empty">
->>>>>>> master
 						<?php echo JText::_('COM_EASYBLOG_PENDING_EMPTY'); ?>
 					</td>
 				</tr>
@@ -131,11 +123,7 @@ defined('_JEXEC') or die('Unauthorized Access');
 			</tbody>
 			<tfoot>
 				<tr>
-<<<<<<< HEAD
 					<td colspan="9">
-=======
-					<td colspan="7">
->>>>>>> master
 						<?php echo $pagination->getListFooter(); ?>
 					</td>
 				</tr>
@@ -149,12 +137,9 @@ defined('_JEXEC') or die('Unauthorized Access');
 	<input type="hidden" name="filter_order_Dir" value="" />
 	<input type="hidden" name="filter_order" value="<?php echo $order; ?>" />
 </form>
-<<<<<<< HEAD
 <div id="toolbar-import" class="btn-wrapper hidden" data-toolbar-import>
 	<span class="btn btn-primary"><?php echo JText::_('Import');?>
 	</span>
 </div>
 
 
-=======
->>>>>>> master

@@ -1,11 +1,7 @@
 <?php
 /**
 * @package  EasyBlog
-<<<<<<< HEAD
 * @copyright Copyright (C) 2010 - 2019 Stack Ideas Sdn Bhd. All rights reserved.
-=======
-* @copyright Copyright (C) 2010 - 2018 Stack Ideas Sdn Bhd. All rights reserved.
->>>>>>> master
 * @license  GNU/GPL, see LICENSE.php
 * EasyBlog is free software. This version may have been modified pursuant
 * to the GNU General Public License, and as distributed it includes or
@@ -952,7 +948,6 @@ class EasyBlogString
 
 		return $content;
 	}
-<<<<<<< HEAD
 
 	/**
 	 * Method to truncate the string while maintaining the HTML integrity of the string
@@ -1070,6 +1065,4 @@ class EasyBlogString
 
 		return $truncate;
 	}	
-=======
->>>>>>> master
 }

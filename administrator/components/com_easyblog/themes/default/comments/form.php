@@ -93,7 +93,6 @@ defined('_JEXEC') or die('Unauthorized Access');
 						   <?php echo $this->html('form.toggler', 'published', $comment->published); ?>
 						</div>
 					</div>
-<<<<<<< HEAD
 
 					<div class="form-group">
 						<?php echo $this->html('form.label', 'COM_EASYBLOG_IP_ADDRESS', 'ip'); ?>
@@ -102,8 +101,6 @@ defined('_JEXEC') or die('Unauthorized Access');
 							<?php echo $this->html('form.text', 'ip', $comment->ip, 'ip'); ?>
 						</div>
 					</div>
-=======
->>>>>>> master
 				</div>
 			</div>
 		</div>

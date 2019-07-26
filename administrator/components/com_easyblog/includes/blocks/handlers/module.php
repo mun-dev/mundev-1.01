@@ -65,7 +65,6 @@ class EasyBlogBlockHandlerModule extends EasyBlogBlockHandlerAbstract
 	 */
 	public function getInstalledModules()
 	{
-<<<<<<< HEAD
 		static $_cache = null;
 
 		if (is_null($_cache)) {
@@ -82,18 +81,6 @@ class EasyBlogBlockHandlerModule extends EasyBlogBlockHandlerAbstract
 		}
 
 		return $_cache;
-=======
-		$db = EB::db();
-
-		$query = 'SELECT id, title, module, position FROM ' . $db->quoteName('#__modules')
-				. ' WHERE ' . $db->nameQuote('published') . '=' . $db->Quote(1)
-				. ' AND ' . $db->nameQuote('client_id') . '=' . $db->Quote(0);
-
-		$db->setQuery($query);
-		$modules = $db->loadObjectList();
-
-		return $modules;
->>>>>>> master
 	}
 
 	/**

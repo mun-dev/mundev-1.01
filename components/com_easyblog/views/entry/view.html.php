@@ -246,11 +246,7 @@ class EasyBlogViewEntry extends EasyBlogView
 
 		// Get the content for the Schema.org 
 		$schemaContent = $post->getContent(EASYBLOG_VIEW_ENTRY, false, null, array('isPreview' => true, 'ignoreCache' => true));
-<<<<<<< HEAD
 		
-=======
-
->>>>>>> master
 		// We don't want to load any module in schema.
 		$schemaContent = $post->removeLoadmodulesTags($schemaContent);
 
@@ -514,7 +510,6 @@ class EasyBlogViewEntry extends EasyBlogView
 		// Retrieve Google Adsense codes
 		$adsense = EB::adsense()->html($post);
 
-<<<<<<< HEAD
 		// Check if the content got render pinterest block
 		$hasPinterestEmbedCode = $post->hasPinterest();
 
@@ -525,8 +520,6 @@ class EasyBlogViewEntry extends EasyBlogView
 			$gaEnabled = true;
 		}
 
-=======
->>>>>>> master
 		// If a custom theme is setup for entries in the category, set a different theme
 		if (!empty($post->category->theme)) {
 			$this->setTheme($post->category->theme);
@@ -576,11 +569,8 @@ class EasyBlogViewEntry extends EasyBlogView
 		$this->set('isBlogSubscribed', $isBlogSubscribed);
 		$this->set('hasEntryTools', $hasEntryTools);
 		$this->set('hasAdminTools', $hasAdminTools);
-<<<<<<< HEAD
 		$this->set('hasPinterestEmbedCode', $hasPinterestEmbedCode);
 		$this->set('gaEnabled', $gaEnabled);
-=======
->>>>>>> master
 
 		// Get the menu params associated with this post
 		$params = $post->getMenuParams();

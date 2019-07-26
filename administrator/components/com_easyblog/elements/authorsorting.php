@@ -1,11 +1,7 @@
 <?php
 /**
 * @package		EasyBlog
-<<<<<<< HEAD
 * @copyright	Copyright (C) 2010 - 2019 Stack Ideas Sdn Bhd. All rights reserved.
-=======
-* @copyright	Copyright (C) 2010 - 2017 Stack Ideas Sdn Bhd. All rights reserved.
->>>>>>> master
 * @license		GNU/GPL, see LICENSE.php
 * EasyBlog is free software. This version may have been modified pursuant
 * to the GNU General Public License, and as distributed it includes or
@@ -26,11 +22,6 @@ class JFormFieldAuthorsorting extends EasyBlogFormField
 	 *
 	 * @since	5.0
 	 * @access	public
-<<<<<<< HEAD
-=======
-	 * @param	string
-	 * @return	
->>>>>>> master
 	 */
 	protected function getInput()
 	{

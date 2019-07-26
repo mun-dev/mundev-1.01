@@ -848,15 +848,9 @@
             <query mode="silenterror">ALTER TABLE `#__kunena_users` CHANGE `qq` `qqsocial` varchar(50);
             </query>             
         </version>
-<<<<<<< HEAD
         <version version="5.1.13.1"
                  versiondate="2019-07-22"
                  versionname="Mimas">
-=======
-        <version version="5.1.12.1"
-                 versiondate="2019-04-22"
-                 versionname="Kerberos">
->>>>>>> master
         </version>
     </upgrade>
 </comupgrade>

@@ -9,7 +9,6 @@
  * @link            https://www.kunena.org
  **/
 defined('_JEXEC') or die;
-<<<<<<< HEAD
 
 use Joomla\CMS\Factory;
 
@@ -20,9 +19,6 @@ $catid = Factory::getApplication()->input->getInt('catid', 0);
 		$("#jumpto option[value=<?php echo $catid ;?>]").prop("selected", "selected");
 	})
 </script>
-=======
-?>
->>>>>>> master
 <form action="<?php echo KunenaRoute::_('index.php?option=com_kunena'); ?>" id="jumpto" name="jumpto" method="post"
       target="_self">
 	<input type="hidden" name="view" value="category"/>

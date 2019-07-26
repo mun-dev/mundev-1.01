@@ -77,11 +77,7 @@ class SocialRouterNotifications extends SocialRouterAdapter
 		$vars = array();
 
 		// URL: http://site.com/menu/notifications
-<<<<<<< HEAD
 		if ($total == 1 && ($segments[0] == $this->translate('notifications') || $segments[0] == 'notifications')) {
-=======
-		if ($total == 1 && $segments[0] == $this->translate('notifications')) {
->>>>>>> master
 			$vars['view'] = 'notifications';
 
 			return $vars;

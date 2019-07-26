@@ -1,15 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?><!DOCTYPE extension>
 <extension type="component" version="3.4" method="upgrade">
     <name>com_kunena</name>
-<<<<<<< HEAD
     <version>5.1.13.1</version>
     <versionname>Mimas</versionname>
     <creationDate>2019-07-22</creationDate>
-=======
-    <version>5.1.12.1</version>
-    <versionname>Kerberos</versionname>
-    <creationDate>2019-04-22</creationDate>
->>>>>>> master
     <author>Kunena Team</author>
     <authorEmail>kunena@kunena.org</authorEmail>
     <authorUrl>https://www.kunena.org</authorUrl>

@@ -1,14 +1,8 @@
 <?php
 /**
-<<<<<<< HEAD
 * @package		EasyBlog
 * @copyright	Copyright (C) 2010 - 2019 Stack Ideas Sdn Bhd. All rights reserved.
 * @license		GNU/GPL, see LICENSE.php
-=======
-* @package  EasyBlog
-* @copyright Copyright (C) 2010 - 2018 Stack Ideas Sdn Bhd. All rights reserved.
-* @license  GNU/GPL, see LICENSE.php
->>>>>>> master
 * EasyBlog is free software. This version may have been modified pursuant
 * to the GNU General Public License, and as distributed it includes or
 * is derivative of works licensed under the GNU General Public License or
@@ -159,15 +153,6 @@ class EasyBlogControllerCategory extends EasyBlogController
 		$category = EB::table('Category');
 		$category->load($id);
 
-<<<<<<< HEAD
-=======
-		// Determines if this is a new category
-		$isNew = $category->id ? false : true;
-
-		// Bind the posted data
-		$category->bind($post);
-
->>>>>>> master
 		// Construct the redirection url
 		$url = 'index.php?option=com_easyblog&view=categories&layout=form';
 
@@ -175,24 +160,17 @@ class EasyBlogControllerCategory extends EasyBlogController
 			$url .= '&id=' . $id;
 		}
 
-<<<<<<< HEAD
 		if (!isset($post['title']) || !$post['title']) {
-=======
-		if (!$category->title) {
->>>>>>> master
 			EB::info()->set(JText::_('COM_EASYBLOG_CATEGORIES_INVALID_CATEGORY'), 'error');
 			return $this->app->redirect($url);
 		}
 
-<<<<<<< HEAD
 		// Determines if this is a new category
 		$isNew = $category->id ? false : true;
 
 		// Bind the posted data
 		$category->bind($post);
 
-=======
->>>>>>> master
 		if (!$category->isNotAssigned() && $category->isDefault()) {
 			EB::info()->set(JText::_('COM_EASYBLOG_CATEGORIES_SAVE_NOT_PUBLIC'), 'error');
 			return $this->app->redirect($url);
@@ -271,7 +249,6 @@ class EasyBlogControllerCategory extends EasyBlogController
 
 		$redirect = 'index.php?option=com_easyblog&view=categories';
 
-<<<<<<< HEAD
 		$actionString = $isNew ? 'COM_EB_ACTIONLOGS_CATEGORY_CREATE' : 'COM_EB_ACTIONLOGS_CATEGORY_UPDATE';
 		$categoryLink = $redirect . '&layout=form&id=' . $category->id;
 
@@ -282,8 +259,6 @@ class EasyBlogControllerCategory extends EasyBlogController
 		));
 
 
-=======
->>>>>>> master
 		if ($task == 'savenew') {
 			return $this->app->redirect($redirect . '&layout=form');
 		}
@@ -307,11 +282,6 @@ class EasyBlogControllerCategory extends EasyBlogController
 	 *
 	 * @since	5.0
 	 * @access	public
-<<<<<<< HEAD
-=======
-	 * @param	string
-	 * @return
->>>>>>> master
 	 */
 	public function remove()
 	{
@@ -355,11 +325,6 @@ class EasyBlogControllerCategory extends EasyBlogController
 	 *
 	 * @since	4.0
 	 * @access	public
-<<<<<<< HEAD
-=======
-	 * @param	string
-	 * @return
->>>>>>> master
 	 */
 	public function publish()
 	{
@@ -377,14 +342,10 @@ class EasyBlogControllerCategory extends EasyBlogController
 			return $this->app->redirect('index.php?option=com_easyblog&view=categories');
 		}
 
-<<<<<<< HEAD
 		if (!is_array($ids)) {
 			$ids = array($ids);
 		}
 
-=======
-		// Get the model
->>>>>>> master
 		$model = EB::model('Categories');
 		$state = $model->publish($ids, 1);
 
@@ -397,11 +358,6 @@ class EasyBlogControllerCategory extends EasyBlogController
 	 *
 	 * @since	4.0
 	 * @access	public
-<<<<<<< HEAD
-=======
-	 * @param	string
-	 * @return
->>>>>>> master
 	 */
 	public function unpublish()
 	{
@@ -418,14 +374,10 @@ class EasyBlogControllerCategory extends EasyBlogController
 			return $this->app->redirect('index.php?option=com_easyblog&view=categories');
 		}
 
-<<<<<<< HEAD
 		if (!is_array($ids)) {
 			$ids = array($ids);
 		}
 
-=======
-		// Get the model
->>>>>>> master
 		$model = EB::model('Categories');
 		$state = $model->publish($ids, 0);
 

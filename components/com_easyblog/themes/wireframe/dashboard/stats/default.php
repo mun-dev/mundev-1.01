@@ -1,11 +1,7 @@
 <?php
 /**
 * @package		EasyBlog
-<<<<<<< HEAD
 * @copyright	Copyright (C) 2010 - 2019 Stack Ideas Sdn Bhd. All rights reserved.
-=======
-* @copyright	Copyright (C) 2010 - 2017 Stack Ideas Sdn Bhd. All rights reserved.
->>>>>>> master
 * @license		GNU/GPL, see LICENSE.php
 * EasyBlog is free software. This version may have been modified pursuant
 * to the GNU General Public License, and as distributed it includes or
@@ -55,7 +51,6 @@ defined('_JEXEC') or die('Unauthorized Access');
 
 				<hr>
 
-<<<<<<< HEAD
 				<?php if ($this->acl->get('create_category')) { ?>
 					<div class="eb-box-body__title"><?php echo JText::_('COM_EASYBLOG_DASHBOARD_POST_BY_CATEGORIES');?></div>
 					<?php if ($categories) { ?>
@@ -78,23 +73,6 @@ defined('_JEXEC') or die('Unauthorized Access');
 						</div>
 					<?php } ?>
 				<?php } ?>
-=======
-				<div class="eb-box-body__title"><?php echo JText::_('COM_EASYBLOG_DASHBOARD_POST_BY_CATEGORIES');?></div>
-				<div class="eb-stats-listing">
-
-					<?php foreach ($categories as $category) { ?>
-					<div>
-						<span class="text-small text-muted pull-right">
-							<?php echo $this->getNouns('COM_EASYBLOG_DASHBOARD_CATEGORY_POSTS', $category->getCount(), true); ?>
-						</span>
-						<b>
-							<i class="fa fa-folder text-muted"></i>&nbsp;
-							<a href="<?php echo $category->getPermalink();?>"><?php echo $category->getTitle();?></a>
-						</b>
-					</div>
-					<?php } ?>
-				</div>
->>>>>>> master
 			</div>
 
 			<div class="col-lg-6">
@@ -160,20 +138,12 @@ defined('_JEXEC') or die('Unauthorized Access');
 							<div class="item <?php echo !isset($active) ? ' active' : '';?>">
 								<div class="media">
 									<div class="media-object pull-left">
-<<<<<<< HEAD
 										<img src="<?php echo $comment->getAuthor()->getAvatar();?>" width="40" height="40" class="img-circle" />
-=======
-										<img src="<?php echo $comment->getAuthor()->getAvatar();?>" width="40" height="40" class="img-circle" />	
->>>>>>> master
 									</div>
 									
 									<div class="media-body">
 										<b class="media-title mt-10"><?php echo $comment->getAuthor()->getName();?></b>
-<<<<<<< HEAD
 
-=======
-										
->>>>>>> master
 									</div>
 								</div>
 								<div class="">
@@ -224,11 +194,7 @@ defined('_JEXEC') or die('Unauthorized Access');
 							<?php foreach ($topCommenters as $topCommenter) { ?>
 								<div class="media">
 									<div class="media-object pull-left">
-<<<<<<< HEAD
 										<img src="<?php echo $topCommenter->author->getAvatar();?>" width="40" height="40" class="img-circle" />
-=======
-										<img src="<?php echo $topCommenter->author->getAvatar();?>" width="40" height="40" class="img-circle" />	
->>>>>>> master
 									</div>
 									
 									<div class="media-body">

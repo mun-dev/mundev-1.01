@@ -1,11 +1,7 @@
 <?php
 /**
 * @package		EasyBlog
-<<<<<<< HEAD
 * @copyright	Copyright (C) 2010 - 2019 Stack Ideas Sdn Bhd. All rights reserved.
-=======
-* @copyright	Copyright (C) 2010 - 2017 Stack Ideas Sdn Bhd. All rights reserved.
->>>>>>> master
 * @license		GNU/GPL, see LICENSE.php
 * EasyBlog is free software. This version may have been modified pursuant
 * to the GNU General Public License, and as distributed it includes or
@@ -39,14 +35,11 @@ class EasyBlogControllerThemes extends EasyBlogController
 		$this->info->set(JText::sprintf('COM_EASYBLOG_THEMES_CUSTOM_CSS_SAVE_SUCCESS', $path), 'success');
 
 		$redirect = 'index.php?option=com_easyblog&view=themes&layout=custom';
-<<<<<<< HEAD
 		
 		$actionlog = EB::actionlog();
 		$actionlog->log('COM_EB_ACTIONLOGS_CUSTOMCSS_UPDATED', 'post', array(
 			'themeTitle' => ucfirst($element)
 		));
-=======
->>>>>>> master
 
 		return $this->app->redirect($redirect);
 	}
@@ -233,14 +226,11 @@ class EasyBlogControllerThemes extends EasyBlogController
 		$table->params 	= $this->config->toString('INI');
 		$table->store();
 
-<<<<<<< HEAD
 		$actionlog = EB::actionlog();
 		$actionlog->log('COM_EB_ACTIONLOGS_THEME_DEFAULT', 'post', array(
 			'themeTitle' => ucfirst($element)
 		));
 
-=======
->>>>>>> master
 		// Clear the component's cache
 		$cache = JFactory::getCache('com_easyblog');
 		$cache->clean();

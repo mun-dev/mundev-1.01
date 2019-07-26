@@ -12,7 +12,6 @@ EasyBlog.ready(function($){
 	});
 
 	// Search
-<<<<<<< HEAD
 	$(document)
 		.off('click.search.toggle')
 		.on('click.search.toggle', '[data-eb-toolbar-search-toggle]', function() {
@@ -24,27 +23,13 @@ EasyBlog.ready(function($){
 
 	<?php if ($this->isMobile() || $this->isTablet()) { ?>
 
-=======
-	$('[data-eb-toolbar-search]').on('click', function() {
-		$('[data-eb-toolbar-search-wrapper]').toggleClass('hide');
-	});
-
-	<?php if ($this->isMobile()) { ?>
-
-	$('[data-eb-mobile-menu]').on('click', function() {
-		$('[data-eb-container]').toggleClass('eb-sidemenu-open');
-	});
->>>>>>> master
 
 	$('.btn-eb-navbar').click(function() {
 		$('.eb-nav-collapse').toggleClass("nav-show");
 		return false;
 	});
 
-<<<<<<< HEAD
 	// Toggle main navigation
-=======
->>>>>>> master
 	$('[data-eb-toolbar-toggle]').on('click', function() {
 		var contents = $('[data-eb-mobile-toolbar]').html();
 
@@ -54,7 +39,6 @@ EasyBlog.ready(function($){
 		});
 	});
 
-<<<<<<< HEAD
 	// Toggle account and manage
 	$('[data-eb-toolbar-manage-toggle]').on('click', function() {
 		var contents = $('[data-eb-mobile-manage-toolbar]').html();
@@ -65,8 +49,6 @@ EasyBlog.ready(function($){
 		});
 	});
 
-=======
->>>>>>> master
 	$('[data-eb-toolbar-dashboard-toggle]').on('click', function() {
 		var contents = $('[data-eb-mobile-dashboard-toolbar]').html();
 

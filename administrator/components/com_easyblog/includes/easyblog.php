@@ -343,7 +343,6 @@ class EB
 	}
 
 	/**
-<<<<<<< HEAD
 	 * Retrieve available Joomla languages
 	 *
 	 * @since	5.3.0
@@ -385,8 +384,6 @@ class EB
 	}
 
 	/**
-=======
->>>>>>> master
 	 * Retrieve the current language tag set
 	 *
 	 * @since	4.0
@@ -743,19 +740,11 @@ class EB
 	 * @since	4.0
 	 * @access	public
 	 */
-<<<<<<< HEAD
 	public static function blogimage($path, $uri, $storageType = 'joomla')
 	{
 		require_once(dirname(__FILE__) . '/blogimage/blogimage.php');
 
 		$image = new EasyBlogBlogImage($path, $uri, $storageType);
-=======
-	public static function blogimage($path, $uri)
-	{
-		require_once(dirname(__FILE__) . '/blogimage/blogimage.php');
-
-		$image = new EasyBlogBlogImage($path, $uri);
->>>>>>> master
 
 		return $image;
 	}
@@ -1276,11 +1265,7 @@ class EB
 
 			$config = EB::config();
 			$provider = $config->get('main_login_provider');
-<<<<<<< HEAD
 
-=======
-			
->>>>>>> master
 			// Get the current URI which you trying to access
 			$currentUri = EBR::getCurrentURI();
 			$returnURL = '?return=' . base64_encode($currentUri);
@@ -1865,7 +1850,6 @@ class EB
 	 * @since	5.1.9
 	 * @access	public
 	 */
-<<<<<<< HEAD
 	public static function setMeta($id, $type, $defaultViewDesc = '', $pagination = null)
 	{
 		$doc = JFactory::getDocument();
@@ -1874,13 +1858,6 @@ class EB
 
 		$app = JFactory::getApplication();
 		$robotsMenu = '';
-=======
-	public static function setMeta($id, $type, $defaultViewDesc = '')
-	{
-		$doc = JFactory::getDocument();
-		$config = EB::config();
-		$app = JFactory::getApplication();
->>>>>>> master
 
 		// Try to load the meta for the content
 		$meta = EB::table('Meta');
@@ -1919,11 +1896,7 @@ class EB
 				$meta->description = $biography;
 			}
 
-<<<<<<< HEAD
 			if (!$meta->keywords && !empty($author->title)) {
-=======
-			if (!empty($author->title)) {
->>>>>>> master
 				$meta->keywords = $author->title;
 			}
 		}
@@ -1971,10 +1944,6 @@ class EB
 			}
 		}
 
-<<<<<<< HEAD
-=======
-
->>>>>>> master
 		// Check if the descriptin or keysword still empty or not. if yes, try to get from joomla menu.
 		if (empty($meta->description) && empty($meta->keywords)) {
 			$active = JFactory::getApplication()->getMenu()->getActive();
@@ -1984,10 +1953,7 @@ class EB
 
 				$description = $params->get('menu-meta_description', '');
 				$keywords = $params->get('menu-meta_keywords', '');
-<<<<<<< HEAD
 				$robotsMenu = $params->get('robots', $jConfig->get('robots'));
-=======
->>>>>>> master
 
 				if (!empty($description) || !empty($keywords)) {
 					$meta = new stdClass();
@@ -2015,7 +1981,6 @@ class EB
 			$meta->description = $defaultViewDesc . ' - ' . EB::jconfig()->get('MetaDesc');
 		}
 
-<<<<<<< HEAD
 		// Need to append the pagination number under meta description for prevent duplicate description content
 		if ($pagination && is_object($pagination)) {
 			$page = $pagination->get('pages.current');
@@ -2027,8 +1992,6 @@ class EB
 			}
 		}
 
-=======
->>>>>>> master
 		if ($meta->keywords) {
 			$doc->setMetadata('keywords', $meta->keywords);
 		}
@@ -2040,17 +2003,12 @@ class EB
 		// Admin probably disabled indexing
 		if (isset($meta->indexing) && !$meta->indexing) {
 			$doc->setMetadata('robots', 'noindex,follow');
-<<<<<<< HEAD
 
 		// If there is active menu and unable to return any data from the meta table
 		// Then retrieve the robots data from this active menu item 
 		} elseif ($robotsMenu && ((isset($meta->id) && !$meta->id) || (!isset($meta->robots)))) {
 			$doc->setMetadata('robots', $robotsMenu);
 		}
-=======
-		}
-
->>>>>>> master
 	}
 
 	/**
@@ -2163,7 +2121,6 @@ class EB
 			return $default;
 		}
 
-<<<<<<< HEAD
 		// check if the current menu item is belong to current view or not.
 		$app = JFactory::getApplication();
 		$xQuery = $item->query;
@@ -2180,14 +2137,6 @@ class EB
 				return $title;
 			}
 
-=======
-		// @task: Let's get the page title from the menu.
-		$title = $item->params->get('page_title', '');
-
-		// If a title is found, just use the configured title.
-		if ($title && $useMenuForTitle) {
-			return $title;
->>>>>>> master
 		}
 
 		return $default;
@@ -4194,7 +4143,6 @@ class EB
 	}
 
 	/**
-<<<<<<< HEAD
 	 * Allows caller to pass in an array of data to normalize the data
 	 *
 	 * @since	5.3.0
@@ -4225,8 +4173,6 @@ class EB
 	}
 
 	/**
-=======
->>>>>>> master
 	 * Normalize directory separator
 	 *
 	 * @since	5.1

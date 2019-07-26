@@ -1,11 +1,7 @@
 <?php
 /**
 * @package		EasyBlog
-<<<<<<< HEAD
 * @copyright	Copyright (C) 2010 - 2019 Stack Ideas Sdn Bhd. All rights reserved.
-=======
-* @copyright	Copyright (C) 2010 - 2017 Stack Ideas Sdn Bhd. All rights reserved.
->>>>>>> master
 * @license		GNU/GPL, see LICENSE.php
 * EasyBlog is free software. This version may have been modified pursuant
 * to the GNU General Public License, and as distributed it includes or
@@ -1056,11 +1052,7 @@ class EasyBlogModelCategory extends EasyBlogAdminModel
 	/**
 	 * Retrieve a list of blog posts from a specific list of categories
 	 *
-<<<<<<< HEAD
 	 * @since	5.3.0
-=======
-	 * @since	4.0
->>>>>>> master
 	 * @access	public
 	 */
 	public function getPosts($categories, $limit = null, $includeAuthors = array(), $excludeAuthors = array(), $options = array())
@@ -1076,11 +1068,8 @@ class EasyBlogModelCategory extends EasyBlogAdminModel
 		$ordering = isset($options['ordering']) ? $options['ordering'] : $config->get('layout_categorypostorder', 'created');
 		$fieldsFilter = isset($options['fieldsFilter']) ? $options['fieldsFilter'] : null;
 		$fieldsFilterRule = isset($options['fieldsFilterRule']) ? $options['fieldsFilterRule'] : 'include';
-<<<<<<< HEAD
 		$strictMode = isset($options['strictMode']) ? $options['strictMode'] : false;
 
-=======
->>>>>>> master
 
 		// Ordering column should be publish_up if the ordering is configured to be publishing date
 		if ($ordering == 'published') {
@@ -1149,7 +1138,6 @@ class EasyBlogModelCategory extends EasyBlogAdminModel
 		// 			'2' => array('2', '1')
 		// 		);
 
-<<<<<<< HEAD
 		$fieldAclQ = '';
 
 		// Custom Fields filter
@@ -1212,55 +1200,11 @@ class EasyBlogModelCategory extends EasyBlogAdminModel
 				}
 			}
 			
-=======
-		// Custom Fields filter
-		if ($fieldsFilter) {
-			$fieldQueries = array();
-			$filterCount = count($fieldsFilter);
-
-			foreach ($fieldsFilter as $fieldId => $values) {
-				$fieldValueQuery = array();
-
-				foreach ($values as $value) {
-					$fieldValueQuery[] = '`value` = ' . $db->Quote($value);
-				}
-
-				$fieldValueQuery = (count($fieldValueQuery) ? implode(' OR ', $fieldValueQuery) : '');
-
-				$fieldQ = 'select distinct `post_id` from `#__easyblog_fields_values` as fv';
-				$fieldQ .= ' LEFT JOIN `#__easyblog_fields` as f ON fv.`field_id` = f.`id`';
-				$fieldQ .= ' LEFT JOIN ' . $db->quoteName('#__easyblog_fields_groups_acl') . ' AS facl';
-				$fieldQ .= ' ON f.' . $db->quoteName('group_id') . ' = facl.' . $db->quoteName('group_id');
-				$fieldQ .= ' WHERE `field_id` = ' . $db->Quote($fieldId) . ' AND (';
-				$fieldQ .= $fieldValueQuery;
-				$fieldQ .= ')';
-
-				$gid = EB::getUserGids();
-				$gids = '';
-
-				if (count($gid) > 0) {
-					foreach ($gid as $id) {
-						$gids .= (empty($gids)) ? $id : ',' . $id;
-					}
-				}
-
-				// We need to check whether the user is belong to one of the group
-				$fieldQ .= ' AND (';
-				$fieldQ .= ' facl.' . $db->quoteName('acl_id') . ' IN(' . $gids . ')';
-				$fieldQ .= ' AND facl.' . $db->quoteName('acl_type') . ' = ' . $db->Quote('read');
-				$fieldQ .= ' OR facl.' . $db->quotename('id') . ' IS NULL';
-				$fieldQ .= ' )';
-
-				$fieldQueries[] = $fieldQ;
-			}
-
->>>>>>> master
 			$union = (count($fieldQueries) > 1) ? implode(') UNION ALL (', $fieldQueries) : $fieldQueries[0];
 			$union = '(' . $union . ')';
 
 			$filterCount = $filterCount - 1;
 
-<<<<<<< HEAD
 			// AND condition Or strictMode enabled.
 			$fieldQuery = '(select * from (' . $union . ') as x group by x.`post_id` having (count(x.`post_id`) > ' . $filterCount . ')) as customFields';
 
@@ -1268,14 +1212,6 @@ class EasyBlogModelCategory extends EasyBlogAdminModel
 			// or strictMode turn off.
 			// OR condition
 			if (!$strictMode || $fieldsFilterRule != 'include') {
-=======
-			// AND condition
-			$fieldQuery = '(select * from (' . $union . ') as x group by x.`post_id` having (count(x.`post_id`) > ' . $filterCount . ')) as customFields';
-
-			// if this is exclude mode, we use OR condition.
-			// OR condition
-			if ($fieldsFilterRule != 'include') {
->>>>>>> master
 				$fieldQuery = '(select * from (' . $union . ') as x group by x.`post_id`) as customFields';
 			}
 
@@ -1286,10 +1222,7 @@ class EasyBlogModelCategory extends EasyBlogAdminModel
 				$query[] = ' LEFT JOIN ' . $fieldQuery . ' ON customFields.`post_id` = a.`id`';
 				$queryWhere .= ' AND customFields.`post_id` IS NULL';
 			}
-<<<<<<< HEAD
 
-=======
->>>>>>> master
 		}
 
 		// Build the WHERE clauses

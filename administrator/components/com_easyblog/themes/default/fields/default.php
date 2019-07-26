@@ -41,11 +41,7 @@ defined('_JEXEC') or die('Unauthorized Access');
 				</th>
 
 				<th style="text-align: left;">
-<<<<<<< HEAD
 					<?php echo JHTML::_('grid.sort', 'COM_EASYBLOG_TABLE_COLUMN_TITLE', 'title', $orderDirection, $order); ?>
-=======
-					<?php echo JText::_('COM_EASYBLOG_TABLE_COLUMN_TITLE');?>
->>>>>>> master
 				</th>
 
 				<th width="5%" class="center nowrap">
@@ -54,15 +50,12 @@ defined('_JEXEC') or die('Unauthorized Access');
 				<th width="5%" class="center nowrap">
 					<?php echo JText::_('COM_EASYBLOG_TABLE_COLUMN_REQUIRED'); ?>
 				</th>
-<<<<<<< HEAD
 				<?php if ($showOrdering) { ?>
 				<th width="6%" class="center nowrap">
 					<?php echo JHTML::_('grid.sort', 'Order', 'ordering', $orderDirection, $order); ?>
 					<?php echo JHTML::_('grid.order', $fields, '', 'fields.saveorder'); ?>
 				</th>
 				<?php } ?>
-=======
->>>>>>> master
 				<th width="15%" class="center nowrap">
 					<?php echo JText::_('COM_EASYBLOG_TABLE_COLUMN_FIELD_GROUP'); ?>
 				</th>
@@ -70,11 +63,7 @@ defined('_JEXEC') or die('Unauthorized Access');
 					<?php echo JText::_('COM_EASYBLOG_TABLE_COLUMN_FIELD_TYPE'); ?>
 				</th>
 				<th width="1%" class="center">
-<<<<<<< HEAD
 					<?php echo JHTML::_('grid.sort', 'COM_EASYBLOG_ID', 'id', $orderDirection, $order); ?>
-=======
-					<?php echo JText::_('COM_EASYBLOG_ID');?>
->>>>>>> master
 				</th>
 			</thead>
 			<tbody>
@@ -97,7 +86,6 @@ defined('_JEXEC') or die('Unauthorized Access');
 							<?php echo $this->html('grid.published', $field, 'fields', 'required', array('fields.setRequired', 'fields.removeRequired')); ?>
 						</td>
 
-<<<<<<< HEAD
 						<?php if ($showOrdering) { ?>
 
 							<?php $orderkey = array_search($field->id, $ordering); ?>
@@ -123,8 +111,6 @@ defined('_JEXEC') or die('Unauthorized Access');
 
 						<?php } ?>
 
-=======
->>>>>>> master
 						<td class="center">
 							<?php echo $field->getGroupTitle(); ?>
 						</td>
@@ -141,11 +127,7 @@ defined('_JEXEC') or die('Unauthorized Access');
 					<?php } ?>
 				<?php } else { ?>
 					<tr>
-<<<<<<< HEAD
 						<td colspan="8" class="empty">
-=======
-						<td colspan="7" class="empty">
->>>>>>> master
 							<?php echo JText::_('COM_EASYBLOG_FIELDS_NO_FIELDS_CREATED_YET');?>
 						</td>
 					</tr>
@@ -164,9 +146,6 @@ defined('_JEXEC') or die('Unauthorized Access');
 	<?php echo $this->html('form.action'); ?>
 	<input type="hidden" name="view" value="fields" />
 	<input type="hidden" name="layout" value="fields" />
-<<<<<<< HEAD
 	<input type="hidden" name="filter_order" value="<?php echo $order; ?>" />
 	<input type="hidden" name="filter_order_Dir" value="" />
-=======
->>>>>>> master
 </form>

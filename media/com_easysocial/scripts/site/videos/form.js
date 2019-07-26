@@ -15,10 +15,7 @@ EasySocial.Controller('Videos.Form', {
 		"{forms}": "[data-form-source]",
 		"{linkForm}": "[data-form-link]",
 		"{uploadForm}": "[data-form-upload]",
-<<<<<<< HEAD
 		"{linkSource}": "[data-video-link]",
-=======
->>>>>>> master
 
 		// Mentions
 		"{mentions}": "[data-mentions]",
@@ -29,10 +26,7 @@ EasySocial.Controller('Videos.Form', {
 		"{videoId}": "[data-video-id]",
 		"{fileUploaded}": "[data-file-uploaded]",
 		"{videoTitle}": "[data-video-title]",
-<<<<<<< HEAD
 		"{videoDescription}": "[data-video-desc]",
-=======
->>>>>>> master
 		"{saveButton}": "[data-save-button]"
 	}
 }, function(self, opts, base) { return {
@@ -219,7 +213,6 @@ EasySocial.Controller('Videos.Form', {
 		});
 	},
 
-<<<<<<< HEAD
 	"{linkSource} focusout": function(el){
 		var url = el.val();
 
@@ -249,8 +242,6 @@ EasySocial.Controller('Videos.Form', {
 		});
 	},
 
-=======
->>>>>>> master
 	"{saveButton} click": function(ele, event) {
 
 		var title = self.videoTitle().val();

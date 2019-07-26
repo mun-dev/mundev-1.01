@@ -1,15 +1,9 @@
 <?php
 /**
 * @package      EasyDiscuss
-<<<<<<< HEAD
 * @copyright    Copyright (C) 2010 - 2019 Stack Ideas Sdn Bhd. All rights reserved.
 * @license      GNU/GPL, see LICENSE.php
 * EasyDiscuss is free software. This version may have been modified pursuant
-=======
-* @copyright    Copyright (C) 2010 - 2016 Stack Ideas Sdn Bhd. All rights reserved.
-* @license      GNU/GPL, see LICENSE.php
-* Komento is free software. This version may have been modified pursuant
->>>>>>> master
 * to the GNU General Public License, and as distributed it includes or
 * is derivative of works licensed under the GNU General Public License or
 * other free or open source software licenses.
@@ -26,13 +20,7 @@ defined('_JEXEC') or die('Restricted access');
 			<div class="o-flag">
 			<?php if ($params->get('show_replies_avatar')) { ?>
 				<div class="o-flag__img t-lg-mr--md">
-<<<<<<< HEAD
                     <?php echo ED::themes()->html('user.avatar', $reply->profile, array('rank' => true, 'status' => true, 'size' => 'md')); ?>
-=======
-					<a class="o-avatar" href="<?php echo $reply->profile->getPermalink(); ?>">
-						<img src="<?php echo $reply->profile->getAvatar(); ?>">
-					</a>
->>>>>>> master
 				</div>
 			<?php } ?>
 				<div class="o-flag__body">

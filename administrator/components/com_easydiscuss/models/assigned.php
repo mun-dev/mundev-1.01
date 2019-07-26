@@ -1,11 +1,7 @@
 <?php
 /**
 * @package		EasyDiscuss
-<<<<<<< HEAD
 * @copyright	Copyright (C) 2010 - 2019 Stack Ideas Sdn Bhd. All rights reserved.
-=======
-* @copyright	Copyright (C) 2010 - 2015 Stack Ideas Sdn Bhd. All rights reserved.
->>>>>>> master
 * @license		GNU/GPL, see LICENSE.php
 * EasyDiscuss is free software. This version may have been modified pursuant
 * to the GNU General Public License, and as distributed it includes or
@@ -15,11 +11,7 @@
 */
 defined('_JEXEC') or die('Unauthorized Access');
 
-<<<<<<< HEAD
 require_once dirname(__FILE__) . '/model.php';
-=======
-require_once dirname( __FILE__ ) . '/model.php';
->>>>>>> master
 
 class EasyDiscussModelAssigned extends EasyDiscussAdminModel
 {
@@ -90,7 +82,6 @@ class EasyDiscussModelAssigned extends EasyDiscussAdminModel
 
 		$respectPrivacy = ($this->my->id == $userid) ? false : true;
 
-<<<<<<< HEAD
 		$query = 'SELECT DATEDIFF('. $db->Quote($date->toMySQL()) . ', b.`created`) as `noofdays`, ';
 		$query .= ' DATEDIFF(' . $db->Quote($date->toMySQL()) . ', IF(b.`replied` = '.$db->Quote('0000-00-00 00:00:00') . ', b.`created`, b.`replied`)) as `daydiff`, ';
 		$query .= ' TIMEDIFF(' . $db->Quote($date->toMySQL()). ', IF(b.`replied` = '.$db->Quote('0000-00-00 00:00:00') . ', b.`created`, b.`replied`)) as `timediff`,';
@@ -108,27 +99,6 @@ class EasyDiscussModelAssigned extends EasyDiscussAdminModel
 		$query .= ' WHERE am.`created` = (SELECT MAX(`created`) FROM `#__discuss_assignment_map` WHERE `post_id` = a.`id`)';
 		$query .= ' AND am.`assignee_id` = ' . $db->Quote($userid);
 		$query .= ' AND a.`published` = 1';
-=======
-		$query	= 'SELECT DATEDIFF('. $db->Quote($date->toMySQL()) . ', a.`created` ) as `noofdays`, ';
-		$query	.= ' DATEDIFF(' . $db->Quote($date->toMySQL()) . ', IF(a.`replied` = '.$db->Quote('0000-00-00 00:00:00') . ', a.`created`, a.`replied`) ) as `daydiff`, ';
-		$query	.= ' TIMEDIFF(' . $db->Quote($date->toMySQL()). ', IF(a.`replied` = '.$db->Quote('0000-00-00 00:00:00') . ', a.`created`, a.`replied`) ) as `timediff`,';
-		$query	.= ' a.*,';
-		// $query  .= ' count(c.id) as `num_replies`,';
-		$query  .= ' e.`title` AS `category`,';
-		$query	.= ' pt.`suffix` AS post_type_suffix, pt.`title` AS post_type_title,';
-		$query	.= ' IF(a.`replied` = '.$db->Quote('0000-00-00 00:00:00') . ', a.`created`, a.`replied`) as `lastupdate`';
-		$query	.= ' FROM `#__discuss_posts` AS a';
-		// $query	.= ' LEFT JOIN `#__discuss_posts` AS c ON c.`parent_id` = a.`id`';
-		// $query	.= ' 	AND c.`published` = ' . $db->Quote('1');
-		$query	.= ' LEFT JOIN ' . $db->nameQuote( '#__discuss_category' ) . ' AS e ON e.`id` = a.`category_id`';
-		$query	.= ' INNER JOIN ' . $db->nameQuote( '#__discuss_assignment_map' ) . ' AS am ON am.`post_id` = a.id';
-		$query	.= '	LEFT JOIN ' . $db->nameQuote('#__discuss_post_types') . ' AS pt ON a.`post_type` = pt.`alias`';
-		$query	.= ' WHERE am.`created` = ( SELECT MAX(`created`) FROM `#__discuss_assignment_map` WHERE `post_id` = a.`id` )';
-		$query	.= ' AND am.`assignee_id` = ' . $db->Quote( $userid );
-		$query	.= ' AND a.`parent_id` = 0';
-		$query	.= ' AND a.`published` = 1';
-
->>>>>>> master
 
 		if ($respectPrivacy) {
 			// category ACL:
@@ -147,33 +117,22 @@ class EasyDiscussModelAssigned extends EasyDiscussAdminModel
 			} else {
 				$query .= ' and a.`category_id` IN (' . implode(',', $catIds) . ')';
 			}
-<<<<<<< HEAD
 		}
 
         $query .= ' ORDER BY am.`created` DESC';
         
 		// echo $query;
 		// echo '<br><br>';
-=======
-
-		}
-
-		// echo $query;exit;
-
->>>>>>> master
 
 		return $query;
 	}
 
-<<<<<<< HEAD
 	/**
 	 * Get user's total assigned posts counts
 	 *
 	 * @since	4.0
 	 * @access	public
 	 */
-=======
->>>>>>> master
 	public function getTotalAssigned($userId = null)
 	{
 		$db = ED::db();
@@ -183,15 +142,8 @@ class EasyDiscussModelAssigned extends EasyDiscussAdminModel
 			$userId = JFactory::getUser()->id;
 		}
 
-<<<<<<< HEAD
 		$respectPrivacy = ($this->my->id == $userId) ? false : true;
 
-=======
-
-		$respectPrivacy = ($this->my->id == $userId) ? false : true;
-
-
->>>>>>> master
 		$query	 = array();
 		$query[] = 'SELECT COUNT(*)';
 		$query[] = 'FROM ' . $db->nameQuote('#__discuss_posts') . ' AS a';
@@ -199,20 +151,11 @@ class EasyDiscussModelAssigned extends EasyDiscussAdminModel
 		$query[] = 'ON b.' . $db->nameQuote('post_id') . ' = a.' . $db->nameQuote('id');
 		$query[] = 'WHERE';
 		$query[] = 'b.' . $db->nameQuote('assignee_id') . '=' . $db->Quote($userId);
-<<<<<<< HEAD
 		$query[] = 'and b.`created` = (SELECT MAX(`created`) FROM `#__discuss_assignment_map` WHERE `post_id` = a.`id`)';
-=======
-		$query[] = 'and b.`created` = ( SELECT MAX(`created`) FROM `#__discuss_assignment_map` WHERE `post_id` = a.`id` )';
->>>>>>> master
 
 		$query[] = 'AND a.' . $db->nameQuote('parent_id') . '=' . $db->Quote(0);
 		$query[] = 'AND a.' . $db->nameQuote('published') . '=' . $db->Quote(1);
 
-<<<<<<< HEAD
-=======
-
-
->>>>>>> master
 		if ($respectPrivacy) {
 			// category ACL:
 			$catOptions = array();
@@ -233,14 +176,7 @@ class EasyDiscussModelAssigned extends EasyDiscussAdminModel
 
 		}
 
-<<<<<<< HEAD
 		$query = implode(' ', $query);
-=======
-
-		$query = implode(' ', $query);
-
-
->>>>>>> master
 		// echo $query;exit;
 
 		$db->setQuery($query);
@@ -253,7 +189,6 @@ class EasyDiscussModelAssigned extends EasyDiscussAdminModel
 		return (int) $total;
 	}
 
-<<<<<<< HEAD
 	/**
 	 * Get user's total resolved posts counts
 	 *
@@ -261,14 +196,10 @@ class EasyDiscussModelAssigned extends EasyDiscussAdminModel
 	 * @access	public
 	 */
 	public function getTotalSolved($userId = null)
-=======
-	public function getTotalSolved( $userId = null )
->>>>>>> master
 	{
 		$db = ED::db();
 		$date = ED::date();
 
-<<<<<<< HEAD
 		if (is_null($userId)) {
 			$userId = JFactory::getUser()->id;
 		}
@@ -290,38 +221,12 @@ class EasyDiscussModelAssigned extends EasyDiscussAdminModel
 		$total = $db->loadResult();
 
 		if (!$total) {
-=======
-		if( is_null($userId) )
-		{
-			$userId = JFactory::getUser()->id;
-		}
-
-		$query		= array();
-		$query[]	= 'SELECT COUNT(*)';
-		$query[]	= 'FROM ' . $db->nameQuote( '#__discuss_posts' ) . ' AS a';
-		$query[]	= 'LEFT JOIN ' . $db->nameQuote( '#__discuss_assignment_map' ) . ' AS b';
-		$query[]	= 'ON b.' . $db->nameQuote( 'post_id' ) . ' = a.' . $db->nameQuote( 'id' );
-		$query[]	= 'WHERE';
-		$query[]	= 'b.' . $db->nameQuote( 'assignee_id' ) . '=' . $db->Quote( $userId );
-		$query[]	= 'AND a.' . $db->nameQuote( 'parent_id' ) . '=' . $db->Quote( 0 );
-		$query[]	= 'AND a.' . $db->nameQuote( 'isresolve' ) . '=' . $db->Quote( 1 );
-
-		$query 		= implode( ' ' , $query );
-
-		$db->setQuery( $query );
-
-		$total 		= $db->loadResult();
-
-		if( !$total )
-		{
->>>>>>> master
 			return 0;
 		}
 
 		return (int) $total;
 	}
 
-<<<<<<< HEAD
 	/**
 	 * Get user's total unresolved counts
 	 *
@@ -350,31 +255,6 @@ class EasyDiscussModelAssigned extends EasyDiscussAdminModel
 		$total = $db->loadResult();
 
 		if (!$total) {
-=======
-	public function getTotalUnresolved( $userId = null )
-	{
-		$db		= DiscussHelper::getDBO();
-		$userId	= JFactory::getUser($userId)->id;
-
-		$query		= array();
-		$query[]	= 'SELECT COUNT(*)';
-		$query[]	= 'FROM ' . $db->nameQuote( '#__discuss_posts' ) . ' AS a';
-		$query[]	= 'LEFT JOIN ' . $db->nameQuote( '#__discuss_assignment_map' ) . ' AS b';
-		$query[]	= 'ON b.' . $db->nameQuote( 'post_id' ) . ' = a.' . $db->nameQuote( 'id' );
-		$query[]	= 'WHERE';
-		$query[]	= 'b.' . $db->nameQuote( 'assignee_id' ) . '=' . $db->Quote( $userId );
-		$query[]	= 'AND a.' . $db->nameQuote( 'parent_id' ) . '=' . $db->Quote( 0 );
-		$query[]	= 'AND a.' . $db->nameQuote( 'isresolve' ) . '=' . $db->Quote(0);
-
-		$query 		= implode( ' ' , $query );
-
-		$db->setQuery( $query );
-
-		$total 		= $db->loadResult();
-
-		if( !$total )
-		{
->>>>>>> master
 			return 0;
 		}
 
@@ -382,16 +262,12 @@ class EasyDiscussModelAssigned extends EasyDiscussAdminModel
 	}
 
 
-<<<<<<< HEAD
 	/**
 	 * Get user's assigned posts
 	 *
 	 * @since	4.0
 	 * @access	public
 	 */
-=======
-
->>>>>>> master
 	public function getPosts($userId = null)
 	{
 		if (empty($this->_data)) {
@@ -410,11 +286,6 @@ class EasyDiscussModelAssigned extends EasyDiscussAdminModel
 	 *
 	 * @since	4.0
 	 * @access	public
-<<<<<<< HEAD
-=======
-	 * @param	string
-	 * @return
->>>>>>> master
 	 */
 	public function getAssignPostGraph($userId)
 	{

@@ -51,12 +51,9 @@ if ($task == 'cron' || $cron) {
 	// Process scheduled unpublish posts
 	$result['scheduler_unpublish'] = EB::scheduler()->unpublish();
 
-<<<<<<< HEAD
 	// Process scheduled posts archiving
 	$result['scheduler_autoarchive'] = EB::scheduler()->archive();
 
-=======
->>>>>>> master
 	// Process the garbage collector. Remove the records from #__easyblog_uploader_tmp which exceed 120 minutes.
 	$result['scheduler_remove_tmp_files'] = EB::scheduler()->removeTmpFiles();
 
@@ -102,10 +99,6 @@ if ($task == 'crondata') {
 	exit;
 }
 
-<<<<<<< HEAD
-=======
-
->>>>>>> master
 function cronOutPut($results) {
 
 	$output = array();

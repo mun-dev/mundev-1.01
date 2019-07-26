@@ -581,11 +581,7 @@ class ComponentKunenaControllerTopicItemDisplay extends KunenaControllerDisplay
 		{
 			$params          = $menu_item->params;
 			$params_keywords = $params->get('menu-meta_keywords');
-<<<<<<< HEAD
                         $headerText = KunenaHtmlParser::stripBBCode($this->topic->subject, 0, true);
-=======
-
->>>>>>> master
 			$this->setTitle($headerText);
 
 			if (!empty($params_keywords))

@@ -4,13 +4,8 @@
 	<element>cleantalk</element>
 	<author>Stack Ideas Sdn Bhd</author>
 	<url>https://stackideas.com</url>
-<<<<<<< HEAD
 	<creationDate>18th July 2019</creationDate>
 	<version>2.1.35</version>
-=======
-	<creationDate>4th July 2019</creationDate>
-	<version>2.1.33</version>
->>>>>>> master
 	<copyright>Copyright (C) 2010 - 2017 Stack Ideas Sdn Bhd</copyright>
 	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
 	<installable>false</installable>

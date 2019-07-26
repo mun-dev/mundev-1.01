@@ -1,11 +1,7 @@
 <?php
 /**
 * @package      EasyBlog
-<<<<<<< HEAD
 * @copyright    Copyright (C) 2010 - 2019 Stack Ideas Sdn Bhd. All rights reserved.
-=======
-* @copyright    Copyright (C) 2010 - 2014 Stack Ideas Sdn Bhd. All rights reserved.
->>>>>>> master
 * @license      GNU/GPL, see LICENSE.php
 * EasyBlog is free software. This version may have been modified pursuant
 * to the GNU General Public License, and as distributed it includes or
@@ -16,7 +12,6 @@
 defined('_JEXEC') or die('Unauthorized Access');
 ?>
 <dialog>
-<<<<<<< HEAD
 	<width>600</width>
 	<height>350</height>
 	<selectors type="json">
@@ -38,28 +33,4 @@ defined('_JEXEC') or die('Unauthorized Access');
 	<buttons>
 		<button data-close-button type="button" class="btn btn-primary btn-sm"><?php echo JText::_('COM_EASYBLOG_CLOSE_BUTTON'); ?></button>
 	</buttons>
-=======
-    <width>600</width>
-    <height>350</height>
-    <selectors type="json">
-    {
-        "{closeButton}" : "[data-close-button]"
-    }
-    </selectors>
-    <bindings type="javascript">
-    {
-        "{closeButton} click": function()
-        {
-            this.parent.close();
-        }
-    }
-    </bindings>
-    <title><?php echo JText::_('COM_EASYBLOG_DIALOG_COMMENTS_TERMS_TITLE'); ?></title>
-    <content>
-    	<?php echo $text;?>
-    </content>
-    <buttons>
-        <button data-close-button type="button" class="btn btn-primary btn-sm"><?php echo JText::_('COM_EASYBLOG_CLOSE_BUTTON'); ?></button>
-    </buttons>
->>>>>>> master
 </dialog>

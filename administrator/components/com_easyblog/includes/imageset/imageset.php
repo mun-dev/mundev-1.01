@@ -1,11 +1,7 @@
 <?php
 /**
 * @package		EasyBlog
-<<<<<<< HEAD
 * @copyright	Copyright (C) 2010 - 2019 Stack Ideas Sdn Bhd. All rights reserved.
-=======
-* @copyright	Copyright (C) 2010 - 2017 Stack Ideas Sdn Bhd. All rights reserved.
->>>>>>> master
 * @license		GNU/GPL, see LICENSE.php
 * EasyBlog is free software. This version may have been modified pursuant
 * to the GNU General Public License, and as distributed it includes or
@@ -30,11 +26,6 @@ class EasyBlogImageset extends EasyBlog
 	 *
 	 * @since	5.0
 	 * @access	public
-<<<<<<< HEAD
-=======
-	 * @param	string
-	 * @return	
->>>>>>> master
 	 */
 	public function create($sizes, $imagePath)
 	{
@@ -117,11 +108,8 @@ class EasyBlogImageset extends EasyBlog
 		}
 
 		// Determines if there's a specific size to generate
-<<<<<<< HEAD
 		$optimizer = EB::imageoptimizer();
 
-=======
->>>>>>> master
 		foreach ($sizes as $size) {
 
 			// Clone the original image to avoid original image width and height being modified
@@ -143,11 +131,8 @@ class EasyBlogImageset extends EasyBlog
 			// Save the image
 			$image->write($data->path, $data->quality);
 
-<<<<<<< HEAD
 			$optimizer->optimize($data->path);
 			
-=======
->>>>>>> master
 			unset($image);
 
 			$images[$size] = $data;

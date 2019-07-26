@@ -73,10 +73,6 @@ $this->_urls['8b16656143810c29c5f44a18dd398084']='lang=en-GB&view=login||home-en
 $this->_urls['a1cafabc11d7030cfe57b147af52a141']='lang=ms-MY||utama';
 $this->_urls['93a679eb580ce88a4228a0703db00776']='lang=ms-MY&view=dashboard||utama';
 $this->_urls['82256c19915b2032d6f7235ffc900e02']='lang=ms-MY||utama';
-<<<<<<< HEAD
 $this->_urls['6ae0fe394f1929b3e3a30fb9b24520d0']='lang=ms-MY||utama';
 $this->_urls['8833e0caffe01db49c56e0778d4ef77a']='filter=me&lang=en-GB&view=dashboard||home-en-gb';
 $this->_urls['690616ca2fe3b25593733884f7797c71']='filter=everyone&lang=en-GB&view=dashboard||home-en-gb/everyone';
-=======
-$this->_urls['6ae0fe394f1929b3e3a30fb9b24520d0']='lang=ms-MY||utama';
->>>>>>> master

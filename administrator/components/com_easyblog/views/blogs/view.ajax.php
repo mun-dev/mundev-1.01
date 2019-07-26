@@ -1,11 +1,7 @@
 <?php
 /**
 * @package		EasyBlog
-<<<<<<< HEAD
 * @copyright	Copyright (C) 2010 - 2019 Stack Ideas Sdn Bhd. All rights reserved.
-=======
-* @copyright	Copyright (C) 2010 - 2017 Stack Ideas Sdn Bhd. All rights reserved.
->>>>>>> master
 * @license		GNU/GPL, see LICENSE.php
 * EasyBlog is free software. This version may have been modified pursuant
 * to the GNU General Public License, and as distributed it includes or
@@ -64,7 +60,6 @@ class EasyBlogViewBlogs extends EasyBlogAdminView
 	}
 
 	/**
-<<<<<<< HEAD
 	 * Renders the dialog to allow admin to import post templates
 	 *
 	 * @since   5.1
@@ -79,8 +74,6 @@ class EasyBlogViewBlogs extends EasyBlogAdminView
 	}
 
 	/**
-=======
->>>>>>> master
 	 * Confirmation to empty trash
 	 *
 	 * @since	5.1
@@ -235,7 +228,6 @@ class EasyBlogViewBlogs extends EasyBlogAdminView
 		$output = $theme->output('admin/blogs/dialogs/mass.assign.tags');
 
 		return $this->ajax->resolve($output);
-<<<<<<< HEAD
 	}
 
 	/**
@@ -252,7 +244,4 @@ class EasyBlogViewBlogs extends EasyBlogAdminView
 		
 		return $this->ajax->resolve($output);
 	}
-=======
-	}	
->>>>>>> master
 }

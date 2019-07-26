@@ -82,7 +82,6 @@ class EasyBlogContributor extends EasyBlog
 	}
 
 	/**
-<<<<<<< HEAD
 	 * Determine if the the contributor is from EasySocial
 	 *
 	 * @since	5.3.0
@@ -108,8 +107,6 @@ class EasyBlogContributor extends EasyBlog
 	}
 
 	/**
-=======
->>>>>>> master
 	 * generate contribution access sql that used with blogs
 	 *
 	 * @since	5.0

@@ -14,7 +14,6 @@ EasyBlog.require()
 
 		$.Joomla('submitform', [action]);
 	});
-<<<<<<< HEAD
 
 	var importTemplates = $('[data-toolbar-import]');
 	importTemplates.appendTo($('#toolbar'));
@@ -25,6 +24,4 @@ EasyBlog.require()
 			"content": EasyBlog.ajax('admin/views/blogs/importForm', {})			
 		});
 	});
-=======
->>>>>>> master
 });
